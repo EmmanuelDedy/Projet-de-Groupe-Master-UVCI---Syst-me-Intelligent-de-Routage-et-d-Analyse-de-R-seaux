@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "graphe.h"
 #include <string.h>
 
 Graphe *graphe_creer(int max_noeuds, bool est_oriente) {
@@ -319,3 +319,4 @@ void graphe_vers_dot(Graphe *g, const char *nom_fichier) {
   fprintf(f, "}\n");
   fclose(f);
 }
+

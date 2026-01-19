@@ -7,7 +7,7 @@
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
 #endif
 
-// --- STRUCTURES INTERNES POUR LES SCC (PILE STATIQUE) ---
+// STRUCTURES INTERNES POUR LES SCC (PILE STATIQUE) 
 #define MAX_NODES 1000
 int pile_scc[MAX_NODES];
 int sommet_pile = -1;

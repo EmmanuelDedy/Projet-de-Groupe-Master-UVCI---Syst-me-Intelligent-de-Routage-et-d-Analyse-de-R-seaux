@@ -1,36 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-  // Liste Chaînée Double (pour file de priorité) //
-
-typedef struct Paquet {
-    int id;                     
-    int priorite;               
-    float taille_Mo;            
-    int source;                 
-    int destination; 
-    clock_t temps_arrivee;            
-    struct Paquet* precedent;   
-    struct Paquet* suivant; 
-} Paquet;
-
-
-typedef struct FileAttente {
-    Paquet* tete;             
-    Paquet* queue;              
-    int taille_actuelle;        
-    int capacite_max; 
-    // pour le calcule des statistiques
-     int paquets_total;        
-    int paquets_defiles;      
-    int paquets_rejetes;      
-    double somme_attente;       
-} FileAttente;
-
+#include "liste_chainee.h"
 
    //INITIALISATION DE LA FILE//
  
 void initialiserFile(FileAttente* f, int capacite_max) {
+    if (!f) return;
     f->tete = NULL;             // Aucun paquet en tête
     f->queue = NULL;            // Aucun paquet en queue
     f->taille_actuelle = 0;     // File vide au départ
@@ -71,6 +47,7 @@ Paquet* creerPaquet(int id, int priorite, float taille,
   // ENQUEUE //
 
 int enfiler(FileAttente* f, Paquet* Nouveau_p) {
+     if (!f || !Nouveau_p) return -1;
     f->paquets_total++; 
 
     // On vérifie si la file est pleine
@@ -124,6 +101,7 @@ int enfiler(FileAttente* f, Paquet* Nouveau_p) {
    //DEFILER//
 
 Paquet* defiler(FileAttente* f) {
+    if (!f) return NULL;
 
     // On vérifie si la file est vide
     if (f->tete == NULL)
@@ -160,6 +138,7 @@ Paquet* defiler(FileAttente* f) {
   //PEEK//
  
 Paquet* consulter(FileAttente* f) {
+      if (!f) return NULL;
     return f->tete;             // Aucun retrait
 }
 
@@ -167,6 +146,7 @@ Paquet* consulter(FileAttente* f) {
    //LIBÉRATION DE LA MÉMOIRE//
    
 void libererFile(FileAttente* f) {
+    if (!f) return;
 
     Paquet* Nouveau_p = f->tete;
 
@@ -181,7 +161,6 @@ void libererFile(FileAttente* f) {
     f->tete = NULL;
     f->queue = NULL;
     f->taille_actuelle = 0;
-     f->taille_actuelle = 0;
     f->paquets_total = 0;
     f->paquets_defiles = 0;
     f->paquets_rejetes = 0;
@@ -190,6 +169,7 @@ void libererFile(FileAttente* f) {
 // Affichage des statistiques
 
 void afficherStats(FileAttente* f) {
+        if (!f) return;
     printf("\n STATISTIQUES \n");
     printf("Paquets envoyés : %d\n", f->paquets_total);
     printf("Paquets traités : %d\n", f->paquets_defiles);

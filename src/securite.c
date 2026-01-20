@@ -7,7 +7,7 @@
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
 #endif
 
-// --- GESTION DYNAMIQUE DE LA PILE SCC (TARJAN) ---
+//  GESTION DYNAMIQUE DE LA PILE SCC (TARJAN) 
 static int *pile_scc = NULL;
 static int sommet_pile = -1;
 static int *present_dans_pile = NULL;

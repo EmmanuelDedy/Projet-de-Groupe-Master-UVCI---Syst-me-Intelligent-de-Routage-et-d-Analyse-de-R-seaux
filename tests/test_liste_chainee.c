@@ -12,7 +12,7 @@
 
 #include <assert.h>
 #include <stdio.h>
-#include "liste_chainee.h"
+#include "../src/liste_chainee.h"
 
 int main() {
 

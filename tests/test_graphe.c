@@ -2,15 +2,16 @@
  * @file test_graphe.c
  * @brief Tests unitaires du module graphe
  *
- * Ce fichier contient des tests unitaires permettant de valider
- * les fonctionnalités principales du module graphe :
+ * Ce fichier contient des tests unitaires permettant de valider les fonctionnalités principales du module graphe :
  *  - création du graphe
  *  - ajout et suppression de nœuds
  *  - ajout et suppression d’arêtes
  */
 #include <assert.h>
 #include <stdio.h>
-#include "graphe.h"
+#include <stdlib.h>  
+#include "liste_chainee.h"
+
 
 int main() {
     /* Définition de métriques de test */

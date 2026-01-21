@@ -1,6 +1,7 @@
 #ifndef LISTE_CHAINEE_H   
 #define LISTE_CHAINEE_H
-
+#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 // Structure pour un paquet

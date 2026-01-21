@@ -1,8 +1,6 @@
-#ifndef FILE_PRIORITE_H   
-#define FILE_PRIORITE_H
+#ifndef LISTE_CHAINEE_H   
+#define LISTE_CHAINEE_H
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 // Structure pour un paquet
@@ -33,12 +31,12 @@ typedef struct FileAttente {
 
 // Déclaration des fonctions
 
-void initialiserFile(FileAttente* f, int capacite_max);
-Paquet* creerPaquet(int id, int priorite, float taille, int source, int destination);
-int enfiler(FileAttente* f, Paquet* Nouveau_p);
-Paquet* defiler(FileAttente* f);
-Paquet* consulter(FileAttente* f);
-void libererFile(FileAttente* f);
-void afficherStats(FileAttente* f);
+void initialiser_file(FileAttente* file, int capacite_max);
+Paquet* creer_paquet(int id, int priorite, float taille, int source, int destination);
+int enfiler(FileAttente* file, Paquet* nouveau_p);
+Paquet* defiler(FileAttente* file);
+Paquet* consulter(FileAttente* file);
+void liberer_file(FileAttente* file);
+void afficher_stats(FileAttente* file);
 
-#endif
+#endif // LISTE_CHAINEE_H

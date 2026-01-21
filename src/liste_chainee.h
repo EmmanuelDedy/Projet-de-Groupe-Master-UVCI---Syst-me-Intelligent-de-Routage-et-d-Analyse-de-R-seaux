@@ -1,8 +1,6 @@
-#ifndef FILE_PRIORITE_H   
-#define FILE_PRIORITE_H
+#ifndef LISTE_CHAINEE_H   
+#define LISTE_CHAINEE_H
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 // Structure pour un paquet
@@ -41,4 +39,4 @@ Paquet* consulter(FileAttente* file);
 void liberer_file(FileAttente* file);
 void afficher_stats(FileAttente* file);
 
-#endif
+#endif // LISTE_CHAINEE_H

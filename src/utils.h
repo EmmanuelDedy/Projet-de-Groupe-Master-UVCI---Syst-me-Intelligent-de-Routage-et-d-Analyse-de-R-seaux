@@ -79,4 +79,14 @@ bool file_exists(const char *path);
  */
 bool ensure_directory(const char *filepath);
 
+/**
+ * @brief Génère un fichier de topologie aléatoire (Legacy gen_large)
+ * @param filename Chemin du fichier de sortie
+ * @param name Nom de la topologie
+ * @param nb_noeuds Nombre de noeuds
+ * @param density_percent Densité des liens (0-100)
+ */
+void utils_generer_topologie_large(const char *filename, const char *name,
+                                   int nb_noeuds, int density_percent);
+
 #endif /* GSM_UTILS_H */

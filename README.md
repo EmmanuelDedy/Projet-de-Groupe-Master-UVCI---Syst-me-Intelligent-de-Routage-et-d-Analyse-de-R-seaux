@@ -293,7 +293,8 @@ Le système génère des preuves visuelles.
 ### Installation
 1.  Cloner le dépôt.
 2.  Exécuter `make` à la racine.
-3.  Vérifier avec `make tests`.
+3.  Vérifier avec `make clean`. // Pour le nettoyage
+.  Vérifier avec `make tests`.
 
 ### Conditions d'Utilisation
 *   **Système** : Linux / macOS recommandés (ou WSL sur Windows).

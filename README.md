@@ -316,4 +316,3 @@ Les algorithmes implémentés (Dijkstra, Tarjan) appartiennent au domaine public
 Nous remercions le corps enseignant de l'**UVCI** et le **Dr. [Nom]** pour l'élaboration du CDC `ProjetAlgo2026.pdf` qui a servi de fil conducteur rigoureux à ce travail.
 
 ---
-*Généré par Antigravity pour UVCI - 2026*

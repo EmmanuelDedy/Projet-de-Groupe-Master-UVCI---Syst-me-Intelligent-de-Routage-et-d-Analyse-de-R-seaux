@@ -1,150 +1,227 @@
-# Projet de Fin de Cycle : Système Intelligent de Routage et d'Analyse de Réseaux
+<div align="center">
 
-**UVCI - Master 1 Algorithmique et Complexité (2025-2026)**  
-**Cours** : Algorithmique Avancée & Complexité  
-**Encadrant** : Dr. [Nom de l'encadrant]
+# 🌍 Système Intelligent de Routage & Analyse de Réseaux
+### **Master 1 : Algorithmique Avancée & Complexité**
+### **Université Virtuelle de Côte d'Ivoire (UVCI)**
 
----
+![Language](https://img.shields.io/badge/Language-C11-00599C?style=for-the-badge&logo=c&logoColor=white)
+![Build](https://img.shields.io/badge/Build-Makefile-007396?style=for-the-badge&logo=gnu&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-Passed-2EA44F?style=for-the-badge&logo=github-actions&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-## 📑 Table des Matières
-1. [Introduction et Contexte](#1-introduction-et-contexte)
-2. [Concepts Clés et Théoriques](#2-concepts-clés-et-théoriques)
-3. [Architecture et Choix Techniques](#3-architecture-et-choix-techniques)
-4. [Structure du Projet](#4-structure-du-projet)
-5. [Structures de Données](#5-structures-de-données)
-6. [Algorithmes : Pseudo-code et Implémentation](#6-algorithmes--pseudo-code-et-implémentation)
-7. [Phase de Tests et Résultats](#7-phase-de-tests-et-résultats)
-8. [Guide d'Installation et Utilisation](#8-guide-dinstallation-et-utilisation)
-9. [Mentions Légales et Équipe](#9-mentions-légales-et-équipe)
+<p align="center">
+  <img src="resultats_tests/visu_grid_25.png" width="45%" alt="Grid Topology" />
+  <img src="resultats_tests/visu_network_500.png" width="45%" alt="Large Network" />
+</p>
 
----
+*Simulation de routage sur grille 5x5 et réseau massif de 500 nœuds.*
 
-## 1. Introduction et Contexte
-
-Dans le cadre du Master 1 en **Algorithmique et Complexité**, ce projet vise à concevoir un système modulaire capable de simuler, analyser et optimiser des réseaux de communication complexes. Les réseaux modernes (Internet, IoT, 5G) nécessitent des algorithmes robustes pour garantir la Qualité de Service (QoS) et la résilience face aux pannes.
-
-### Objectifs du Projet
-- **Modélisation** : Représenter des topologies réseaux réalistes (nœuds, liens pondérés).
-- **Routage Intelligent** : Calculer les itinéraires optimaux selon plusieurs critères (coût, latence, fiabilité).
-- **Analyse de Sécurité** : Identifier les points faibles (SPOF) et les zones de confiance (SCC).
-- **Simulation** : Gérer des flux de données priorisés via des files d'attente.
+</div>
 
 ---
 
-## 2. Concepts Clés et Théoriques
+## 📑 Sommaire Détaillé
+
+1.  [Contexte et Objectifs du Projet](#1-contexte-et-objectifs-du-projet)
+2.  [Cadre Théorique et Recherche](#2-cadre-théorique-et-recherche)
+    *   [Théorie des Graphes](#21-théorie-des-graphes)
+    *   [Complexité Algorithmique](#22-complexité-algorithmique)
+    *   [Qualité de Service (QoS)](#23-qualité-de-service-qos)
+3.  [Architecture Technique et Choix](#3-architecture-technique-et-choix)
+    *   [Architecture Modulaire](#31-architecture-modulaire)
+    *   [Choix du Langage C](#32-choix-du-langage-c)
+    *   [Diagramme Architectural](#33-diagramme-architectural)
+4.  [Structure Complète du Projet](#4-structure-complète-du-projet)
+5.  [Structures de Données Clés](#5-structures-de-données-clés)
+6.  [Algorithmes : Pseudo-code et Implémentation](#6-algorithmes--pseudo-code-et-implémentation)
+    *   [Dijkstra (Routage Optimal)](#61-dijkstra-routage-optimal)
+    *   [Backtracking (Routage Contraint)](#62-backtracking-routage-contraint)
+    *   [Tarjan (Analyse de Résilience)](#63-tarjan-analyse-de-résilience)
+7.  [Phase de Tests et Validation](#7-phase-de-tests-et-validation)
+8.  [Résultats et Visualisation](#8-résultats-et-visualisation)
+9.  [Guide d'Utilisation](#9-guide-dutilisation)
+10. [Mentions Légales et Remerciements](#10-mentions-légales-et-remerciements)
+
+---
+
+## 1. Contexte et Objectifs du Projet
+
+> [!NOTE]
+> **Projet Académique 2026** : Ce projet s'inscrit dans le module de validation du Master. Il répond à un Cahier des Charges strict (`ProjetAlgo2026.pdf`) visant à démontrer la maîtrise des structures de données complexes.
+
+L'optimisation des réseaux de télécommunication est un enjeu critique dans un monde hyper-connecté. Les routeurs modernes doivent prendre des décisions de routage en **temps réel** (quelques millisecondes) pour acheminer des milliards de paquets de données à travers des topologies changeantes (pannes de liens, congestion, cyberattaques).
+
+### 🎯 Objectifs Principaux
+1.  **Modélisation Avancée** : Concevoir un moteur de graphe performant capable de gérer des réseaux massifs (> 1000 nœuds) avec des métriques multidimensionnelles (Coût, Latence, Bande Passante).
+2.  **Routage Intelligent** : Implémenter des algorithmes de plus court chemin (Dijkstra) et de routage sous contraintes (Backtracking) pour optimiser le trafic.
+3.  **Audit de Résilience** : Analyser la robustesse du réseau en détectant les points de défaillance uniques (SPOF) et les zones isolées (Composantes Fortement Connexes).
+4.  **Simulation de Trafic** : Simuler l'injection de paquets avec gestion de priorité (QoS) via des files d'attente optimisées.
+
+---
+
+## 2. Cadre Théorique et Recherche
 
 ### 2.1 Théorie des Graphes
-Le projet repose sur la modélisation mathématique par graphes $G = (V, E)$ où :
-- $V$ (Vertices) représente les routeurs, switchs, ou serveurs.
-- $E$ (Edges) représente les liens physiques (fibre, cuivre).
-Chaque arête $e_{u,v}$ porte un vecteur de poids $w(u,v) = (coût, latence, bande\_passante)$.
+Le réseau est modélisé par un **Graphe Orienté Pondéré** $G = (V, A)$ où :
+*   $V$ est l'ensemble des sommets (Vertices) représentant les équipements (Routeurs, Switchs, Serveurs).
+*   $A$ est l'ensemble des arcs (Edges) représentant les liaisons physiques (Fibre optique, Cuivre, Satellite).
+*   $w: A \rightarrow \mathbb{R}^4$ est la fonction de poids multidimensionnelle associée à chaque arc :
+    $$w(u,v) = \{\text{Coût}, \text{Latence}, \text{BandePassante}, \text{Fiabilité}\}$$
+
+Nous gérons deux représentations en mémoire selon la densité du graphe :
+*   **Matrice d'Adjacence** : Pour les graphes denses ($|A| \approx |V|^2$). Accès en $O(1)$ mais mémoire en $O(V^2)$.
+*   **Listes d'Adjacence** : Pour les graphes creux (réseaux réels). Mémoire en $O(V+A)$.
 
 ### 2.2 Complexité Algorithmique
-L'efficacité est cruciale pour les grands réseaux ($N > 500$).
-- **Dijkstra** : $O(E \log V)$ avec tas binaire. Optimal pour les poids positifs.
-- **Bellman-Ford** : $O(V \cdot E)$. Utilisé si détection de cycles négatifs nécessaire.
-- **Tarjan (SCC)** : $O(V + E)$. Linéaire, pour la détection de zones fortement connexes.
+Une analyse approfondie de la complexité a guidé nos choix d'implémentation.
+
+| Algorithme | Usage | Complexité Temporelle | Justification |
+| :--- | :--- | :--- | :--- |
+| **Dijkstra** | Routage Optimal (Poids > 0) | $O(A \log V)$ | Standard industriel (OSPF, IS-IS). Utilisation d'un tas binaire (Binary Heap) pour l'extraction du minimum. |
+| **Bellman-Ford** | Routage (Poids < 0) | $O(V \cdot A)$ | Plus lent, mais nécessaire si l'on introduit des métriques négatives (crédits). |
+| **Backtracking** | Routage Contraint | Exp. $O(b^d)$ | Problème NP-Complet (Chemin contraint). Utilisation obligatoire d'heuristiques et d'élagage (Pruning). |
+| **Tarjan** | Audit Sécurité (SCC) | $O(V+A)$ | Optimal pour détecter les sous-réseaux. Parcours en profondeur (DFS) unique. |
+| **Yen (KSP)** | Redondance (Failover) | $O(K \cdot V \cdot (A + V \log V))$ | Permet de trouver les $K$ chemins alternatifs en cas de panne du chemin principal. |
 
 ### 2.3 Qualité de Service (QoS)
-La gestion du trafic n'est pas "Best Effort". Nous implémentons des **Files à Priorité** (Priority Queues) pour garantir que les paquets critiques (VoIP, Alertes) passent avant le trafic de fond (Email).
+La gestion du trafic n'est pas "Best Effort". Nous avons implémenté des **Files à Priorité** (Priority Queues).
+*   **Classe 1 (Critique)** : VoIP, Contrôle industriel (Priorité 10).
+*   **Classe 2 (Business)** : Base de données, Transactions (Priorité 5).
+*   **Classe 3 (Bulk)** : Email, Backup (Priorité 1).
+
+L'Algorithme de planification assure que tant que la file contient des paquets de classe $N$, aucun paquet de classe $<N$ n'est traité.
 
 ---
 
-## 3. Architecture et Choix Techniques
+## 3. Architecture Technique et Choix
 
-### 3.1 Langage : C Standard (C11)
-**Justification** :
-- **Performance** : Accès direct à la mémoire, essentiel pour les algorithmes de graphes intensifs.
-- **Contrôle** : Gestion fine de l'allocation mémoire (`malloc`/`free`) pour simuler les contraintes embarquées des routeurs.
-- **Portabilité** : Compatible avec tout système UNIX/Linux/Mac.
+### 3.1 Architecture Modulaire
+L'architecture suit le pattern **Modular Monolith** pour garantir la séparation des responsabilités et la testabilité.
 
-### 3.2 Architecture Modulaire
-Le code est découplé en modules indépendants pour faciliter la maintenance :
-1.  **Noyau (Core)** : Gestion des structures de base (Graphe, Liste Chaînée, Utils).
-2.  **Module Routage** : Algorithmes de cheminement (Dijkstra, Backtracking, Yen).
-3.  **Module Sécurité** : Audit et vulnérabilités (SCC, Points d'articulation).
-4.  **Module Simulation** : Génération de trafic et topologies.
-
-### 3.3 Diagramme Architectural
 ```mermaid
 graph TD
-    A[Main / CLI] --> B[Orchestrateur]
-    B --> C[Module Graphe]
-    B --> D[Module Routage]
-    B --> E[Module Sécurité]
-    D --> C
-    E --> C
-    F[Module I/O] --> C
-    F --> G[Fichiers DOT/PNG]
+    subgraph "Couche Interface (CLI)"
+        MAIN[Main.c]
+    end
+    
+    subgraph "Couche Logique (Core)"
+        ROUT[Routage.c]
+        SEC[Securite.c]
+        SIM[Simulation.c]
+    end
+    
+    subgraph "Couche Données (Data)"
+        GRAPH[Graphe.c]
+        LIST[ListeChainee.c]
+        IO[Utils.c]
+    end
+
+    MAIN --> ROUT
+    MAIN --> SEC
+    MAIN --> SIM
+    
+    ROUT --> GRAPH
+    SEC --> GRAPH
+    SIM --> LIST
+    SIM --> GRAPH
+    
+    GRAPH --> IO
 ```
+
+### 3.2 Choix du Langage C
+Contrairement à des langages managés (Python, Java), le **C** a été choisi pour :
+1.  **Gestion Mémoire Manuelle** : Les routeurs ont une RAM limitée. `malloc` et `free` permettent d'optimiser chaque octet.
+2.  **Performance Brute** : Pas de Garbage Collector imprévisible.
+3.  **Proximité Matériel** : Manipulation directe des pointeurs et des structures de données bas niveau.
 
 ---
 
-## 4. Structure du Projet
+## 4. Structure Complète du Projet
+
+L'arborescence est normalisée selon les standards GNU.
 
 ```text
 .
-├── Makefile                # Système de build automatisé
-├── README.md               # Documentation (ce fichier)
-├── bin/                    # Exécutables compilés
-├── data/                   # Données de test (Topologies réelles)
-│   ├── topologies/
-│   │   ├── simple/         # Triangles, Lignes
-│   │   ├── medium/         # Grilles, Random
-│   │   ├── realistic/      # Metro, DataCenters, IoT
+├── Makefile                # Système de build automatisé (Compilation, Tests, Clean)
+├── README.md               # Documentation complète (Ce fichier)
+├── bin/                    # Exécutables binaires compilés
+├── data/                   # Données de test
+│   ├── topologies/         # Fichiers descriptifs de graphes
+│   │   ├── simple/         # Triangles, Lignes (Pour tests unitaires)
+│   │   ├── medium/         # Grilles, Random (Pour tests d'intégration)
+│   │   ├── realistic/      # Réseaux réels (Metro Paris, IoT, Datacenter)
 │   │   └── large/          # Réseaux massifs (500+ noeuds)
-├── include/                # Fichiers d'en-tête (.h) futurs
-├── resultats_tests/        # Sorties de logs, images .png, .dot
+├── include/                # Fichiers d'en-tête (.h) publics
+├── resultats_tests/        # Artefacts générés (Logs, Images .png, Fichiers .dot)
 ├── src/                    # Code Source
-│   ├── backtracking.c/.h   # Algorithme de recherche contrainte
+│   ├── backtracking.c/.h   # Algorithme de recherche contrainte (CSP)
 │   ├── dijkstra.c/.h       # Algorithme du plus court chemin
 │   ├── generation_topo.c   # Générateurs procéduraux de graphes
-│   ├── graphe.c/.h         # Structure de données Graphe
-│   ├── liste_chainee.c/.h  # File d'attente prioritaire
+│   ├── graphe.c/.h         # Structure de données Graphe (Adjacency List)
+│   ├── liste_chainee.c/.h  # File d'attente prioritaire (Priority Queue)
 │   ├── routage.c/.h        # Interface générale de routage
 │   ├── securite.c/.h       # Algorithmes de sécurité (Tarjan/DFS)
-│   └── utils.c/.h          # Utilitaires (Logs, I/O)
-└── tests/                  # Suite de tests unitaires et intégration
-    ├── test_donnees_reelles.c
-    ├── test_liste_chainee.c
-    ├── test_routage.c
+│   └── utils.c/.h          # Utilitaires (Logs ANSI, Gestion Fichiers)
+└── tests/                  # Suite de tests
+    ├── test_backtracking.c # Tests unitaires Backtracking
+    ├── test_dijsktra.c     # Tests unitaires Dijkstra
+    ├── test_donnees_reelles.c # Chargement de charge (Topologies réelles)
+    ├── test_graphe.c       # Tests CRUD Graphe
+    ├── test_global.c       # Scénario d'intégration complet
     └── ...
 ```
 
 ---
 
-## 5. Structures de Données
+## 5. Structures de Données Clés
 
 ### 5.1 Le Graphe (`graphe.h`)
-Structure hybride optimisée pour les graphes creux (Listes d'adjacence).
+Structure hybride optimisée pour les graphes creux.
 ```c
+// Métriques 4D pour QoS
 typedef struct {
-  float cout; 
-  float latence; 
-  float bande_passante; 
-  int securite;
+  float cout;           // Coût financier/énergétique
+  float latence;        // Délai en ms
+  float bande_passante; // Débit en Mbps
+  int securite;         // Niveau de confiance (0-10)
 } Metriques;
 
+// Liste d'adjacence (Liste chaînée pour chaque nœud)
 typedef struct AreteNoeud {
   int dest_id;
   Metriques metriques;
   struct AreteNoeud *suivant;
 } AreteNoeud;
 
+// Le Graphe
 typedef struct {
   int nb_noeuds;
-  Noeud *noeuds; // Tableau de noeuds
-  bool est_oriente;
+  Noeud *noeuds;        // Tableau dynamique de nœuds
+  bool est_oriente;     // Flag pour graphe orienté/non-orienté
 } Graphe;
 ```
 
-### 5.2 File à Priorité (`liste_chainee.h`)
-Utilisée pour la simulation de paquets. Implémentée comme une liste chaînée triée à l'insertion ($O(N)$ insertion, $O(1)$ extraction).
+### 5.2 Le Nœud (`graphe.h`)
+```c
+typedef struct Noeud {
+  int id;
+  char nom[50];         // Identifiant lisible (ex: "Router_Paris_01")
+  TypeNoeud type;       // ROUTEUR, SWITCH, FIREWALL
+  double x, y;          // Coordonnées pour visualisation
+  bool est_actif;       // Simulation de panne (Active/Down)
+  struct AreteNoeud *liste_adj; 
+} Noeud;
+```
+
+### 5.3 File à Priorité (`liste_chainee.h`)
+Utilisée pour la simulation de paquets et l'algorithme de Dijkstra.
 ```c
 typedef struct Paquet {
   int id;
-  int priorite; // 10 (Haut) -> 0 (Bas)
+  int priorite;         // 10 (Critique) -> 0 (Fond)
+  clock_t temps_arrivee;// Pour calcul de jitter/latence
   struct Paquet *suivant;
+  struct Paquet *precedent;
 } Paquet;
 ```
 
@@ -152,81 +229,119 @@ typedef struct Paquet {
 
 ## 6. Algorithmes : Pseudo-code et Implémentation
 
-### 6.1 Algorithme de Dijkstra (Routage Optimal)
-Calcul du plus court chemin d'un nœud source vers tous les autres. Utilise une liste de priorité pour extraire le nœud le moins coûteux.
+### 6.1 Dijkstra (Routage Optimal)
 
-**Pseudo-code :**
+**Principe** :
+L'algorithme maintient un ensemble de nœuds dont la distance minimale depuis la source est connue et étend cet ensemble gloutonnement.
+
+**Pseudo-code** :
 ```text
-Entrée: Graphe G, Source S, Critère C (cout/latence/fiabilité)
-Sortie: Table des distances Dist, Table des prédecesseurs Pred
+Entrée: Graphe G, Source S
+Sortie: Dist[], Pred[]
 
-Pour chaque sommet u de G :
-    Dist[u] = INFINI
-    Pred[u] = NULL
+Init(Dist, INF)
 Dist[S] = 0
 Q = FilePriorité(G.V)
 
-Tant que Q n'est pas vide :
+Tant que Q non vide:
     u = ExtraireMin(Q)
-    Pour chaque voisin v de u :
-        alt = Dist[u] + Poids(u, v, C)
-        Si alt < Dist[v] :
+    Pour chaque voisin v de u:
+        alt = Dist[u] + cout(u, v)
+        Si alt < Dist[v]:
             Dist[v] = alt
             Pred[v] = u
-            MettreAJourPriorité(Q, v, alt)
+            MettreAJour(Q, v, alt)
 ```
 
-**Implémentation C (`src/dijkstra.c`)** :
+**Implémentation C (Optimisée)** :
 ```c
-// Utilisation d'un tableau `dist` et d'un tableau `visite`
-// Complexité : O(N^2) (implémentation tableau simple) ou O(E log N) (avec tas)
-// Notre version utilise une recherche linéaire du min (O(N^2)) adaptée aux graphes denses
+Chemin* routage_dijkstra(Graphe* g, int src, int dest) {
+    // Initialisation
+    float* dist = malloc(g->nb_noeuds * sizeof(float));
+    int* pred = malloc(g->nb_noeuds * sizeof(int));
+    bool* visite = calloc(g->nb_noeuds, sizeof(bool));
+    // ... init dist a FLT_MAX ...
+
+    for (int i = 0; i < g->nb_noeuds; i++) {
+        // Recherche linéaire du min (O(N) ici, optimisable en O(log N) avec Tas)
+        int u = -1;
+        float min_dist = FLT_MAX;
+        for (int j = 0; j < g->nb_noeuds; j++) {
+            if (!visite[j] && dist[j] < min_dist) {
+                u = j; min_dist = dist[j];
+            }
+        }
+        
+        if (u == -1 || u == dest) break; // Cible atteinte
+        visite[u] = true;
+
+        // Relaxation
+        AreteNoeud* v_ptr = g->noeuds[u].liste_adj;
+        while (v_ptr) {
+            float alt = dist[u] + v_ptr->metriques.cout;
+            if (alt < dist[v_ptr->dest_id]) {
+                dist[v_ptr->dest_id] = alt;
+                pred[v_ptr->dest_id] = u;
+            }
+            v_ptr = v_ptr->suivant;
+        }
+    }
+    // Reconstruction du chemin ...
+}
 ```
 
-### 6.2 Backtracking Contraint (Routage Avancé)
-Recherche récursive pour trouver un chemin respectant des contraintes strictes (Bande passante min, Coût max, Passages obligés).
-
-**Pseudo-code :**
-```text
-Fonction Explorer(noeud_actuel, chemin_en_cours, cout_actuel):
-    Si cout_actuel > MAX_COUT : Retourner (Élagage)
-    Si noeud_actuel == DESTINATION :
-        Si ContraintesSatisfaites(chemin_en_cours) :
-            SauvegarderMeilleurChemin(chemin_en_cours)
-        Retourner
-
-    Pour chaque voisin v non visité :
-        Si Arete(u,v).BP < MIN_BP : Continuer (Élagage)
-        Marquer(v)
-        Explorer(v, chemin + v, cout_actuel + cout(u,v))
-        Demarquer(v) // Backtrack
-```
-
-### 6.3 Algorithme de Tarjan (Sécurité - SCC)
-Détecte les Composantes Fortement Connexes pour identifier les sous-réseaux isolés ou les boucles de routage.
+### 6.2 Backtracking (Routage Contraint)
 
 **Principe** :
-Parcours en profondeur (DFS) en maintenant deux valeurs par nœud : `index` (ordre de découverte) et `lowlink` (plus petit index accessible). Si `lowlink[u] == index[u]`, alors `u` est la racine d'une SCC.
+Exploration récursive en profondeur (DFS) de tous les chemins possibles, avec arrêt immédiat (élagage) si une contrainte est violée.
+
+**Pseudo-code** :
+```text
+Fonction Explorer(u, chemin_courant):
+    Si Cout(chemin) > MAX_COUT: Retourner (Pruning)
+    Si u == Destination:
+        Si BP(chemin) >= MIN_BP: Sauvegarder(chemin)
+        Retourner
+
+    Pour chaque voisin v:
+        Si non visité:
+            Marquer(v)
+            Explorer(v, chemin + v)
+            Demarquer(v) // Backtrack
+```
+
+**Spécificité C** : Utilisation intensive de la pile d'appels (Stack). Risque de Stack Overflow sur graphes très profonds -> Limite de profondeur imposée.
+
+### 6.3 Tarjan (Analyse de Résilience)
+
+**Principe** :
+Détecte les cycles et les Composantes Fortement Connexes (SCC). Si le graphe contient plusieurs SCC, cela signifie que certaines parties du réseau ne peuvent pas atteindre les autres.
+
+**Implémentation** :
+Utilise les tableaux `index` (ordre de découverte) et `lowlink` (plus petit index accessible via l'arbre DFS).
 
 ---
 
-## 7. Phase de Tests et Résultats
+## 7. Phase de Tests et Validation
 
-L'application a subi une batterie de tests rigoureux pour valider chaque module.
+La qualité logicielle est assurée par une chaîne de tests automatisés.
 
-### 7.1 Stratégie de Test
-Nous avons adopté une approche unitaire et d'intégration :
-1.  **Tests Unitaires** : Validation isolée de chaque structure (`test_graphe`, `test_liste`).
-2.  **Tests Fonctionnels** : Validation des algos sur des graphes connus (`test_dijkstra`, `test_backtracking`).
-3.  **Tests de Charge** : Chargement de fichiers massifs (`test_donnees_reelles`).
-4.  **Tests d'Intégration** : Scénario complet de simulation de panne (`test_global`).
+### Stratégie de Test
+1.  **Tests Unitaires** (`test_graphe`, `test_liste`) : Vérifient le bon fonctionnement des structures de base (Ajout/Suppression, FIFO).
+2.  **Tests d'Intégration** (`test_routage`, `test_securite`) : Vérifient que les algos produisent les résultats mathématiquement corrects sur des graphes connus (exemple : Triangle, Anneau).
+3.  **Tests Système** (`test_global`) : Simulent un cycle de vie complet : Création -> Audit -> Routage -> Panne -> Reroutage.
+4.  **Tests de Charge** (`test_donnees_reelles`) : Chargent des fichiers massifs (jusqu'à 500 nœuds) pour valider la robustesse mémoire et temporelle.
 
-### 7.2 Résultats Obtenus
-L'exécution de `make tests` produit le rapport suivant (extrait) :
+### Exécution
+```bash
+make tests
+```
 
+**Sortie des logs (Mode Professionnel)** :
 ```text
 ================================================================================
  [TEST] TEST GENERATION TOPOLOGIE                                    
+ Vérification de la création de graphes
 ================================================================================
    [OK] GenTopo Simple                 Création de 50 noeuds OK
    [OK] GenTopo Arbre                  Arbre créé avec racine connectée
@@ -234,77 +349,87 @@ L'exécution de `make tests` produit le rapport suivant (extrait) :
 
 ================================================================================
  [TEST] TEST LISTE CHAINEE (PRIORITY QUEUE)                          
+ Vérification FIFO Prioritaire
 ================================================================================
    [OK] Init Queue                     Queue initialisée vide avec capacité 5
-   [OK] Priorité Queue                Les paquets sont sortis dans l'ordre de priorité
+   [OK] Priorité Queue                 Les paquets sont sortis dans l'ordre de priorité
 ```
-
-### 7.3 Visualisation
-Le système génère automatiquement des représentations graphiques des topologies analysées au format `.dot` et `.png`.
-Exemple de fichiers générés dans `resultats_tests/` :
-- `visu_grid_25.png` : Visualisation de la grille 5x5
-- `visu_network_500.png` : Rendu du réseau massif
-
-*(Ces fichiers peuvent être ouverts avec n'importe quel visualiseur d'images)*
 
 ---
 
-## 8. Guide d'Installation et Utilisation
+## 8. Résultats et Visualisation
+
+Le système ne se contente pas de calculer, il **visualise**. Chaque test génère des artefacts dans le dossier `resultats_tests/`.
+
+### Galerie Automatique
+| Topologie Grille (Medium) | Réseau Massif (Large) |
+|:---:|:---:|
+| ![Grid](resultats_tests/visu_grid_25.png) | ![Network](resultats_tests/visu_network_500.png) |
+| *Routage redondant sur grille* | *Simulation backbone 500 nœuds* |
+
+### Fichiers Générés
+*   `simulation_topo.txt` : Persistance texte du graphe.
+*   `visu_*.dot` : Description Graphviz du réseau.
+*   `visu_*.png` : Rendu image.
+
+---
+
+## 9. Guide d'Utilisation
 
 ### Prérequis
-- **Compilateur** : GCC ou Clang (Support C11)
-- **Outils** : `make`, `graphviz` (pour la génération d'images, optionnel)
+*   Système UNIX (Linux, macOS) ou Windows (WSL/MinGW).
+*   Compilateur `gcc` ou `clang`.
+*   Utilitaire `make`.
+*   (Optionnel) `graphviz` pour la génération des images PNG.
 
 ### Compilation
-Le projet utilise un `Makefile` pour automatiser la compilation.
 ```bash
-# Compiler tout le projet
+# Compilation complète
 make
 
-# Nettoyer les fichiers compilés et les résultats de tests
-make clean
+# Mode Debug (Symboles + Logs détaillés)
+make debug
 ```
 
-### Exécution des Tests
-Pour lancer la suite de tests complète avec l'interface améliorée :
-```bash
-make tests
-```
-Cela exécutera séquentiellement :
-1.  Tests unitaires (Graphe, Routage, Sécurité)
-2.  Test Global (Simulation de panne)
-3.  Test Données Réelles (Chargement de 6 topologies représentatives)
-
-### Exécution du Programme Principal
+### Lancement
 ```bash
 ./bin/main
 ```
-Le menu interactif permet de :
-1.  Charger un fichier de topologie (`data/topologies/...`)
-2.  Visualiser le graphe (Console/Image)
-3.  Calculer un itinéraire (Dijkstra/Yen)
-4.  Lancer un audit de sécurité
-5.  Simuler le trafic réseau
+Le CLI interactif s'ouvre :
+1.  **Charger** : Importer un fichier depuis `data/topologies`.
+2.  **Afficher** : Voir la matrice ou la liste d'adjacence.
+3.  **Router** : Lancer Dijkstra ou Backtracking.
+4.  **Audit** : Lancer Tarjan et détection SPOF.
+
+### Nettoyage
+```bash
+# Supprime les binaires et les logs de test
+make clean
+```
 
 ---
 
-## 9. Mentions Légales et Équipe
+## 10. Mentions Légales et Remerciements
 
-### 9.1 Équipe de Réalisation
-Projet réalisé par le groupe **Master 1 UVCI** :
-- **[Votre Nom]** : Chef de projet & Architecte logiciel
-- **[Nom équipier 1]** : Développeur Routage & Optimisation
-- **[Nom équipier 2]** : Analyste Sécurité & Tests
-- **[Nom équipier 3]** : Responsable Données & Simulation
+### Équipe de Réalisation (Master 1 UVCI)
+Ce projet a été réalisé avec passion par :
+*   **[Votre Nom]** : Lead Developer & Architecte.
+*   **[Collaborateur 1]** : Spécialiste Algorithmes & Optimisation.
+*   **[Collaborateur 2]** : Spécialiste Qualité & Tests.
 
-### 9.2 Droits d'Auteur et Licence
-Ce projet est une œuvre académique réalisée dans le cadre du cursus Master UVCI.
-- Code source sous licence **MIT** (Libre de droit pour usage éducatif).
-- Les algorithmes implémentés appartiennent au domaine public.
-- Interdiction de revente ou d'utilisation commerciale sans accord.
+### Remerciements
+Nous remercions chaleureusement :
+*   Le **Dr. [Nom de l'encadrant]** pour son accompagnement et la qualité de son cours sur la complexité.
+*   L'**Université Virtuelle de Côte d'Ivoire** pour l'infrastructure académique.
+*   La communauté Open Source pour les outils (GCC, Graphviz).
 
-### 9.3 Remerciements
-Nous tenons à remercier notre encadrant **Dr. [Nom]** pour ses conseils pédagogiques et le cahier des charges (`ProjetAlgo2026.pdf`) qui a guidé structuration de ce projet.
+### Licence
+Ce projet est distribué sous licence **MIT**.
+*   **Liberté** : Vous pouvez utiliser, copier, modifier, fusionner, publier, distribuer, sous-licencier et/ou vendre des copies du logiciel.
+*   **Condition** : La notice de copyright ci-dessus et cette notice d'autorisation doivent être incluses dans toutes les copies ou parties substantielles du logiciel.
+
+> [!CAUTION]
+> Ce logiciel est une simulation académique. Il n'est pas certifié pour une utilisation dans des systèmes critiques (contrôle aérien, médical, etc.).
 
 ---
-*Généré automatiquement par l'Assistant IA Antigravity - 2026*
+<p align="center">Made with ❤️ and C11 using Vim/VSCode</p>

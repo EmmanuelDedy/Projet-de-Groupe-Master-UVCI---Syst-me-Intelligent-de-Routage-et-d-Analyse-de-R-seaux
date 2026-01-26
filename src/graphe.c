@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "graphe.h"
 #include <string.h>
 
 Graphe *graphe_creer(int max_noeuds, bool est_oriente) {

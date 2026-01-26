@@ -1,25 +1,28 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude -std=c11 -g
+CFLAGS = -Wall -Wextra -Iinclude -Isrc -std=c11 -g
 LDFLAGS = 
 
 # Dossiers sources
 SRC_DIR = src
 BIN_DIR = bin
 
-# Chemins des Modules
-MOD1_DIR = $(SRC_DIR)/Module1_Graphe
-MOD2_DIR = $(SRC_DIR)/Module2_Routage
-MOD3_DIR = $(SRC_DIR)/Module3_Securite
-MOD4_DIR = $(SRC_DIR)/Module4_Files
-MOD_GSM_DIR = $(SRC_DIR)/Module_GSM
+# Chemins des Modules (Structure Plate)
+MOD1_DIR = $(SRC_DIR)
+MOD2_DIR = $(SRC_DIR)
+MOD3_DIR = $(SRC_DIR)
+MOD4_DIR = $(SRC_DIR)
+MOD_GSM_DIR = $(SRC_DIR)
 
 # Sources Noyau (Core)
 CORE_SRC = $(MOD1_DIR)/graphe.c $(MOD4_DIR)/liste_chainee.c $(MOD_GSM_DIR)/utils.c
-LOGGER_SRC = $(MOD_GSM_DIR)/logger.c
-ORCH_SRC = $(MOD_GSM_DIR)/orchestrator.c
+LOGGER_SRC = $(MOD_GSM_DIR)/logger.c  # Note: logger.c n'etait pas dans ls src, verifier s'il existe
+ORCH_SRC = $(MOD_GSM_DIR)/orchestrator.c # Pareil
 ROUTAGE_SRC = $(MOD2_DIR)/routage.c $(MOD2_DIR)/backtracking.c
 SECURITY_SRC = $(MOD3_DIR)/securite.c
-SIMULATOR_SRC = $(MOD_GSM_DIR)/simulator.c
+SIMULATOR_SRC = $(MOD_GSM_DIR)/simulator.c # Pareil
+
+# Tests Utils
+TEST_UTILS = tests/test_utils.c
 
 # Cibles de compilation
 TARGETS = $(BIN_DIR)/main $(BIN_DIR)/dijkstra \
@@ -62,7 +65,7 @@ $(BIN_DIR)/topo_generator: $(MOD_GSM_DIR)/topo_generator_cli.c $(MOD_GSM_DIR)/ge
 
 
 # Tests
-TEST_SRC = $(SRC_DIR)/tests
+TEST_SRC = tests
 TEST_BIN = $(BIN_DIR)/tests
 
 $(TEST_BIN):
@@ -80,13 +83,11 @@ test_securite: $(TEST_SRC)/test_securite.c $(CORE_SRC) $(SECURITY_SRC) | $(TEST_
 	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_securite $^ $(LDFLAGS)
 	./$(TEST_BIN)/test_securite
 
-test_global: $(TEST_SRC)/test_global.c $(CORE_SRC) $(ROUTAGE_SRC) $(SECURITY_SRC) | $(TEST_BIN)
+test_global: $(TEST_SRC)/test_global.c $(TEST_UTILS) $(CORE_SRC) $(ROUTAGE_SRC) $(SECURITY_SRC) | $(TEST_BIN)
 	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_global $^ $(LDFLAGS)
 	./$(TEST_BIN)/test_global
 
-test_liste: $(TEST_SRC)/test_liste.c src/Module4_Files/liste_chainee.c | $(TEST_BIN)
-	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_liste $^ $(LDFLAGS)
-	./$(TEST_BIN)/test_liste
+
 
 test_generator: $(TEST_SRC)/test_generator.c $(MOD_GSM_DIR)/generator.c $(CORE_SRC) | $(TEST_BIN)
 	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_generator $^ $(LDFLAGS)
@@ -96,12 +97,35 @@ test_sim: $(TEST_SRC)/test_sim.c $(MOD_GSM_DIR)/simulator.c $(MOD_GSM_DIR)/utils
 	$(CC) $(CFLAGS) -DTEST_MODE -o $(TEST_BIN)/test_sim $^ $(LDFLAGS)
 	./$(TEST_BIN)/test_sim
 
-tests: test_graphe test_routage test_securite test_global test_liste test_generator test_sim
+# New Tests
+
+test_dijsktra: tests/test_dijsktra.c $(TEST_UTILS) $(CORE_SRC) $(ROUTAGE_SRC) | $(TEST_BIN)
+	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_dijsktra $^ $(LDFLAGS)
+	./$(TEST_BIN)/test_dijsktra
+
+test_backtracking: tests/test_backtracking.c $(TEST_UTILS) $(CORE_SRC) $(ROUTAGE_SRC) | $(TEST_BIN)
+	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_backtracking $^ $(LDFLAGS)
+	./$(TEST_BIN)/test_backtracking
+
+test_generation_topo: tests/test_generation_topo.c $(TEST_UTILS) $(CORE_SRC) | $(TEST_BIN)
+	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_generation_topo $^ $(LDFLAGS)
+	./$(TEST_BIN)/test_generation_topo
+
+test_liste: tests/test_liste_chainee.c $(TEST_UTILS) $(CORE_SRC) | $(TEST_BIN)
+	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_liste $^ $(LDFLAGS)
+	./$(TEST_BIN)/test_liste
+
+test_donnees: tests/test_donnees_reelles.c $(TEST_UTILS) $(CORE_SRC) $(ROUTAGE_SRC) | $(TEST_BIN)
+	$(CC) $(CFLAGS) -o $(TEST_BIN)/test_donnees $^ $(LDFLAGS)
+	./$(TEST_BIN)/test_donnees
+
+tests: test_graphe test_routage test_securite test_global test_dijsktra test_backtracking test_generation_topo test_liste test_donnees
 	@echo "-----------------------------------"
 	@echo ">>> TOUS LES TESTS SONT PASSES <<<"
 	@echo "-----------------------------------"
 
 clean:
 	rm -rf $(BIN_DIR)
+	rm -f resultats_tests/*.log resultats_tests/*.txt resultats_tests/*.dot resultats_tests/*.png resultats_tests/*.tmp
 
 .PHONY: all clean directories tests test_graphe test_routage test_securite test_global

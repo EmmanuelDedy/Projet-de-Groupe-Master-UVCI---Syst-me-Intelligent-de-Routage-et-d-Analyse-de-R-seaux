@@ -1,0 +1,8 @@
+graph G {
+  0 [label="Router_A"];
+  1 [label="Router_B"];
+  2 [label="Router_C"];
+  0 -- 2 [label="c:1.5, b:1000.0"];
+  0 -- 1 [label="c:1.5, b:1000.0"];
+  1 -- 2 [label="c:1.5, b:1000.0"];
+}

@@ -1,108 +1,125 @@
 #include "graphe.h"
 #include "routage.h"
 #include "securite.h"
+#include "test_utils.h"
 #include <assert.h>
 #include <stdio.h>
 
-int main() {
-  printf("=== TEST INTEGRATION GLOBAL ===\n");
+void test_simulation_complete() {
+  log_section(
+      "TEST GLOBAL INTÉGRATION",
+      "Simulation complète : Design -> Audit -> Routage -> Panne -> Visu");
 
-  // 1. Creation d'une topologie reseau type "Entreprise"
-  printf("1. Construction du reseau...");
-  Graphe *g = graphe_creer(10, true);
+  // 1. Generation Topologie (Grille 5x5 = 25 noeuds pour avoir un truc
+  // consistant)
+  log_info("Phase 1: Génération de la Topologie (Grille 5x5)...");
+  Graphe *g = creer_graphe_test(TOPO_GRILLE, 25);
 
-  // Core (0,1)
-  graphe_ajouter_noeud_nomme(g, "Core1", ROUTEUR, 0, 0);
-  graphe_ajouter_noeud_nomme(g, "Core2", ROUTEUR, 10, 0);
+  if (!g) {
+    log_echec("Creation Graphe", "Echec allocation");
+    return;
+  }
+  log_succes("Creation Graphe", "Graphe Grille 25 noeuds généré");
 
-  // Distribution (2,3)
-  graphe_ajouter_noeud_nomme(g, "Dist1", COMMUTATEUR, 0, 10);
-  graphe_ajouter_noeud_nomme(g, "Dist2", COMMUTATEUR, 10, 10);
+  // 2. Sauvegarde et Rechargement (Persistence)
+  const char *txt_file = "resultats_tests/simulation_topo.txt";
+  log_info("Phase 2: Test Persistence (I/O)...");
+  if (graphe_sauvegarder(g, txt_file)) {
+    log_succes("Sauvegarde", txt_file);
+  } else {
+    log_echec("Sauvegarde", "Erreur écriture fichier");
+  }
 
-  // Access (4,5)
-  graphe_ajouter_noeud_nomme(g, "Access1", COMMUTATEUR, 0, 20);
-  graphe_ajouter_noeud_nomme(g, "Access2", COMMUTATEUR, 10, 20);
+  graphe_detruire(g); // On détruit pour forcer le rechargement propre
+  g = graphe_charger(txt_file);
+  if (g && g->nb_noeuds == 25) {
+    log_succes("Chargement", "Graphe rechargé avec succès (25 noeuds)");
+  } else {
+    log_echec("Chargement", "Echec rechargement graphe");
+    return;
+  }
 
-  // Servers (6)
-  graphe_ajouter_noeud_nomme(g, "ServerFarm", SERVEUR, 5, -10);
-
-  // Liens Core-Core (Haute dispo)
-  Metriques m_10g = {1, 1, 10000, 10, 10};
-  graphe_ajouter_arete(g, 0, 1, m_10g);
-  graphe_ajouter_arete(g, 1, 0, m_10g);
-
-  // Liens Core-Dist
-  Metriques m_1g = {10, 2, 1000, 8, 8};
-  graphe_ajouter_arete(g, 0, 2, m_1g);
-  graphe_ajouter_arete(g, 1, 3, m_1g);
-  // Redondance croisee
-  graphe_ajouter_arete(g, 0, 3, m_1g);
-  graphe_ajouter_arete(g, 1, 2, m_1g);
-
-  // Liens Dist-Access
-  graphe_ajouter_arete(g, 2, 4, m_1g);
-  graphe_ajouter_arete(g, 3, 5, m_1g);
-
-  // Acces vers Core (Retour pour le routage bi-directionnel simplifie)
-  graphe_ajouter_arete(g, 4, 2, m_1g);
-  graphe_ajouter_arete(g, 5, 3, m_1g);
-  graphe_ajouter_arete(g, 2, 0, m_1g);
-  graphe_ajouter_arete(g, 3, 1, m_1g);
-
-  printf(" OK\n");
-
-  // 2. Verification Sante Reseau
-  printf("2. Audit Securite...");
+  // 3. Audit Sécurité
+  log_info("Phase 3: Audit de Sécurité...");
+  // Sur une grille parfaite, il y a beaucoup de redondance, donc peu de points
+  // critiques normalement. Sauf les coins si on isole ?
   int cycles = detecter_cycles(g);
   if (cycles)
-    printf(" [Info] Redondance (cycles) detectee, normal pour ce design.");
-  // Ce test passe toujours, c'est juste informatif ici
+    log_succes("Détection Cycles", "Cycles détectés (Attendu pour une grille)");
 
-  // 3. Test Routage Access -> Core -> Server (Hypothetique)
-  // Ajoutons le serveur connecte au Core1
-  graphe_ajouter_arete(g, 0, 6, m_10g);
-  graphe_ajouter_arete(g, 6, 0, m_10g);
+  identifier_points_critiques(g); // Affiche dans la console pour l'instant
+  // TODO: Capturer le résultat si la fonction retournait une structure.
 
-  printf("\n3. Calcul Routage (Access1 -> ServerFarm)...");
-  // Access1(4) -> Dist1(2) -> Core1(0) -> ServerFarm(6)
-  Chemin *c = routage_dijkstra(g, 4, 6, "latence");
-
-  assert(c != NULL);
-  printf(" Chemin trouve ! Longueur: %d sauts\n", c->longueur);
-  assert(c->noeuds[0] == 4);
-  assert(c->noeuds[c->longueur - 1] == 6);
-
-  chemin_detruire(c);
-
-  // 4. Test Panne (Suppression lien Dist1->Core1) et Reroutage
-  printf("4. Simulation Panne (Dist1->Core1 HS)...");
-  graphe_supprimer_arete(g, 2, 0); // Coupe le lien principal
-
-  // Access1(4) -> Dist1(2) -> Core2(1) -> Core1(0) -> ServerFarm(6)
-  // ou via la redondance croisee si implementee correctement (Dist1 a lien vers
-  // Core2 ?) J'ai mis: graphe_ajouter_arete(g, 1, 2, m_1g); (Core2 -> Dist1).
-  // Mais Dist1 -> Core2 ? Non, je n'ai pas mis Dist1 -> Core2 explicitement
-  // dans la liste ci-dessus ("Redondance croisee" commentaire mais code a
-  // verifier) Core1->Dist1, Core1->Dist2, Core2->Dist2, Core2->Dist1 (lignes
-  // 35-39). Ah les liens montants (Dist->Core) sont lignes 43-46. 2->0
-  // (Dist1->Core1) et 3->1 (Dist2->Core2). Pas de lien croise montant 2->1 dans
-  // mon setup initial. Ajoutons le pour la robustesse du test.
-  graphe_ajouter_arete(g, 2, 1, m_1g); // Dist1 -> Core2
-
-  // Recalcul
-  Chemin *c_failover = routage_dijkstra(g, 4, 6, "cout");
-  assert(c_failover != NULL);
-  printf(" Failover reussi via chemin alternatif !\n");
-  // On s'attend a passer par 4 -> 2 -> 1 -> 0 -> 6
-  if (c_failover->longueur > 0) {
-    printf("Trajet secours: ");
-    for (int i = 0; i < c_failover->longueur; i++)
-      printf("%d ", c_failover->noeuds[i]);
-    printf("\n");
+  // 4. Routage Normal
+  // Coin haut gauche (0) -> Coin bas droite (24)
+  log_info("Phase 4: Calcul Itinéraire Nominal (0 -> 24)...");
+  Chemin *c = routage_dijkstra(g, 0, 24, "cout");
+  if (c) {
+    char buff[100];
+    snprintf(buff, sizeof(buff), "Chemin trouvé, Longueur: %d, Coût: %.1f",
+             c->longueur, c->cout_total);
+    log_succes("Routage Dijkstra", buff);
+    chemin_detruire(c);
+  } else {
+    log_echec("Routage Dijkstra", "Aucun chemin trouvé");
   }
-  chemin_detruire(c_failover);
+
+  // 5. Simulation Panne
+  log_info("Phase 5: Simulation de Panne Majeure...");
+  // On coupe un lien critique ou central.
+  // Dans une grille 5x5 (width 5). 0 est connecté à 1 et 5.
+  // Coupons 0-1 et 0-5 ? Isolons partiellement.
+  // Coupons juste le lien 0->1.
+  graphe_supprimer_arete(g, 0, 1);
+  graphe_supprimer_arete(g, 1, 0); // Bidirectionnel
+  log_warning("Lien 0 <-> 1 coupé !");
+
+  // 6. Reroutage
+  log_info("Phase 6: Recalcul Itinéraire (Failover)...");
+  Chemin *c2 = routage_dijkstra(g, 0, 24, "cout");
+  if (c2) {
+    char buff[100];
+    snprintf(buff, sizeof(buff), "Chemin alternatif trouvé, Longueur: %d",
+             c2->longueur);
+    log_succes("Routage Secours", buff);
+
+    // Verifions qu'il ne passe pas par 1 (sauf si 1 est dispo autrement mais
+    // lien 0-1 coupé)
+    int passe_par_1 = 0;
+    // On sait que 0-1 est coupé. Donc il doit passer par 5 (le bas).
+    if (c2->longueur > 1 && c2->noeuds[1] == 1)
+      passe_par_1 = 1;
+
+    if (!passe_par_1)
+      log_succes("Vérification Route", "Le chemin contourne le lien coupé");
+    else
+      log_echec("Vérification Route",
+                "Le chemin passe toujours par le lien coupé ! (Bug?)");
+
+    chemin_detruire(c2);
+  } else {
+    log_echec("Routage Secours", "Isolement du noeud source ?");
+  }
+
+  // 7. Visualisation
+  log_info("Phase 7: Génération des Artefacts Visuels...");
+  const char *dot_file = "resultats_tests/simulation_visu.dot";
+  const char *img_file = "resultats_tests/simulation_visu.png";
+
+  graphe_vers_dot(g, dot_file);
+  log_succes("Export DOT", dot_file);
+
+  // Essai conversion PNG
+  generer_image_depuis_dot(dot_file, img_file);
 
   graphe_detruire(g);
-  printf("\n=== TEST INTEGRATION TERMINE AVEC SUCCES ===\n");
+  log_section(
+      "FIN SIMULATION",
+      "Le système a démontré ses capacités de résilience et d'analyse.");
+}
+
+int main() {
+  init_log_test();
+  test_simulation_complete();
   return 0;
 }

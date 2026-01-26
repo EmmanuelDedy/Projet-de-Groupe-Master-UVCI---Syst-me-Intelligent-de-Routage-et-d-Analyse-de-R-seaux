@@ -1,0 +1,11 @@
+graph G {
+  0 [label="PC_Client"];
+  1 [label="Switch_A"];
+  2 [label="Router_Core"];
+  3 [label="Switch_B"];
+  4 [label="Server_Web"];
+  0 -- 1 [label="c:1.0, b:1000.0"];
+  1 -- 2 [label="c:2.0, b:10000.0"];
+  2 -- 3 [label="c:2.0, b:10000.0"];
+  3 -- 4 [label="c:1.0, b:1000.0"];
+}

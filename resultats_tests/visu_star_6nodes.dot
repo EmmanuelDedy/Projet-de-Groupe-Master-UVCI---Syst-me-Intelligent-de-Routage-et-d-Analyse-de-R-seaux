@@ -1,0 +1,13 @@
+graph G {
+  0 [label="Core_Switch"];
+  1 [label="Dept_Admin"];
+  2 [label="Dept_Info"];
+  3 [label="Dept_Compta"];
+  4 [label="Dept_RH"];
+  5 [label="Server_Farm"];
+  0 -- 5 [label="c:1.0, b:10000.0"];
+  0 -- 4 [label="c:2.0, b:1000.0"];
+  0 -- 3 [label="c:2.0, b:1000.0"];
+  0 -- 2 [label="c:2.0, b:1000.0"];
+  0 -- 1 [label="c:2.0, b:1000.0"];
+}

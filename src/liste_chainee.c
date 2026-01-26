@@ -64,9 +64,10 @@ int enfiler(FileAttente *file, Paquet *nouveau_p) {
   } else {
     Paquet *paquet_actu = file->tete;
 
-    // Insertion du paquet selon la priorité
+    // Insertion du paquet selon la priorité (Décroissante: Plus grand = Plus
+    // prioritaire)
     while (paquet_actu != NULL &&
-           paquet_actu->priorite <= nouveau_p->priorite) {
+           paquet_actu->priorite >= nouveau_p->priorite) {
       paquet_actu = paquet_actu->suivant;
     }
 

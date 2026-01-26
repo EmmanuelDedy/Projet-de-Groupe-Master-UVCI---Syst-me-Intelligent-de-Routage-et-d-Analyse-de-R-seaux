@@ -1,0 +1,10 @@
+<map id="analyser_zones_securite" name="analyser_zones_securite">
+<area shape="rect" id="Node000001" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="5,31,171,56"/>
+<area shape="rect" id="Node000002" href="$securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="219,31,286,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,41,206,43,201,44,171,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="231,29,227,22,230,13,238,6,252,4,267,7,276,16,271,15,265,12,252,9,240,11,234,16,232,22,236,31"/>
+<area shape="rect" id="Node000003" href="$securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="338,5,408,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="286,34,320,29,325,28,287,39"/>
+<area shape="rect" id="Node000004" href="$securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="334,55,411,80"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="287,48,322,57,316,57,286,53"/>
+</map>

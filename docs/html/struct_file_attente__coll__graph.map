@@ -1,0 +1,6 @@
+<map id="FileAttente" name="FileAttente">
+<area shape="rect" id="Node000001" title="Gestionnaire de file prioritaire." alt="" coords="5,140,90,166"/>
+<area shape="rect" id="Node000002" href="$struct_paquet.html" title="Unité de données transitant sur le réseau." alt="" coords="16,14,79,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,54,50,140,45,139,45,56"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="94,14,102,19,105,27,97,39,81,42,78,37,94,35,100,27,98,22,95,19"/>
+</map>

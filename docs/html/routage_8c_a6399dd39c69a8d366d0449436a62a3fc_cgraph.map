@@ -1,0 +1,5 @@
+<map id="routage_dijkstra" name="routage_dijkstra">
+<area shape="rect" id="Node000001" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="5,5,119,31"/>
+<area shape="rect" id="Node000002" href="$routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="167,5,265,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,16,154,18,148,18,119,21"/>
+</map>

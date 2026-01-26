@@ -1,0 +1,17 @@
+<map id="menu_k_shortest" name="menu_k_shortest">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,127,80"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="210,5,323,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,52,198,34,194,37,122,56"/>
+<area shape="rect" id="Node000003" href="$routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81" title=" " alt="" coords="175,55,358,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,65,162,66,157,69,128,70"/>
+<area shape="rect" id="Node000004" href="$routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="184,104,349,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,78,181,98,176,101,114,84"/>
+<area shape="rect" id="Node000005" href="$routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="418,63,531,88"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="349,103,400,93,405,92,350,108"/>
+<area shape="rect" id="Node000006" href="$routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="406,112,542,138"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="349,122,393,125,388,125,350,127"/>
+<area shape="rect" id="Node000007" href="$routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="418,161,531,187"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="350,142,405,157,400,157,349,147"/>
+<area shape="rect" id="Node000008" href="$routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="590,161,689,187"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="531,172,577,174,572,174,532,177"/>
+</map>

@@ -1,0 +1,1013 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence du fichier src/securite.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('securite_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier securite.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="securite_8h_source.html">securite.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de securite.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c__incl.png" border="0" usemap="#asrc_2securite_8c" loading="lazy" alt=""/></div>
+<map name="asrc_2securite_8c" id="asrc_2securite_8c">
+<area shape="rect" title=" " alt="" coords="77,5,178,31"/>
+<area shape="rect" href="securite_8h.html" title="Module 3 : Détection d&#39;Anomalies et Audit de Résilience." alt="" coords="88,79,167,105"/>
+<area shape="poly" title=" " alt="" coords="128,29,130,64,125,63,127,34"/>
+<area shape="rect" title=" " alt="" coords="5,226,66,252"/>
+<area shape="poly" title=" " alt="" coords="113,34,97,54,79,80,65,114,54,149,41,212,36,210,49,148,60,112,74,78,93,51,116,29"/>
+<area shape="rect" title=" " alt="" coords="189,226,252,252"/>
+<area shape="poly" title=" " alt="" coords="141,29,162,51,180,78,196,112,207,148,220,212,215,210,202,149,191,114,176,80,158,54,141,34"/>
+<area shape="rect" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="92,153,163,178"/>
+<area shape="poly" title=" " alt="" coords="129,103,130,138,125,136,126,107"/>
+<area shape="rect" title=" " alt="" coords="90,226,165,252"/>
+<area shape="poly" title=" " alt="" coords="129,177,130,212,125,209,126,181"/>
+<area shape="poly" title=" " alt="" coords="115,178,64,219,61,215,109,179"/>
+<area shape="poly" title=" " alt="" coords="144,176,196,216,191,217,142,181"/>
+</map>
+</div>
+</div>
+<p><a href="securite_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3acffbd305ee72dcd4593c0d8af64a4f" id="r_a3acffbd305ee72dcd4593c0d8af64a4f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(a,  b)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a2192e024ee94f5a67e89275e672cfe51" id="r_a2192e024ee94f5a67e89275e672cfe51"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2192e024ee94f5a67e89275e672cfe51">push_scc</a> (int v)</td></tr>
+<tr class="memitem:aa8cc9093ef3c3f7d8ef3b94b69178f26" id="r_aa8cc9093ef3c3f7d8ef3b94b69178f26"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa8cc9093ef3c3f7d8ef3b94b69178f26">pop_scc</a> ()</td></tr>
+<tr class="memitem:a2a8528b133bc88a0a3fcd0d4bc8490f0" id="r_a2a8528b133bc88a0a3fcd0d4bc8490f0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a> (int v, int visite[], int pile_rec[], <a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memitem:a4370eac228145617d0e3627c3b10d081" id="r_a4370eac228145617d0e3627c3b10d081"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4370eac228145617d0e3627c3b10d081">detecter_cycles</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memdesc:a4370eac228145617d0e3627c3b10d081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage des nœuds "en cours de
+visite".  <br /></td></tr>
+<tr class="memitem:a9168b48ff7f7d88fd3f713fead433645" id="r_a9168b48ff7f7d88fd3f713fead433645"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9168b48ff7f7d88fd3f713fead433645">dfs_points_critiques</a> (int u, int visite[], int disc[], int low[], int parent[], int est_articul[], <a class="el" href="struct_graphe.html">Graphe</a> *g, int *temps)</td></tr>
+<tr class="memitem:a1cf4224c021167a4369de4ea48d5d5a3" id="r_a1cf4224c021167a4369de4ea48d5d5a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1cf4224c021167a4369de4ea48d5d5a3">identifier_points_critiques</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memdesc:a1cf4224c021167a4369de4ea48d5d5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifie les Points d'Articulation (SPOF).  <br /></td></tr>
+<tr class="memitem:a2169ae842221ab74532d33a621e9b1fd" id="r_a2169ae842221ab74532d33a621e9b1fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2169ae842221ab74532d33a621e9b1fd">dfs_scc</a> (int u, int disc[], int low[], <a class="el" href="struct_graphe.html">Graphe</a> *g, int *temps)</td></tr>
+<tr class="memitem:a44f3600062ffe146efdebcfc633c0906" id="r_a44f3600062ffe146efdebcfc633c0906"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a44f3600062ffe146efdebcfc633c0906">analyser_zones_securite</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memdesc:a44f3600062ffe146efdebcfc633c0906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analyse les Zones de Confiance (SCC - Strongly Connected Components).  <br /></td></tr>
+<tr class="memitem:ad543fa19b5a48eadcb131545d552aa5d" id="r_ad543fa19b5a48eadcb131545d552aa5d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad543fa19b5a48eadcb131545d552aa5d">securite_analyser_vulnerabilites</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memdesc:ad543fa19b5a48eadcb131545d552aa5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rapport complet de vulnérabilité. Exécute tous les tests ci-dessus et affiche un diagnostic console.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a247ea796acf7631873f8ab6f10c82516" id="r_a247ea796acf7631873f8ab6f10c82516"><td class="memItemLeft">static int *&#160;</td><td class="memItemRight"><a class="el" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a> = NULL</td></tr>
+<tr class="memitem:a504c3522389efa7da54cd6de8d01cfbc" id="r_a504c3522389efa7da54cd6de8d01cfbc"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a504c3522389efa7da54cd6de8d01cfbc">sommet_pile</a> = -1</td></tr>
+<tr class="memitem:a4b15c647a6e453bfdddd9e59c5e084a8" id="r_a4b15c647a6e453bfdddd9e59c5e084a8"><td class="memItemLeft">static int *&#160;</td><td class="memItemRight"><a class="el" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a> = NULL</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentation des macros</h2>
+<a id="a3acffbd305ee72dcd4593c0d8af64a4f" name="a3acffbd305ee72dcd4593c0d8af64a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3acffbd305ee72dcd4593c0d8af64a4f">&#9670;&#160;</a></span>MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valeur :</b><div class="fragment"><div class="line">((a) &lt; (b) ? (a) : (b))</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00007">7</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00075">dfs_points_critiques()</a>, et <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a44f3600062ffe146efdebcfc633c0906" name="a44f3600062ffe146efdebcfc633c0906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f3600062ffe146efdebcfc633c0906">&#9670;&#160;</a></span>analyser_zones_securite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void analyser_zones_securite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Analyse les Zones de Confiance (SCC - Strongly Connected Components). </p>
+<p>Utilise l'algorithme de <b>Tarjan</b> ou <b>Kosaraju</b>. Chaque SCC représente une zone où tout nœud peut atteindre tous les autres. Idéal pour segmenter le réseau en sous-zones résilientes. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00184">184</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>                                        {</div>
+<div class="line"><span class="lineno">  185</span>  <span class="keywordflow">if</span> (!g || g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>  <span class="comment">// Allocation dynamique de la pile pour plus de flexibilité</span></div>
+<div class="line"><span class="lineno">  189</span>  <a class="code hl_variable" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a> = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  190</span>  <a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a> = (<span class="keywordtype">int</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  191</span>  <a class="code hl_variable" href="#a504c3522389efa7da54cd6de8d01cfbc">sommet_pile</a> = -1;</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>  <span class="keywordtype">int</span> *disc = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  194</span>  <span class="keywordtype">int</span> *low = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  195</span>  <span class="keywordtype">int</span> temps = 0;</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  198</span>    disc[i] = -1;</div>
+<div class="line"><span class="lineno">  199</span>    low[i] = -1;</div>
+<div class="line"><span class="lineno">  200</span>  }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>  printf(<span class="stringliteral">&quot;\n--- ANALYSE DU ZONAGE RÉSEAU (SCC) ---\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a> &amp;&amp; disc[i] == -1) {</div>
+<div class="line"><span class="lineno">  205</span>      <a class="code hl_function" href="#a2169ae842221ab74532d33a621e9b1fd">dfs_scc</a>(i, disc, low, g, &amp;temps);</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>  }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>  free(disc);</div>
+<div class="line"><span class="lineno">  210</span>  free(low);</div>
+<div class="line"><span class="lineno">  211</span>  free(<a class="code hl_variable" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a>);</div>
+<div class="line"><span class="lineno">  212</span>  free(<a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a>);</div>
+<div class="line"><span class="lineno">  213</span>  <a class="code hl_variable" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a> = NULL;</div>
+<div class="line"><span class="lineno">  214</span>  <a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a> = NULL;</div>
+<div class="line"><span class="lineno">  215</span>}</div>
+<div class="ttc" id="asecurite_8c_html_a2169ae842221ab74532d33a621e9b1fd"><div class="ttname"><a href="#a2169ae842221ab74532d33a621e9b1fd">dfs_scc</a></div><div class="ttdeci">void dfs_scc(int u, int disc[], int low[], Graphe *g, int *temps)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00150">securite.c:150</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a247ea796acf7631873f8ab6f10c82516"><div class="ttname"><a href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a></div><div class="ttdeci">static int * pile_scc</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00011">securite.c:11</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a4b15c647a6e453bfdddd9e59c5e084a8"><div class="ttname"><a href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a></div><div class="ttdeci">static int * present_dans_pile</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00013">securite.c:13</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a504c3522389efa7da54cd6de8d01cfbc"><div class="ttname"><a href="#a504c3522389efa7da54cd6de8d01cfbc">sommet_pile</a></div><div class="ttdeci">static int sommet_pile</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00012">securite.c:12</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a2e5bb51629044539e81c5c1041ed1602"><div class="ttname"><a href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">Graphe::noeuds</a></div><div class="ttdeci">Noeud * noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00051">dijkstra.h:51</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a6b2d16680a41bda9522ea949e001736c"><div class="ttname"><a href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">Graphe::nb_noeuds</a></div><div class="ttdeci">int nb_noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00049">dijkstra.h:49</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a33400f54123d7a20606a752b8dc988a9"><div class="ttname"><a href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">Noeud::est_actif</a></div><div class="ttdeci">bool est_actif</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00032">dijkstra.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00049">Graphe::nb_noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="securite_8c_source.html#l00011">pile_scc</a>, <a class="el" href="securite_8c_source.html#l00013">present_dans_pile</a>, et <a class="el" href="securite_8c_source.html#l00012">sommet_pile</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00218">securite_analyser_vulnerabilites()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a44f3600062ffe146efdebcfc633c0906_cgraph.png" border="0" usemap="#asecurite_8c_a44f3600062ffe146efdebcfc633c0906_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a44f3600062ffe146efdebcfc633c0906_cgraph" id="asecurite_8c_a44f3600062ffe146efdebcfc633c0906_cgraph">
+<area shape="rect" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="5,31,171,56"/>
+<area shape="rect" href="securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="219,31,286,56"/>
+<area shape="poly" title=" " alt="" coords="171,41,206,43,201,44,171,46"/>
+<area shape="poly" title=" " alt="" coords="231,29,227,22,230,13,238,6,252,4,267,7,276,16,271,15,265,12,252,9,240,11,234,16,232,22,236,31"/>
+<area shape="rect" href="securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="338,5,408,31"/>
+<area shape="poly" title=" " alt="" coords="286,34,320,29,325,28,287,39"/>
+<area shape="rect" href="securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="334,55,411,80"/>
+<area shape="poly" title=" " alt="" coords="287,48,322,57,316,57,286,53"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a44f3600062ffe146efdebcfc633c0906_icgraph.png" border="0" usemap="#asecurite_8c_a44f3600062ffe146efdebcfc633c0906_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a44f3600062ffe146efdebcfc633c0906_icgraph" id="asecurite_8c_a44f3600062ffe146efdebcfc633c0906_icgraph">
+<area shape="rect" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="357,5,522,31"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,5,309,31"/>
+<area shape="poly" title=" " alt="" coords="339,18,309,21,309,16,344,18"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4370eac228145617d0e3627c3b10d081" name="a4370eac228145617d0e3627c3b10d081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4370eac228145617d0e3627c3b10d081">&#9670;&#160;</a></span>detecter_cycles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int detecter_cycles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage des nœuds "en cours de
+visite". </p>
+<dl class="section return"><dt>Renvoie</dt><dd>1 si cycle détecté, 0 sinon. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00052">52</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>                               {</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">if</span> (!g || g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> 0; <span class="comment">// Sécurité mémoire</span></div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordtype">int</span> *visite = (<span class="keywordtype">int</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">int</span> *pile_rec = (<span class="keywordtype">int</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">int</span> trouve = 0;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a> &amp;&amp; !visite[i]) {</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a>(i, visite, pile_rec, g)) {</div>
+<div class="line"><span class="lineno">   63</span>        trouve = 1;</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="line"><span class="lineno">   68</span>  free(visite);</div>
+<div class="line"><span class="lineno">   69</span>  free(pile_rec);</div>
+<div class="line"><span class="lineno">   70</span>  <span class="keywordflow">return</span> trouve;</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+<div class="ttc" id="asecurite_8c_html_a2a8528b133bc88a0a3fcd0d4bc8490f0"><div class="ttname"><a href="#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a></div><div class="ttdeci">int dfs_cycle(int v, int visite[], int pile_rec[], Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00028">securite.c:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00028">dfs_cycle()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00049">Graphe::nb_noeuds</a>, et <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>, et <a class="el" href="securite_8c_source.html#l00218">securite_analyser_vulnerabilites()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a4370eac228145617d0e3627c3b10d081_cgraph.png" border="0" usemap="#asecurite_8c_a4370eac228145617d0e3627c3b10d081_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a4370eac228145617d0e3627c3b10d081_cgraph" id="asecurite_8c_a4370eac228145617d0e3627c3b10d081_cgraph">
+<area shape="rect" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="5,29,119,55"/>
+<area shape="rect" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0" title=" " alt="" coords="167,29,244,55"/>
+<area shape="poly" title=" " alt="" coords="119,40,154,42,148,42,119,45"/>
+<area shape="poly" title=" " alt="" coords="180,28,176,21,179,11,189,5,205,3,223,5,233,15,228,14,221,10,205,8,191,10,183,14,181,20,185,30"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a4370eac228145617d0e3627c3b10d081_icgraph.png" border="0" usemap="#asecurite_8c_a4370eac228145617d0e3627c3b10d081_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a4370eac228145617d0e3627c3b10d081_icgraph" id="asecurite_8c_a4370eac228145617d0e3627c3b10d081_icgraph">
+<area shape="rect" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="357,5,470,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="341,21,55,21,55,16,342,16"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,31,309,56"/>
+<area shape="poly" title=" " alt="" coords="345,27,310,34,309,28,339,27"/>
+<area shape="poly" title=" " alt="" coords="95,29,55,24,55,19,100,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a8528b133bc88a0a3fcd0d4bc8490f0" name="a2a8528b133bc88a0a3fcd0d4bc8490f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8528b133bc88a0a3fcd0d4bc8490f0">&#9670;&#160;</a></span>dfs_cycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dfs_cycle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>visite</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pile_rec</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00028">28</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>                                                              {</div>
+<div class="line"><span class="lineno">   29</span>  visite[v] = 1; <span class="comment">// Nœud en cours de visite (Gris)</span></div>
+<div class="line"><span class="lineno">   30</span>  pile_rec[v] = 1;</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>  <span class="comment">// Utilisation de AreteNoeud et liste_adj selon les nouvelles exigences</span></div>
+<div class="line"><span class="lineno">   33</span>  <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *courant = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[v].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">while</span> (courant != NULL) {</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span> voisin = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="comment">// Vérification de robustesse : ignorer les nœuds inactifs</span></div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[voisin].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a>) {</div>
+<div class="line"><span class="lineno">   39</span>      <span class="keywordflow">if</span> (!visite[voisin]) {</div>
+<div class="line"><span class="lineno">   40</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a>(voisin, visite, pile_rec, g))</div>
+<div class="line"><span class="lineno">   41</span>          <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   42</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pile_rec[voisin]) {</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span> 1; <span class="comment">// Cycle détecté</span></div>
+<div class="line"><span class="lineno">   44</span>      }</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>    courant = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">   47</span>  }</div>
+<div class="line"><span class="lineno">   48</span>  pile_rec[v] = 0;</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="astruct_arete_noeud_html"><div class="ttname"><a href="struct_arete_noeud.html">AreteNoeud</a></div><div class="ttdoc">Élément de la liste d&#39;adjacence.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00039">dijkstra.h:39</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_a366a0842a23870f85e4a115f3ffab39e"><div class="ttname"><a href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">AreteNoeud::suivant</a></div><div class="ttdeci">struct AreteNoeud * suivant</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00042">dijkstra.h:42</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_aaa25db0933c600b0903f6e07953aa7e8"><div class="ttname"><a href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">AreteNoeud::dest_id</a></div><div class="ttdeci">int dest_id</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00040">dijkstra.h:40</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a85658820f041ae3215f449308e5e75b4"><div class="ttname"><a href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">Noeud::liste_adj</a></div><div class="ttdeci">struct AreteNoeud * liste_adj</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00033">dijkstra.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="securite_8c_source.html#l00028">dfs_cycle()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00052">detecter_cycles()</a>, et <a class="el" href="securite_8c_source.html#l00028">dfs_cycle()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_cgraph.png" border="0" usemap="#asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_cgraph" id="asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,83,55"/>
+<area shape="poly" title=" " alt="" coords="29,29,28,12,34,5,44,3,54,5,60,14,55,14,51,10,44,8,37,10,33,14,35,29"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_icgraph.png" border="0" usemap="#asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_icgraph" id="asecurite_8c_a2a8528b133bc88a0a3fcd0d4bc8490f0_icgraph">
+<area shape="rect" title=" " alt="" coords="518,29,596,55"/>
+<area shape="poly" title=" " alt="" coords="580,13,573,10,557,8,542,10,535,14,533,20,537,30,532,28,528,21,530,11,541,5,557,3,575,5,585,15"/>
+<area shape="rect" href="securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="357,29,470,55"/>
+<area shape="poly" title=" " alt="" coords="500,42,471,45,471,40,505,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="341,45,55,45,55,40,342,40"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,55,309,80"/>
+<area shape="poly" title=" " alt="" coords="345,51,310,58,309,52,339,51"/>
+<area shape="poly" title=" " alt="" coords="95,53,55,48,55,43,100,50"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9168b48ff7f7d88fd3f713fead433645" name="a9168b48ff7f7d88fd3f713fead433645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9168b48ff7f7d88fd3f713fead433645">&#9670;&#160;</a></span>dfs_points_critiques()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dfs_points_critiques </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>visite</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>disc</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>low</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>est_articul</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>temps</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00075">75</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                      {</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordtype">int</span> fils = 0;</div>
+<div class="line"><span class="lineno">   79</span>  visite[u] = 1;</div>
+<div class="line"><span class="lineno">   80</span>  disc[u] = low[u] = ++(*temps);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>  <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *courant = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[u].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">while</span> (courant != NULL) {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">int</span> v = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (!g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[v].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a>) {</div>
+<div class="line"><span class="lineno">   87</span>      courant = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span> (!visite[v]) {</div>
+<div class="line"><span class="lineno">   92</span>      fils++;</div>
+<div class="line"><span class="lineno">   93</span>      parent[v] = u;</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_function" href="#a9168b48ff7f7d88fd3f713fead433645">dfs_points_critiques</a>(v, visite, disc, low, parent, est_articul, g, temps);</div>
+<div class="line"><span class="lineno">   95</span>      low[u] = <a class="code hl_define" href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(low[u], low[v]);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>      <span class="comment">// Cas racine et cas général</span></div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordflow">if</span> (parent[u] == -1 &amp;&amp; fils &gt; 1)</div>
+<div class="line"><span class="lineno">   99</span>        est_articul[u] = 1;</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> (parent[u] != -1 &amp;&amp; low[v] &gt;= disc[u])</div>
+<div class="line"><span class="lineno">  101</span>        est_articul[u] = 1;</div>
+<div class="line"><span class="lineno">  102</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v != parent[u]) {</div>
+<div class="line"><span class="lineno">  103</span>      low[u] = <a class="code hl_define" href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(low[u], disc[v]);</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span>    courant = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  106</span>  }</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="asecurite_8c_html_a3acffbd305ee72dcd4593c0d8af64a4f"><div class="ttname"><a href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a></div><div class="ttdeci">#define MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00007">securite.c:7</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a9168b48ff7f7d88fd3f713fead433645"><div class="ttname"><a href="#a9168b48ff7f7d88fd3f713fead433645">dfs_points_critiques</a></div><div class="ttdeci">void dfs_points_critiques(int u, int visite[], int disc[], int low[], int parent[], int est_articul[], Graphe *g, int *temps)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00075">securite.c:75</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="securite_8c_source.html#l00075">dfs_points_critiques()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="securite_8c_source.html#l00007">MIN</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00075">dfs_points_critiques()</a>, et <a class="el" href="securite_8c_source.html#l00109">identifier_points_critiques()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a9168b48ff7f7d88fd3f713fead433645_cgraph.png" border="0" usemap="#asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_cgraph" id="asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,143,55"/>
+<area shape="poly" title=" " alt="" coords="50,29,46,21,48,11,58,5,74,3,91,5,101,14,96,14,89,10,74,8,60,10,53,14,51,20,55,29"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a9168b48ff7f7d88fd3f713fead433645_icgraph.png" border="0" usemap="#asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_icgraph" id="asecurite_8c_a9168b48ff7f7d88fd3f713fead433645_icgraph">
+<area shape="rect" title=" " alt="" coords="573,29,711,55"/>
+<area shape="poly" title=" " alt="" coords="675,14,665,10,642,8,621,10,610,15,607,20,613,30,608,28,602,21,606,11,620,5,642,3,667,5,681,15"/>
+<area shape="rect" href="securite_8c.html#a1cf4224c021167a4369de4ea48d5d5a3" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="357,29,525,55"/>
+<area shape="poly" title=" " alt="" coords="555,42,526,45,526,40,560,42"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,29,309,55"/>
+<area shape="poly" title=" " alt="" coords="339,42,309,45,309,40,344,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="84,43,55,45,55,40,89,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2169ae842221ab74532d33a621e9b1fd" name="a2169ae842221ab74532d33a621e9b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2169ae842221ab74532d33a621e9b1fd">&#9670;&#160;</a></span>dfs_scc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dfs_scc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>disc</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>low</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>temps</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00150">150</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                                  {</div>
+<div class="line"><span class="lineno">  151</span>  disc[u] = low[u] = ++(*temps);</div>
+<div class="line"><span class="lineno">  152</span>  <a class="code hl_function" href="#a2192e024ee94f5a67e89275e672cfe51">push_scc</a>(u);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>  <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *courant = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[u].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">while</span> (courant != NULL) {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordtype">int</span> v = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>; <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">if</span> (!g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[v].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a>) {</div>
+<div class="line"><span class="lineno">  159</span>      courant = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  160</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> (disc[v] == -1) {</div>
+<div class="line"><span class="lineno">  164</span>      <a class="code hl_function" href="#a2169ae842221ab74532d33a621e9b1fd">dfs_scc</a>(v, disc, low, g, temps);</div>
+<div class="line"><span class="lineno">  165</span>      low[u] = <a class="code hl_define" href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(low[u], low[v]);</div>
+<div class="line"><span class="lineno">  166</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a>[v]) {</div>
+<div class="line"><span class="lineno">  167</span>      low[u] = <a class="code hl_define" href="#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(low[u], disc[v]);</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span>    courant = courant-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  170</span>  }</div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>  <span class="keywordflow">if</span> (low[u] == disc[u]) {</div>
+<div class="line"><span class="lineno">  173</span>    printf(<span class="stringliteral">&quot;Zone de confiance (SCC) détectée : &quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordtype">int</span> node = <a class="code hl_function" href="#aa8cc9093ef3c3f7d8ef3b94b69178f26">pop_scc</a>();</div>
+<div class="line"><span class="lineno">  176</span>      printf(<span class="stringliteral">&quot;%d &quot;</span>, node);</div>
+<div class="line"><span class="lineno">  177</span>      <span class="keywordflow">if</span> (u == node)</div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span>    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+<div class="line"><span class="lineno">  182</span>}</div>
+<div class="ttc" id="asecurite_8c_html_a2192e024ee94f5a67e89275e672cfe51"><div class="ttname"><a href="#a2192e024ee94f5a67e89275e672cfe51">push_scc</a></div><div class="ttdeci">void push_scc(int v)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00015">securite.c:15</a></div></div>
+<div class="ttc" id="asecurite_8c_html_aa8cc9093ef3c3f7d8ef3b94b69178f26"><div class="ttname"><a href="#aa8cc9093ef3c3f7d8ef3b94b69178f26">pop_scc</a></div><div class="ttdeci">int pop_scc()</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00020">securite.c:20</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="securite_8c_source.html#l00007">MIN</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="securite_8c_source.html#l00020">pop_scc()</a>, <a class="el" href="securite_8c_source.html#l00013">present_dans_pile</a>, <a class="el" href="securite_8c_source.html#l00015">push_scc()</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00184">analyser_zones_securite()</a>, et <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a2169ae842221ab74532d33a621e9b1fd_cgraph.png" border="0" usemap="#asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_cgraph" id="asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,73,56"/>
+<area shape="poly" title=" " alt="" coords="18,31,14,22,16,13,25,6,39,4,54,7,63,15,58,16,52,12,39,9,27,11,21,16,19,22,23,30"/>
+<area shape="rect" href="securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="124,5,194,31"/>
+<area shape="poly" title=" " alt="" coords="72,34,111,27,107,30,74,39"/>
+<area shape="rect" href="securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="121,55,198,80"/>
+<area shape="poly" title=" " alt="" coords="73,48,108,56,103,58,73,53"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a2169ae842221ab74532d33a621e9b1fd_icgraph.png" border="0" usemap="#asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_icgraph" id="asecurite_8c_a2169ae842221ab74532d33a621e9b1fd_icgraph">
+<area shape="rect" title=" " alt="" coords="570,29,638,55"/>
+<area shape="poly" title=" " alt="" coords="631,14,622,10,604,8,587,10,578,15,576,20,581,30,576,28,571,21,574,11,585,5,604,3,624,5,636,15"/>
+<area shape="rect" href="securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="357,29,522,55"/>
+<area shape="poly" title=" " alt="" coords="552,42,523,45,523,40,558,42"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,29,309,55"/>
+<area shape="poly" title=" " alt="" coords="339,42,309,45,309,40,344,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="84,43,55,45,55,40,89,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1cf4224c021167a4369de4ea48d5d5a3" name="a1cf4224c021167a4369de4ea48d5d5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf4224c021167a4369de4ea48d5d5a3">&#9670;&#160;</a></span>identifier_points_critiques()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void identifier_points_critiques </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Identifie les Points d'Articulation (SPOF). </p>
+<p>Un nœud est un SPOF si sa suppression augmente le nombre de composantes connexes du graphe. L'algorithme simule la suppression de chaque nœud et vérifie la connectivité.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Le graphe à auditer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00109">109</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                            {</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> (!g || g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="keywordtype">int</span> *disc = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  114</span>  <span class="keywordtype">int</span> *low = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordtype">int</span> *parent = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordtype">int</span> *visite = (<span class="keywordtype">int</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  117</span>  <span class="keywordtype">int</span> *est_articul = (<span class="keywordtype">int</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  118</span>  <span class="keywordtype">int</span> temps = 0;</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++)</div>
+<div class="line"><span class="lineno">  121</span>    parent[i] = -1;</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>  printf(<span class="stringliteral">&quot;\n--- ANALYSE DE RÉSILIENCE ---\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a> &amp;&amp; !visite[i]) {</div>
+<div class="line"><span class="lineno">  126</span>      <a class="code hl_function" href="#a9168b48ff7f7d88fd3f713fead433645">dfs_points_critiques</a>(i, visite, disc, low, parent, est_articul, g,</div>
+<div class="line"><span class="lineno">  127</span>                           &amp;temps);</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="line"><span class="lineno">  129</span>  }</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>  <span class="keywordtype">int</span> nb_critiques = 0;</div>
+<div class="line"><span class="lineno">  132</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (est_articul[i]) {</div>
+<div class="line"><span class="lineno">  134</span>      printf(<span class="stringliteral">&quot;[VULNÉRABILITÉ] Le nœud %d est un point critique (SPOF).\n&quot;</span>, i);</div>
+<div class="line"><span class="lineno">  135</span>      nb_critiques++;</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordflow">if</span> (nb_critiques == 0)</div>
+<div class="line"><span class="lineno">  139</span>    printf(<span class="stringliteral">&quot;Aucun point critique structurel détecté.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>  free(disc);</div>
+<div class="line"><span class="lineno">  142</span>  free(low);</div>
+<div class="line"><span class="lineno">  143</span>  free(parent);</div>
+<div class="line"><span class="lineno">  144</span>  free(visite);</div>
+<div class="line"><span class="lineno">  145</span>  free(est_articul);</div>
+<div class="line"><span class="lineno">  146</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00075">dfs_points_critiques()</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00049">Graphe::nb_noeuds</a>, et <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00218">securite_analyser_vulnerabilites()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a1cf4224c021167a4369de4ea48d5d5a3_cgraph.png" border="0" usemap="#asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_cgraph" id="asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_cgraph">
+<area shape="rect" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="5,29,174,55"/>
+<area shape="rect" href="securite_8c.html#a9168b48ff7f7d88fd3f713fead433645" title=" " alt="" coords="222,29,359,55"/>
+<area shape="poly" title=" " alt="" coords="174,40,209,42,203,42,174,45"/>
+<area shape="poly" title=" " alt="" coords="256,28,250,21,254,11,268,5,290,3,315,5,329,15,324,14,313,10,290,8,269,10,258,15,255,20,261,30"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a1cf4224c021167a4369de4ea48d5d5a3_icgraph.png" border="0" usemap="#asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_icgraph" id="asecurite_8c_a1cf4224c021167a4369de4ea48d5d5a3_icgraph">
+<area shape="rect" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="357,5,525,31"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,5,309,31"/>
+<area shape="poly" title=" " alt="" coords="339,18,309,21,309,16,344,18"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8cc9093ef3c3f7d8ef3b94b69178f26" name="aa8cc9093ef3c3f7d8ef3b94b69178f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cc9093ef3c3f7d8ef3b94b69178f26">&#9670;&#160;</a></span>pop_scc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pop_scc </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00020">20</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>              {</div>
+<div class="line"><span class="lineno">   21</span>  <span class="keywordtype">int</span> v = <a class="code hl_variable" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a>[<a class="code hl_variable" href="#a504c3522389efa7da54cd6de8d01cfbc">sommet_pile</a>--];</div>
+<div class="line"><span class="lineno">   22</span>  <a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a>[v] = 0;</div>
+<div class="line"><span class="lineno">   23</span>  <span class="keywordflow">return</span> v;</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00011">pile_scc</a>, <a class="el" href="securite_8c_source.html#l00013">present_dans_pile</a>, et <a class="el" href="securite_8c_source.html#l00012">sommet_pile</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_aa8cc9093ef3c3f7d8ef3b94b69178f26_icgraph.png" border="0" usemap="#asecurite_8c_aa8cc9093ef3c3f7d8ef3b94b69178f26_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_aa8cc9093ef3c3f7d8ef3b94b69178f26_icgraph" id="asecurite_8c_aa8cc9093ef3c3f7d8ef3b94b69178f26_icgraph">
+<area shape="rect" title=" " alt="" coords="686,29,756,55"/>
+<area shape="rect" href="securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="570,29,638,55"/>
+<area shape="poly" title=" " alt="" coords="668,42,638,45,638,40,673,42"/>
+<area shape="poly" title=" " alt="" coords="622,13,616,10,604,8,592,10,586,14,585,20,588,30,583,28,580,21,582,11,590,5,604,3,619,5,627,15"/>
+<area shape="rect" href="securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="357,29,522,55"/>
+<area shape="poly" title=" " alt="" coords="552,42,523,45,523,40,558,42"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,29,309,55"/>
+<area shape="poly" title=" " alt="" coords="339,42,309,45,309,40,344,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="84,43,55,45,55,40,89,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2192e024ee94f5a67e89275e672cfe51" name="a2192e024ee94f5a67e89275e672cfe51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2192e024ee94f5a67e89275e672cfe51">&#9670;&#160;</a></span>push_scc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void push_scc </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00015">15</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                     {</div>
+<div class="line"><span class="lineno">   16</span>  <a class="code hl_variable" href="#a247ea796acf7631873f8ab6f10c82516">pile_scc</a>[++<a class="code hl_variable" href="#a504c3522389efa7da54cd6de8d01cfbc">sommet_pile</a>] = v;</div>
+<div class="line"><span class="lineno">   17</span>  <a class="code hl_variable" href="#a4b15c647a6e453bfdddd9e59c5e084a8">present_dans_pile</a>[v] = 1;</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00011">pile_scc</a>, <a class="el" href="securite_8c_source.html#l00013">present_dans_pile</a>, et <a class="el" href="securite_8c_source.html#l00012">sommet_pile</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_a2192e024ee94f5a67e89275e672cfe51_icgraph.png" border="0" usemap="#asecurite_8c_a2192e024ee94f5a67e89275e672cfe51_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_a2192e024ee94f5a67e89275e672cfe51_icgraph" id="asecurite_8c_a2192e024ee94f5a67e89275e672cfe51_icgraph">
+<area shape="rect" title=" " alt="" coords="686,29,763,55"/>
+<area shape="rect" href="securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="570,29,638,55"/>
+<area shape="poly" title=" " alt="" coords="667,42,638,45,638,40,673,42"/>
+<area shape="poly" title=" " alt="" coords="623,13,617,10,604,8,592,10,586,14,584,20,587,30,583,28,579,21,581,11,590,5,604,3,619,5,628,15"/>
+<area shape="rect" href="securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="357,29,522,55"/>
+<area shape="poly" title=" " alt="" coords="552,42,523,45,523,40,558,42"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,29,309,55"/>
+<area shape="poly" title=" " alt="" coords="339,42,309,45,309,40,344,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="84,43,55,45,55,40,89,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad543fa19b5a48eadcb131545d552aa5d" name="ad543fa19b5a48eadcb131545d552aa5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad543fa19b5a48eadcb131545d552aa5d">&#9670;&#160;</a></span>securite_analyser_vulnerabilites()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void securite_analyser_vulnerabilites </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rapport complet de vulnérabilité. Exécute tous les tests ci-dessus et affiche un diagnostic console. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00218">218</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>                                                 {</div>
+<div class="line"><span class="lineno">  219</span>  <span class="keywordflow">if</span> (!g)</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>  printf(<span class="stringliteral">&quot;\n=== RAPPORT COMPLET DE SÉCURITÉ ===\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>  <span class="comment">// 1. Détection de cycles (boucles de routage)</span></div>
+<div class="line"><span class="lineno">  225</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="#a4370eac228145617d0e3627c3b10d081">detecter_cycles</a>(g)) {</div>
+<div class="line"><span class="lineno">  226</span>    printf(<span class="stringliteral">&quot;[ATTENTION] Cycles de routage détectés dans le réseau.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  227</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  228</span>    printf(<span class="stringliteral">&quot;[OK] Aucun cycle de routage détecté.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  229</span>  }</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>  <span class="comment">// 2. Identification des points critiques (SPOF)</span></div>
+<div class="line"><span class="lineno">  232</span>  <a class="code hl_function" href="#a1cf4224c021167a4369de4ea48d5d5a3">identifier_points_critiques</a>(g);</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>  <span class="comment">// 3. Analyse du zonage (SCC)</span></div>
+<div class="line"><span class="lineno">  235</span>  <a class="code hl_function" href="#a44f3600062ffe146efdebcfc633c0906">analyser_zones_securite</a>(g);</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>  printf(<span class="stringliteral">&quot;\n=== FIN DU RAPPORT ===\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  238</span>}</div>
+<div class="ttc" id="asecurite_8c_html_a1cf4224c021167a4369de4ea48d5d5a3"><div class="ttname"><a href="#a1cf4224c021167a4369de4ea48d5d5a3">identifier_points_critiques</a></div><div class="ttdeci">void identifier_points_critiques(Graphe *g)</div><div class="ttdoc">Identifie les Points d&#39;Articulation (SPOF).</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00109">securite.c:109</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a4370eac228145617d0e3627c3b10d081"><div class="ttname"><a href="#a4370eac228145617d0e3627c3b10d081">detecter_cycles</a></div><div class="ttdeci">int detecter_cycles(Graphe *g)</div><div class="ttdoc">Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d...</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00052">securite.c:52</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a44f3600062ffe146efdebcfc633c0906"><div class="ttname"><a href="#a44f3600062ffe146efdebcfc633c0906">analyser_zones_securite</a></div><div class="ttdeci">void analyser_zones_securite(Graphe *g)</div><div class="ttdoc">Analyse les Zones de Confiance (SCC - Strongly Connected Components).</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00184">securite.c:184</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="securite_8c_source.html#l00184">analyser_zones_securite()</a>, <a class="el" href="securite_8c_source.html#l00052">detecter_cycles()</a>, et <a class="el" href="securite_8c_source.html#l00109">identifier_points_critiques()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_ad543fa19b5a48eadcb131545d552aa5d_cgraph.png" border="0" usemap="#asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_cgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_cgraph" id="asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_cgraph">
+<area shape="rect" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="5,103,212,128"/>
+<area shape="rect" href="securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="261,41,426,67"/>
+<area shape="poly" title=" " alt="" coords="160,100,279,70,275,73,162,105"/>
+<area shape="rect" href="securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="287,103,400,128"/>
+<area shape="poly" title=" " alt="" coords="212,113,274,115,269,116,213,118"/>
+<area shape="rect" href="securite_8c.html#a1cf4224c021167a4369de4ea48d5d5a3" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="260,164,428,190"/>
+<area shape="poly" title=" " alt="" coords="161,126,279,158,275,161,161,132"/>
+<area shape="rect" href="securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="511,29,578,55"/>
+<area shape="poly" title=" " alt="" coords="426,47,498,44,493,46,427,52"/>
+<area shape="poly" title=" " alt="" coords="518,28,513,21,516,11,527,5,545,3,564,5,575,14,570,14,562,10,545,8,529,10,520,15,518,20,523,30"/>
+<area shape="rect" href="securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="665,5,735,31"/>
+<area shape="poly" title=" " alt="" coords="578,34,652,25,647,26,579,40"/>
+<area shape="rect" href="securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="661,55,739,80"/>
+<area shape="poly" title=" " alt="" coords="579,45,649,59,644,59,579,50"/>
+<area shape="rect" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0" title=" " alt="" coords="506,103,583,128"/>
+<area shape="poly" title=" " alt="" coords="401,113,493,115,488,116,401,118"/>
+<area shape="poly" title=" " alt="" coords="518,101,513,94,516,84,527,78,545,76,564,79,575,88,570,87,562,84,545,81,529,83,520,88,518,93,523,103"/>
+<area shape="rect" href="securite_8c.html#a9168b48ff7f7d88fd3f713fead433645" title=" " alt="" coords="476,176,613,202"/>
+<area shape="poly" title=" " alt="" coords="429,179,463,184,458,184,429,185"/>
+<area shape="poly" title=" " alt="" coords="518,174,513,167,516,158,527,152,545,149,564,152,575,161,570,160,562,157,545,155,529,157,520,161,518,167,523,177"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="securite_8c_ad543fa19b5a48eadcb131545d552aa5d_icgraph.png" border="0" usemap="#asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_icgraph" loading="lazy" alt=""/></div>
+<map name="asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_icgraph" id="asecurite_8c_ad543fa19b5a48eadcb131545d552aa5d_icgraph">
+<area shape="rect" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,5,309,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentation des variables</h2>
+<a id="a247ea796acf7631873f8ab6f10c82516" name="a247ea796acf7631873f8ab6f10c82516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247ea796acf7631873f8ab6f10c82516">&#9670;&#160;</a></span>pile_scc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* pile_scc = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00011">11</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00184">analyser_zones_securite()</a>, <a class="el" href="securite_8c_source.html#l00020">pop_scc()</a>, et <a class="el" href="securite_8c_source.html#l00015">push_scc()</a>.</p>
+
+</div>
+</div>
+<a id="a4b15c647a6e453bfdddd9e59c5e084a8" name="a4b15c647a6e453bfdddd9e59c5e084a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b15c647a6e453bfdddd9e59c5e084a8">&#9670;&#160;</a></span>present_dans_pile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* present_dans_pile = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00013">13</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00184">analyser_zones_securite()</a>, <a class="el" href="securite_8c_source.html#l00150">dfs_scc()</a>, <a class="el" href="securite_8c_source.html#l00020">pop_scc()</a>, et <a class="el" href="securite_8c_source.html#l00015">push_scc()</a>.</p>
+
+</div>
+</div>
+<a id="a504c3522389efa7da54cd6de8d01cfbc" name="a504c3522389efa7da54cd6de8d01cfbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a504c3522389efa7da54cd6de8d01cfbc">&#9670;&#160;</a></span>sommet_pile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sommet_pile = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="securite_8c_source.html#l00012">12</a> du fichier <a class="el" href="securite_8c_source.html">securite.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="securite_8c_source.html#l00184">analyser_zones_securite()</a>, <a class="el" href="securite_8c_source.html#l00020">pop_scc()</a>, et <a class="el" href="securite_8c_source.html#l00015">push_scc()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="securite_8c.html">securite.c</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

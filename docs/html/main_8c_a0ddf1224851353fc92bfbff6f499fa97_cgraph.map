@@ -1,0 +1,78 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,279,55,304"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a26f23b0a449e679f092983b1ef986fa2" title=" " alt="" coords="154,29,258,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,278,33,238,43,183,64,124,81,97,101,72,118,59,141,51,138,55,121,64,105,76,85,100,69,126,48,185,38,239,34,278"/>
+<area shape="rect" id="Node000003" href="$securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="392,61,505,87"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="30,278,35,245,46,200,68,154,83,134,101,116,122,105,150,96,222,83,302,76,379,73,374,77,303,81,222,88,151,101,124,110,104,120,87,137,72,157,51,202,40,246,35,279"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a522a68e001b36eb7d9c1a2a63d6c74cd" title=" " alt="" coords="145,180,267,206"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="38,277,64,245,101,215,131,203,128,207,104,219,68,249,43,279"/>
+<area shape="rect" id="Node000006" href="$dijkstra_8c.html#a884a6c2ed91f47fb047348db4b2b3e51" title=" " alt="" coords="151,229,261,255"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="53,281,102,264,137,255,134,259,103,269,57,284"/>
+<area shape="rect" id="Node000007" href="$dijkstra_8c.html#aa830572ceebc271506945fefcc5b619e" title="Charge la topologie du réseau depuis un fichier texte." alt="" coords="151,279,261,304"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="54,289,137,290,133,293,56,294"/>
+<area shape="rect" id="Node000012" href="$dijkstra_8c.html#abca3fdcb1a60fb08d61571ad9cc2c05c" title="Libère toute la mémoire associée au graphe (Nœuds, Arêtes, Matrice)." alt="" coords="151,328,261,354"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="54,298,103,314,138,324,133,327,102,319,56,303"/>
+<area shape="rect" id="Node000013" href="$dijkstra_8c.html#a381bdc9e6a3ddc54ed0710249f8c0ccd" title="Sauvegarde la topologie du réseau dans un fichier texte." alt="" coords="137,377,275,403"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="40,302,68,334,104,364,124,374,120,376,101,368,64,338,41,307"/>
+<area shape="rect" id="Node000014" href="$main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="139,435,273,460"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="35,302,60,357,80,387,104,413,127,428,122,430,101,418,75,391,56,360,36,308"/>
+<area shape="rect" id="Node000020" href="$main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="155,515,257,540"/>
+<area shape="poly" id="edge22_Node000001_Node000020" title=" " alt="" coords="33,302,43,337,56,381,76,428,105,471,127,491,154,507,149,509,124,495,101,475,71,431,50,383,38,338,33,308"/>
+<area shape="rect" id="Node000023" href="$main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="145,615,266,640"/>
+<area shape="poly" id="edge27_Node000001_Node000023" title=" " alt="" coords="32,302,39,349,50,413,71,484,86,519,105,551,133,581,166,606,161,607,129,585,101,554,81,521,66,486,44,414,33,349,32,307"/>
+<area shape="rect" id="Node000027" href="$securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,131,309,156"/>
+<area shape="poly" id="edge34_Node000001_Node000027" title=" " alt="" coords="32,278,55,223,75,192,101,165,110,161,107,166,104,170,79,195,60,225,38,279"/>
+<area shape="rect" id="Node000004" href="$securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0" title=" " alt="" coords="624,29,701,55"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="504,63,610,49,606,52,507,68"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="632,29,626,21,630,11,642,5,663,3,684,5,697,14,692,15,682,10,662,8,644,10,634,15,632,20,637,29"/>
+<area shape="rect" id="Node000008" href="$dijkstra_8c.html#a0959b2dfdba06257de37da0f563487e7" title="Ajoute un arc pondéré entre deux nœuds." alt="" coords="378,324,520,350"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="261,299,364,319,360,322,262,304"/>
+<area shape="rect" id="Node000009" href="$dijkstra_8c.html#a58cbcfc3a8f9120bafdbc5b9ea129de4" title="Variante avec nom personnalisé" alt="" coords="374,210,523,250"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="260,277,308,265,362,253,357,256,310,270,263,281"/>
+<area shape="rect" id="Node000011" href="$dijkstra_8c.html#ae9eb42a80d2e863ca022db43cc012dbe" title="Alloue et initialise un graphe vide." alt="" coords="400,275,497,300"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="261,288,387,287,383,290,263,293"/>
+<area shape="rect" id="Node000010" href="$dijkstra_8c.html#a2e3e53c139166f6235e948259ac489ea" title=" " alt="" coords="588,225,737,251"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="522,230,575,234,570,236,524,235"/>
+<area shape="rect" id="Node000015" href="$main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="392,489,505,515"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="266,458,379,485,375,487,266,464"/>
+<area shape="rect" id="Node000016" href="$routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="785,489,898,515"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="273,451,771,494,768,498,273,456"/>
+<area shape="rect" id="Node000017" href="$backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="376,374,521,414"/>
+<area shape="poly" id="edge17_Node000014_Node000017" title=" " alt="" coords="267,432,363,412,359,415,269,436"/>
+<area shape="rect" id="Node000018" href="$backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="629,384,696,410"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="521,392,616,395,611,397,522,398"/>
+<area shape="poly" id="edge19_Node000018_Node000016" title=" " alt="" coords="693,408,738,431,812,480,807,480,735,435,693,413"/>
+<area shape="poly" id="edge21_Node000018_Node000018" title=" " alt="" coords="632,383,626,375,630,366,642,360,663,357,684,360,697,369,692,369,682,365,662,363,644,365,634,369,632,375,637,384"/>
+<area shape="rect" id="Node000019" href="$backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="808,384,875,410"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="696,394,795,396,790,398,697,399"/>
+<area shape="poly" id="edge23_Node000020_Node000015" title=" " alt="" coords="257,520,379,508,375,511,258,525"/>
+<area shape="poly" id="edge24_Node000020_Node000016" title=" " alt="" coords="257,526,386,528,540,525,661,517,772,509,767,510,662,522,540,530,386,533,258,531"/>
+<area shape="rect" id="Node000021" href="$routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="606,593,719,619"/>
+<area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="246,538,299,554,358,569,480,588,593,601,587,602,480,593,356,574,298,560,246,544"/>
+<area shape="rect" id="Node000022" href="$routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="792,593,890,619"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="719,604,779,606,774,606,720,609"/>
+<area shape="poly" id="edge28_Node000023_Node000015" title=" " alt="" coords="232,612,406,524,411,521,234,616"/>
+<area shape="rect" id="Node000024" href="$routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81" title=" " alt="" coords="357,641,540,667"/>
+<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="267,631,344,642,339,643,267,637"/>
+<area shape="rect" id="Node000025" href="$routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="366,691,531,732"/>
+<area shape="poly" id="edge30_Node000023_Node000025" title=" " alt="" coords="246,638,376,685,371,686,245,644"/>
+<area shape="poly" id="edge31_Node000025_Node000016" title=" " alt="" coords="531,692,648,663,700,646,735,629,754,612,777,585,820,529,825,526,781,589,758,616,738,634,702,651,649,668,532,697"/>
+<area shape="poly" id="edge33_Node000025_Node000021" title=" " alt="" coords="517,688,539,677,563,658,587,637,610,627,615,625,590,642,566,662,542,682,518,693"/>
+<area shape="rect" id="Node000026" href="$routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="594,699,731,724"/>
+<area shape="poly" id="edge32_Node000025_Node000026" title=" " alt="" coords="532,709,581,711,576,712,532,714"/>
+<area shape="poly" id="edge40_Node000027_Node000003" title=" " alt="" coords="249,128,356,96,383,90,379,93,358,101,252,132"/>
+<area shape="rect" id="Node000028" href="$securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="366,111,531,136"/>
+<area shape="poly" id="edge35_Node000027_Node000028" title=" " alt="" coords="308,133,353,130,348,133,311,137"/>
+<area shape="rect" id="Node000032" href="$securite_8c.html#a1cf4224c021167a4369de4ea48d5d5a3" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="364,160,533,186"/>
+<area shape="poly" id="edge41_Node000027_Node000032" title=" " alt="" coords="308,154,351,160,347,162,310,158"/>
+<area shape="rect" id="Node000029" href="$securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="629,103,696,128"/>
+<area shape="poly" id="edge36_Node000028_Node000029" title=" " alt="" coords="531,118,615,116,611,119,533,123"/>
+<area shape="poly" id="edge37_Node000029_Node000029" title=" " alt="" coords="632,102,626,94,630,84,642,78,663,76,684,79,697,87,692,88,682,84,662,81,644,83,634,88,632,93,637,103"/>
+<area shape="rect" id="Node000030" href="$securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="806,79,876,104"/>
+<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="696,109,793,97,788,99,698,114"/>
+<area shape="rect" id="Node000031" href="$securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="803,128,880,154"/>
+<area shape="poly" id="edge39_Node000029_Node000031" title=" " alt="" coords="696,118,790,132,785,134,697,123"/>
+<area shape="rect" id="Node000033" href="$securite_8c.html#a9168b48ff7f7d88fd3f713fead433645" title=" " alt="" coords="594,176,731,202"/>
+<area shape="poly" id="edge42_Node000032_Node000033" title=" " alt="" coords="533,177,581,182,576,184,534,182"/>
+<area shape="poly" id="edge43_Node000033_Node000033" title=" " alt="" coords="632,175,626,167,630,158,642,152,663,149,684,152,697,161,692,161,682,157,662,155,644,157,634,161,632,167,637,176"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="menu_backtracking" name="menu_backtracking">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,140,82"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="204,5,317,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,53,198,34,193,37,124,58"/>
+<area shape="rect" id="Node000003" href="$routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="496,69,610,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,68,481,78,480,83,140,73"/>
+<area shape="rect" id="Node000004" href="$backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="188,114,333,154"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="112,80,188,107,183,109,111,85"/>
+<area shape="rect" id="Node000005" href="$backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="381,131,448,156"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="334,136,368,141,363,141,333,141"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="445,127,506,102,511,101,447,133"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="391,129,386,122,389,113,399,106,415,104,432,107,442,116,437,115,430,112,415,109,401,111,393,116,391,122,395,132"/>
+<area shape="rect" id="Node000006" href="$backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="519,131,587,156"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="449,141,506,143,501,144,449,146"/>
+</map>

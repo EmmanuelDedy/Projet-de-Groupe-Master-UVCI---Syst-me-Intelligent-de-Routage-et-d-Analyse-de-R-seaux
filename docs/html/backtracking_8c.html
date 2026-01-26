@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence du fichier src/backtracking.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('backtracking_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier backtracking.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Exploration exhaustive sous contraintes (Section 3.2.2.2).  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="backtracking_8h_source.html">backtracking.h</a>&quot;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de backtracking.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c__incl.png" border="0" usemap="#asrc_2backtracking_8c" loading="lazy" alt=""/></div>
+<map name="asrc_2backtracking_8c" id="asrc_2backtracking_8c">
+<area shape="rect" title="Exploration exhaustive sous contraintes (Section 3.2.2.2)." alt="" coords="176,5,304,31"/>
+<area shape="rect" href="backtracking_8h.html" title="Exploration exhaustive avec élagage." alt="" coords="81,79,188,105"/>
+<area shape="poly" title=" " alt="" coords="220,34,167,72,163,68,224,30"/>
+<area shape="rect" title=" " alt="" coords="211,79,268,105"/>
+<area shape="poly" title=" " alt="" coords="241,29,242,64,237,62,239,34"/>
+<area shape="rect" title=" " alt="" coords="293,79,357,105"/>
+<area shape="poly" title=" " alt="" coords="254,29,302,69,297,70,254,34"/>
+<area shape="rect" href="routage_8h.html" title="Module 2 : Algorithmes de Routage Optimal &amp; Intelligent." alt="" coords="97,153,172,178"/>
+<area shape="poly" title=" " alt="" coords="135,102,137,137,132,136,134,107"/>
+<area shape="rect" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="99,226,170,252"/>
+<area shape="poly" title=" " alt="" coords="136,176,137,211,132,210,133,181"/>
+<area shape="rect" title=" " alt="" coords="5,300,80,326"/>
+<area shape="poly" title=" " alt="" coords="121,252,71,293,68,288,116,253"/>
+<area shape="rect" title=" " alt="" coords="104,300,165,326"/>
+<area shape="poly" title=" " alt="" coords="136,250,137,285,132,283,133,254"/>
+<area shape="rect" title=" " alt="" coords="188,300,252,326"/>
+<area shape="poly" title=" " alt="" coords="150,250,197,290,191,290,148,255"/>
+</map>
+</div>
+</div>
+<p><a href="backtracking_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:Context" id="r_Context"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_context.html">Context</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a332ad0b3cf1a41a5f452fb6fd1435923" id="r_a332ad0b3cf1a41a5f452fb6fd1435923"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a332ad0b3cf1a41a5f452fb6fd1435923">contient</a> (int val, int *tab, int nb)</td></tr>
+<tr class="memitem:ab5c009fb6e579070ddda28585fe7ba4b" id="r_ab5c009fb6e579070ddda28585fe7ba4b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a> (<a class="el" href="struct_context.html">Context</a> *ctx, int u, float cout_c, float lat_c, float bp_m, int sec_m)</td></tr>
+<tr class="memitem:af774ccbdbe171c882ea576d0812cf076" id="r_af774ccbdbe171c882ea576d0812cf076"><td class="memItemLeft"><a class="el" href="struct_chemin.html">Chemin</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af774ccbdbe171c882ea576d0812cf076">routage_backtracking_contraint</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g, int dep, int arr, float min_bp, float max_c, int *req, int nb_r)</td></tr>
+<tr class="memdesc:af774ccbdbe171c882ea576d0812cf076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recherche par Backtracking avec Élagage (Pruning).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Exploration exhaustive sous contraintes (Section 3.2.2.2). </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a332ad0b3cf1a41a5f452fb6fd1435923" name="a332ad0b3cf1a41a5f452fb6fd1435923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332ad0b3cf1a41a5f452fb6fd1435923">&#9670;&#160;</a></span>contient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool contient </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>tab</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00023">23</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                {</div>
+<div class="line"><span class="lineno">   24</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nb; i++)</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (tab[i] == val)</div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   27</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   28</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c_a332ad0b3cf1a41a5f452fb6fd1435923_icgraph.png" border="0" usemap="#abacktracking_8c_a332ad0b3cf1a41a5f452fb6fd1435923_icgraph" loading="lazy" alt=""/></div>
+<map name="abacktracking_8c_a332ad0b3cf1a41a5f452fb6fd1435923_icgraph" id="abacktracking_8c_a332ad0b3cf1a41a5f452fb6fd1435923_icgraph">
+<area shape="rect" title=" " alt="" coords="594,29,661,55"/>
+<area shape="rect" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="478,29,546,55"/>
+<area shape="poly" title=" " alt="" coords="575,42,546,45,546,40,581,42"/>
+<area shape="poly" title=" " alt="" coords="530,13,524,10,512,8,501,10,495,14,493,20,496,30,492,28,488,21,490,11,498,5,512,3,527,5,535,15"/>
+<area shape="rect" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,22,430,62"/>
+<area shape="poly" title=" " alt="" coords="460,42,431,45,430,40,465,42"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,29,237,55"/>
+<area shape="poly" title=" " alt="" coords="267,42,237,45,237,40,272,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="85,43,55,45,55,40,90,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab5c009fb6e579070ddda28585fe7ba4b" name="ab5c009fb6e579070ddda28585fe7ba4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c009fb6e579070ddda28585fe7ba4b">&#9670;&#160;</a></span>explorer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void explorer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_context.html">Context</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>cout_c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>lat_c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>bp_m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sec_m</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00030">30</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                                {</div>
+<div class="line"><span class="lineno">   32</span>  <span class="keywordflow">if</span> (cout_c &gt; ctx-&gt;<a class="code hl_variable" href="struct_context.html#a038ec699661c3e53d7c6b7ad28381fbe">max_cout</a>)</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   34</span>  <span class="keywordflow">if</span> (ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a> &amp;&amp; cout_c &gt;= ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a>)</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>  ctx-&gt;<a class="code hl_variable" href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">visite</a>[u] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   38</span>  ctx-&gt;<a class="code hl_variable" href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a>[ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a>++] = u;</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">if</span> (u == ctx-&gt;<a class="code hl_variable" href="struct_context.html#af36bf356bed53015bf5ab389835e5e82">target</a>) {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">bool</span> ok = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ctx-&gt;<a class="code hl_variable" href="struct_context.html#a57e47350b19fbf81e675ff67656f80a8">nb_obligatoire</a>; i++) {</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a332ad0b3cf1a41a5f452fb6fd1435923">contient</a>(ctx-&gt;<a class="code hl_variable" href="struct_context.html#a39ca1ce80b97479263ceff5ccd1a2818">passage_obligatoire</a>[i], ctx-&gt;<a class="code hl_variable" href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a>,</div>
+<div class="line"><span class="lineno">   44</span>                    ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a>)) {</div>
+<div class="line"><span class="lineno">   45</span>        ok = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   47</span>      }</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (ok) {</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">if</span> (ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>)</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>);</div>
+<div class="line"><span class="lineno">   52</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a> = (<a class="code hl_struct" href="struct_chemin.html">Chemin</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_chemin.html">Chemin</a>));</div>
+<div class="line"><span class="lineno">   53</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a> = ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a>;</div>
+<div class="line"><span class="lineno">   54</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a> = (<span class="keywordtype">int</span> *)malloc(ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   55</span>      memcpy(ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>, ctx-&gt;<a class="code hl_variable" href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a>,</div>
+<div class="line"><span class="lineno">   56</span>             ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   57</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a> = cout_c;</div>
+<div class="line"><span class="lineno">   58</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">latence_totale</a> = lat_c;</div>
+<div class="line"><span class="lineno">   59</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">bande_passante_min</a> = bp_m;</div>
+<div class="line"><span class="lineno">   60</span>      ctx-&gt;<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>-&gt;<a class="code hl_variable" href="struct_chemin.html#aed61181a645cd34b9488467883053271">securite_min</a> = sec_m;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>  }</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>  <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *a = ctx-&gt;<a class="code hl_variable" href="struct_context.html#a418d6d9523f31f28b7a8ef624513c9b2">g</a>-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[u].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">while</span> (a) {</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">int</span> v = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">if</span> (!ctx-&gt;<a class="code hl_variable" href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">visite</a>[v] &amp;&amp; ctx-&gt;<a class="code hl_variable" href="struct_context.html#a418d6d9523f31f28b7a8ef624513c9b2">g</a>-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[v].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a> &amp;&amp;</div>
+<div class="line"><span class="lineno">   68</span>        a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a> &gt;= ctx-&gt;<a class="code hl_variable" href="struct_context.html#aa89ce916b394ce7302bc958ac349b3a0">min_bp</a>) {</div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordtype">float</span> n_bp = (bp_m &lt; a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a>)</div>
+<div class="line"><span class="lineno">   70</span>                       ? bp_m</div>
+<div class="line"><span class="lineno">   71</span>                       : a-&gt;metriques.bande_passante;</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">int</span> n_sec =</div>
+<div class="line"><span class="lineno">   73</span>          (sec_m &lt; a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">securite</a>) ? sec_m : a-&gt;metriques.securite;</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_function" href="#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a>(ctx, v, cout_c + a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>, lat_c + a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a>,</div>
+<div class="line"><span class="lineno">   75</span>               n_bp, n_sec);</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span>    a = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>  ctx-&gt;<a class="code hl_variable" href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a>--;</div>
+<div class="line"><span class="lineno">   81</span>  ctx-&gt;<a class="code hl_variable" href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">visite</a>[u] = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+<div class="ttc" id="abacktracking_8c_html_a332ad0b3cf1a41a5f452fb6fd1435923"><div class="ttname"><a href="#a332ad0b3cf1a41a5f452fb6fd1435923">contient</a></div><div class="ttdeci">static bool contient(int val, int *tab, int nb)</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00023">backtracking.c:23</a></div></div>
+<div class="ttc" id="abacktracking_8c_html_ab5c009fb6e579070ddda28585fe7ba4b"><div class="ttname"><a href="#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a></div><div class="ttdeci">static void explorer(Context *ctx, int u, float cout_c, float lat_c, float bp_m, int sec_m)</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00030">backtracking.c:30</a></div></div>
+<div class="ttc" id="aroutage_8c_html_a5f3c9dc95951b06193d080420a6ef90c"><div class="ttname"><a href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a></div><div class="ttdeci">void chemin_detruire(Chemin *c)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00017">routage.c:17</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html"><div class="ttname"><a href="struct_arete_noeud.html">AreteNoeud</a></div><div class="ttdoc">Élément de la liste d&#39;adjacence.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00039">dijkstra.h:39</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_a366a0842a23870f85e4a115f3ffab39e"><div class="ttname"><a href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">AreteNoeud::suivant</a></div><div class="ttdeci">struct AreteNoeud * suivant</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00042">dijkstra.h:42</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_aaa25db0933c600b0903f6e07953aa7e8"><div class="ttname"><a href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">AreteNoeud::dest_id</a></div><div class="ttdeci">int dest_id</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00040">dijkstra.h:40</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_ac096b1117c764e5b31c468e3adf12389"><div class="ttname"><a href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">AreteNoeud::metriques</a></div><div class="ttdeci">Metriques metriques</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00041">dijkstra.h:41</a></div></div>
+<div class="ttc" id="astruct_chemin_html"><div class="ttname"><a href="struct_chemin.html">Chemin</a></div><div class="ttdoc">Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00028">routage.h:28</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a19ac368ad526034b581cef5e0bfd3886"><div class="ttname"><a href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">Chemin::cout_total</a></div><div class="ttdeci">float cout_total</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00031">routage.h:31</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a508037535aaaf0d3335d53dc31ff4276"><div class="ttname"><a href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">Chemin::latence_totale</a></div><div class="ttdeci">float latence_totale</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00032">routage.h:32</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a5c86f06e708953bfed14aef45ccd3156"><div class="ttname"><a href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">Chemin::bande_passante_min</a></div><div class="ttdeci">float bande_passante_min</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00033">routage.h:33</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a95532be55c6268b4d75931fbbf03d37b"><div class="ttname"><a href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">Chemin::noeuds</a></div><div class="ttdeci">int * noeuds</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00029">routage.h:29</a></div></div>
+<div class="ttc" id="astruct_chemin_html_ac75550e412ee627165a15c3e65f20c1d"><div class="ttname"><a href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">Chemin::longueur</a></div><div class="ttdeci">int longueur</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00030">routage.h:30</a></div></div>
+<div class="ttc" id="astruct_chemin_html_aed61181a645cd34b9488467883053271"><div class="ttname"><a href="struct_chemin.html#aed61181a645cd34b9488467883053271">Chemin::securite_min</a></div><div class="ttdeci">int securite_min</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00034">routage.h:34</a></div></div>
+<div class="ttc" id="astruct_context_html_a038ec699661c3e53d7c6b7ad28381fbe"><div class="ttname"><a href="struct_context.html#a038ec699661c3e53d7c6b7ad28381fbe">Context::max_cout</a></div><div class="ttdeci">float max_cout</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00014">backtracking.c:14</a></div></div>
+<div class="ttc" id="astruct_context_html_a39ca1ce80b97479263ceff5ccd1a2818"><div class="ttname"><a href="struct_context.html#a39ca1ce80b97479263ceff5ccd1a2818">Context::passage_obligatoire</a></div><div class="ttdeci">int * passage_obligatoire</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00015">backtracking.c:15</a></div></div>
+<div class="ttc" id="astruct_context_html_a3cf78a0f35d10c478868b075f2a3274f"><div class="ttname"><a href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">Context::visite</a></div><div class="ttdeci">bool * visite</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00017">backtracking.c:17</a></div></div>
+<div class="ttc" id="astruct_context_html_a418d6d9523f31f28b7a8ef624513c9b2"><div class="ttname"><a href="struct_context.html#a418d6d9523f31f28b7a8ef624513c9b2">Context::g</a></div><div class="ttdeci">Graphe * g</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00011">backtracking.c:11</a></div></div>
+<div class="ttc" id="astruct_context_html_a57e47350b19fbf81e675ff67656f80a8"><div class="ttname"><a href="struct_context.html#a57e47350b19fbf81e675ff67656f80a8">Context::nb_obligatoire</a></div><div class="ttdeci">int nb_obligatoire</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00016">backtracking.c:16</a></div></div>
+<div class="ttc" id="astruct_context_html_a695f8a20ef93783a2ef6dc8b1e746348"><div class="ttname"><a href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">Context::chemin_courant</a></div><div class="ttdeci">int * chemin_courant</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00018">backtracking.c:18</a></div></div>
+<div class="ttc" id="astruct_context_html_aa89ce916b394ce7302bc958ac349b3a0"><div class="ttname"><a href="struct_context.html#aa89ce916b394ce7302bc958ac349b3a0">Context::min_bp</a></div><div class="ttdeci">float min_bp</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00013">backtracking.c:13</a></div></div>
+<div class="ttc" id="astruct_context_html_ac1bf3ff3b00b71914b9684ba9a1fa696"><div class="ttname"><a href="struct_context.html#ac1bf3ff3b00b71914b9684ba9a1fa696">Context::indice</a></div><div class="ttdeci">int indice</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00019">backtracking.c:19</a></div></div>
+<div class="ttc" id="astruct_context_html_ad1f61e2a9aab283095206461774c232a"><div class="ttname"><a href="struct_context.html#ad1f61e2a9aab283095206461774c232a">Context::meilleur</a></div><div class="ttdeci">Chemin * meilleur</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00020">backtracking.c:20</a></div></div>
+<div class="ttc" id="astruct_context_html_af36bf356bed53015bf5ab389835e5e82"><div class="ttname"><a href="struct_context.html#af36bf356bed53015bf5ab389835e5e82">Context::target</a></div><div class="ttdeci">int target</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00012">backtracking.c:12</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a2e5bb51629044539e81c5c1041ed1602"><div class="ttname"><a href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">Graphe::noeuds</a></div><div class="ttdeci">Noeud * noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00051">dijkstra.h:51</a></div></div>
+<div class="ttc" id="astruct_metriques_html_a71f6b2d4a14d89cb07983d651a9c514c"><div class="ttname"><a href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">Metriques::securite</a></div><div class="ttdeci">int securite</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00021">dijkstra.h:21</a></div></div>
+<div class="ttc" id="astruct_metriques_html_ab7c69a08304787bc9e2cff02a98572ab"><div class="ttname"><a href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">Metriques::cout</a></div><div class="ttdeci">float cout</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00017">dijkstra.h:17</a></div></div>
+<div class="ttc" id="astruct_metriques_html_acdfcc2cf1099f9bfeb474d505b2aacb7"><div class="ttname"><a href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">Metriques::latence</a></div><div class="ttdeci">float latence</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00018">dijkstra.h:18</a></div></div>
+<div class="ttc" id="astruct_metriques_html_af82d8dbbe7806b04907d672e18cb12f2"><div class="ttname"><a href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">Metriques::bande_passante</a></div><div class="ttdeci">float bande_passante</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00019">dijkstra.h:19</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a33400f54123d7a20606a752b8dc988a9"><div class="ttname"><a href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">Noeud::est_actif</a></div><div class="ttdeci">bool est_actif</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00032">dijkstra.h:32</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a85658820f041ae3215f449308e5e75b4"><div class="ttname"><a href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">Noeud::liste_adj</a></div><div class="ttdeci">struct AreteNoeud * liste_adj</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00033">dijkstra.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00019">Metriques::bande_passante</a>, <a class="el" href="routage_8h_source.html#l00033">Chemin::bande_passante_min</a>, <a class="el" href="backtracking_8c_source.html#l00018">Context::chemin_courant</a>, <a class="el" href="routage_8c_source.html#l00017">chemin_detruire()</a>, <a class="el" href="backtracking_8c_source.html#l00023">contient()</a>, <a class="el" href="dijkstra_8h_source.html#l00017">Metriques::cout</a>, <a class="el" href="routage_8h_source.html#l00031">Chemin::cout_total</a>, <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, <a class="el" href="backtracking_8c_source.html#l00011">Context::g</a>, <a class="el" href="backtracking_8c_source.html#l00019">Context::indice</a>, <a class="el" href="dijkstra_8h_source.html#l00018">Metriques::latence</a>, <a class="el" href="routage_8h_source.html#l00032">Chemin::latence_totale</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="routage_8h_source.html#l00030">Chemin::longueur</a>, <a class="el" href="backtracking_8c_source.html#l00014">Context::max_cout</a>, <a class="el" href="backtracking_8c_source.html#l00020">Context::meilleur</a>, <a class="el" href="dijkstra_8h_source.html#l00041">AreteNoeud::metriques</a>, <a class="el" href="backtracking_8c_source.html#l00013">Context::min_bp</a>, <a class="el" href="backtracking_8c_source.html#l00016">Context::nb_obligatoire</a>, <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="backtracking_8c_source.html#l00015">Context::passage_obligatoire</a>, <a class="el" href="dijkstra_8h_source.html#l00021">Metriques::securite</a>, <a class="el" href="routage_8h_source.html#l00034">Chemin::securite_min</a>, <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>, <a class="el" href="backtracking_8c_source.html#l00012">Context::target</a>, et <a class="el" href="backtracking_8c_source.html#l00017">Context::visite</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, et <a class="el" href="backtracking_8c_source.html#l00084">routage_backtracking_contraint()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_cgraph.png" border="0" usemap="#abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_cgraph" loading="lazy" alt=""/></div>
+<map name="abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_cgraph" id="abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,73,56"/>
+<area shape="poly" title=" " alt="" coords="15,31,10,22,13,13,23,6,39,4,56,7,66,15,61,16,54,12,39,9,25,11,17,16,16,22,20,30"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="121,5,234,31"/>
+<area shape="poly" title=" " alt="" coords="72,35,108,30,103,33,74,40"/>
+<area shape="rect" href="backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="144,55,211,80"/>
+<area shape="poly" title=" " alt="" coords="73,47,131,58,126,61,73,52"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_icgraph.png" border="0" usemap="#abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_icgraph" loading="lazy" alt=""/></div>
+<map name="abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_icgraph" id="abacktracking_8c_ab5c009fb6e579070ddda28585fe7ba4b_icgraph">
+<area shape="rect" title=" " alt="" coords="478,29,546,55"/>
+<area shape="poly" title=" " alt="" coords="537,14,529,10,512,8,496,10,488,15,486,20,490,30,485,28,480,21,484,11,494,5,512,3,531,5,542,15"/>
+<area shape="rect" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,22,430,62"/>
+<area shape="poly" title=" " alt="" coords="460,42,431,45,430,40,465,42"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,29,237,55"/>
+<area shape="poly" title=" " alt="" coords="267,42,237,45,237,40,272,42"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" title=" " alt="" coords="85,43,55,45,55,40,90,41"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af774ccbdbe171c882ea576d0812cf076" name="af774ccbdbe171c882ea576d0812cf076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af774ccbdbe171c882ea576d0812cf076">&#9670;&#160;</a></span>routage_backtracking_contraint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chemin.html">Chemin</a> * routage_backtracking_contraint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>noeud_dep</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>noeud_arr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>min_bp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>max_cout</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>passage_obligatoire</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_obligatoire</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recherche par Backtracking avec Élagage (Pruning). </p>
+<p>Explore l'arbre des possibilités pour trouver un chemin satisfaisant des contraintes multiples (Multi-Constrained Path Problem).</p>
+<p><b>Contraintes traitées :</b></p><ul>
+<li>Bande passante &gt;= min_bp</li>
+<li>Coût total &lt;= max_cout</li>
+<li>Passage obligatoire par une liste de nœuds (Waypoints)</li>
+</ul>
+<dl class="section return"><dt>Renvoie</dt><dd>Chemin* Le meilleur chemin valide trouvé. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00084">84</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                 {</div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">if</span> (!g || dep &lt; 0 || dep &gt;= g-&gt;<a class="code hl_variable" href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">max_noeuds</a>)</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   89</span>  <a class="code hl_struct" href="struct_context.html">Context</a> ctx = {g,   arr,  min_bp, (max_c &gt; 0) ? max_c : FLT_MAX,</div>
+<div class="line"><span class="lineno">   90</span>                 req, nb_r, NULL,   NULL,</div>
+<div class="line"><span class="lineno">   91</span>                 0,   NULL};</div>
+<div class="line"><span class="lineno">   92</span>  ctx.<a class="code hl_variable" href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">visite</a> = (<span class="keywordtype">bool</span> *)calloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">max_noeuds</a>, <span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>));</div>
+<div class="line"><span class="lineno">   93</span>  ctx.<a class="code hl_variable" href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a> = (<span class="keywordtype">int</span> *)malloc(g-&gt;<a class="code hl_variable" href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">max_noeuds</a> * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   94</span>  <a class="code hl_function" href="#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a>(&amp;ctx, dep, 0, 0, FLT_MAX, 10);</div>
+<div class="line"><span class="lineno">   95</span>  free(ctx.<a class="code hl_variable" href="struct_context.html#a3cf78a0f35d10c478868b075f2a3274f">visite</a>);</div>
+<div class="line"><span class="lineno">   96</span>  free(ctx.<a class="code hl_variable" href="struct_context.html#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a>);</div>
+<div class="line"><span class="lineno">   97</span>  <span class="keywordflow">return</span> ctx.<a class="code hl_variable" href="struct_context.html#ad1f61e2a9aab283095206461774c232a">meilleur</a>;</div>
+<div class="line"><span class="lineno">   98</span>}</div>
+<div class="ttc" id="astruct_context_html"><div class="ttname"><a href="struct_context.html">Context</a></div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00010">backtracking.c:10</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a02df04020837bee5ecdfe22a8318de05"><div class="ttname"><a href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">Graphe::max_noeuds</a></div><div class="ttdeci">int max_noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00050">dijkstra.h:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="backtracking_8c_source.html#l00018">Context::chemin_courant</a>, <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, <a class="el" href="dijkstra_8h_source.html#l00050">Graphe::max_noeuds</a>, <a class="el" href="backtracking_8c_source.html#l00020">Context::meilleur</a>, et <a class="el" href="backtracking_8c_source.html#l00017">Context::visite</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00129">menu_backtracking()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c_af774ccbdbe171c882ea576d0812cf076_cgraph.png" border="0" usemap="#abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_cgraph" loading="lazy" alt=""/></div>
+<map name="abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_cgraph" id="abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_cgraph">
+<area shape="rect" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="5,23,151,64"/>
+<area shape="rect" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="199,31,266,56"/>
+<area shape="poly" title=" " alt="" coords="151,41,186,43,180,44,151,46"/>
+<area shape="poly" title=" " alt="" coords="208,29,204,22,207,13,216,6,232,4,249,7,260,16,254,15,247,12,232,9,218,11,211,16,209,22,213,31"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="314,5,427,31"/>
+<area shape="poly" title=" " alt="" coords="266,35,296,32,301,31,267,40"/>
+<area shape="rect" href="backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="337,55,404,80"/>
+<area shape="poly" title=" " alt="" coords="267,47,325,59,319,59,266,52"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="backtracking_8c_af774ccbdbe171c882ea576d0812cf076_icgraph.png" border="0" usemap="#abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_icgraph" loading="lazy" alt=""/></div>
+<map name="abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_icgraph" id="abacktracking_8c_af774ccbdbe171c882ea576d0812cf076_icgraph">
+<area shape="rect" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,5,430,46"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,13,237,38"/>
+<area shape="poly" title=" " alt="" coords="267,26,237,28,237,23,272,26"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
+<area shape="poly" title=" " alt="" coords="85,27,55,28,55,23,90,25"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="backtracking_8c.html">backtracking.c</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

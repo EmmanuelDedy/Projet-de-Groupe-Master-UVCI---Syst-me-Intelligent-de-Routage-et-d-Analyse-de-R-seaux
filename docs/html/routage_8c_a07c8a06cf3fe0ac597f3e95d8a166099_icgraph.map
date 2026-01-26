@@ -1,0 +1,14 @@
+<map id="obtenir_poids" name="obtenir_poids">
+<area shape="rect" id="Node000001" title=" " alt="" coords="647,32,745,58"/>
+<area shape="rect" id="Node000002" href="$routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="485,32,599,58"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="628,45,599,47,599,42,634,45"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="112,5,214,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="468,42,215,24,215,19,471,38"/>
+<area shape="rect" id="Node000005" href="$routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="272,52,437,93"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="472,55,438,63,438,58,467,56"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,32,55,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,33,56,42,54,37,99,30"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,56,224,82"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="254,71,224,73,224,67,259,71"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="85,56,55,52,55,47,90,54"/>
+</map>

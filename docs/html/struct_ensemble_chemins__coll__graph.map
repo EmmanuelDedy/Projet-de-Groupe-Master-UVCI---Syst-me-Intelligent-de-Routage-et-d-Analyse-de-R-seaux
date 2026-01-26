@@ -1,0 +1,5 @@
+<map id="EnsembleChemins" name="EnsembleChemins">
+<area shape="rect" id="Node000001" title="Conteneur pour les résultats de recherche multiple (ex: K&#45;chemins)." alt="" coords="5,102,137,128"/>
+<area shape="rect" id="Node000002" href="$struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées." alt="" coords="38,5,104,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,45,74,102,68,101,69,48"/>
+</map>

@@ -1,0 +1,111 @@
+/*
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
+
+ The MIT License (MIT)
+
+ Copyright (C) 1997-2020 by Dimitri van Heesch
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
+*/
+var NAVTREE =
+[
+  [ "Système Intelligent de Routage (UVCI)", "index.html", [
+    [ "Système Intelligent de Routage &amp; Analyse de Réseaux", "index.html", "index" ],
+    [ "📄 Rapport Technique (Projet de Fin de Semestre)", "rapport_projet.html", [
+      [ "1. Page de Garde", "rapport_projet.html#rap_garde", null ],
+      [ "2. Introduction", "rapport_projet.html#rap_intro", [
+        [ "Contexte et Motivation", "rapport_projet.html#rap_context", null ],
+        [ "Objectifs du Projet", "rapport_projet.html#rap_objectifs", null ],
+        [ "Organisation du Rapport", "rapport_projet.html#rap_org", null ]
+      ] ],
+      [ "3. État de l'Art", "rapport_projet.html#rap_state_art", [
+        [ "Algorithmes de Routage Existants", "rapport_projet.html#rap_algo_exist", null ],
+        [ "Comparaison des Approches", "rapport_projet.html#rap_comparaison", null ],
+        [ "Justification des Choix", "rapport_projet.html#rap_choix", null ]
+      ] ],
+      [ "4. Conception", "rapport_projet.html#rap_conception", [
+        [ "Architecture Globale", "rapport_projet.html#rap_arch", null ],
+        [ "Structures de Données", "rapport_projet.html#rap_data_struct", null ],
+        [ "Algorithmes Implémentés (Détails)", "rapport_projet.html#rap_algo_pseudo", [
+          [ "1. Module Routage : Dijkstra (<span class=\"tt\">routage_dijkstra</span>)", "rapport_projet.html#autotoc_md10", null ],
+          [ "2. Module Routage : Backtracking (<span class=\"tt\">routage_backtracking</span>)", "rapport_projet.html#autotoc_md11", null ],
+          [ "3. Module Routage : K-Plus Courts Chemins (<span class=\"tt\">routage_k_chemins</span>)", "rapport_projet.html#autotoc_md12", null ],
+          [ "4. Module Sécurité : Détection de Cycle (<span class=\"tt\">detecter_cycles</span>)", "rapport_projet.html#autotoc_md13", null ],
+          [ "5. Module Sécurité : Points d'Articulation (<span class=\"tt\">identifier_points_critiques</span>)", "rapport_projet.html#autotoc_md14", null ],
+          [ "6. Module Graphe : Ajout d'Arête (<span class=\"tt\">graphe_ajouter_arete</span>)", "rapport_projet.html#autotoc_md15", null ],
+          [ "7. Module Simulation : File à Priorité (<span class=\"tt\">enfiler</span>)", "rapport_projet.html#autotoc_md16", null ]
+        ] ]
+      ] ],
+      [ "5. Analyse Théorique de Complexité (CRUCIAL)", "rapport_projet.html#rap_complexity", [
+        [ "5.1 Algorithme de Dijkstra", "rapport_projet.html#rap_proof_dijkstra", null ],
+        [ "5.2 Algorithme de Backtracking", "rapport_projet.html#rap_proof_backtracking", null ],
+        [ "5.3 K-Plus Courts Chemins (Yen Simplifié)", "rapport_projet.html#rap_proof_yen", null ],
+        [ "5.4 Algorithmes de Sécurité (DFS/Tarjan)", "rapport_projet.html#rap_proof_secu", null ],
+        [ "Tableau Comparatif Théorique", "rapport_projet.html#rap_summary", null ]
+      ] ],
+      [ "6. Implémentation", "rapport_projet.html#rap_impl", [
+        [ "Choix Techniques (Langage C)", "rapport_projet.html#rap_tech_choice", null ],
+        [ "Difficultés &amp; Solutions", "rapport_projet.html#rap_difficulties", null ]
+      ] ],
+      [ "7. Résultats Expérimentaux (CRUCIAL)", "rapport_projet.html#rap_res", [
+        [ "7.1 Protocole de Test", "rapport_projet.html#rap_proto", null ],
+        [ "7.2 Mesures de Performance Comparatives", "rapport_projet.html#rap_perf", [
+          [ "A. Comparaison Algorithmique : Dijkstra vs Bellman-Ford", "rapport_projet.html#autotoc_md27", null ],
+          [ "B. Impact de l'Élagage sur le Backtracking", "rapport_projet.html#autotoc_md28", null ]
+        ] ],
+        [ "7.3 Comparaison Structurelle : Matrice vs Liste d'Adjacence", "rapport_projet.html#rap_comp_struct", null ],
+        [ "7.4 Validation de la Complexité Théorique", "rapport_projet.html#rap_val_theory", null ]
+      ] ],
+      [ "8. Innovation", "rapport_projet.html#rap_innov", [
+        [ "Extensions Réalisées", "rapport_projet.html#rap_ext", null ],
+        [ "Perspectives", "rapport_projet.html#rap_perspectives", null ]
+      ] ],
+      [ "9. Conclusion", "rapport_projet.html#rap_conc", null ],
+      [ "10. Bibliographie et Références", "rapport_projet.html#rap_biblio", null ]
+    ] ],
+    [ "Structures de données", "annotated.html", [
+      [ "Structures de données", "annotated.html", "annotated_dup" ],
+      [ "Index des structures de données", "classes.html", null ],
+      [ "Champs de donnée", "functions.html", [
+        [ "Tout", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
+    [ "Fichiers", "files.html", [
+      [ "Liste des fichiers", "files.html", "files_dup" ],
+      [ "Variables globale", "globals.html", [
+        [ "Tout", "globals.html", null ],
+        [ "Fonctions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Énumérations", "globals_enum.html", null ],
+        [ "Valeurs énumérées", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
+    ] ]
+  ] ]
+];
+
+var NAVTREEINDEX =
+[
+"annotated.html",
+"struct_file_attente.html#afbdb5cb25ea33ea63775cbf19a71e78c"
+];
+
+var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';
+var SYNCOFFMSG = 'cliquez pour activer la synchronisation du panel';
+var LISTOFALLMEMBERS = 'Liste de tous les membres';

@@ -1,0 +1,7 @@
+<map id="routage_backtracking_contraint" name="routage_backtracking_contraint">
+<area shape="rect" id="Node000001" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,5,430,46"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,13,237,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,26,237,28,237,23,272,26"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,27,55,28,55,23,90,25"/>
+</map>

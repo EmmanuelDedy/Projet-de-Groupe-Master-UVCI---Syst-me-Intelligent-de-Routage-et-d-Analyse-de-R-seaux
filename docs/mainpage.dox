@@ -1,0 +1,176 @@
+/**
+ * @mainpage Système Intelligent de Routage & Analyse de Réseaux
+ *
+ * @b Université @b Virtuelle @b de @b Côte @b d'Ivoire -- @b Master @b 1 @b Algorithmique @b & @b Complexité (2025-2026)
+ *
+ * ---
+ *
+ * @section sec_sommaire Sommaire
+ * 1. @ref sec_intro "Introduction & Contexte"
+ * 2. @ref sec_theory "Cadre Théorique & Recherche"
+ * 3. @ref sec_arch "Architecture Technique"
+ * 4. @ref sec_data "Structures de Données Clés"
+ * 5. @ref sec_algo "Implémentation Algorithmique (A-Z)"
+ * 6. @ref rapport_projet "Voir le RAPPORT DU PROJET"
+ * 7. @ref sec_install "Installation & Utilisation"
+ * 8. @ref sec_team "Équipe & Mentions Légales"
+ *
+ * ---
+ *
+ * @section sec_intro 1. Introduction & Contexte
+ *
+ * Ce projet s'inscrit dans le cadre de l'unité d'enseignement **Algorithmique Avancée**, supervisée par le **Dr. [Nom]**.
+ * Il vise à concevoir un simulateur de réseau performant capable de valider des algorithmes de routage complexes sur des topologies massives.
+ *
+ * @subsection sub_goals Objectifs du Cahier des Charges (CDC)
+ * - **Simuler** un réseau de routeurs, switchs et serveurs connectés par des liens pondérés.
+ * - **Calculer** des itinéraires optimaux (Dijkstra) et sous contraintes (Backtracking).
+ * - **Auditer** la résilience du réseau (Détection de SPOF et Zones Isolées).
+ * - **Gérer** la Qualité de Service (QoS) via des files d'attente prioritaires.
+ *
+ * ---
+ *
+ * @section sec_theory 2. Cadre Théorique & Recherche
+ *
+ * @subsection sub_graph Modélisation Mathématique
+ * Le réseau est modélisé par un **Graphe Orienté Pondéré** \f$ G = (V, E) \f$ où :
+ * - \f$ V \f$ est l'ensemble des sommets (Équipements).
+ * - \f$ E \f$ est l'ensemble des arcs (Liaisons).
+ * - Une fonction de poids vectorielle \f$ w(e) = (Cout, Latence, BP, Fiabilite) \f$.
+ *
+ * @subsection sub_complexity Analyse de Complexité
+ * Le choix des algorithmes a été guidé par une analyse asymptotique rigoureuse pour garantir la scalabilité ($N > 500$).
+ *
+ * | Algorithme | Problème Résolu | Complexité Temporelle | Complexité Spatiale | Justification |
+ * | :--- | :--- | :--- | :--- | :--- |
+ * | **Dijkstra** | Plus Court Chemin (Poids Positifs) | \f$ O(E \log V) \f$ | \f$ O(V) \f$ | Optimal avec un tas binaire. Stockage `dist[]` et `pred[]`. |
+ * | **Backtracking** | Chemin Contraint (QoS) | \f$ O(b^d) \f$ | \f$ O(N) \f$ | Pile de récursion (Profondeur max N). |
+ * | **Tarjan** | Composantes Fortement Connexes | \f$ O(V + E) \f$ | \f$ O(V) \f$ | Tableaux `index[]`, `lowlink[]` et Pile explicite. |
+ * | **Yen's KSP** | K-Chemins Alternatifs | \f$ O(K \cdot N (E + N \log N)) \f$ | \f$ O(V + E) \f$ | Nécessite des copies partielles du graphe (suppression virtuelle). |
+ *
+ * ---
+ *
+ * @section sec_arch 3. Architecture Technique
+ *
+ * @subsection sub_choice Choix du C11
+ * Nous avons opté pour le langage **C (Standard C11)** pour :
+ * 1. **Gestion Mémoire Fine** : `malloc`/`free` permettent de gérer precisely l'allocation pour des graphes de taille variable.
+ * 2. **Performance** : Accès direct à la RAM (Pointeurs) pour parcourir les matrices d'adjacence sans overhead.
+ * 3. **Portabilité** : Code standard compilable sur tout système POSIX.
+ *
+ * @subsection sub_diag Diagramme Architectural
+ * L'application suit une architecture modulaire stricte :
+ * @dot
+ * digraph G {
+ *   rankdir=TD;
+ *   node [fontname="Helvetica", fontsize=10, shape=record, style=filled, fillcolor="#f0f0f0"];
+ *   edge [fontname="Helvetica", fontsize=10];
+ *
+ *   CLI [label="{ Interface Utilisateur (CLI) | main.c }", fillcolor="#ffcccc"];
+ *   Orch [label="{ Orchestrateur | Gestionnaire de Scénarios }", fillcolor="#ffe6cc"];
+ *   
+ *   subgraph cluster_core {
+ *     label = "Noyau (Core)";
+ *     style=dashed;
+ *     color=gray;
+ *     Graph [label="{ Module Graphe | graphe.c \n (Structures de Données) }", fillcolor="#ccffcc"];
+ *     Utils [label="{ Utilitaires | utils.c \n (I/O, Logs) }", fillcolor="#e6ccff"];
+ *   }
+ *
+ *   subgraph cluster_algo {
+ *     label = "Moteurs Algorithmiques";
+ *     style=dashed;
+ *     color=blue;
+ *     Route [label="{ Module Routage | routage.c \n (Dijkstra, Bellman) }", fillcolor="#ccccff"];
+ *     Secu [label="{ Module Sécurité | securite.c \n (Tarjan, DFS) }", fillcolor="#ccccff"];
+ *     Sim [label="{ Module Simulation | liste_chainee.c \n (Priority Queue) }", fillcolor="#ccccff"];
+ *   }
+ *
+ *   CLI -> Orch;
+ *   Orch -> Graph [label="Init"];
+ *   Orch -> Route [label="Calcul"];
+ *   Orch -> Secu [label="Audit"];
+ *   Route -> Graph [label="Lit"];
+ *   Secu -> Graph [label="Lit"];
+ *   Sim -> Utils [label="Log"];
+ * }
+ * @enddot
+ *
+ * ---
+ *
+ * @section sec_data 4. Structures de Données Clés
+ *
+ * @subsection struct_graph Le Graphe Hybride
+ * Pour concilier performance sur graphes denses et économie sur graphes creux, la structure `Graphe` (dans `graphe.h`) maintient deux représentations :
+ * @code
+ * typedef struct {
+ *   Noeud *noeuds;        // Tableau dynamique (Accès O(1))
+ *   double **matrice_adj; // Matrice (Graphes denses)
+ *   // Chaque noeud possède aussi une liste chaînée (Graphes creux)
+ * } Graphe;
+ * @endcode
+ *
+ * @subsection struct_pq La File à Priorité
+ * La gestion QoS repose sur une liste chaînée triée à l'insertion (dans `liste_chainee.h`) :
+ * @code
+ * typedef struct Paquet {
+ *   int priorite;         // 10 (Haut) -> 0 (Bas)
+ *   struct Paquet *suiv;  // Liste doublement chaînée
+ * } Paquet;
+ * @endcode
+ *
+ * ---
+ *
+ * @section sec_algo 5. Implémentation Algorithmique (A-Z)
+ *
+ * @subsection algo_dijkstra 5.1 Dijkstra (Routing)
+ * **Fichier** : `src/routage.c`
+ *
+ * Le cœur du routage. Nous utilisons une version relaxée :
+ * 1. Initialiser les distances à \f$ \infty \f$.
+ * 2. Insérer la source dans la file de priorité.
+ * 3. Tant que la file n'est pas vide, extraire le min \f$ u \f$.
+ * 4. Pour chaque voisin \f$ v \f$, si \f$ dist[u] + w(u,v) < dist[v] \f$, mettre à jour.
+ *
+ * @subsection algo_tarjan 5.2 Tarjan (Security)
+ * **Fichier** : `src/securite.c`
+ *
+ * Détection des points critiques :
+ * - Un nœud est un **Point d'Articulation** si sa suppression augmente le nombre de composantes connexes.
+ * - Algorithme : DFS qui maintient `discovery_time` et `low_link_value`.
+ *
+ * ---
+ *
+ * @section sec_install 6. Installation & Utilisation
+ *
+ * @subsection sub_req Prérequis
+ * - Compilateur GCC ou Clang.
+ * - Make.
+ * - Graphviz (optionnel, pour les images).
+ *
+ * @subsection sub_build Compilation
+ * @code{.sh}
+ * $ make        # Compile le projet
+ * $ make tests  # Lance la suite de tests unitaires
+ * $ make docs   # Génère cette documentation
+ * @endcode
+ *
+ * @subsection sub_run Exécution
+ * @code{.sh}
+ * $ ./bin/main
+ * > [1] Charger Topologie
+ * > [2] Calculer Routage
+ * > ...
+ * @endcode
+ *
+ * ---
+ *
+ * @section sec_team 7. Équipe & Mentions Légales
+ *
+ * **Université Virtuelle de Côte d'Ivoire**
+ * - **Département** : Informatique
+ * - **Cours** : Algorithmique Avancée
+ * - **Licence** : MIT (Open Source)
+ *
+ * *Documentation générée automatiquement par Doxygen.*
+ */

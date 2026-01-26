@@ -124,8 +124,13 @@ tests: test_graphe test_routage test_securite test_global test_dijsktra test_bac
 	@echo ">>> TOUS LES TESTS SONT PASSES <<<"
 	@echo "-----------------------------------"
 
+# Documentation
+docs:
+	doxygen Doxyfile
+	@echo "Documentation générée dans docs/html/index.html"
+
 clean:
 	rm -rf $(BIN_DIR)
 	rm -f resultats_tests/*.log resultats_tests/*.txt resultats_tests/*.dot resultats_tests/*.png resultats_tests/*.tmp
 
-.PHONY: all clean directories tests test_graphe test_routage test_securite test_global
+.PHONY: all clean directories tests test_graphe test_routage test_securite test_global docs

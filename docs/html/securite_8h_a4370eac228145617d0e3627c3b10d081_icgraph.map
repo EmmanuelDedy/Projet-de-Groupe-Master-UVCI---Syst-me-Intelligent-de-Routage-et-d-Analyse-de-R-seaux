@@ -1,0 +1,8 @@
+<map id="detecter_cycles" name="detecter_cycles">
+<area shape="rect" id="Node000001" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="357,5,470,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="341,21,55,21,55,16,342,16"/>
+<area shape="rect" id="Node000003" href="$securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,31,309,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="345,27,310,34,309,28,339,27"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="95,29,55,24,55,19,100,26"/>
+</map>

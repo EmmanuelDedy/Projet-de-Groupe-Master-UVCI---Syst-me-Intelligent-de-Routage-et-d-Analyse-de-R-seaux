@@ -1,0 +1,10 @@
+<map id="explorer" name="explorer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="478,29,546,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="537,14,529,10,512,8,496,10,488,15,486,20,490,30,485,28,480,21,484,11,494,5,512,3,531,5,542,15"/>
+<area shape="rect" id="Node000002" href="$backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,22,430,62"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="460,42,431,45,430,40,465,42"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,29,237,55"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="267,42,237,45,237,40,272,42"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="85,43,55,45,55,40,90,41"/>
+</map>

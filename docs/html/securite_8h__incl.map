@@ -1,0 +1,11 @@
+<map id="src/securite.h" name="src/securite.h">
+<area shape="rect" id="Node000001" title="Module 3 : Détection d&#39;Anomalies et Audit de Résilience." alt="" coords="84,5,185,31"/>
+<area shape="rect" id="Node000002" href="$graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="99,79,170,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,29,137,64,132,62,133,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,80,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,105,71,145,68,141,116,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="104,153,165,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="136,103,137,138,132,136,133,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="188,153,252,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="150,103,197,143,191,143,148,108"/>
+</map>

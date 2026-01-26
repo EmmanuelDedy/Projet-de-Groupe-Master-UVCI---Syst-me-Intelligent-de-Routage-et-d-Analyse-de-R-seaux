@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence du fichier src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('main_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier main.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="graphe_8h_source.html">graphe.h</a>&quot;</code><br />
+<code>#include &quot;logger.h&quot;</code><br />
+<code>#include &quot;orchestrator.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="routage_8h_source.html">routage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="securite_8h_source.html">securite.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#asrc_2main_8c" loading="lazy" alt=""/></div>
+<map name="asrc_2main_8c" id="asrc_2main_8c">
+<area shape="rect" title=" " alt="" coords="294,5,377,31"/>
+<area shape="rect" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="121,153,192,178"/>
+<area shape="poly" title=" " alt="" coords="291,27,237,45,209,60,184,81,168,108,161,138,156,136,164,106,180,77,206,56,235,41,296,24"/>
+<area shape="rect" title=" " alt="" coords="5,226,66,252"/>
+<area shape="poly" title=" " alt="" coords="292,23,226,29,147,39,76,56,49,68,32,81,23,95,17,111,14,146,19,181,28,211,22,212,14,182,9,146,12,110,18,93,28,77,47,63,74,51,146,34,225,24,296,20"/>
+<area shape="rect" title=" " alt="" coords="354,226,418,252"/>
+<area shape="poly" title=" " alt="" coords="377,19,409,25,442,35,474,52,499,77,508,97,508,118,501,138,489,157,456,192,420,220,417,215,452,188,485,154,496,136,503,117,503,99,495,81,471,57,440,40,408,30,378,25"/>
+<area shape="rect" title=" " alt="" coords="194,79,261,105"/>
+<area shape="poly" title=" " alt="" coords="315,33,260,72,257,68,319,30"/>
+<area shape="rect" title=" " alt="" coords="285,79,386,105"/>
+<area shape="poly" title=" " alt="" coords="337,29,338,64,333,62,334,33"/>
+<area shape="rect" href="routage_8h.html" title="Module 2 : Algorithmes de Routage Optimal &amp; Intelligent." alt="" coords="410,79,485,105"/>
+<area shape="poly" title=" " alt="" coords="355,29,418,70,413,71,354,34"/>
+<area shape="rect" href="securite_8h.html" title="Module 3 : Détection d&#39;Anomalies et Audit de Résilience." alt="" coords="42,79,120,105"/>
+<area shape="poly" title=" " alt="" coords="293,33,136,78,134,73,295,29"/>
+<area shape="rect" title=" " alt="" coords="559,79,624,105"/>
+<area shape="poly" title=" " alt="" coords="377,28,547,77,542,78,377,34"/>
+<area shape="rect" title=" " alt="" coords="648,79,727,105"/>
+<area shape="poly" title=" " alt="" coords="377,25,635,77,630,80,377,30"/>
+<area shape="rect" title=" " alt="" coords="120,226,194,252"/>
+<area shape="poly" title=" " alt="" coords="159,177,159,212,154,209,155,181"/>
+<area shape="poly" title=" " alt="" coords="138,181,71,220,68,216,134,177"/>
+<area shape="poly" title=" " alt="" coords="193,175,342,222,337,225,192,181"/>
+<area shape="poly" title=" " alt="" coords="408,105,208,154,207,149,411,100"/>
+<area shape="poly" title=" " alt="" coords="94,103,136,141,131,143,93,108"/>
+</map>
+</div>
+</div>
+<p><a href="main_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a522a68e001b36eb7d9c1a2a63d6c74cd" id="r_a522a68e001b36eb7d9c1a2a63d6c74cd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a522a68e001b36eb7d9c1a2a63d6c74cd">formatter_chemin</a> (const char *entree, char *sortie)</td></tr>
+<tr class="memitem:a26f23b0a449e679f092983b1ef986fa2" id="r_a26f23b0a449e679f092983b1ef986fa2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a26f23b0a449e679f092983b1ef986fa2">afficher_menu</a> ()</td></tr>
+<tr class="memitem:ac4aef0759d8a84faa4b43d5596fda57b" id="r_ac4aef0759d8a84faa4b43d5596fda57b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac4aef0759d8a84faa4b43d5596fda57b">afficher_chemin</a> (<a class="el" href="struct_chemin.html">Chemin</a> *c, const char *titre)</td></tr>
+<tr class="memitem:a3ad9847319be43403b546b596f0ee98e" id="r_a3ad9847319be43403b546b596f0ee98e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3ad9847319be43403b546b596f0ee98e">menu_dijkstra</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memitem:a37d8ab5be3c11050660d64e3c72c4826" id="r_a37d8ab5be3c11050660d64e3c72c4826"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a37d8ab5be3c11050660d64e3c72c4826">menu_k_shortest</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memitem:a432757db13bf20b412d6228233d31775" id="r_a432757db13bf20b412d6228233d31775"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a432757db13bf20b412d6228233d31775">menu_backtracking</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g)</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="ac4aef0759d8a84faa4b43d5596fda57b" name="ac4aef0759d8a84faa4b43d5596fda57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4aef0759d8a84faa4b43d5596fda57b">&#9670;&#160;</a></span>afficher_chemin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficher_chemin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chemin.html">Chemin</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>titre</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00054">54</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                                   {</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordflow">if</span> (!c) {</div>
+<div class="line"><span class="lineno">   56</span>    printf(<span class="stringliteral">&quot;   -&gt; %s : Aucun chemin trouve.\n&quot;</span>, titre);</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   58</span>  }</div>
+<div class="line"><span class="lineno">   59</span>  printf(<span class="stringliteral">&quot;   -&gt; %s :\n&quot;</span>, titre);</div>
+<div class="line"><span class="lineno">   60</span>  printf(<span class="stringliteral">&quot;      Cout Total : %.2f | Latence : %.2f ms | BP Min : %.2f Mbps\n&quot;</span>,</div>
+<div class="line"><span class="lineno">   61</span>         c-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a>, c-&gt;<a class="code hl_variable" href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">latence_totale</a>, c-&gt;<a class="code hl_variable" href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">bande_passante_min</a>);</div>
+<div class="line"><span class="lineno">   62</span>  printf(<span class="stringliteral">&quot;      Trajet : [ &quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; c-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a>; i++) {</div>
+<div class="line"><span class="lineno">   64</span>    printf(<span class="stringliteral">&quot;%d &quot;</span>, c-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i]);</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">if</span> (i &lt; c-&gt;longueur - 1)</div>
+<div class="line"><span class="lineno">   66</span>      printf(<span class="stringliteral">&quot;-&gt; &quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>  }</div>
+<div class="line"><span class="lineno">   68</span>  printf(<span class="stringliteral">&quot;]\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="astruct_chemin_html_a19ac368ad526034b581cef5e0bfd3886"><div class="ttname"><a href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">Chemin::cout_total</a></div><div class="ttdeci">float cout_total</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00031">routage.h:31</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a508037535aaaf0d3335d53dc31ff4276"><div class="ttname"><a href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">Chemin::latence_totale</a></div><div class="ttdeci">float latence_totale</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00032">routage.h:32</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a5c86f06e708953bfed14aef45ccd3156"><div class="ttname"><a href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">Chemin::bande_passante_min</a></div><div class="ttdeci">float bande_passante_min</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00033">routage.h:33</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a95532be55c6268b4d75931fbbf03d37b"><div class="ttname"><a href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">Chemin::noeuds</a></div><div class="ttdeci">int * noeuds</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00029">routage.h:29</a></div></div>
+<div class="ttc" id="astruct_chemin_html_ac75550e412ee627165a15c3e65f20c1d"><div class="ttname"><a href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">Chemin::longueur</a></div><div class="ttdeci">int longueur</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00030">routage.h:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="routage_8h_source.html#l00033">Chemin::bande_passante_min</a>, <a class="el" href="routage_8h_source.html#l00031">Chemin::cout_total</a>, <a class="el" href="routage_8h_source.html#l00032">Chemin::latence_totale</a>, <a class="el" href="routage_8h_source.html#l00030">Chemin::longueur</a>, et <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00129">menu_backtracking()</a>, <a class="el" href="main_8c_source.html#l00073">menu_dijkstra()</a>, et <a class="el" href="main_8c_source.html#l00097">menu_k_shortest()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_ac4aef0759d8a84faa4b43d5596fda57b_icgraph.png" border="0" usemap="#amain_8c_ac4aef0759d8a84faa4b43d5596fda57b_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_ac4aef0759d8a84faa4b43d5596fda57b_icgraph" id="amain_8c_ac4aef0759d8a84faa4b43d5596fda57b_icgraph">
+<area shape="rect" title=" " alt="" coords="285,55,398,80"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="277,50,217,34,217,29,282,49"/>
+<area shape="rect" href="main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="119,55,221,80"/>
+<area shape="poly" title=" " alt="" coords="267,68,222,70,221,65,272,67"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="109,104,230,130"/>
+<area shape="poly" title=" " alt="" coords="282,85,218,106,217,101,277,86"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,55,80"/>
+<area shape="poly" title=" " alt="" coords="116,39,56,61,54,57,118,34"/>
+<area shape="poly" title=" " alt="" coords="101,69,56,70,55,65,105,66"/>
+<area shape="poly" title=" " alt="" coords="115,100,55,79,55,73,119,97"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a26f23b0a449e679f092983b1ef986fa2" name="a26f23b0a449e679f092983b1ef986fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26f23b0a449e679f092983b1ef986fa2">&#9670;&#160;</a></span>afficher_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficher_menu </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00038">38</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                     {</div>
+<div class="line"><span class="lineno">   39</span>  printf(<span class="stringliteral">&quot;\n=== SYSTEME DE GESTION RESEAU (GSM) ===\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>  printf(<span class="stringliteral">&quot;1.  Charger un fichier de topologie\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>  printf(<span class="stringliteral">&quot;2.  Afficher les informations du graphe\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>  printf(<span class="stringliteral">&quot;3.  [Routage] Plus Court Chemin (Dijkstra)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>  printf(<span class="stringliteral">&quot;4.  [Routage] K-Plus Courts Chemins\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   44</span>  printf(<span class="stringliteral">&quot;5.  [Routage] Chemin Contraint (Backtracking)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>  printf(<span class="stringliteral">&quot;6.  [Securite] Audit de Vulnerabilite (Complet)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>  printf(<span class="stringliteral">&quot;7.  [Securite] Detecter les Cycles\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>  printf(<span class="stringliteral">&quot;7.  [Securite] Detecter les Cycles\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>  printf(<span class="stringliteral">&quot;8.  Sauvegarder la topologie actuelle\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>  printf(<span class="stringliteral">&quot;0.  Quitter\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   50</span>  printf(<span class="stringliteral">&quot;========================================\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>  printf(<span class="stringliteral">&quot;Votre choix : &quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a26f23b0a449e679f092983b1ef986fa2_icgraph.png" border="0" usemap="#amain_8c_a26f23b0a449e679f092983b1ef986fa2_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a26f23b0a449e679f092983b1ef986fa2_icgraph" id="amain_8c_a26f23b0a449e679f092983b1ef986fa2_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,206,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,90,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a522a68e001b36eb7d9c1a2a63d6c74cd" name="a522a68e001b36eb7d9c1a2a63d6c74cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a522a68e001b36eb7d9c1a2a63d6c74cd">&#9670;&#160;</a></span>formatter_chemin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void formatter_chemin </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>entree</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>sortie</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00026">26</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                               {</div>
+<div class="line"><span class="lineno">   27</span>  <span class="comment">// Si le chemin commence par . ou / ou data/, on touche pas</span></div>
+<div class="line"><span class="lineno">   28</span>  <span class="keywordflow">if</span> (entree[0] == <span class="charliteral">&#39;.&#39;</span> || entree[0] == <span class="charliteral">&#39;/&#39;</span> ||</div>
+<div class="line"><span class="lineno">   29</span>      strncmp(entree, <span class="stringliteral">&quot;data/&quot;</span>, 5) == 0) {</div>
+<div class="line"><span class="lineno">   30</span>    strcpy(sortie, entree);</div>
+<div class="line"><span class="lineno">   31</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   32</span>    sprintf(sortie, <span class="stringliteral">&quot;data/%s&quot;</span>, entree);</div>
+<div class="line"><span class="lineno">   33</span>  }</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a522a68e001b36eb7d9c1a2a63d6c74cd_icgraph.png" border="0" usemap="#amain_8c_a522a68e001b36eb7d9c1a2a63d6c74cd_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a522a68e001b36eb7d9c1a2a63d6c74cd_icgraph" id="amain_8c_a522a68e001b36eb7d9c1a2a63d6c74cd_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,225,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,90,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00159">159</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>                                 {</div>
+<div class="line"><span class="lineno">  160</span>  <a class="code hl_struct" href="struct_graphe.html">Graphe</a> *g = NULL;</div>
+<div class="line"><span class="lineno">  161</span>  <span class="keywordtype">char</span> filepath[256];</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>  <span class="comment">// Initialiser le système de logging</span></div>
+<div class="line"><span class="lineno">  164</span>  logger_init_simple(<span class="stringliteral">&quot;logs/gsm.log&quot;</span>, LOG_LEVEL_INFO);</div>
+<div class="line"><span class="lineno">  165</span>  LOG_INFO(MOD_MAIN, <span class="stringliteral">&quot;Démarrage de l&#39;interface interactive GSM&quot;</span>);</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>  <span class="comment">// Si un fichier est passé en argument, on essaie de le charger direct</span></div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordflow">if</span> (argc &gt; 1) {</div>
+<div class="line"><span class="lineno">  169</span>    LOG_INFO(MOD_LOADER, <span class="stringliteral">&quot;Chargement depuis argument: %s&quot;</span>, argv[1]);</div>
+<div class="line"><span class="lineno">  170</span>    g = <a class="code hl_function" href="dijkstra_8c.html#aa830572ceebc271506945fefcc5b619e">graphe_charger</a>(argv[1]);</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">if</span> (g) {</div>
+<div class="line"><span class="lineno">  172</span>      LOG_INFO(MOD_LOADER, <span class="stringliteral">&quot;Graphe chargé avec succès&quot;</span>);</div>
+<div class="line"><span class="lineno">  173</span>      printf(<span class="stringliteral">&quot;Graphe charge avec succes !\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  174</span>      <a class="code hl_function" href="dijkstra_8c.html#a884a6c2ed91f47fb047348db4b2b3e51">graphe_afficher</a>(g);</div>
+<div class="line"><span class="lineno">  175</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  176</span>      LOG_ERROR(MOD_LOADER, <span class="stringliteral">&quot;Échec du chargement: %s&quot;</span>, argv[1]);</div>
+<div class="line"><span class="lineno">  177</span>      printf(<span class="stringliteral">&quot;Echec du chargement.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span>  }</div>
+<div class="line"><span class="lineno">  180</span> </div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordtype">int</span> choix = -1;</div>
+<div class="line"><span class="lineno">  182</span>  <span class="keywordflow">while</span> (choix != 0) {</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_function" href="#a26f23b0a449e679f092983b1ef986fa2">afficher_menu</a>();</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;choix) != 1) {</div>
+<div class="line"><span class="lineno">  185</span>      <span class="comment">// Vider le buffer si l&#39;utilisateur rentre n&#39;importe quoi</span></div>
+<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">while</span> (getchar() != <span class="charliteral">&#39;\n&#39;</span>)</div>
+<div class="line"><span class="lineno">  187</span>        ;</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">switch</span> (choix) {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">case</span> 1: <span class="comment">// Charger</span></div>
+<div class="line"><span class="lineno">  193</span>      printf(<span class="stringliteral">&quot;Nom du fichier (dans data/) ou chemin complet : &quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>      scanf(<span class="stringliteral">&quot;%s&quot;</span>, filepath);</div>
+<div class="line"><span class="lineno">  195</span>      <span class="keywordtype">char</span> fullpath[256];</div>
+<div class="line"><span class="lineno">  196</span>      <a class="code hl_function" href="#a522a68e001b36eb7d9c1a2a63d6c74cd">formatter_chemin</a>(filepath, fullpath);</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>      <span class="keywordflow">if</span> (g)</div>
+<div class="line"><span class="lineno">  199</span>        <a class="code hl_function" href="dijkstra_8c.html#abca3fdcb1a60fb08d61571ad9cc2c05c">graphe_detruire</a>(g); <span class="comment">// Liberer l&#39;ancien</span></div>
+<div class="line"><span class="lineno">  200</span>      g = <a class="code hl_function" href="dijkstra_8c.html#aa830572ceebc271506945fefcc5b619e">graphe_charger</a>(fullpath);</div>
+<div class="line"><span class="lineno">  201</span>      <span class="keywordflow">if</span> (g)</div>
+<div class="line"><span class="lineno">  202</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Graphe charge depuis %s.\n&quot;</span>, fullpath);</div>
+<div class="line"><span class="lineno">  203</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  204</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Erreur de chargement (%s).\n&quot;</span>, fullpath);</div>
+<div class="line"><span class="lineno">  205</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">case</span> 2: <span class="comment">// Afficher</span></div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">if</span> (g)</div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_function" href="dijkstra_8c.html#a884a6c2ed91f47fb047348db4b2b3e51">graphe_afficher</a>(g);</div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  211</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Aucun graphe en memoire.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    <span class="keywordflow">case</span> 3: <span class="comment">// Dijkstra</span></div>
+<div class="line"><span class="lineno">  215</span>      <a class="code hl_function" href="#a3ad9847319be43403b546b596f0ee98e">menu_dijkstra</a>(g);</div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  217</span> </div>
+<div class="line"><span class="lineno">  218</span>    <span class="keywordflow">case</span> 4: <span class="comment">// K-Shortest</span></div>
+<div class="line"><span class="lineno">  219</span>      <a class="code hl_function" href="#a37d8ab5be3c11050660d64e3c72c4826">menu_k_shortest</a>(g);</div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>    <span class="keywordflow">case</span> 5: <span class="comment">// Backtracking</span></div>
+<div class="line"><span class="lineno">  223</span>      <a class="code hl_function" href="#a432757db13bf20b412d6228233d31775">menu_backtracking</a>(g);</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>    <span class="keywordflow">case</span> 6: <span class="comment">// Securite Globale</span></div>
+<div class="line"><span class="lineno">  227</span>      <span class="keywordflow">if</span> (g)</div>
+<div class="line"><span class="lineno">  228</span>        <a class="code hl_function" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d">securite_analyser_vulnerabilites</a>(g);</div>
+<div class="line"><span class="lineno">  229</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  230</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Aucun graphe en memoire.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">case</span> 7: <span class="comment">// Detecter Cycles</span></div>
+<div class="line"><span class="lineno">  234</span>      <span class="keywordflow">if</span> (g) {</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordtype">int</span> has_cycle = <a class="code hl_function" href="securite_8c.html#a4370eac228145617d0e3627c3b10d081">detecter_cycles</a>(g);</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">if</span> (has_cycle)</div>
+<div class="line"><span class="lineno">  237</span>          printf(<span class="stringliteral">&quot;&gt;&gt;&gt; ATTENTION: Le graphe contient des cycles !\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  238</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  239</span>          printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Le graphe est acyclique (DAG).\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  240</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  241</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Aucun graphe en memoire.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  242</span>      }</div>
+<div class="line"><span class="lineno">  243</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">case</span> 8: <span class="comment">// Sauvegarder</span></div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordflow">if</span> (!g) {</div>
+<div class="line"><span class="lineno">  247</span>        printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Aucun graphe a sauvegarder.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  248</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  249</span>        printf(<span class="stringliteral">&quot;Nom du fichier de sortie (sera dans data/) : &quot;</span>);</div>
+<div class="line"><span class="lineno">  250</span>        scanf(<span class="stringliteral">&quot;%s&quot;</span>, filepath);</div>
+<div class="line"><span class="lineno">  251</span>        <span class="keywordtype">char</span> outpath[256];</div>
+<div class="line"><span class="lineno">  252</span>        <a class="code hl_function" href="#a522a68e001b36eb7d9c1a2a63d6c74cd">formatter_chemin</a>(filepath, outpath);</div>
+<div class="line"><span class="lineno">  253</span> </div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="dijkstra_8c.html#a381bdc9e6a3ddc54ed0710249f8c0ccd">graphe_sauvegarder</a>(g, outpath)) {</div>
+<div class="line"><span class="lineno">  255</span>          printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Topologie sauvegardee dans %s\n&quot;</span>, outpath);</div>
+<div class="line"><span class="lineno">  256</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  257</span>          printf(<span class="stringliteral">&quot;&gt;&gt;&gt; Erreur lors de la sauvegarde.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  258</span>        }</div>
+<div class="line"><span class="lineno">  259</span>      }</div>
+<div class="line"><span class="lineno">  260</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  263</span>      LOG_INFO(MOD_MAIN, <span class="stringliteral">&quot;Fermeture demandée par l&#39;utilisateur&quot;</span>);</div>
+<div class="line"><span class="lineno">  264</span>      printf(<span class="stringliteral">&quot;Au revoir !\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  265</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  266</span> </div>
+<div class="line"><span class="lineno">  267</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  268</span>      LOG_WARN(MOD_MAIN, <span class="stringliteral">&quot;Choix invalide: %d&quot;</span>, choix);</div>
+<div class="line"><span class="lineno">  269</span>      printf(<span class="stringliteral">&quot;Choix invalide.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  270</span>    }</div>
+<div class="line"><span class="lineno">  271</span>  }</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>  <span class="comment">// Nettoyage</span></div>
+<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">if</span> (g) {</div>
+<div class="line"><span class="lineno">  275</span>    LOG_DEBUG(MOD_MAIN, <span class="stringliteral">&quot;Libération du graphe en mémoire&quot;</span>);</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="dijkstra_8c.html#abca3fdcb1a60fb08d61571ad9cc2c05c">graphe_detruire</a>(g);</div>
+<div class="line"><span class="lineno">  277</span>  }</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>  LOG_INFO(MOD_MAIN, <span class="stringliteral">&quot;Session terminée&quot;</span>);</div>
+<div class="line"><span class="lineno">  280</span>  logger_close();</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  283</span>}</div>
+<div class="ttc" id="adijkstra_8c_html_a381bdc9e6a3ddc54ed0710249f8c0ccd"><div class="ttname"><a href="dijkstra_8c.html#a381bdc9e6a3ddc54ed0710249f8c0ccd">graphe_sauvegarder</a></div><div class="ttdeci">bool graphe_sauvegarder(Graphe *g, const char *nom_fichier)</div><div class="ttdoc">Sauvegarde la topologie du réseau dans un fichier texte.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8c_source.html#l00232">dijkstra.c:232</a></div></div>
+<div class="ttc" id="adijkstra_8c_html_a884a6c2ed91f47fb047348db4b2b3e51"><div class="ttname"><a href="dijkstra_8c.html#a884a6c2ed91f47fb047348db4b2b3e51">graphe_afficher</a></div><div class="ttdeci">void graphe_afficher(Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8c_source.html#l00120">dijkstra.c:120</a></div></div>
+<div class="ttc" id="adijkstra_8c_html_aa830572ceebc271506945fefcc5b619e"><div class="ttname"><a href="dijkstra_8c.html#aa830572ceebc271506945fefcc5b619e">graphe_charger</a></div><div class="ttdeci">Graphe * graphe_charger(const char *nom_fichier)</div><div class="ttdoc">Charge la topologie du réseau depuis un fichier texte.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8c_source.html#l00262">dijkstra.c:262</a></div></div>
+<div class="ttc" id="adijkstra_8c_html_abca3fdcb1a60fb08d61571ad9cc2c05c"><div class="ttname"><a href="dijkstra_8c.html#abca3fdcb1a60fb08d61571ad9cc2c05c">graphe_detruire</a></div><div class="ttdeci">void graphe_detruire(Graphe *g)</div><div class="ttdoc">Libère toute la mémoire associée au graphe (Nœuds, Arêtes, Matrice).</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8c_source.html#l00040">dijkstra.c:40</a></div></div>
+<div class="ttc" id="amain_8c_html_a26f23b0a449e679f092983b1ef986fa2"><div class="ttname"><a href="#a26f23b0a449e679f092983b1ef986fa2">afficher_menu</a></div><div class="ttdeci">void afficher_menu()</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00038">main.c:38</a></div></div>
+<div class="ttc" id="amain_8c_html_a37d8ab5be3c11050660d64e3c72c4826"><div class="ttname"><a href="#a37d8ab5be3c11050660d64e3c72c4826">menu_k_shortest</a></div><div class="ttdeci">void menu_k_shortest(Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00097">main.c:97</a></div></div>
+<div class="ttc" id="amain_8c_html_a3ad9847319be43403b546b596f0ee98e"><div class="ttname"><a href="#a3ad9847319be43403b546b596f0ee98e">menu_dijkstra</a></div><div class="ttdeci">void menu_dijkstra(Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00073">main.c:73</a></div></div>
+<div class="ttc" id="amain_8c_html_a432757db13bf20b412d6228233d31775"><div class="ttname"><a href="#a432757db13bf20b412d6228233d31775">menu_backtracking</a></div><div class="ttdeci">void menu_backtracking(Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00129">main.c:129</a></div></div>
+<div class="ttc" id="amain_8c_html_a522a68e001b36eb7d9c1a2a63d6c74cd"><div class="ttname"><a href="#a522a68e001b36eb7d9c1a2a63d6c74cd">formatter_chemin</a></div><div class="ttdeci">static void formatter_chemin(const char *entree, char *sortie)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00026">main.c:26</a></div></div>
+<div class="ttc" id="asecurite_8c_html_a4370eac228145617d0e3627c3b10d081"><div class="ttname"><a href="securite_8c.html#a4370eac228145617d0e3627c3b10d081">detecter_cycles</a></div><div class="ttdeci">int detecter_cycles(Graphe *g)</div><div class="ttdoc">Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d...</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00052">securite.c:52</a></div></div>
+<div class="ttc" id="asecurite_8c_html_ad543fa19b5a48eadcb131545d552aa5d"><div class="ttname"><a href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d">securite_analyser_vulnerabilites</a></div><div class="ttdeci">void securite_analyser_vulnerabilites(Graphe *g)</div><div class="ttdoc">Rapport complet de vulnérabilité. Exécute tous les tests ci-dessus et affiche un diagnostic console.</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00218">securite.c:218</a></div></div>
+<div class="ttc" id="astruct_graphe_html"><div class="ttname"><a href="struct_graphe.html">Graphe</a></div><div class="ttdoc">Structure du graphe représentant le réseau.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00048">dijkstra.h:48</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="main_8c_source.html#l00038">afficher_menu()</a>, <a class="el" href="securite_8c_source.html#l00052">detecter_cycles()</a>, <a class="el" href="main_8c_source.html#l00026">formatter_chemin()</a>, <a class="el" href="dijkstra_8c_source.html#l00120">graphe_afficher()</a>, <a class="el" href="dijkstra_8c_source.html#l00262">graphe_charger()</a>, <a class="el" href="dijkstra_8c_source.html#l00040">graphe_detruire()</a>, <a class="el" href="dijkstra_8c_source.html#l00232">graphe_sauvegarder()</a>, <a class="el" href="main_8c_source.html#l00129">menu_backtracking()</a>, <a class="el" href="main_8c_source.html#l00073">menu_dijkstra()</a>, <a class="el" href="main_8c_source.html#l00097">menu_k_shortest()</a>, et <a class="el" href="securite_8c_source.html#l00218">securite_analyser_vulnerabilites()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#amain_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="amain_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title=" " alt="" coords="5,279,55,304"/>
+<area shape="rect" href="main_8c.html#a26f23b0a449e679f092983b1ef986fa2" title=" " alt="" coords="154,29,258,55"/>
+<area shape="poly" title=" " alt="" coords="29,278,33,238,43,183,64,124,81,97,101,72,118,59,141,51,138,55,121,64,105,76,85,100,69,126,48,185,38,239,34,278"/>
+<area shape="rect" href="securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="392,61,505,87"/>
+<area shape="poly" title=" " alt="" coords="30,278,35,245,46,200,68,154,83,134,101,116,122,105,150,96,222,83,302,76,379,73,374,77,303,81,222,88,151,101,124,110,104,120,87,137,72,157,51,202,40,246,35,279"/>
+<area shape="rect" href="main_8c.html#a522a68e001b36eb7d9c1a2a63d6c74cd" title=" " alt="" coords="145,180,267,206"/>
+<area shape="poly" title=" " alt="" coords="38,277,64,245,101,215,131,203,128,207,104,219,68,249,43,279"/>
+<area shape="rect" href="dijkstra_8c.html#a884a6c2ed91f47fb047348db4b2b3e51" title=" " alt="" coords="151,229,261,255"/>
+<area shape="poly" title=" " alt="" coords="53,281,102,264,137,255,134,259,103,269,57,284"/>
+<area shape="rect" href="dijkstra_8c.html#aa830572ceebc271506945fefcc5b619e" title="Charge la topologie du réseau depuis un fichier texte." alt="" coords="151,279,261,304"/>
+<area shape="poly" title=" " alt="" coords="54,289,137,290,133,293,56,294"/>
+<area shape="rect" href="dijkstra_8c.html#abca3fdcb1a60fb08d61571ad9cc2c05c" title="Libère toute la mémoire associée au graphe (Nœuds, Arêtes, Matrice)." alt="" coords="151,328,261,354"/>
+<area shape="poly" title=" " alt="" coords="54,298,103,314,138,324,133,327,102,319,56,303"/>
+<area shape="rect" href="dijkstra_8c.html#a381bdc9e6a3ddc54ed0710249f8c0ccd" title="Sauvegarde la topologie du réseau dans un fichier texte." alt="" coords="137,377,275,403"/>
+<area shape="poly" title=" " alt="" coords="40,302,68,334,104,364,124,374,120,376,101,368,64,338,41,307"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="139,435,273,460"/>
+<area shape="poly" title=" " alt="" coords="35,302,60,357,80,387,104,413,127,428,122,430,101,418,75,391,56,360,36,308"/>
+<area shape="rect" href="main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="155,515,257,540"/>
+<area shape="poly" title=" " alt="" coords="33,302,43,337,56,381,76,428,105,471,127,491,154,507,149,509,124,495,101,475,71,431,50,383,38,338,33,308"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="145,615,266,640"/>
+<area shape="poly" title=" " alt="" coords="32,302,39,349,50,413,71,484,86,519,105,551,133,581,166,606,161,607,129,585,101,554,81,521,66,486,44,414,33,349,32,307"/>
+<area shape="rect" href="securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,131,309,156"/>
+<area shape="poly" title=" " alt="" coords="32,278,55,223,75,192,101,165,110,161,107,166,104,170,79,195,60,225,38,279"/>
+<area shape="rect" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0" title=" " alt="" coords="624,29,701,55"/>
+<area shape="poly" title=" " alt="" coords="504,63,610,49,606,52,507,68"/>
+<area shape="poly" title=" " alt="" coords="632,29,626,21,630,11,642,5,663,3,684,5,697,14,692,15,682,10,662,8,644,10,634,15,632,20,637,29"/>
+<area shape="rect" href="dijkstra_8c.html#a0959b2dfdba06257de37da0f563487e7" title="Ajoute un arc pondéré entre deux nœuds." alt="" coords="378,324,520,350"/>
+<area shape="poly" title=" " alt="" coords="261,299,364,319,360,322,262,304"/>
+<area shape="rect" href="dijkstra_8c.html#a58cbcfc3a8f9120bafdbc5b9ea129de4" title="Variante avec nom personnalisé" alt="" coords="374,210,523,250"/>
+<area shape="poly" title=" " alt="" coords="260,277,308,265,362,253,357,256,310,270,263,281"/>
+<area shape="rect" href="dijkstra_8c.html#ae9eb42a80d2e863ca022db43cc012dbe" title="Alloue et initialise un graphe vide." alt="" coords="400,275,497,300"/>
+<area shape="poly" title=" " alt="" coords="261,288,387,287,383,290,263,293"/>
+<area shape="rect" href="dijkstra_8c.html#a2e3e53c139166f6235e948259ac489ea" title=" " alt="" coords="588,225,737,251"/>
+<area shape="poly" title=" " alt="" coords="522,230,575,234,570,236,524,235"/>
+<area shape="rect" href="main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="392,489,505,515"/>
+<area shape="poly" title=" " alt="" coords="266,458,379,485,375,487,266,464"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="785,489,898,515"/>
+<area shape="poly" title=" " alt="" coords="273,451,771,494,768,498,273,456"/>
+<area shape="rect" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="376,374,521,414"/>
+<area shape="poly" title=" " alt="" coords="267,432,363,412,359,415,269,436"/>
+<area shape="rect" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="629,384,696,410"/>
+<area shape="poly" title=" " alt="" coords="521,392,616,395,611,397,522,398"/>
+<area shape="poly" title=" " alt="" coords="693,408,738,431,812,480,807,480,735,435,693,413"/>
+<area shape="poly" title=" " alt="" coords="632,383,626,375,630,366,642,360,663,357,684,360,697,369,692,369,682,365,662,363,644,365,634,369,632,375,637,384"/>
+<area shape="rect" href="backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="808,384,875,410"/>
+<area shape="poly" title=" " alt="" coords="696,394,795,396,790,398,697,399"/>
+<area shape="poly" title=" " alt="" coords="257,520,379,508,375,511,258,525"/>
+<area shape="poly" title=" " alt="" coords="257,526,386,528,540,525,661,517,772,509,767,510,662,522,540,530,386,533,258,531"/>
+<area shape="rect" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="606,593,719,619"/>
+<area shape="poly" title=" " alt="" coords="246,538,299,554,358,569,480,588,593,601,587,602,480,593,356,574,298,560,246,544"/>
+<area shape="rect" href="routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="792,593,890,619"/>
+<area shape="poly" title=" " alt="" coords="719,604,779,606,774,606,720,609"/>
+<area shape="poly" title=" " alt="" coords="232,612,406,524,411,521,234,616"/>
+<area shape="rect" href="routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81" title=" " alt="" coords="357,641,540,667"/>
+<area shape="poly" title=" " alt="" coords="267,631,344,642,339,643,267,637"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="366,691,531,732"/>
+<area shape="poly" title=" " alt="" coords="246,638,376,685,371,686,245,644"/>
+<area shape="poly" title=" " alt="" coords="531,692,648,663,700,646,735,629,754,612,777,585,820,529,825,526,781,589,758,616,738,634,702,651,649,668,532,697"/>
+<area shape="poly" title=" " alt="" coords="517,688,539,677,563,658,587,637,610,627,615,625,590,642,566,662,542,682,518,693"/>
+<area shape="rect" href="routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="594,699,731,724"/>
+<area shape="poly" title=" " alt="" coords="532,709,581,711,576,712,532,714"/>
+<area shape="poly" title=" " alt="" coords="249,128,356,96,383,90,379,93,358,101,252,132"/>
+<area shape="rect" href="securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="366,111,531,136"/>
+<area shape="poly" title=" " alt="" coords="308,133,353,130,348,133,311,137"/>
+<area shape="rect" href="securite_8c.html#a1cf4224c021167a4369de4ea48d5d5a3" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="364,160,533,186"/>
+<area shape="poly" title=" " alt="" coords="308,154,351,160,347,162,310,158"/>
+<area shape="rect" href="securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="629,103,696,128"/>
+<area shape="poly" title=" " alt="" coords="531,118,615,116,611,119,533,123"/>
+<area shape="poly" title=" " alt="" coords="632,102,626,94,630,84,642,78,663,76,684,79,697,87,692,88,682,84,662,81,644,83,634,88,632,93,637,103"/>
+<area shape="rect" href="securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="806,79,876,104"/>
+<area shape="poly" title=" " alt="" coords="696,109,793,97,788,99,698,114"/>
+<area shape="rect" href="securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="803,128,880,154"/>
+<area shape="poly" title=" " alt="" coords="696,118,790,132,785,134,697,123"/>
+<area shape="rect" href="securite_8c.html#a9168b48ff7f7d88fd3f713fead433645" title=" " alt="" coords="594,176,731,202"/>
+<area shape="poly" title=" " alt="" coords="533,177,581,182,576,184,534,182"/>
+<area shape="poly" title=" " alt="" coords="632,175,626,167,630,158,642,152,663,149,684,152,697,161,692,161,682,157,662,155,644,157,634,161,632,167,637,176"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a432757db13bf20b412d6228233d31775" name="a432757db13bf20b412d6228233d31775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a432757db13bf20b412d6228233d31775">&#9670;&#160;</a></span>menu_backtracking()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menu_backtracking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00129">129</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                  {</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordflow">if</span> (!g) {</div>
+<div class="line"><span class="lineno">  131</span>    printf(<span class="stringliteral">&quot;Erreur : Aucun graphe charge.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  133</span>  }</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordtype">int</span> src, dest;</div>
+<div class="line"><span class="lineno">  135</span>  <span class="keywordtype">float</span> min_bp, max_cout;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>  printf(<span class="stringliteral">&quot;Source : &quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;src) != 1)</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  140</span>  printf(<span class="stringliteral">&quot;Destination : &quot;</span>);</div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;dest) != 1)</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  143</span>  printf(<span class="stringliteral">&quot;Bande Passante Minimale requise : &quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%f&quot;</span>, &amp;min_bp) != 1)</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  146</span>  printf(<span class="stringliteral">&quot;Cout Maximum autorise : &quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%f&quot;</span>, &amp;max_cout) != 1)</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  149</span> </div>
+<div class="line"><span class="lineno">  150</span>  <span class="comment">// Pour cet exemple interactif, on ne demande pas de nœuds obligatoires (NULL)</span></div>
+<div class="line"><span class="lineno">  151</span>  <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *c =</div>
+<div class="line"><span class="lineno">  152</span>      <a class="code hl_function" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076">routage_backtracking_contraint</a>(g, src, dest, min_bp, max_cout, NULL, 0);</div>
+<div class="line"><span class="lineno">  153</span>  <a class="code hl_function" href="#ac4aef0759d8a84faa4b43d5596fda57b">afficher_chemin</a>(c, <span class="stringliteral">&quot;Resultat Backtracking Contraint&quot;</span>);</div>
+<div class="line"><span class="lineno">  154</span>  <a class="code hl_function" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(c);</div>
+<div class="line"><span class="lineno">  155</span>}</div>
+<div class="ttc" id="abacktracking_8c_html_af774ccbdbe171c882ea576d0812cf076"><div class="ttname"><a href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076">routage_backtracking_contraint</a></div><div class="ttdeci">Chemin * routage_backtracking_contraint(Graphe *g, int dep, int arr, float min_bp, float max_c, int *req, int nb_r)</div><div class="ttdoc">Recherche par Backtracking avec Élagage (Pruning).</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00084">backtracking.c:84</a></div></div>
+<div class="ttc" id="amain_8c_html_ac4aef0759d8a84faa4b43d5596fda57b"><div class="ttname"><a href="#ac4aef0759d8a84faa4b43d5596fda57b">afficher_chemin</a></div><div class="ttdeci">void afficher_chemin(Chemin *c, const char *titre)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00054">main.c:54</a></div></div>
+<div class="ttc" id="aroutage_8c_html_a5f3c9dc95951b06193d080420a6ef90c"><div class="ttname"><a href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a></div><div class="ttdeci">void chemin_detruire(Chemin *c)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00017">routage.c:17</a></div></div>
+<div class="ttc" id="astruct_chemin_html"><div class="ttname"><a href="struct_chemin.html">Chemin</a></div><div class="ttdoc">Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00028">routage.h:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="main_8c_source.html#l00054">afficher_chemin()</a>, <a class="el" href="routage_8c_source.html#l00017">chemin_detruire()</a>, et <a class="el" href="backtracking_8c_source.html#l00084">routage_backtracking_contraint()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a432757db13bf20b412d6228233d31775_cgraph.png" border="0" usemap="#amain_8c_a432757db13bf20b412d6228233d31775_cgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a432757db13bf20b412d6228233d31775_cgraph" id="amain_8c_a432757db13bf20b412d6228233d31775_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,140,82"/>
+<area shape="rect" href="main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="204,5,317,31"/>
+<area shape="poly" title=" " alt="" coords="122,53,198,34,193,37,124,58"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="496,69,610,95"/>
+<area shape="poly" title=" " alt="" coords="140,68,481,78,480,83,140,73"/>
+<area shape="rect" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="188,114,333,154"/>
+<area shape="poly" title=" " alt="" coords="112,80,188,107,183,109,111,85"/>
+<area shape="rect" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="381,131,448,156"/>
+<area shape="poly" title=" " alt="" coords="334,136,368,141,363,141,333,141"/>
+<area shape="poly" title=" " alt="" coords="445,127,506,102,511,101,447,133"/>
+<area shape="poly" title=" " alt="" coords="391,129,386,122,389,113,399,106,415,104,432,107,442,116,437,115,430,112,415,109,401,111,393,116,391,122,395,132"/>
+<area shape="rect" href="backtracking_8c.html#a332ad0b3cf1a41a5f452fb6fd1435923" title=" " alt="" coords="519,131,587,156"/>
+<area shape="poly" title=" " alt="" coords="449,141,506,143,501,144,449,146"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a432757db13bf20b412d6228233d31775_icgraph.png" border="0" usemap="#amain_8c_a432757db13bf20b412d6228233d31775_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a432757db13bf20b412d6228233d31775_icgraph" id="amain_8c_a432757db13bf20b412d6228233d31775_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,237,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="85,19,55,21,55,16,90,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ad9847319be43403b546b596f0ee98e" name="a3ad9847319be43403b546b596f0ee98e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad9847319be43403b546b596f0ee98e">&#9670;&#160;</a></span>menu_dijkstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menu_dijkstra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00073">73</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                              {</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">if</span> (!g) {</div>
+<div class="line"><span class="lineno">   75</span>    printf(<span class="stringliteral">&quot;Erreur : Aucun graphe charge.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   77</span>  }</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordtype">int</span> src, dest;</div>
+<div class="line"><span class="lineno">   79</span>  printf(<span class="stringliteral">&quot;Source : &quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;src) != 1)</div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   82</span>  printf(<span class="stringliteral">&quot;Destination : &quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;dest) != 1)</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>  <span class="keywordtype">char</span> critere[20];</div>
+<div class="line"><span class="lineno">   87</span>  printf(<span class="stringliteral">&quot;Critere (cout/latence/bande_passante/securite) [defaut: cout] : &quot;</span>);</div>
+<div class="line"><span class="lineno">   88</span>  scanf(<span class="stringliteral">&quot;%s&quot;</span>, critere);</div>
+<div class="line"><span class="lineno">   89</span>  <span class="comment">// Valeur par défaut si entrée vide ou invalide géré par l&#39;algo (fallback sur</span></div>
+<div class="line"><span class="lineno">   90</span>  <span class="comment">// cout)</span></div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>  <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *c = <a class="code hl_function" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(g, src, dest, critere);</div>
+<div class="line"><span class="lineno">   93</span>  <a class="code hl_function" href="#ac4aef0759d8a84faa4b43d5596fda57b">afficher_chemin</a>(c, <span class="stringliteral">&quot;Resultat Dijkstra&quot;</span>);</div>
+<div class="line"><span class="lineno">   94</span>  <a class="code hl_function" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(c);</div>
+<div class="line"><span class="lineno">   95</span>}</div>
+<div class="ttc" id="aroutage_8c_html_a6399dd39c69a8d366d0449436a62a3fc"><div class="ttname"><a href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a></div><div class="ttdeci">Chemin * routage_dijkstra(Graphe *g, int source, int destination, const char *critere)</div><div class="ttdoc">Algorithme de Dijkstra (Routage Optimal).</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00050">routage.c:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="main_8c_source.html#l00054">afficher_chemin()</a>, <a class="el" href="routage_8c_source.html#l00017">chemin_detruire()</a>, et <a class="el" href="routage_8c_source.html#l00050">routage_dijkstra()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a3ad9847319be43403b546b596f0ee98e_cgraph.png" border="0" usemap="#amain_8c_a3ad9847319be43403b546b596f0ee98e_cgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a3ad9847319be43403b546b596f0ee98e_cgraph" id="amain_8c_a3ad9847319be43403b546b596f0ee98e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,108,80"/>
+<area shape="rect" href="main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="156,5,269,31"/>
+<area shape="poly" title=" " alt="" coords="99,52,157,35,153,38,101,56"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="156,55,269,80"/>
+<area shape="poly" title=" " alt="" coords="108,65,143,67,138,68,108,70"/>
+<area shape="rect" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="156,104,269,130"/>
+<area shape="poly" title=" " alt="" coords="100,78,157,98,152,100,99,84"/>
+<area shape="rect" href="routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="317,104,415,130"/>
+<area shape="poly" title=" " alt="" coords="269,114,304,117,299,117,270,119"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a3ad9847319be43403b546b596f0ee98e_icgraph.png" border="0" usemap="#amain_8c_a3ad9847319be43403b546b596f0ee98e_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a3ad9847319be43403b546b596f0ee98e_icgraph" id="amain_8c_a3ad9847319be43403b546b596f0ee98e_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,205,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="85,19,55,21,55,16,90,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a37d8ab5be3c11050660d64e3c72c4826" name="a37d8ab5be3c11050660d64e3c72c4826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d8ab5be3c11050660d64e3c72c4826">&#9670;&#160;</a></span>menu_k_shortest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void menu_k_shortest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="main_8c_source.html#l00097">97</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>                                {</div>
+<div class="line"><span class="lineno">   98</span>  <span class="keywordflow">if</span> (!g) {</div>
+<div class="line"><span class="lineno">   99</span>    printf(<span class="stringliteral">&quot;Erreur : Aucun graphe charge.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  101</span>  }</div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">int</span> src, dest, k;</div>
+<div class="line"><span class="lineno">  103</span>  printf(<span class="stringliteral">&quot;Source : &quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;src) != 1)</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  106</span>  printf(<span class="stringliteral">&quot;Destination : &quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;dest) != 1)</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  109</span>  printf(<span class="stringliteral">&quot;Nombre de chemins (K) : &quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> (scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;k) != 1)</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>  <span class="comment">// On utilise le critère &quot;cout&quot; par défaut pour simplifier l&#39;interaction</span></div>
+<div class="line"><span class="lineno">  114</span>  <a class="code hl_struct" href="struct_ensemble_chemins.html">EnsembleChemins</a> *ec = <a class="code hl_function" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf">routage_k_chemins_plus_courts</a>(g, src, dest, k, <span class="stringliteral">&quot;cout&quot;</span>);</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>  <span class="keywordflow">if</span> (ec) {</div>
+<div class="line"><span class="lineno">  117</span>    printf(<span class="stringliteral">&quot;\nResultats K-Plus Courts Chemins (K=%d) :\n&quot;</span>, ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>);</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>; i++) {</div>
+<div class="line"><span class="lineno">  119</span>      <span class="keywordtype">char</span> label[20];</div>
+<div class="line"><span class="lineno">  120</span>      sprintf(label, <span class="stringliteral">&quot;Chemin #%d&quot;</span>, i + 1);</div>
+<div class="line"><span class="lineno">  121</span>      <a class="code hl_function" href="#ac4aef0759d8a84faa4b43d5596fda57b">afficher_chemin</a>(&amp;ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i], label);</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>    <a class="code hl_function" href="routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81">ensemble_chemins_detruire</a>(ec); <span class="comment">// Nettoyage</span></div>
+<div class="line"><span class="lineno">  124</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  125</span>    printf(<span class="stringliteral">&quot;Aucun ensemble de chemins retourne.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  126</span>  }</div>
+<div class="line"><span class="lineno">  127</span>}</div>
+<div class="ttc" id="aroutage_8c_html_a28c046b774836a7ea3e1d0d47bd031cf"><div class="ttname"><a href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf">routage_k_chemins_plus_courts</a></div><div class="ttdeci">EnsembleChemins * routage_k_chemins_plus_courts(Graphe *g, int source, int destination, int k, const char *critere)</div><div class="ttdoc">Algorithme de Yen (K-Plus Courts Chemins).</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00168">routage.c:168</a></div></div>
+<div class="ttc" id="aroutage_8c_html_a3895d2d7244d1c6edc4115e77b19af81"><div class="ttname"><a href="routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81">ensemble_chemins_detruire</a></div><div class="ttdeci">void ensemble_chemins_detruire(EnsembleChemins *ec)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00025">routage.c:25</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html"><div class="ttname"><a href="struct_ensemble_chemins.html">EnsembleChemins</a></div><div class="ttdoc">Conteneur pour les résultats de recherche multiple (ex: K-chemins).</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00041">routage.h:41</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html_a5430bbe2e567fb4fa4b249f4ede09792"><div class="ttname"><a href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">EnsembleChemins::chemins</a></div><div class="ttdeci">Chemin * chemins</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00042">routage.h:42</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html_a98a9559da5f7bb2ff4e302f619914855"><div class="ttname"><a href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">EnsembleChemins::nombre</a></div><div class="ttdeci">int nombre</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00043">routage.h:43</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="main_8c_source.html#l00054">afficher_chemin()</a>, <a class="el" href="routage_8h_source.html#l00042">EnsembleChemins::chemins</a>, <a class="el" href="routage_8c_source.html#l00025">ensemble_chemins_detruire()</a>, <a class="el" href="routage_8h_source.html#l00043">EnsembleChemins::nombre</a>, et <a class="el" href="routage_8c_source.html#l00168">routage_k_chemins_plus_courts()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00159">main()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a37d8ab5be3c11050660d64e3c72c4826_cgraph.png" border="0" usemap="#amain_8c_a37d8ab5be3c11050660d64e3c72c4826_cgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a37d8ab5be3c11050660d64e3c72c4826_cgraph" id="amain_8c_a37d8ab5be3c11050660d64e3c72c4826_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,127,80"/>
+<area shape="rect" href="main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="210,5,323,31"/>
+<area shape="poly" title=" " alt="" coords="120,52,198,34,194,37,122,56"/>
+<area shape="rect" href="routage_8c.html#a3895d2d7244d1c6edc4115e77b19af81" title=" " alt="" coords="175,55,358,80"/>
+<area shape="poly" title=" " alt="" coords="126,65,162,66,157,69,128,70"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="184,104,349,145"/>
+<area shape="poly" title=" " alt="" coords="114,78,181,98,176,101,114,84"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="418,63,531,88"/>
+<area shape="poly" title=" " alt="" coords="349,103,400,93,405,92,350,108"/>
+<area shape="rect" href="routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="406,112,542,138"/>
+<area shape="poly" title=" " alt="" coords="349,122,393,125,388,125,350,127"/>
+<area shape="rect" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="418,161,531,187"/>
+<area shape="poly" title=" " alt="" coords="350,142,405,157,400,157,349,147"/>
+<area shape="rect" href="routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="590,161,689,187"/>
+<area shape="poly" title=" " alt="" coords="531,172,577,174,572,174,532,177"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a37d8ab5be3c11050660d64e3c72c4826_icgraph.png" border="0" usemap="#amain_8c_a37d8ab5be3c11050660d64e3c72c4826_icgraph" loading="lazy" alt=""/></div>
+<map name="amain_8c_a37d8ab5be3c11050660d64e3c72c4826_icgraph" id="amain_8c_a37d8ab5be3c11050660d64e3c72c4826_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,224,31"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="main_8c.html">main.c</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -123,7 +123,7 @@ Description exhaustive de l'arborescence :
 | ├── `backtracking.c` | Module CSP | Algorithme récursif pour les chemins sous contraintes. |
 | ├── `securite.c` | Module Audit | Détection de cycles, composantes connexes, points critiques. |
 | ├── `liste_chainee.c` | Module QoS | Gestion des files d'attente prioritaires (Linked List). |
-| └── `utils.c` | Utilitaires | Fonctions de logs couleurs, gestion d'erreurs, I/O. |
+| └── `utils.c` | Utilitaires | Fonctions de logs couleurs, gestion d'erreurs, I/O et **Générateur de Topologies**. |
 | **`tests/`** | Assurance Qualité | Tests unitaires et d'intégration. |
 | ├── `test_donnees_reelles.c` | Test de Charge | Charge 20 fichiers topologies réelles pour valider la robustesse. |
 | └── `resultats_tests/` | Artefacts | Sorties graphiques `.png` et logs `.log`. |

@@ -1,0 +1,13 @@
+<map id="afficher_chemin" name="afficher_chemin">
+<area shape="rect" id="Node000001" title=" " alt="" coords="285,55,398,80"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,5,237,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="277,50,217,34,217,29,282,49"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="119,55,221,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,68,222,70,221,65,272,67"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="109,104,230,130"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="282,85,218,106,217,101,277,86"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,55,55,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,39,56,61,54,57,118,34"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="101,69,56,70,55,65,105,66"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="115,100,55,79,55,73,119,97"/>
+</map>

@@ -305,10 +305,11 @@ Le système génère des preuves visuelles.
 ## 10. Mentions Légales et Remerciements
 
 ### Équipe de Réalisation
-*   **[Votre Nom]** : Chef de Projet
-*   [Collaborateur 1] : Développeur
-*   [Collaborateur 2] : Testeur
-
+*   DEDY PRINCE EMMANUEL : Chef de Projet
+*   AHUI EHUIENY KOUTOUA SEM : Dev.files
+*   SORO NAWA JUNIOR : Dev. Sécurité
+*   ASSI ANOKOU DANIEL : Testeur/Doc
+*   GNAZOU GOUDI BERNARD : Dev. Routage, Architecte, Dev. Graphes
 ### Droit d'Auteur
 Projet académique sous licence **MIT**. Le code est libre d'utilisation à des fins pédagogiques.
 Les algorithmes implémentés (Dijkstra, Tarjan) appartiennent au domaine public.

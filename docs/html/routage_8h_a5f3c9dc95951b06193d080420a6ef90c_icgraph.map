@@ -1,0 +1,21 @@
+<map id="chemin_detruire" name="chemin_detruire">
+<area shape="rect" id="Node000001" title=" " alt="" coords="692,108,805,134"/>
+<area shape="rect" id="Node000002" href="$backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="527,29,595,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="699,102,593,58,594,53,704,101"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,83,237,108"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="675,120,238,101,237,96,677,115"/>
+<area shape="rect" id="Node000006" href="$main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="119,133,221,159"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="676,127,222,147,221,141,676,121"/>
+<area shape="rect" id="Node000007" href="$routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="478,183,644,224"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="706,140,610,185,608,180,700,141"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="592,14,582,10,561,8,541,10,531,15,529,20,534,30,529,28,523,21,527,11,540,5,561,3,584,5,597,14"/>
+<area shape="rect" id="Node000003" href="$backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,18,430,58"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="509,42,431,42,430,37,515,41"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="272,65,216,85,214,80,277,62"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,133,55,159"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="116,117,56,140,54,135,119,112"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="101,148,56,149,54,144,105,144"/>
+<area shape="rect" id="Node000008" href="$main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="297,188,418,214"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="460,202,418,204,418,199,466,202"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="279,197,195,190,102,174,55,159,55,153,103,169,196,185,284,196"/>
+</map>

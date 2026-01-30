@@ -1,0 +1,9 @@
+<map id="src/liste_chainee.h" name="src/liste_chainee.h">
+<area shape="rect" id="Node000001" title="Module 4 : Simulation et Gestion de Flux (QoS)." alt="" coords="56,5,186,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,66,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,31,63,71,60,67,104,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,79,152,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,29,123,64,118,62,119,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="176,79,234,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,29,182,68,176,69,134,34"/>
+</map>

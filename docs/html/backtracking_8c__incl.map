@@ -1,0 +1,19 @@
+<map id="src/backtracking.c" name="src/backtracking.c">
+<area shape="rect" id="Node000001" title="Exploration exhaustive sous contraintes (Section 3.2.2.2)." alt="" coords="176,5,304,31"/>
+<area shape="rect" id="Node000002" href="$backtracking_8h.html" title="Exploration exhaustive avec élagage." alt="" coords="81,79,188,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,34,167,72,163,68,224,30"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="211,79,268,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="241,29,242,64,237,62,239,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="293,79,357,105"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="254,29,302,69,297,70,254,34"/>
+<area shape="rect" id="Node000003" href="$routage_8h.html" title="Module 2 : Algorithmes de Routage Optimal &amp; Intelligent." alt="" coords="97,153,172,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,102,137,137,132,136,134,107"/>
+<area shape="rect" id="Node000004" href="$graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="99,226,170,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="136,176,137,211,132,210,133,181"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,300,80,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="121,252,71,293,68,288,116,253"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="104,300,165,326"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="136,250,137,285,132,283,133,254"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="188,300,252,326"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="150,250,197,290,191,290,148,255"/>
+</map>

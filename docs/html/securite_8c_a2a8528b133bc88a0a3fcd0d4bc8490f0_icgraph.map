@@ -1,0 +1,11 @@
+<map id="dfs_cycle" name="dfs_cycle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="518,29,596,55"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="580,13,573,10,557,8,542,10,535,14,533,20,537,30,532,28,528,21,530,11,541,5,557,3,575,5,585,15"/>
+<area shape="rect" id="Node000002" href="$securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="357,29,470,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="500,42,471,45,471,40,505,42"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,29,55,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,45,55,45,55,40,342,40"/>
+<area shape="rect" id="Node000004" href="$securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,55,309,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="345,51,310,58,309,52,339,51"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="95,53,55,48,55,43,100,50"/>
+</map>

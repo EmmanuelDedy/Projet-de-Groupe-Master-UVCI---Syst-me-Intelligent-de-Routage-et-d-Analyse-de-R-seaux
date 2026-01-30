@@ -1,0 +1,144 @@
+
+--- SESSION DE TEST : Mon Jan 26 12:58:42 2026
+---------------------------------------------------
+
+[SECTION] TEST GLOBAL INTÉGRATION - Simulation complète : Design -> Audit -> Routage -> Panne -> Visu
+[INFO] Phase 1: Génération de la Topologie (Grille 5x5)...
+[SUCCES] Creation Graphe : Graphe Grille 25 noeuds généré
+[INFO] Phase 2: Test Persistence (I/O)...
+[SUCCES] Sauvegarde : resultats_tests/simulation_topo.txt
+[SUCCES] Chargement : Graphe rechargé avec succès (25 noeuds)
+[INFO] Phase 3: Audit de Sécurité...
+[SUCCES] Détection Cycles : Cycles détectés (Attendu pour une grille)
+[INFO] Phase 4: Calcul Itinéraire Nominal (0 -> 24)...
+[SUCCES] Routage Dijkstra : Chemin trouvé, Longueur: 9, Coût: 40.0
+[INFO] Phase 5: Simulation de Panne Majeure...
+[WARN] Lien 0 <-> 1 coupé !
+[INFO] Phase 6: Recalcul Itinéraire (Failover)...
+[SUCCES] Routage Secours : Chemin alternatif trouvé, Longueur: 9
+[SUCCES] Vérification Route : Le chemin contourne le lien coupé
+[INFO] Phase 7: Génération des Artefacts Visuels...
+[SUCCES] Export DOT : resultats_tests/simulation_visu.dot
+[INFO] Génération image du graphe...
+[SUCCES] Visualization Mode : Image générée: resultats_tests/simulation_visu.png
+
+[SECTION] FIN SIMULATION - Le système a démontré ses capacités de résilience et d'analyse.
+
+--- SESSION DE TEST : Mon Jan 26 12:58:44 2026
+---------------------------------------------------
+
+[SECTION] TEST DIJKSTRA - Validation de l'algorithme de plus court chemin
+[SUCCES] Dijkstra Chemin Simple : Chemin correct et coût correct (40)
+[SUCCES] Dijkstra Maillage Direct : A bien trouvé le lien direct
+[SUCCES] Dijkstra Logique Anneau : Chemins corrects dans l'anneau
+
+--- SESSION DE TEST : Mon Jan 26 12:58:45 2026
+---------------------------------------------------
+
+[SECTION] TEST BACKTRACKING - Validation du routage avec contraintes
+[SUCCES] Backtracking Contrainte Coût : Respecte la contrainte de coût
+[SUCCES] Backtracking Noeud Obligatoire : A visité le noeud obligatoire 2
+[SUCCES] Backtracking Min Bande Passante : A choisi le chemin à haute BP
+
+--- SESSION DE TEST : Mon Jan 26 12:58:46 2026
+---------------------------------------------------
+
+[SECTION] TEST GENERATION TOPOLOGIE - Vérification de la création de graphes
+[SUCCES] GenTopo Simple : Création de 50 noeuds OK
+[SUCCES] GenTopo Arbre : Arbre créé avec racine connectée
+[SUCCES] GenTopo Grille : Degré coin correct
+
+--- SESSION DE TEST : Mon Jan 26 12:58:47 2026
+---------------------------------------------------
+
+[SECTION] TEST LISTE CHAINEE (PRIORITY QUEUE) - Vérification FIFO Prioritaire
+[SUCCES] Init Queue : Queue initialisée vide avec capacité 5
+[SUCCES] Priorité Queue : Les paquets sont sortis dans l'ordre de priorité (10 -> 5 -> 1)
+[SUCCES] Capacité Max : Paquet rejeté correctement quand pleine
+
+--- SESSION DE TEST : Mon Jan 26 12:58:48 2026
+---------------------------------------------------
+
+[SECTION] TEST DONNEES REELLES - Chargement massif des topologies (Limit: 6)
+[INFO] Scanning dossier...
+[SUCCES] Chargement Fichier : OK (3 noeuds) - triangle.txt
+[SUCCES] Chargement Fichier : OK (5 noeuds) - linear_5nodes.txt
+[SUCCES] Chargement Fichier : OK (6 noeuds) - star_6nodes.txt
+[SUCCES] Chargement Fichier : OK (8 noeuds) - mesh_8nodes.txt
+[INFO] Scanning dossier...
+[SUCCES] Chargement Fichier : OK (100 noeuds) - random_100.txt
+[SUCCES] Chargement Fichier : OK (50 noeuds) - grid_50.txt
+[INFO] Limite atteinte (6 fichiers). Arret du scan dossier.
+[SUCCES] FIN : Limite de 6 fichiers atteinte comme demandé
+
+--- SESSION DE TEST : Mon Jan 26 18:43:37 2026
+---------------------------------------------------
+
+[SECTION] TEST GLOBAL INTÉGRATION - Simulation complète : Design -> Audit -> Routage -> Panne -> Visu
+[INFO] Phase 1: Génération de la Topologie (Grille 5x5)...
+[SUCCES] Creation Graphe : Graphe Grille 25 noeuds généré
+[INFO] Phase 2: Test Persistence (I/O)...
+[SUCCES] Sauvegarde : resultats_tests/simulation_topo.txt
+[SUCCES] Chargement : Graphe rechargé avec succès (25 noeuds)
+[INFO] Phase 3: Audit de Sécurité...
+[SUCCES] Détection Cycles : Cycles détectés (Attendu pour une grille)
+[INFO] Phase 4: Calcul Itinéraire Nominal (0 -> 24)...
+[SUCCES] Routage Dijkstra : Chemin trouvé, Longueur: 9, Coût: 40.0
+[INFO] Phase 5: Simulation de Panne Majeure...
+[WARN] Lien 0 <-> 1 coupé !
+[INFO] Phase 6: Recalcul Itinéraire (Failover)...
+[SUCCES] Routage Secours : Chemin alternatif trouvé, Longueur: 9
+[SUCCES] Vérification Route : Le chemin contourne le lien coupé
+[INFO] Phase 7: Génération des Artefacts Visuels...
+[SUCCES] Export DOT : resultats_tests/simulation_visu.dot
+[INFO] Génération image du graphe...
+[SUCCES] Visualization Mode : Image générée: resultats_tests/simulation_visu.png
+
+[SECTION] FIN SIMULATION - Le système a démontré ses capacités de résilience et d'analyse.
+
+--- SESSION DE TEST : Mon Jan 26 18:43:41 2026
+---------------------------------------------------
+
+[SECTION] TEST DIJKSTRA - Validation de l'algorithme de plus court chemin
+[SUCCES] Dijkstra Chemin Simple : Chemin correct et coût correct (40)
+[SUCCES] Dijkstra Maillage Direct : A bien trouvé le lien direct
+[SUCCES] Dijkstra Logique Anneau : Chemins corrects dans l'anneau
+
+--- SESSION DE TEST : Mon Jan 26 18:43:42 2026
+---------------------------------------------------
+
+[SECTION] TEST BACKTRACKING - Validation du routage avec contraintes
+[SUCCES] Backtracking Contrainte Coût : Respecte la contrainte de coût
+[SUCCES] Backtracking Noeud Obligatoire : A visité le noeud obligatoire 2
+[SUCCES] Backtracking Min Bande Passante : A choisi le chemin à haute BP
+
+--- SESSION DE TEST : Mon Jan 26 18:43:44 2026
+---------------------------------------------------
+
+[SECTION] TEST GENERATION TOPOLOGIE - Vérification de la création de graphes
+[SUCCES] GenTopo Simple : Création de 50 noeuds OK
+[SUCCES] GenTopo Arbre : Arbre créé avec racine connectée
+[SUCCES] GenTopo Grille : Degré coin correct
+
+--- SESSION DE TEST : Mon Jan 26 18:43:46 2026
+---------------------------------------------------
+
+[SECTION] TEST LISTE CHAINEE (PRIORITY QUEUE) - Vérification FIFO Prioritaire
+[SUCCES] Init Queue : Queue initialisée vide avec capacité 5
+[SUCCES] Priorité Queue : Les paquets sont sortis dans l'ordre de priorité (10 -> 5 -> 1)
+[SUCCES] Capacité Max : Paquet rejeté correctement quand pleine
+
+--- SESSION DE TEST : Mon Jan 26 18:43:48 2026
+---------------------------------------------------
+
+[SECTION] TEST DONNEES REELLES - Chargement massif des topologies (Limit: 6)
+[INFO] Scanning dossier...
+[SUCCES] Chargement Fichier : OK (3 noeuds) - triangle.txt
+[SUCCES] Chargement Fichier : OK (5 noeuds) - linear_5nodes.txt
+[SUCCES] Chargement Fichier : OK (6 noeuds) - star_6nodes.txt
+[SUCCES] Chargement Fichier : OK (8 noeuds) - mesh_8nodes.txt
+[INFO] Scanning dossier...
+[SUCCES] Chargement Fichier : OK (100 noeuds) - random_100.txt
+[SUCCES] Chargement Fichier : OK (50 noeuds) - grid_50.txt
+[INFO] Limite atteinte (6 fichiers). Arret du scan dossier.
+[SUCCES] FIN : Limite de 6 fichiers atteinte comme demandé

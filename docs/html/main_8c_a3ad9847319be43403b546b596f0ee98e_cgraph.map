@@ -1,0 +1,11 @@
+<map id="menu_dijkstra" name="menu_dijkstra">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,108,80"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ac4aef0759d8a84faa4b43d5596fda57b" title=" " alt="" coords="156,5,269,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,52,157,35,153,38,101,56"/>
+<area shape="rect" id="Node000003" href="$routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="156,55,269,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,65,143,67,138,68,108,70"/>
+<area shape="rect" id="Node000004" href="$routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="156,104,269,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="100,78,157,98,152,100,99,84"/>
+<area shape="rect" id="Node000005" href="$routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="317,104,415,130"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,114,304,117,299,117,270,119"/>
+</map>

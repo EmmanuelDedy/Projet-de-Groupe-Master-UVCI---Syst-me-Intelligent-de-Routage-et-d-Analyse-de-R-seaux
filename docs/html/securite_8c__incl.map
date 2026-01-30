@@ -1,0 +1,15 @@
+<map id="src/securite.c" name="src/securite.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="77,5,178,31"/>
+<area shape="rect" id="Node000002" href="$securite_8h.html" title="Module 3 : Détection d&#39;Anomalies et Audit de Résilience." alt="" coords="88,79,167,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,29,130,64,125,63,127,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,226,66,252"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="113,34,97,54,79,80,65,114,54,149,41,212,36,210,49,148,60,112,74,78,93,51,116,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="189,226,252,252"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="141,29,162,51,180,78,196,112,207,148,220,212,215,210,202,149,191,114,176,80,158,54,141,34"/>
+<area shape="rect" id="Node000003" href="$graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="92,153,163,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,103,130,138,125,136,126,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="90,226,165,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="129,177,130,212,125,209,126,181"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="115,178,64,219,61,215,109,179"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="144,176,196,216,191,217,142,181"/>
+</map>

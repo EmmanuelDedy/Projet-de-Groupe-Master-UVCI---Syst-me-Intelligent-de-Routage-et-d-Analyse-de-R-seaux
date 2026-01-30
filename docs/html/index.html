@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Système Intelligent de Routage &amp; Analyse de Réseaux</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Système Intelligent de Routage &amp; Analyse de Réseaux </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><b>Université</b> <b>Virtuelle</b> <b>de</b> <b>Côte</b> <b>d'Ivoire</b> &ndash; <b>Master</b> <b>1</b> <b>Algorithmique</b> <b>&amp;</b> <b>Complexité</b> (2025-2026)</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_sommaire"></a>
+Sommaire</h1>
+<ol type="1">
+<li><a class="el" href="#sec_intro" title="1. Introduction &amp; Contexte">Introduction &amp; Contexte</a></li>
+<li><a class="el" href="#sec_theory" title="2. Cadre Théorique &amp; Recherche">Cadre Théorique &amp; Recherche</a></li>
+<li><a class="el" href="#sec_arch" title="3. Architecture Technique">Architecture Technique</a></li>
+<li><a class="el" href="#sec_data" title="4. Structures de Données Clés">Structures de Données Clés</a></li>
+<li><a class="el" href="#sec_algo" title="5. Implémentation Algorithmique (A-Z)">Implémentation Algorithmique (A-Z)</a></li>
+<li><a class="el" href="rapport_projet.html" title="📄 Rapport Technique">Voir le RAPPORT DU PROJET</a></li>
+<li><a class="el" href="#sec_install" title="6. Installation &amp; Utilisation">Installation &amp; Utilisation</a></li>
+<li><a class="el" href="#sec_team" title="7. Équipe &amp; Mentions Légales">Équipe &amp; Mentions Légales</a></li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_intro"></a>
+1. Introduction &amp; Contexte</h1>
+<p>Ce projet s'inscrit dans le cadre de l'unité d'enseignement <b>Algorithmique Avancée</b>, supervisée par le <b>Dr. [Nom]</b>. Il vise à concevoir un simulateur de réseau performant capable de valider des algorithmes de routage complexes sur des topologies massives.</p>
+<h2 class="doxsection"><a class="anchor" id="sub_goals"></a>
+Objectifs du Cahier des Charges (CDC)</h2>
+<ul>
+<li><b>Simuler</b> un réseau de routeurs, switchs et serveurs connectés par des liens pondérés.</li>
+<li><b>Calculer</b> des itinéraires optimaux (Dijkstra) et sous contraintes (Backtracking).</li>
+<li><b>Auditer</b> la résilience du réseau (Détection de SPOF et Zones Isolées).</li>
+<li><b>Gérer</b> la Qualité de Service (QoS) via des files d'attente prioritaires.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_theory"></a>
+2. Cadre Théorique &amp; Recherche</h1>
+<h2 class="doxsection"><a class="anchor" id="sub_graph"></a>
+Modélisation Mathématique</h2>
+<p>Le réseau est modélisé par un <b><a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a> Orienté Pondéré</b> <picture><source srcset="form_3_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ G = (V, E) $" src="form_3.png"/></picture> où :</p><ul>
+<li><picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture> est l'ensemble des sommets (Équipements).</li>
+<li><picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E $" src="form_5.png"/></picture> est l'ensemble des arcs (Liaisons).</li>
+<li>Une fonction de poids vectorielle <picture><source srcset="form_6_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ w(e) = (Cout, Latence, BP, Fiabilite) $" src="form_6.png"/></picture>.</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="sub_complexity"></a>
+Analyse de Complexité</h2>
+<p>Le choix des algorithmes a été guidé par une analyse asymptotique rigoureuse pour garantir la scalabilité ($N &gt; 500$).</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Algorithme  </th><th class="markdownTableHeadLeft">Problème Résolu  </th><th class="markdownTableHeadLeft">Complexité Temporelle  </th><th class="markdownTableHeadLeft">Complexité Spatiale  </th><th class="markdownTableHeadLeft">Justification  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Dijkstra</b>  </td><td class="markdownTableBodyLeft">Plus Court <a class="el" href="struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.">Chemin</a> (Poids Positifs)  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(E \log V) $" src="form_0.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">Optimal avec un tas binaire. Stockage <span class="tt">dist[]</span> et <span class="tt">pred[]</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Backtracking</b>  </td><td class="markdownTableBodyLeft"><a class="el" href="struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.">Chemin</a> Contraint (QoS)  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_1_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(b^d) $" src="form_1.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(N) $" src="form_8.png"/></picture>  </td><td class="markdownTableBodyLeft">Pile de récursion (Profondeur max N).  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Tarjan</b>  </td><td class="markdownTableBodyLeft">Composantes Fortement Connexes  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V + E) $" src="form_9.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">Tableaux <span class="tt">index[]</span>, <span class="tt">lowlink[]</span> et Pile explicite.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Yen's KSP</b>  </td><td class="markdownTableBodyLeft">K-Chemins Alternatifs  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_10_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(K \cdot N (E + N \log N)) $" src="form_10.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V + E) $" src="form_9.png"/></picture>  </td><td class="markdownTableBodyLeft">Nécessite des copies partielles du graphe (suppression virtuelle).  </td></tr>
+</table>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_arch"></a>
+3. Architecture Technique</h1>
+<h2 class="doxsection"><a class="anchor" id="sub_choice"></a>
+Choix du C11</h2>
+<p>Nous avons opté pour le langage <b>C (Standard C11)</b> pour :</p><ol type="1">
+<li><b>Gestion Mémoire Fine</b> : <span class="tt">malloc</span>/<span class="tt">free</span> permettent de gérer precisely l'allocation pour des graphes de taille variable.</li>
+<li><b>Performance</b> : Accès direct à la RAM (Pointeurs) pour parcourir les matrices d'adjacence sans overhead.</li>
+<li><b>Portabilité</b> : Code standard compilable sur tout système POSIX.</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="sub_diag"></a>
+Diagramme Architectural</h2>
+<p>L'application suit une architecture modulaire stricte : </p><div class="dotgraph">
+<img src="dot_inline_dotgraph_fd904d82192eae8cd2156c3c4375f74a.png" alt="dot_inline_dotgraph_fd904d82192eae8cd2156c3c4375f74a.png" border="0" usemap="#dot_inline_dotgraph_fd904d82192eae8cd2156c3c4375f74a.map"/>
+</div>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_data"></a>
+4. Structures de Données Clés</h1>
+<h2 class="doxsection"><a class="anchor" id="struct_graph"></a>
+Le Graphe Hybride</h2>
+<p>Pour concilier performance sur graphes denses et économie sur graphes creux, la structure <span class="tt"><a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a></span> (dans <span class="tt"><a class="el" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système).">graphe.h</a></span>) maintient deux représentations : </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">  <a class="code hl_struct" href="struct_noeud.html">Noeud</a> *noeuds;        <span class="comment">// Tableau dynamique (Accès O(1))</span></div>
+<div class="line">  <span class="keywordtype">double</span> **matrice_adj; <span class="comment">// Matrice (Graphes denses)</span></div>
+<div class="line">  <span class="comment">// Chaque noeud possède aussi une liste chaînée (Graphes creux)</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_graphe.html">Graphe</a>;</div>
+<div class="ttc" id="astruct_graphe_html"><div class="ttname"><a href="struct_graphe.html">Graphe</a></div><div class="ttdoc">Structure du graphe représentant le réseau.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00048">dijkstra.h:48</a></div></div>
+<div class="ttc" id="astruct_noeud_html"><div class="ttname"><a href="struct_noeud.html">Noeud</a></div><div class="ttdoc">Informations sur un nœud.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00027">dijkstra.h:27</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="struct_pq"></a>
+La File à Priorité</h2>
+<p>La gestion QoS repose sur une liste chaînée triée à l'insertion (dans <span class="tt"><a class="el" href="liste__chainee_8h.html" title="Module 4 : Simulation et Gestion de Flux (QoS).">liste_chainee.h</a></span>) : </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_paquet.html">Paquet</a> {</div>
+<div class="line">  <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_paquet.html#a8651669edfbe5d4a5b3dcc62515e6acb">priorite</a>;         <span class="comment">// 10 (Haut) -&gt; 0 (Bas)</span></div>
+<div class="line">  <span class="keyword">struct </span><a class="code hl_struct" href="struct_paquet.html">Paquet</a> *suiv;  <span class="comment">// Liste doublement chaînée</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_paquet.html">Paquet</a>;</div>
+<div class="ttc" id="astruct_paquet_html"><div class="ttname"><a href="struct_paquet.html">Paquet</a></div><div class="ttdoc">Unité de données transitant sur le réseau.</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00019">liste_chainee.h:19</a></div></div>
+<div class="ttc" id="astruct_paquet_html_a8651669edfbe5d4a5b3dcc62515e6acb"><div class="ttname"><a href="struct_paquet.html#a8651669edfbe5d4a5b3dcc62515e6acb">Paquet::priorite</a></div><div class="ttdeci">int priorite</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00021">liste_chainee.h:21</a></div></div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_algo"></a>
+5. Implémentation Algorithmique (A-Z)</h1>
+<h2 class="doxsection"><a class="anchor" id="algo_dijkstra"></a>
+5.1 Dijkstra (Routing)</h2>
+<p><b>Fichier</b> : <span class="tt"><a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></span></p>
+<p>Le cœur du routage. Nous utilisons une version relaxée :</p><ol type="1">
+<li>Initialiser les distances à <picture><source srcset="form_11_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \infty $" src="form_11.png"/></picture>.</li>
+<li>Insérer la source dans la file de priorité.</li>
+<li>Tant que la file n'est pas vide, extraire le min <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture>.</li>
+<li>Pour chaque voisin <picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ v $" src="form_13.png"/></picture>, si <picture><source srcset="form_14_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ dist[u] + w(u,v) &lt; dist[v] $" src="form_14.png"/></picture>, mettre à jour.</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="algo_tarjan"></a>
+5.2 Tarjan (Security)</h2>
+<p><b>Fichier</b> : <span class="tt"><a class="el" href="securite_8c.html">src/securite.c</a></span></p>
+<p>Détection des points critiques :</p><ul>
+<li>Un nœud est un <b>Point d'Articulation</b> si sa suppression augmente le nombre de composantes connexes.</li>
+<li>Algorithme : DFS qui maintient <span class="tt">discovery_time</span> et <span class="tt">low_link_value</span>.</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_install"></a>
+6. Installation &amp; Utilisation</h1>
+<h2 class="doxsection"><a class="anchor" id="sub_req"></a>
+Prérequis</h2>
+<ul>
+<li>Compilateur GCC ou Clang.</li>
+<li>Make.</li>
+<li>Graphviz (optionnel, pour les images).</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="sub_build"></a>
+Compilation</h2>
+<div class="fragment"><div class="line">$ make        # Compile le projet</div>
+<div class="line">$ make tests  # Lance la suite de tests unitaires</div>
+<div class="line">$ make docs   # Génère cette documentation</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="sub_run"></a>
+Exécution</h2>
+<div class="fragment"><div class="line">$ ./bin/main</div>
+<div class="line">&gt; [1] Charger Topologie</div>
+<div class="line">&gt; [2] Calculer Routage</div>
+<div class="line">&gt; ...</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="sec_team"></a>
+7. Équipe &amp; Mentions Légales</h1>
+<p><b>Université Virtuelle de Côte d'Ivoire</b></p><ul>
+<li><b>Département</b> : Informatique</li>
+<li><b>Cours</b> : Algorithmique Avancée</li>
+<li><b>Licence</b> : MIT (Open Source)</li>
+</ul>
+<p><em>Documentation générée automatiquement par Doxygen.</em> </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="identifier_points_critiques" name="identifier_points_critiques">
+<area shape="rect" id="Node000001" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="357,5,525,31"/>
+<area shape="rect" id="Node000002" href="$securite_8c.html#ad543fa19b5a48eadcb131545d552aa5d" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="103,5,309,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,18,309,21,309,16,344,18"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>

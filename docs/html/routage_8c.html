@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence du fichier src/routage.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('routage_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier routage.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module 2 : Algorithmes de Routage Optimal.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="routage_8h_source.html">routage.h</a>&quot;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de routage.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c__incl.png" border="0" usemap="#asrc_2routage_8c" loading="lazy" alt=""/></div>
+<map name="asrc_2routage_8c" id="asrc_2routage_8c">
+<area shape="rect" title="Module 2 : Algorithmes de Routage Optimal." alt="" coords="194,5,291,31"/>
+<area shape="rect" href="routage_8h.html" title="Module 2 : Algorithmes de Routage Optimal &amp; Intelligent." alt="" coords="97,79,172,105"/>
+<area shape="poly" title=" " alt="" coords="222,33,167,72,164,68,226,30"/>
+<area shape="rect" title=" " alt="" coords="5,226,80,252"/>
+<area shape="poly" title=" " alt="" coords="191,28,138,46,110,61,87,81,67,111,55,146,48,181,45,211,40,210,43,180,49,145,62,109,83,77,107,57,136,41,195,24"/>
+<area shape="rect" title=" " alt="" coords="188,226,252,252"/>
+<area shape="poly" title=" " alt="" coords="243,29,238,79,225,212,220,210,233,79,240,34"/>
+<area shape="rect" title=" " alt="" coords="247,79,304,105"/>
+<area shape="poly" title=" " alt="" coords="249,29,266,65,261,64,247,34"/>
+<area shape="rect" title=" " alt="" coords="329,79,390,105"/>
+<area shape="poly" title=" " alt="" coords="263,29,330,70,324,71,262,34"/>
+<area shape="rect" title=" " alt="" coords="414,79,479,105"/>
+<area shape="poly" title=" " alt="" coords="277,29,402,73,397,75,277,34"/>
+<area shape="rect" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="99,153,170,178"/>
+<area shape="poly" title=" " alt="" coords="136,103,137,138,132,136,133,107"/>
+<area shape="poly" title=" " alt="" coords="121,178,71,219,68,215,116,180"/>
+<area shape="rect" title=" " alt="" coords="104,226,165,252"/>
+<area shape="poly" title=" " alt="" coords="136,177,137,212,132,209,133,181"/>
+<area shape="poly" title=" " alt="" coords="150,176,197,216,191,217,148,181"/>
+</map>
+</div>
+</div>
+<p><a href="routage_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a5f3c9dc95951b06193d080420a6ef90c" id="r_a5f3c9dc95951b06193d080420a6ef90c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a> (<a class="el" href="struct_chemin.html">Chemin</a> *c)</td></tr>
+<tr class="memitem:a3895d2d7244d1c6edc4115e77b19af81" id="r_a3895d2d7244d1c6edc4115e77b19af81"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3895d2d7244d1c6edc4115e77b19af81">ensemble_chemins_detruire</a> (<a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> *ec)</td></tr>
+<tr class="memitem:a07c8a06cf3fe0ac597f3e95d8a166099" id="r_a07c8a06cf3fe0ac597f3e95d8a166099"><td class="memItemLeft">static float&#160;</td><td class="memItemRight"><a class="el" href="#a07c8a06cf3fe0ac597f3e95d8a166099">obtenir_poids</a> (<a class="el" href="struct_arete_noeud.html">AreteNoeud</a> *a, const char *critere)</td></tr>
+<tr class="memitem:a6399dd39c69a8d366d0449436a62a3fc" id="r_a6399dd39c69a8d366d0449436a62a3fc"><td class="memItemLeft"><a class="el" href="struct_chemin.html">Chemin</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g, int source, int destination, const char *critere)</td></tr>
+<tr class="memdesc:a6399dd39c69a8d366d0449436a62a3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorithme de Dijkstra (Routage Optimal).  <br /></td></tr>
+<tr class="memitem:aaf47a335e2350c7be2f7aa842d649c2a" id="r_aaf47a335e2350c7be2f7aa842d649c2a"><td class="memItemLeft"><a class="el" href="struct_chemin.html">Chemin</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aaf47a335e2350c7be2f7aa842d649c2a">routage_bellman_ford</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g, int source, int destination)</td></tr>
+<tr class="memdesc:aaf47a335e2350c7be2f7aa842d649c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorithme de Bellman-Ford. Supporte les poids négatifs (non utilisé par défaut).  <br /></td></tr>
+<tr class="memitem:a6c714354c5d0fc10baa8a1e5e2bb824f" id="r_a6c714354c5d0fc10baa8a1e5e2bb824f"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#a6c714354c5d0fc10baa8a1e5e2bb824f">chemin_existe_deja</a> (<a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> *ec, <a class="el" href="struct_chemin.html">Chemin</a> *c)</td></tr>
+<tr class="memitem:a28c046b774836a7ea3e1d0d47bd031cf" id="r_a28c046b774836a7ea3e1d0d47bd031cf"><td class="memItemLeft"><a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a28c046b774836a7ea3e1d0d47bd031cf">routage_k_chemins_plus_courts</a> (<a class="el" href="struct_graphe.html">Graphe</a> *g, int source, int destination, int k, const char *critere)</td></tr>
+<tr class="memdesc:a28c046b774836a7ea3e1d0d47bd031cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algorithme de Yen (K-Plus Courts Chemins).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module 2 : Algorithmes de Routage Optimal. </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a5f3c9dc95951b06193d080420a6ef90c" name="a5f3c9dc95951b06193d080420a6ef90c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3c9dc95951b06193d080420a6ef90c">&#9670;&#160;</a></span>chemin_detruire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void chemin_detruire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chemin.html">Chemin</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00017">17</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                {</div>
+<div class="line"><span class="lineno">   18</span>  <span class="keywordflow">if</span> (c) {</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (c-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>)</div>
+<div class="line"><span class="lineno">   20</span>      free(c-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>);</div>
+<div class="line"><span class="lineno">   21</span>    free(c);</div>
+<div class="line"><span class="lineno">   22</span>  }</div>
+<div class="line"><span class="lineno">   23</span>}</div>
+<div class="ttc" id="astruct_chemin_html_a95532be55c6268b4d75931fbbf03d37b"><div class="ttname"><a href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">Chemin::noeuds</a></div><div class="ttdeci">int * noeuds</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00029">routage.h:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, <a class="el" href="main_8c_source.html#l00129">menu_backtracking()</a>, <a class="el" href="main_8c_source.html#l00073">menu_dijkstra()</a>, et <a class="el" href="routage_8c_source.html#l00168">routage_k_chemins_plus_courts()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a5f3c9dc95951b06193d080420a6ef90c_icgraph.png" border="0" usemap="#aroutage_8c_a5f3c9dc95951b06193d080420a6ef90c_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a5f3c9dc95951b06193d080420a6ef90c_icgraph" id="aroutage_8c_a5f3c9dc95951b06193d080420a6ef90c_icgraph">
+<area shape="rect" title=" " alt="" coords="692,108,805,134"/>
+<area shape="rect" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b" title=" " alt="" coords="527,29,595,55"/>
+<area shape="poly" title=" " alt="" coords="699,102,593,58,594,53,704,101"/>
+<area shape="rect" href="main_8c.html#a432757db13bf20b412d6228233d31775" title=" " alt="" coords="103,83,237,108"/>
+<area shape="poly" title=" " alt="" coords="675,120,238,101,237,96,677,115"/>
+<area shape="rect" href="main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="119,133,221,159"/>
+<area shape="poly" title=" " alt="" coords="676,127,222,147,221,141,676,121"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="478,183,644,224"/>
+<area shape="poly" title=" " alt="" coords="706,140,610,185,608,180,700,141"/>
+<area shape="poly" title=" " alt="" coords="592,14,582,10,561,8,541,10,531,15,529,20,534,30,529,28,523,21,527,11,540,5,561,3,584,5,597,14"/>
+<area shape="rect" href="backtracking_8c.html#af774ccbdbe171c882ea576d0812cf076" title="Recherche par Backtracking avec Élagage (Pruning)." alt="" coords="285,18,430,58"/>
+<area shape="poly" title=" " alt="" coords="509,42,431,42,430,37,515,41"/>
+<area shape="poly" title=" " alt="" coords="272,65,216,85,214,80,277,62"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,133,55,159"/>
+<area shape="poly" title=" " alt="" coords="116,117,56,140,54,135,119,112"/>
+<area shape="poly" title=" " alt="" coords="101,148,56,149,54,144,105,144"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="297,188,418,214"/>
+<area shape="poly" title=" " alt="" coords="460,202,418,204,418,199,466,202"/>
+<area shape="poly" title=" " alt="" coords="279,197,195,190,102,174,55,159,55,153,103,169,196,185,284,196"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c714354c5d0fc10baa8a1e5e2bb824f" name="a6c714354c5d0fc10baa8a1e5e2bb824f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c714354c5d0fc10baa8a1e5e2bb824f">&#9670;&#160;</a></span>chemin_existe_deja()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool chemin_existe_deja </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> *</td>          <td class="paramname"><span class="paramname"><em>ec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chemin.html">Chemin</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00151">151</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>                                                               {</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>; i++) {</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordflow">if</span> (ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i].<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a> != c-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a>)</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordtype">bool</span> t = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; c-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a>; j++) {</div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">if</span> (ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i].<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[j] != c-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[j]) {</div>
+<div class="line"><span class="lineno">  158</span>        t = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  160</span>      }</div>
+<div class="line"><span class="lineno">  161</span>    }</div>
+<div class="line"><span class="lineno">  162</span>    <span class="keywordflow">if</span> (t &amp;&amp; fabs(ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i].<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a> - c-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a>) &lt; 0.001)</div>
+<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  164</span>  }</div>
+<div class="line"><span class="lineno">  165</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  166</span>}</div>
+<div class="ttc" id="astruct_chemin_html_a19ac368ad526034b581cef5e0bfd3886"><div class="ttname"><a href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">Chemin::cout_total</a></div><div class="ttdeci">float cout_total</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00031">routage.h:31</a></div></div>
+<div class="ttc" id="astruct_chemin_html_ac75550e412ee627165a15c3e65f20c1d"><div class="ttname"><a href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">Chemin::longueur</a></div><div class="ttdeci">int longueur</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00030">routage.h:30</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html_a5430bbe2e567fb4fa4b249f4ede09792"><div class="ttname"><a href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">EnsembleChemins::chemins</a></div><div class="ttdeci">Chemin * chemins</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00042">routage.h:42</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html_a98a9559da5f7bb2ff4e302f619914855"><div class="ttname"><a href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">EnsembleChemins::nombre</a></div><div class="ttdeci">int nombre</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00043">routage.h:43</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="routage_8h_source.html#l00042">EnsembleChemins::chemins</a>, <a class="el" href="routage_8h_source.html#l00031">Chemin::cout_total</a>, <a class="el" href="routage_8h_source.html#l00030">Chemin::longueur</a>, <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>, et <a class="el" href="routage_8h_source.html#l00043">EnsembleChemins::nombre</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="routage_8c_source.html#l00168">routage_k_chemins_plus_courts()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a6c714354c5d0fc10baa8a1e5e2bb824f_icgraph.png" border="0" usemap="#aroutage_8c_a6c714354c5d0fc10baa8a1e5e2bb824f_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a6c714354c5d0fc10baa8a1e5e2bb824f_icgraph" id="aroutage_8c_a6c714354c5d0fc10baa8a1e5e2bb824f_icgraph">
+<area shape="rect" title=" " alt="" coords="485,13,622,38"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="272,5,437,46"/>
+<area shape="poly" title=" " alt="" coords="467,26,438,28,438,23,473,26"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,13,224,38"/>
+<area shape="poly" title=" " alt="" coords="254,26,224,28,224,23,259,26"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
+<area shape="poly" title=" " alt="" coords="84,27,55,28,55,23,89,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3895d2d7244d1c6edc4115e77b19af81" name="a3895d2d7244d1c6edc4115e77b19af81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3895d2d7244d1c6edc4115e77b19af81">&#9670;&#160;</a></span>ensemble_chemins_detruire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ensemble_chemins_detruire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> *</td>          <td class="paramname"><span class="paramname"><em>ec</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00025">25</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                                                    {</div>
+<div class="line"><span class="lineno">   26</span>  <span class="keywordflow">if</span> (!ec)</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   28</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>; i++) {</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i].<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>)</div>
+<div class="line"><span class="lineno">   30</span>      free(ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[i].<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>);</div>
+<div class="line"><span class="lineno">   31</span>  }</div>
+<div class="line"><span class="lineno">   32</span>  free(ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>);</div>
+<div class="line"><span class="lineno">   33</span>  free(ec);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="routage_8h_source.html#l00042">EnsembleChemins::chemins</a>, <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>, et <a class="el" href="routage_8h_source.html#l00043">EnsembleChemins::nombre</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00097">menu_k_shortest()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a3895d2d7244d1c6edc4115e77b19af81_icgraph.png" border="0" usemap="#aroutage_8c_a3895d2d7244d1c6edc4115e77b19af81_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a3895d2d7244d1c6edc4115e77b19af81_icgraph" id="aroutage_8c_a3895d2d7244d1c6edc4115e77b19af81_icgraph">
+<area shape="rect" title=" " alt="" coords="272,5,455,31"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,5,224,31"/>
+<area shape="poly" title=" " alt="" coords="254,18,224,21,224,16,259,18"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="84,19,55,21,55,16,89,17"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a07c8a06cf3fe0ac597f3e95d8a166099" name="a07c8a06cf3fe0ac597f3e95d8a166099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c8a06cf3fe0ac597f3e95d8a166099">&#9670;&#160;</a></span>obtenir_poids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float obtenir_poids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_arete_noeud.html">AreteNoeud</a> *</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>critere</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00040">40</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                               {</div>
+<div class="line"><span class="lineno">   41</span>  <span class="keywordflow">if</span> (strcmp(critere, <span class="stringliteral">&quot;latence&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a>;</div>
+<div class="line"><span class="lineno">   43</span>  <span class="keywordflow">if</span> (strcmp(critere, <span class="stringliteral">&quot;securite&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> 11.0f - (float)a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">securite</a>;</div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordflow">if</span> (strcmp(critere, <span class="stringliteral">&quot;bande_passante&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> 1000000.0f / (a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a> + 1);</div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">return</span> a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="astruct_arete_noeud_html_ac096b1117c764e5b31c468e3adf12389"><div class="ttname"><a href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">AreteNoeud::metriques</a></div><div class="ttdeci">Metriques metriques</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00041">dijkstra.h:41</a></div></div>
+<div class="ttc" id="astruct_metriques_html_a71f6b2d4a14d89cb07983d651a9c514c"><div class="ttname"><a href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">Metriques::securite</a></div><div class="ttdeci">int securite</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00021">dijkstra.h:21</a></div></div>
+<div class="ttc" id="astruct_metriques_html_ab7c69a08304787bc9e2cff02a98572ab"><div class="ttname"><a href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">Metriques::cout</a></div><div class="ttdeci">float cout</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00017">dijkstra.h:17</a></div></div>
+<div class="ttc" id="astruct_metriques_html_acdfcc2cf1099f9bfeb474d505b2aacb7"><div class="ttname"><a href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">Metriques::latence</a></div><div class="ttdeci">float latence</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00018">dijkstra.h:18</a></div></div>
+<div class="ttc" id="astruct_metriques_html_af82d8dbbe7806b04907d672e18cb12f2"><div class="ttname"><a href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">Metriques::bande_passante</a></div><div class="ttdeci">float bande_passante</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00019">dijkstra.h:19</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00019">Metriques::bande_passante</a>, <a class="el" href="dijkstra_8h_source.html#l00017">Metriques::cout</a>, <a class="el" href="dijkstra_8h_source.html#l00018">Metriques::latence</a>, <a class="el" href="dijkstra_8h_source.html#l00041">AreteNoeud::metriques</a>, et <a class="el" href="dijkstra_8h_source.html#l00021">Metriques::securite</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="routage_8c_source.html#l00050">routage_dijkstra()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a07c8a06cf3fe0ac597f3e95d8a166099_icgraph.png" border="0" usemap="#aroutage_8c_a07c8a06cf3fe0ac597f3e95d8a166099_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a07c8a06cf3fe0ac597f3e95d8a166099_icgraph" id="aroutage_8c_a07c8a06cf3fe0ac597f3e95d8a166099_icgraph">
+<area shape="rect" title=" " alt="" coords="647,32,745,58"/>
+<area shape="rect" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="485,32,599,58"/>
+<area shape="poly" title=" " alt="" coords="628,45,599,47,599,42,634,45"/>
+<area shape="rect" href="main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="112,5,214,31"/>
+<area shape="poly" title=" " alt="" coords="468,42,215,24,215,19,471,38"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="272,52,437,93"/>
+<area shape="poly" title=" " alt="" coords="472,55,438,63,438,58,467,56"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,32,55,58"/>
+<area shape="poly" title=" " alt="" coords="95,33,56,42,54,37,99,30"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,56,224,82"/>
+<area shape="poly" title=" " alt="" coords="254,71,224,73,224,67,259,71"/>
+<area shape="poly" title=" " alt="" coords="85,56,55,52,55,47,90,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaf47a335e2350c7be2f7aa842d649c2a" name="aaf47a335e2350c7be2f7aa842d649c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf47a335e2350c7be2f7aa842d649c2a">&#9670;&#160;</a></span>routage_bellman_ford()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chemin.html">Chemin</a> * routage_bellman_ford </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Algorithme de Bellman-Ford. Supporte les poids négatifs (non utilisé par défaut). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00138">138</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>                                                                     {</div>
+<div class="line"><span class="lineno">  139</span>  (void)g;</div>
+<div class="line"><span class="lineno">  140</span>  (void)source;</div>
+<div class="line"><span class="lineno">  141</span>  (void)destination;</div>
+<div class="line"><span class="lineno">  142</span>  printf(<span class="stringliteral">&quot;Bellman-Ford non implemente (Non requis)\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6399dd39c69a8d366d0449436a62a3fc" name="a6399dd39c69a8d366d0449436a62a3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6399dd39c69a8d366d0449436a62a3fc">&#9670;&#160;</a></span>routage_dijkstra()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chemin.html">Chemin</a> * routage_dijkstra </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>critere</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Algorithme de Dijkstra (Routage Optimal). </p>
+<p>Trouve le chemin minimisant le critère donné (cout ou latence). Utilise une stratégie gloutonne par relaxation.</p>
+<p><b>Pseudo-code :</b> </p><div class="fragment"><div class="line">Pour v dans V: dist[v] = INF, pred[v] = NULL</div>
+<div class="line">dist[source] = 0</div>
+<div class="line">Q = PriorityQueue(V)</div>
+<div class="line">Tant que Q non vide:</div>
+<div class="line">    u = ExtractMin(Q)</div>
+<div class="line">    Pour chaque voisin v de u:</div>
+<div class="line">        alt = dist[u] + poids(u,v)</div>
+<div class="line">        Si alt &lt; dist[v]:</div>
+<div class="line">            dist[v] = alt</div>
+<div class="line">            pred[v] = u</div>
+<div class="line">            Update(Q, v, alt)</div>
+</div><!-- fragment --><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Le graphe </td></tr>
+    <tr><td class="paramname">source</td><td>ID nœud départ </td></tr>
+    <tr><td class="paramname">destination</td><td>ID nœud arrivée </td></tr>
+    <tr><td class="paramname">critere</td><td>"cout" ou "latence" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Chemin* Structure allouée ou NULL si inaccessible. </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00050">50</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>                                              {</div>
+<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">if</span> (!g || source &lt; 0 || source &gt;= g-&gt;<a class="code hl_variable" href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">max_noeuds</a>)</div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordtype">int</span> n = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">max_noeuds</a>;</div>
+<div class="line"><span class="lineno">   56</span>  <span class="keywordtype">float</span> *dist = (<span class="keywordtype">float</span> *)malloc(n * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><span class="lineno">   57</span>  <span class="keywordtype">int</span> *pred = (<span class="keywordtype">int</span> *)malloc(n * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">   58</span>  <span class="keywordtype">bool</span> *visite = (<span class="keywordtype">bool</span> *)calloc(n, <span class="keyword">sizeof</span>(<span class="keywordtype">bool</span>));</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
+<div class="line"><span class="lineno">   61</span>    dist[i] = FLT_MAX;</div>
+<div class="line"><span class="lineno">   62</span>    pred[i] = -1;</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+<div class="line"><span class="lineno">   64</span>  dist[source] = 0.0f;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++) {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordtype">int</span> u = -1;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordtype">float</span> min_d = FLT_MAX;</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> v = 0; v &lt; n; v++) {</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">if</span> (!visite[v] &amp;&amp; dist[v] &lt; min_d) {</div>
+<div class="line"><span class="lineno">   71</span>        min_d = dist[v];</div>
+<div class="line"><span class="lineno">   72</span>        u = v;</div>
+<div class="line"><span class="lineno">   73</span>      }</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (u == -1 || u == destination)</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   77</span>    visite[u] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *a = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[u].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">while</span> (a) {</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordtype">int</span> v = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>;</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">if</span> (!visite[v] &amp;&amp; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[v].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a>) {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordtype">float</span> p = <a class="code hl_function" href="#a07c8a06cf3fe0ac597f3e95d8a166099">obtenir_poids</a>(a, critere);</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> (dist[u] + p &lt; dist[v]) {</div>
+<div class="line"><span class="lineno">   85</span>          dist[v] = dist[u] + p;</div>
+<div class="line"><span class="lineno">   86</span>          pred[v] = u;</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="line"><span class="lineno">   88</span>      }</div>
+<div class="line"><span class="lineno">   89</span>      a = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
+<div class="line"><span class="lineno">   91</span>  }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>  <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *res = NULL;</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">if</span> (destination &gt;= 0 &amp;&amp; destination &lt; n &amp;&amp; dist[destination] != FLT_MAX) {</div>
+<div class="line"><span class="lineno">   95</span>    res = (<a class="code hl_struct" href="struct_chemin.html">Chemin</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_chemin.html">Chemin</a>));</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordtype">int</span> curr = destination, len = 0;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">while</span> (curr != -1) {</div>
+<div class="line"><span class="lineno">   98</span>      len++;</div>
+<div class="line"><span class="lineno">   99</span>      curr = pred[curr];</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a> = len;</div>
+<div class="line"><span class="lineno">  102</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a> = (<span class="keywordtype">int</span> *)malloc(len * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>));</div>
+<div class="line"><span class="lineno">  103</span>    curr = destination;</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = len - 1; i &gt;= 0; i--) {</div>
+<div class="line"><span class="lineno">  105</span>      res-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i] = curr;</div>
+<div class="line"><span class="lineno">  106</span>      curr = pred[curr];</div>
+<div class="line"><span class="lineno">  107</span>    }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="comment">// Recalcul des métriques réelles du trajet</span></div>
+<div class="line"><span class="lineno">  110</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a> = 0;</div>
+<div class="line"><span class="lineno">  111</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">latence_totale</a> = 0;</div>
+<div class="line"><span class="lineno">  112</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">bande_passante_min</a> = FLT_MAX;</div>
+<div class="line"><span class="lineno">  113</span>    res-&gt;<a class="code hl_variable" href="struct_chemin.html#aed61181a645cd34b9488467883053271">securite_min</a> = 10;</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len - 1; i++) {</div>
+<div class="line"><span class="lineno">  115</span>      <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *a = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[res-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i]].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">while</span> (a &amp;&amp; a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a> != res-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i + 1])</div>
+<div class="line"><span class="lineno">  117</span>        a = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">if</span> (a) {</div>
+<div class="line"><span class="lineno">  119</span>        res-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a> += a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>;</div>
+<div class="line"><span class="lineno">  120</span>        res-&gt;<a class="code hl_variable" href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">latence_totale</a> += a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a>;</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a> &lt; res-&gt;<a class="code hl_variable" href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">bande_passante_min</a>)</div>
+<div class="line"><span class="lineno">  122</span>          res-&gt;<a class="code hl_variable" href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">bande_passante_min</a> = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a>;</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">if</span> (a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">securite</a> &lt; res-&gt;<a class="code hl_variable" href="struct_chemin.html#aed61181a645cd34b9488467883053271">securite_min</a>)</div>
+<div class="line"><span class="lineno">  124</span>          res-&gt;<a class="code hl_variable" href="struct_chemin.html#aed61181a645cd34b9488467883053271">securite_min</a> = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#a71f6b2d4a14d89cb07983d651a9c514c">securite</a>;</div>
+<div class="line"><span class="lineno">  125</span>      }</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+<div class="line"><span class="lineno">  128</span>  free(dist);</div>
+<div class="line"><span class="lineno">  129</span>  free(pred);</div>
+<div class="line"><span class="lineno">  130</span>  free(visite);</div>
+<div class="line"><span class="lineno">  131</span>  <span class="keywordflow">return</span> res;</div>
+<div class="line"><span class="lineno">  132</span>}</div>
+<div class="ttc" id="aroutage_8c_html_a07c8a06cf3fe0ac597f3e95d8a166099"><div class="ttname"><a href="#a07c8a06cf3fe0ac597f3e95d8a166099">obtenir_poids</a></div><div class="ttdeci">static float obtenir_poids(AreteNoeud *a, const char *critere)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00040">routage.c:40</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html"><div class="ttname"><a href="struct_arete_noeud.html">AreteNoeud</a></div><div class="ttdoc">Élément de la liste d&#39;adjacence.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00039">dijkstra.h:39</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_a366a0842a23870f85e4a115f3ffab39e"><div class="ttname"><a href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">AreteNoeud::suivant</a></div><div class="ttdeci">struct AreteNoeud * suivant</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00042">dijkstra.h:42</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_aaa25db0933c600b0903f6e07953aa7e8"><div class="ttname"><a href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">AreteNoeud::dest_id</a></div><div class="ttdeci">int dest_id</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00040">dijkstra.h:40</a></div></div>
+<div class="ttc" id="astruct_chemin_html"><div class="ttname"><a href="struct_chemin.html">Chemin</a></div><div class="ttdoc">Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00028">routage.h:28</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a508037535aaaf0d3335d53dc31ff4276"><div class="ttname"><a href="struct_chemin.html#a508037535aaaf0d3335d53dc31ff4276">Chemin::latence_totale</a></div><div class="ttdeci">float latence_totale</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00032">routage.h:32</a></div></div>
+<div class="ttc" id="astruct_chemin_html_a5c86f06e708953bfed14aef45ccd3156"><div class="ttname"><a href="struct_chemin.html#a5c86f06e708953bfed14aef45ccd3156">Chemin::bande_passante_min</a></div><div class="ttdeci">float bande_passante_min</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00033">routage.h:33</a></div></div>
+<div class="ttc" id="astruct_chemin_html_aed61181a645cd34b9488467883053271"><div class="ttname"><a href="struct_chemin.html#aed61181a645cd34b9488467883053271">Chemin::securite_min</a></div><div class="ttdeci">int securite_min</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00034">routage.h:34</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a02df04020837bee5ecdfe22a8318de05"><div class="ttname"><a href="struct_graphe.html#a02df04020837bee5ecdfe22a8318de05">Graphe::max_noeuds</a></div><div class="ttdeci">int max_noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00050">dijkstra.h:50</a></div></div>
+<div class="ttc" id="astruct_graphe_html_a2e5bb51629044539e81c5c1041ed1602"><div class="ttname"><a href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">Graphe::noeuds</a></div><div class="ttdeci">Noeud * noeuds</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00051">dijkstra.h:51</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a33400f54123d7a20606a752b8dc988a9"><div class="ttname"><a href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">Noeud::est_actif</a></div><div class="ttdeci">bool est_actif</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00032">dijkstra.h:32</a></div></div>
+<div class="ttc" id="astruct_noeud_html_a85658820f041ae3215f449308e5e75b4"><div class="ttname"><a href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">Noeud::liste_adj</a></div><div class="ttdeci">struct AreteNoeud * liste_adj</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00033">dijkstra.h:33</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00019">Metriques::bande_passante</a>, <a class="el" href="routage_8h_source.html#l00033">Chemin::bande_passante_min</a>, <a class="el" href="dijkstra_8h_source.html#l00017">Metriques::cout</a>, <a class="el" href="routage_8h_source.html#l00031">Chemin::cout_total</a>, <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="dijkstra_8h_source.html#l00032">Noeud::est_actif</a>, <a class="el" href="dijkstra_8h_source.html#l00018">Metriques::latence</a>, <a class="el" href="routage_8h_source.html#l00032">Chemin::latence_totale</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="routage_8h_source.html#l00030">Chemin::longueur</a>, <a class="el" href="dijkstra_8h_source.html#l00050">Graphe::max_noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00041">AreteNoeud::metriques</a>, <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="routage_8c_source.html#l00040">obtenir_poids()</a>, <a class="el" href="dijkstra_8h_source.html#l00021">Metriques::securite</a>, <a class="el" href="routage_8h_source.html#l00034">Chemin::securite_min</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00073">menu_dijkstra()</a>, et <a class="el" href="routage_8c_source.html#l00168">routage_k_chemins_plus_courts()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a6399dd39c69a8d366d0449436a62a3fc_cgraph.png" border="0" usemap="#aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_cgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_cgraph" id="aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_cgraph">
+<area shape="rect" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="5,5,119,31"/>
+<area shape="rect" href="routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="167,5,265,31"/>
+<area shape="poly" title=" " alt="" coords="119,16,154,18,148,18,119,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a6399dd39c69a8d366d0449436a62a3fc_icgraph.png" border="0" usemap="#aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_icgraph" id="aroutage_8c_a6399dd39c69a8d366d0449436a62a3fc_icgraph">
+<area shape="rect" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="485,32,599,58"/>
+<area shape="rect" href="main_8c.html#a3ad9847319be43403b546b596f0ee98e" title=" " alt="" coords="112,5,214,31"/>
+<area shape="poly" title=" " alt="" coords="468,42,215,24,215,19,471,38"/>
+<area shape="rect" href="routage_8c.html#a28c046b774836a7ea3e1d0d47bd031cf" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="272,52,437,93"/>
+<area shape="poly" title=" " alt="" coords="472,55,438,63,438,58,467,56"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,32,55,58"/>
+<area shape="poly" title=" " alt="" coords="95,33,56,42,54,37,99,30"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,56,224,82"/>
+<area shape="poly" title=" " alt="" coords="254,71,224,73,224,67,259,71"/>
+<area shape="poly" title=" " alt="" coords="85,56,55,52,55,47,90,54"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a28c046b774836a7ea3e1d0d47bd031cf" name="a28c046b774836a7ea3e1d0d47bd031cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c046b774836a7ea3e1d0d47bd031cf">&#9670;&#160;</a></span>routage_k_chemins_plus_courts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_ensemble_chemins.html">EnsembleChemins</a> * routage_k_chemins_plus_courts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_graphe.html">Graphe</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>k</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>critere</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Algorithme de Yen (K-Plus Courts Chemins). </p>
+<p>Génère K chemins alternatifs pour la redondance (Failover). Utilise Dijkstra de manière itérative en "supprimant" virtuellement des liens.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>Nombre de chemins demandés. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="routage_8c_source.html#l00168">168</a> du fichier <a class="el" href="routage_8c_source.html">routage.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                                                    {</div>
+<div class="line"><span class="lineno">  171</span>  <span class="keywordflow">if</span> (!g || k &lt;= 0)</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>  <a class="code hl_struct" href="struct_ensemble_chemins.html">EnsembleChemins</a> *ec = (<a class="code hl_struct" href="struct_ensemble_chemins.html">EnsembleChemins</a> *)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_ensemble_chemins.html">EnsembleChemins</a>));</div>
+<div class="line"><span class="lineno">  175</span>  <span class="comment">// Allocation max large, realloc plus tard ou statique</span></div>
+<div class="line"><span class="lineno">  176</span>  ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a> = (<a class="code hl_struct" href="struct_chemin.html">Chemin</a> *)malloc(k * <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct_chemin.html">Chemin</a>));</div>
+<div class="line"><span class="lineno">  177</span>  ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a> = 0;</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>  <span class="comment">// 1. Premier plus court chemin (Dijkstra standard)</span></div>
+<div class="line"><span class="lineno">  180</span>  <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *start = <a class="code hl_function" href="#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(g, source, destination, critere);</div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordflow">if</span> (!start)</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> ec;</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>  ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>++] =</div>
+<div class="line"><span class="lineno">  185</span>      *start; <span class="comment">// Copie structure shallow, mais chemin_detruire devra faire gaffe</span></div>
+<div class="line"><span class="lineno">  186</span>              <span class="comment">// ou on fait deep copy</span></div>
+<div class="line"><span class="lineno">  187</span>  <span class="comment">// Dijkstra retourne un malloc. ec stocke la struct Chemin, pas un pointeur.</span></div>
+<div class="line"><span class="lineno">  188</span>  <span class="comment">// start-&gt;noeuds est alloué. On transfère la propriété à ec-&gt;chemins[0].</span></div>
+<div class="line"><span class="lineno">  189</span>  free(start);</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>  <span class="comment">// Algorithme itératif simple (Approche suppression d&#39;arcs)</span></div>
+<div class="line"><span class="lineno">  192</span>  <span class="comment">// Pour K-1 itérations : cherche une alternative en supprimant temporairement</span></div>
+<div class="line"><span class="lineno">  193</span>  <span class="comment">// chaque arc du chemin precedent Note: C&#39;est une simplification tre brutale</span></div>
+<div class="line"><span class="lineno">  194</span>  <span class="comment">// de Yen. Yen utilise &quot;Deviations&quot;. Ici on va essayer de trouver K chemins</span></div>
+<div class="line"><span class="lineno">  195</span>  <span class="comment">// differents en penalisant les arcs deja utilisés ? Ou juste simple</span></div>
+<div class="line"><span class="lineno">  196</span>  <span class="comment">// suppression.</span></div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>  <span class="comment">// Pour simplifier et ne pas complexifier le code avec des heaps de candidats</span></div>
+<div class="line"><span class="lineno">  199</span>  <span class="comment">// (Yen complet), on fait une boucle qui essaie de trouver un chemin</span></div>
+<div class="line"><span class="lineno">  200</span>  <span class="comment">// différent. Approche naive : Pour chaque chemin trouvé, on essaie de</span></div>
+<div class="line"><span class="lineno">  201</span>  <span class="comment">// l&#39;éviter. Mais Dijkstra déterministe donnera toujours le même. Il faut</span></div>
+<div class="line"><span class="lineno">  202</span>  <span class="comment">// modifier le graphe temporairement.</span></div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>  <span class="comment">// On va implémenter un &quot;Yen simplifié&quot; :</span></div>
+<div class="line"><span class="lineno">  205</span>  <span class="comment">// On prend le dernier chemin trouvé.</span></div>
+<div class="line"><span class="lineno">  206</span>  <span class="comment">// Pour chaque arête de ce chemin :</span></div>
+<div class="line"><span class="lineno">  207</span>  <span class="comment">//   On la desactive.</span></div>
+<div class="line"><span class="lineno">  208</span>  <span class="comment">//   On lance Dijkstra.</span></div>
+<div class="line"><span class="lineno">  209</span>  <span class="comment">//   On stocke le résultat s&#39;il est valide et nouveau.</span></div>
+<div class="line"><span class="lineno">  210</span>  <span class="comment">//   On réactive.</span></div>
+<div class="line"><span class="lineno">  211</span>  <span class="comment">// On prend le meilleur des candidats trouvés.</span></div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>  <span class="keywordflow">while</span> (ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a> &lt; k) {</div>
+<div class="line"><span class="lineno">  214</span>    <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *candidat_choisi = NULL;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>    <span class="comment">// Chercher des candidats à partir des chemins DEJA trouvés</span></div>
+<div class="line"><span class="lineno">  217</span>    <span class="comment">// (En théorie Yen ne regarde que les déviations du dermier, mais</span></div>
+<div class="line"><span class="lineno">  218</span>    <span class="comment">// simplifions en regardant suppression d&#39;arêtes sur le dernier chemin</span></div>
+<div class="line"><span class="lineno">  219</span>    <span class="comment">// ajouté)</span></div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *dernier = &amp;ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a> - 1];</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; dernier-&gt;<a class="code hl_variable" href="struct_chemin.html#ac75550e412ee627165a15c3e65f20c1d">longueur</a> - 1; i++) {</div>
+<div class="line"><span class="lineno">  224</span>      <span class="keywordtype">int</span> u = dernier-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i];</div>
+<div class="line"><span class="lineno">  225</span>      <span class="keywordtype">int</span> v = dernier-&gt;<a class="code hl_variable" href="struct_chemin.html#a95532be55c6268b4d75931fbbf03d37b">noeuds</a>[i + 1];</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>      <span class="comment">// Trouver l&#39;arete et la desactiver</span></div>
+<div class="line"><span class="lineno">  228</span>      <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *a = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[u].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
+<div class="line"><span class="lineno">  229</span>      <span class="keywordtype">float</span> save_cout = 0;</div>
+<div class="line"><span class="lineno">  230</span>      <span class="keywordflow">while</span> (a) {</div>
+<div class="line"><span class="lineno">  231</span>        <span class="keywordflow">if</span> (a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a> == v) {</div>
+<div class="line"><span class="lineno">  232</span>          <span class="comment">// Hack: on change le cout temporairement à FLT_MAX pour &quot;désactiver&quot;</span></div>
+<div class="line"><span class="lineno">  233</span>          <span class="comment">// sans structure complexe Attention: Dijkstra utilise</span></div>
+<div class="line"><span class="lineno">  234</span>          <span class="comment">// &quot;obtenir_poids&quot;. Si on modifie a-&gt;metriques.cout, cela affecte tout</span></div>
+<div class="line"><span class="lineno">  235</span>          <span class="comment">// le monde. Comme c&#39;est monothread, OK.</span></div>
+<div class="line"><span class="lineno">  236</span>          save_cout = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>;</div>
+<div class="line"><span class="lineno">  237</span>          <span class="comment">// On veut le rendre inutilisable. On met un cout enorme.</span></div>
+<div class="line"><span class="lineno">  238</span>          <span class="comment">// Mais si critere est BP, on met 0 ? Si latence, MAX.</span></div>
+<div class="line"><span class="lineno">  239</span>          <span class="comment">// On va utiliser un flag &quot;actif&quot; sur l&#39;arete si possible, mais struct</span></div>
+<div class="line"><span class="lineno">  240</span>          <span class="comment">// AreteNoeud n&#39;a pas de flag actif. On suppose que le graphe a des</span></div>
+<div class="line"><span class="lineno">  241</span>          <span class="comment">// couts positifs. On met cout = 1e9.</span></div>
+<div class="line"><span class="lineno">  242</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a> = 1e9;</div>
+<div class="line"><span class="lineno">  243</span>          <span class="comment">// Si critere autre que cout, il faudrait aussi modifier l&#39;autre</span></div>
+<div class="line"><span class="lineno">  244</span>          <span class="comment">// metrique. Simplification: on affecte TOUTES les metriques</span></div>
+<div class="line"><span class="lineno">  245</span>          <span class="comment">// penalisantes.</span></div>
+<div class="line"><span class="lineno">  246</span>          <span class="keywordtype">float</span> save_lat = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a>;</div>
+<div class="line"><span class="lineno">  247</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a> = 1e9;</div>
+<div class="line"><span class="lineno">  248</span>          <span class="keywordtype">float</span> save_bp = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a>;</div>
+<div class="line"><span class="lineno">  249</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a> =</div>
+<div class="line"><span class="lineno">  250</span>              0.001; <span class="comment">// BP quasi nulle -&gt; Poids enorme (1M/BP)</span></div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>          <span class="comment">// Lance Dijkstra</span></div>
+<div class="line"><span class="lineno">  253</span>          <a class="code hl_struct" href="struct_chemin.html">Chemin</a> *alt = <a class="code hl_function" href="#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(g, source, destination, critere);</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>          <span class="comment">// Rétablir</span></div>
+<div class="line"><span class="lineno">  256</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a> = save_cout;</div>
+<div class="line"><span class="lineno">  257</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#acdfcc2cf1099f9bfeb474d505b2aacb7">latence</a> = save_lat;</div>
+<div class="line"><span class="lineno">  258</span>          a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a> = save_bp;</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>          <span class="keywordflow">if</span> (alt) {</div>
+<div class="line"><span class="lineno">  261</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a6c714354c5d0fc10baa8a1e5e2bb824f">chemin_existe_deja</a>(ec, alt)) {</div>
+<div class="line"><span class="lineno">  262</span>              <span class="keywordflow">if</span> (candidat_choisi == NULL ||</div>
+<div class="line"><span class="lineno">  263</span>                  alt-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a> &lt; candidat_choisi-&gt;<a class="code hl_variable" href="struct_chemin.html#a19ac368ad526034b581cef5e0bfd3886">cout_total</a>) {</div>
+<div class="line"><span class="lineno">  264</span>                <span class="keywordflow">if</span> (candidat_choisi)</div>
+<div class="line"><span class="lineno">  265</span>                  <a class="code hl_function" href="#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(candidat_choisi);</div>
+<div class="line"><span class="lineno">  266</span>                candidat_choisi = alt;</div>
+<div class="line"><span class="lineno">  267</span>              } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  268</span>                <a class="code hl_function" href="#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(alt);</div>
+<div class="line"><span class="lineno">  269</span>              }</div>
+<div class="line"><span class="lineno">  270</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  271</span>              <a class="code hl_function" href="#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a>(alt);</div>
+<div class="line"><span class="lineno">  272</span>            }</div>
+<div class="line"><span class="lineno">  273</span>          }</div>
+<div class="line"><span class="lineno">  274</span>          <span class="keywordflow">break</span>; <span class="comment">// Arc trouvé et traité</span></div>
+<div class="line"><span class="lineno">  275</span>        }</div>
+<div class="line"><span class="lineno">  276</span>        a = a-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  277</span>      }</div>
+<div class="line"><span class="lineno">  278</span>    }</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>    <span class="keywordflow">if</span> (candidat_choisi) {</div>
+<div class="line"><span class="lineno">  281</span>      ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a5430bbe2e567fb4fa4b249f4ede09792">chemins</a>[ec-&gt;<a class="code hl_variable" href="struct_ensemble_chemins.html#a98a9559da5f7bb2ff4e302f619914855">nombre</a>++] = *candidat_choisi;</div>
+<div class="line"><span class="lineno">  282</span>      free(candidat_choisi); <span class="comment">// Libère la struct, garde les arrays (copie</span></div>
+<div class="line"><span class="lineno">  283</span>                             <span class="comment">// shallow struct dans array)</span></div>
+<div class="line"><span class="lineno">  284</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  285</span>      <span class="keywordflow">break</span>; <span class="comment">// Plus de chemin alternatif trouvé par cette méthode simple</span></div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span>  }</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>  <span class="keywordflow">return</span> ec;</div>
+<div class="line"><span class="lineno">  290</span>}</div>
+<div class="ttc" id="aroutage_8c_html_a5f3c9dc95951b06193d080420a6ef90c"><div class="ttname"><a href="#a5f3c9dc95951b06193d080420a6ef90c">chemin_detruire</a></div><div class="ttdeci">void chemin_detruire(Chemin *c)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00017">routage.c:17</a></div></div>
+<div class="ttc" id="aroutage_8c_html_a6399dd39c69a8d366d0449436a62a3fc"><div class="ttname"><a href="#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a></div><div class="ttdeci">Chemin * routage_dijkstra(Graphe *g, int source, int destination, const char *critere)</div><div class="ttdoc">Algorithme de Dijkstra (Routage Optimal).</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00050">routage.c:50</a></div></div>
+<div class="ttc" id="aroutage_8c_html_a6c714354c5d0fc10baa8a1e5e2bb824f"><div class="ttname"><a href="#a6c714354c5d0fc10baa8a1e5e2bb824f">chemin_existe_deja</a></div><div class="ttdeci">static bool chemin_existe_deja(EnsembleChemins *ec, Chemin *c)</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00151">routage.c:151</a></div></div>
+<div class="ttc" id="astruct_ensemble_chemins_html"><div class="ttname"><a href="struct_ensemble_chemins.html">EnsembleChemins</a></div><div class="ttdoc">Conteneur pour les résultats de recherche multiple (ex: K-chemins).</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00041">routage.h:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00019">Metriques::bande_passante</a>, <a class="el" href="routage_8c_source.html#l00017">chemin_detruire()</a>, <a class="el" href="routage_8c_source.html#l00151">chemin_existe_deja()</a>, <a class="el" href="routage_8h_source.html#l00042">EnsembleChemins::chemins</a>, <a class="el" href="dijkstra_8h_source.html#l00017">Metriques::cout</a>, <a class="el" href="routage_8h_source.html#l00031">Chemin::cout_total</a>, <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="dijkstra_8h_source.html#l00018">Metriques::latence</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="routage_8h_source.html#l00030">Chemin::longueur</a>, <a class="el" href="dijkstra_8h_source.html#l00041">AreteNoeud::metriques</a>, <a class="el" href="routage_8h_source.html#l00029">Chemin::noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="routage_8h_source.html#l00043">EnsembleChemins::nombre</a>, <a class="el" href="routage_8c_source.html#l00050">routage_dijkstra()</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="main_8c_source.html#l00097">menu_k_shortest()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a28c046b774836a7ea3e1d0d47bd031cf_cgraph.png" border="0" usemap="#aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_cgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_cgraph" id="aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_cgraph">
+<area shape="rect" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="5,47,171,88"/>
+<area shape="rect" href="routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="230,5,344,31"/>
+<area shape="poly" title=" " alt="" coords="170,44,220,34,215,36,172,50"/>
+<area shape="rect" href="routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="219,55,355,80"/>
+<area shape="poly" title=" " alt="" coords="170,65,206,67,200,68,171,70"/>
+<area shape="rect" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="230,104,344,130"/>
+<area shape="poly" title=" " alt="" coords="171,85,220,99,215,100,171,91"/>
+<area shape="rect" href="routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="403,104,501,130"/>
+<area shape="poly" title=" " alt="" coords="344,114,390,117,385,117,344,119"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="routage_8c_a28c046b774836a7ea3e1d0d47bd031cf_icgraph.png" border="0" usemap="#aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_icgraph" loading="lazy" alt=""/></div>
+<map name="aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_icgraph" id="aroutage_8c_a28c046b774836a7ea3e1d0d47bd031cf_icgraph">
+<area shape="rect" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="272,5,437,46"/>
+<area shape="rect" href="main_8c.html#a37d8ab5be3c11050660d64e3c72c4826" title=" " alt="" coords="103,13,224,38"/>
+<area shape="poly" title=" " alt="" coords="254,26,224,28,224,23,259,26"/>
+<area shape="rect" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,55,38"/>
+<area shape="poly" title=" " alt="" coords="84,27,55,28,55,23,89,25"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="routage_8c.html">routage.c</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

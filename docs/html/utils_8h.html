@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence du fichier src/utils.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('utils_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence du fichier utils.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Module GSM : Utilitaires pour sortie JSON et parsing CLI.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de utils.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h__incl.png" border="0" usemap="#asrc_2utils_8h" loading="lazy" alt=""/></div>
+<map name="asrc_2utils_8h" id="asrc_2utils_8h">
+<area shape="rect" title="Module GSM : Utilitaires pour sortie JSON et parsing CLI." alt="" coords="188,5,267,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,74,105"/>
+<area shape="poly" title=" " alt="" coords="197,34,87,75,85,70,195,29"/>
+<area shape="rect" title=" " alt="" coords="98,79,173,105"/>
+<area shape="poly" title=" " alt="" coords="214,31,164,72,161,67,209,32"/>
+<area shape="rect" title=" " alt="" coords="197,79,258,105"/>
+<area shape="poly" title=" " alt="" coords="229,29,230,65,225,62,226,33"/>
+<area shape="rect" title=" " alt="" coords="281,79,344,105"/>
+<area shape="poly" title=" " alt="" coords="243,29,290,69,284,69,241,34"/>
+<area shape="rect" title=" " alt="" coords="369,79,433,105"/>
+<area shape="poly" title=" " alt="" coords="257,29,360,72,355,73,256,34"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h__dep__incl.png" border="0" usemap="#asrc_2utils_8hdep" loading="lazy" alt=""/></div>
+<map name="asrc_2utils_8hdep" id="asrc_2utils_8hdep">
+<area shape="rect" title="Module GSM : Utilitaires pour sortie JSON et parsing CLI." alt="" coords="5,5,84,31"/>
+<area shape="rect" href="utils_8c.html" title="Module GSM : Implémentation des utilitaires." alt="" coords="5,79,84,105"/>
+<area shape="poly" title=" " alt="" coords="47,45,47,79,42,78,42,48"/>
+</map>
+</div>
+</div>
+<p><a href="utils_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a7c659b38fd102af4415111d2243becfd" id="r_a7c659b38fd102af4415111d2243becfd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7c659b38fd102af4415111d2243becfd">json_success</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a7c659b38fd102af4415111d2243becfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écrit une réponse JSON de succès sur stdout.  <br /></td></tr>
+<tr class="memitem:a3c0d38217befb9cae141ac1cd694bdc0" id="r_a3c0d38217befb9cae141ac1cd694bdc0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c0d38217befb9cae141ac1cd694bdc0">json_error</a> (const char *message)</td></tr>
+<tr class="memdesc:a3c0d38217befb9cae141ac1cd694bdc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écrit une réponse JSON d'erreur sur stdout.  <br /></td></tr>
+<tr class="memitem:a2b29b8173b46a8b93ab76452ae5e5dbd" id="r_a2b29b8173b46a8b93ab76452ae5e5dbd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b29b8173b46a8b93ab76452ae5e5dbd">json_escape_string</a> (const char *input, char *output, size_t max_len)</td></tr>
+<tr class="memdesc:a2b29b8173b46a8b93ab76452ae5e5dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écape une chaîne pour inclusion dans du JSON.  <br /></td></tr>
+<tr class="memitem:abb78004d41898990f7e77ee27a6a8058" id="r_abb78004d41898990f7e77ee27a6a8058"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#abb78004d41898990f7e77ee27a6a8058">parse_int_arg</a> (const char *arg, int default_val)</td></tr>
+<tr class="memdesc:abb78004d41898990f7e77ee27a6a8058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un argument comme entier avec valeur par défaut.  <br /></td></tr>
+<tr class="memitem:a9366640bfd08ef066de45ff5483481cb" id="r_a9366640bfd08ef066de45ff5483481cb"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a9366640bfd08ef066de45ff5483481cb">parse_float_arg</a> (const char *arg, float default_val)</td></tr>
+<tr class="memdesc:a9366640bfd08ef066de45ff5483481cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un argument comme flottant avec valeur par défaut.  <br /></td></tr>
+<tr class="memitem:a2e5343578ab9f920858bbc97fd12e3b7" id="r_a2e5343578ab9f920858bbc97fd12e3b7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a2e5343578ab9f920858bbc97fd12e3b7">parse_bool_arg</a> (const char *arg, bool default_val)</td></tr>
+<tr class="memdesc:a2e5343578ab9f920858bbc97fd12e3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un argument comme booléen (0/1, true/false).  <br /></td></tr>
+<tr class="memitem:a158acfe06fa8e590f7139b7c8dafb736" id="r_a158acfe06fa8e590f7139b7c8dafb736"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a158acfe06fa8e590f7139b7c8dafb736">check_args</a> (int argc, int min_required, const char *usage)</td></tr>
+<tr class="memdesc:a158acfe06fa8e590f7139b7c8dafb736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie le nombre minimum d'arguments.  <br /></td></tr>
+<tr class="memitem:aba2db2f17a82cb9f949de86a2f783ce6" id="r_aba2db2f17a82cb9f949de86a2f783ce6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aba2db2f17a82cb9f949de86a2f783ce6">file_exists</a> (const char *path)</td></tr>
+<tr class="memdesc:aba2db2f17a82cb9f949de86a2f783ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si un fichier existe.  <br /></td></tr>
+<tr class="memitem:a23179d832d8ca657da9e43fd6a4e72cd" id="r_a23179d832d8ca657da9e43fd6a4e72cd"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a23179d832d8ca657da9e43fd6a4e72cd">ensure_directory</a> (const char *filepath)</td></tr>
+<tr class="memdesc:a23179d832d8ca657da9e43fd6a4e72cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée le répertoire parent si nécessaire.  <br /></td></tr>
+<tr class="memitem:a25c92490a54680a532dbfbaa4dee8a46" id="r_a25c92490a54680a532dbfbaa4dee8a46"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a25c92490a54680a532dbfbaa4dee8a46">utils_generer_topologie_large</a> (const char *filename, const char *name, int nb_noeuds, int density_percent)</td></tr>
+<tr class="memdesc:a25c92490a54680a532dbfbaa4dee8a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Génère un fichier de topologie aléatoire (Legacy gen_large).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Module GSM : Utilitaires pour sortie JSON et parsing CLI. </p>
+<p>Fournit des fonctions d'aide pour la communication entre les binaires C et l'interface Desktop Python. </p>
+
+<p class="definition">Définition dans le fichier <a class="el" href="utils_8h_source.html">utils.h</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions</h2>
+<a id="a158acfe06fa8e590f7139b7c8dafb736" name="a158acfe06fa8e590f7139b7c8dafb736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158acfe06fa8e590f7139b7c8dafb736">&#9670;&#160;</a></span>check_args()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool check_args </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>min_required</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>usage</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie le nombre minimum d'arguments. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>true si suffisant, false sinon (affiche usage) </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00109">109</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                               {</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> (argc &lt; min_required) {</div>
+<div class="line"><span class="lineno">  111</span>    fprintf(stderr, <span class="stringliteral">&quot;Usage : %s\n&quot;</span>, usage);</div>
+<div class="line"><span class="lineno">  112</span>    <a class="code hl_function" href="utils_8c.html#a3c0d38217befb9cae141ac1cd694bdc0">json_error</a>(<span class="stringliteral">&quot;Arguments insuffisants&quot;</span>);</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  114</span>  }</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="autils_8c_html_a3c0d38217befb9cae141ac1cd694bdc0"><div class="ttname"><a href="utils_8c.html#a3c0d38217befb9cae141ac1cd694bdc0">json_error</a></div><div class="ttdeci">void json_error(const char *message)</div><div class="ttdoc">Écrit une réponse JSON d&#39;erreur sur stdout.</div><div class="ttdef"><b>Definition</b> <a href="utils_8c_source.html#l00028">utils.c:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="utils_8c_source.html#l00028">json_error()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a158acfe06fa8e590f7139b7c8dafb736_cgraph.png" border="0" usemap="#autils_8h_a158acfe06fa8e590f7139b7c8dafb736_cgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a158acfe06fa8e590f7139b7c8dafb736_cgraph" id="autils_8h_a158acfe06fa8e590f7139b7c8dafb736_cgraph">
+<area shape="rect" title="Vérifie le nombre minimum d&#39;arguments." alt="" coords="5,5,94,31"/>
+<area shape="rect" href="utils_8c.html#a3c0d38217befb9cae141ac1cd694bdc0" title="Écrit une réponse JSON d&#39;erreur sur stdout." alt="" coords="142,5,220,31"/>
+<area shape="poly" title=" " alt="" coords="94,16,129,18,123,18,94,21"/>
+<area shape="rect" href="utils_8c.html#a2b29b8173b46a8b93ab76452ae5e5dbd" title="Écape une chaîne pour inclusion dans du JSON." alt="" coords="268,5,401,31"/>
+<area shape="poly" title=" " alt="" coords="220,16,255,18,250,18,220,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a23179d832d8ca657da9e43fd6a4e72cd" name="a23179d832d8ca657da9e43fd6a4e72cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23179d832d8ca657da9e43fd6a4e72cd">&#9670;&#160;</a></span>ensure_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ensure_directory </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filepath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée le répertoire parent si nécessaire. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00129">129</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                            {</div>
+<div class="line"><span class="lineno">  130</span>  <span class="keywordflow">if</span> (!filepath)</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>  <span class="comment">// Extraire le répertoire parent</span></div>
+<div class="line"><span class="lineno">  134</span>  <span class="keywordtype">char</span> dir[512];</div>
+<div class="line"><span class="lineno">  135</span>  strncpy(dir, filepath, <span class="keyword">sizeof</span>(dir) - 1);</div>
+<div class="line"><span class="lineno">  136</span>  dir[<span class="keyword">sizeof</span>(dir) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>  <span class="comment">// Trouver le dernier séparateur</span></div>
+<div class="line"><span class="lineno">  139</span>  <span class="keywordtype">char</span> *last_sep = strrchr(dir, <span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">  140</span>  <span class="keywordflow">if</span> (!last_sep)</div>
+<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// Pas de répertoire parent</span></div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span>  *last_sep = <span class="charliteral">&#39;\0&#39;</span>; <span class="comment">// Tronquer au répertoire parent</span></div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>  <span class="comment">// Créer récursivement (simple, un seul niveau)</span></div>
+<div class="line"><span class="lineno">  146</span>  <span class="keyword">struct </span>stat st;</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordflow">if</span> (stat(dir, &amp;st) != 0) {</div>
+<div class="line"><span class="lineno">  148</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> mkdir(dir) == 0;</div>
+<div class="line"><span class="lineno">  150</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> mkdir(dir, 0755) == 0;</div>
+<div class="line"><span class="lineno">  152</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  153</span>  }</div>
+<div class="line"><span class="lineno">  154</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  155</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="utils_8c_source.html#l00161">utils_generer_topologie_large()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a23179d832d8ca657da9e43fd6a4e72cd_icgraph.png" border="0" usemap="#autils_8h_a23179d832d8ca657da9e43fd6a4e72cd_icgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a23179d832d8ca657da9e43fd6a4e72cd_icgraph" id="autils_8h_a23179d832d8ca657da9e43fd6a4e72cd_icgraph">
+<area shape="rect" title="Crée le répertoire parent si nécessaire." alt="" coords="208,13,325,38"/>
+<area shape="rect" href="utils_8c.html#a25c92490a54680a532dbfbaa4dee8a46" title="Génère un fichier de topologie aléatoire (Legacy gen_large)." alt="" coords="5,5,160,46"/>
+<area shape="poly" title=" " alt="" coords="189,26,160,28,160,23,195,25"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aba2db2f17a82cb9f949de86a2f783ce6" name="aba2db2f17a82cb9f949de86a2f783ce6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2db2f17a82cb9f949de86a2f783ce6">&#9670;&#160;</a></span>file_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool file_exists </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si un fichier existe. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00122">122</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>                                   {</div>
+<div class="line"><span class="lineno">  123</span>  <span class="keywordflow">if</span> (!path)</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  125</span>  <span class="keyword">struct </span>stat st;</div>
+<div class="line"><span class="lineno">  126</span>  <span class="keywordflow">return</span> (stat(path, &amp;st) == 0);</div>
+<div class="line"><span class="lineno">  127</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3c0d38217befb9cae141ac1cd694bdc0" name="a3c0d38217befb9cae141ac1cd694bdc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c0d38217befb9cae141ac1cd694bdc0">&#9670;&#160;</a></span>json_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void json_error </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Écrit une réponse JSON d'erreur sur stdout. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message d'erreur </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00028">28</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>                                     {</div>
+<div class="line"><span class="lineno">   29</span>  <span class="keywordtype">char</span> escaped[512];</div>
+<div class="line"><span class="lineno">   30</span>  <a class="code hl_function" href="utils_8c.html#a2b29b8173b46a8b93ab76452ae5e5dbd">json_escape_string</a>(message, escaped, <span class="keyword">sizeof</span>(escaped));</div>
+<div class="line"><span class="lineno">   31</span>  printf(<span class="stringliteral">&quot;{\&quot;success\&quot;: false, \&quot;error\&quot;: \&quot;%s\&quot;}\n&quot;</span>, escaped);</div>
+<div class="line"><span class="lineno">   32</span>  fflush(stdout);</div>
+<div class="line"><span class="lineno">   33</span>}</div>
+<div class="ttc" id="autils_8c_html_a2b29b8173b46a8b93ab76452ae5e5dbd"><div class="ttname"><a href="utils_8c.html#a2b29b8173b46a8b93ab76452ae5e5dbd">json_escape_string</a></div><div class="ttdeci">void json_escape_string(const char *input, char *output, size_t max_len)</div><div class="ttdoc">Écape une chaîne pour inclusion dans du JSON.</div><div class="ttdef"><b>Definition</b> <a href="utils_8c_source.html#l00035">utils.c:35</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="utils_8c_source.html#l00035">json_escape_string()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="utils_8c_source.html#l00109">check_args()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a3c0d38217befb9cae141ac1cd694bdc0_cgraph.png" border="0" usemap="#autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_cgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_cgraph" id="autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_cgraph">
+<area shape="rect" title="Écrit une réponse JSON d&#39;erreur sur stdout." alt="" coords="5,5,84,31"/>
+<area shape="rect" href="utils_8c.html#a2b29b8173b46a8b93ab76452ae5e5dbd" title="Écape une chaîne pour inclusion dans du JSON." alt="" coords="132,5,265,31"/>
+<area shape="poly" title=" " alt="" coords="84,16,119,18,113,19,84,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a3c0d38217befb9cae141ac1cd694bdc0_icgraph.png" border="0" usemap="#autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_icgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_icgraph" id="autils_8h_a3c0d38217befb9cae141ac1cd694bdc0_icgraph">
+<area shape="rect" title="Écrit une réponse JSON d&#39;erreur sur stdout." alt="" coords="142,5,220,31"/>
+<area shape="rect" href="utils_8c.html#a158acfe06fa8e590f7139b7c8dafb736" title="Vérifie le nombre minimum d&#39;arguments." alt="" coords="5,5,94,31"/>
+<area shape="poly" title=" " alt="" coords="123,18,94,21,94,16,129,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b29b8173b46a8b93ab76452ae5e5dbd" name="a2b29b8173b46a8b93ab76452ae5e5dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b29b8173b46a8b93ab76452ae5e5dbd">&#9670;&#160;</a></span>json_escape_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void json_escape_string </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Écape une chaîne pour inclusion dans du JSON. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Chaîne à échapper </td></tr>
+    <tr><td class="paramname">output</td><td>Buffer de sortie (doit être au moins 2x input) </td></tr>
+    <tr><td class="paramname">max_len</td><td>Taille max du buffer de sortie </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00035">35</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                                         {</div>
+<div class="line"><span class="lineno">   36</span>  <span class="keywordflow">if</span> (!input || !output || max_len == 0)</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>  <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; input[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; j &lt; max_len - 1; i++) {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">char</span> c = input[i];</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;&quot;&#39;</span> || c == <span class="charliteral">&#39;\\&#39;</span>) {</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">if</span> (j + 2 &gt;= max_len)</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   45</span>      output[j++] = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   46</span>      output[j++] = c;</div>
+<div class="line"><span class="lineno">   47</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\n&#39;</span>) {</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keywordflow">if</span> (j + 2 &gt;= max_len)</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   50</span>      output[j++] = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   51</span>      output[j++] = <span class="charliteral">&#39;n&#39;</span>;</div>
+<div class="line"><span class="lineno">   52</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\r&#39;</span>) {</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">if</span> (j + 2 &gt;= max_len)</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   55</span>      output[j++] = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   56</span>      output[j++] = <span class="charliteral">&#39;r&#39;</span>;</div>
+<div class="line"><span class="lineno">   57</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;\t&#39;</span>) {</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">if</span> (j + 2 &gt;= max_len)</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   60</span>      output[j++] = <span class="charliteral">&#39;\\&#39;</span>;</div>
+<div class="line"><span class="lineno">   61</span>      output[j++] = <span class="charliteral">&#39;t&#39;</span>;</div>
+<div class="line"><span class="lineno">   62</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   63</span>      output[j++] = c;</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>  }</div>
+<div class="line"><span class="lineno">   66</span>  output[j] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   67</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="utils_8c_source.html#l00028">json_error()</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a2b29b8173b46a8b93ab76452ae5e5dbd_icgraph.png" border="0" usemap="#autils_8h_a2b29b8173b46a8b93ab76452ae5e5dbd_icgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a2b29b8173b46a8b93ab76452ae5e5dbd_icgraph" id="autils_8h_a2b29b8173b46a8b93ab76452ae5e5dbd_icgraph">
+<area shape="rect" title="Écape une chaîne pour inclusion dans du JSON." alt="" coords="268,5,401,31"/>
+<area shape="rect" href="utils_8c.html#a3c0d38217befb9cae141ac1cd694bdc0" title="Écrit une réponse JSON d&#39;erreur sur stdout." alt="" coords="142,5,220,31"/>
+<area shape="poly" title=" " alt="" coords="250,18,220,21,220,16,255,18"/>
+<area shape="rect" href="utils_8c.html#a158acfe06fa8e590f7139b7c8dafb736" title="Vérifie le nombre minimum d&#39;arguments." alt="" coords="5,5,94,31"/>
+<area shape="poly" title=" " alt="" coords="123,18,94,21,94,16,129,18"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c659b38fd102af4415111d2243becfd" name="a7c659b38fd102af4415111d2243becfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c659b38fd102af4415111d2243becfd">&#9670;&#160;</a></span>json_success()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void json_success </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Écrit une réponse JSON de succès sur stdout. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format printf pour le contenu JSON (sans les accolades externes) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00015">15</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                           {</div>
+<div class="line"><span class="lineno">   16</span>  printf(<span class="stringliteral">&quot;{\&quot;success\&quot;: true&quot;</span>);</div>
+<div class="line"><span class="lineno">   17</span>  <span class="keywordflow">if</span> (format &amp;&amp; format[0] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><span class="lineno">   18</span>    printf(<span class="stringliteral">&quot;, &quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>    va_list args;</div>
+<div class="line"><span class="lineno">   20</span>    va_start(args, format);</div>
+<div class="line"><span class="lineno">   21</span>    vprintf(format, args);</div>
+<div class="line"><span class="lineno">   22</span>    va_end(args);</div>
+<div class="line"><span class="lineno">   23</span>  }</div>
+<div class="line"><span class="lineno">   24</span>  printf(<span class="stringliteral">&quot;}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>  fflush(stdout);</div>
+<div class="line"><span class="lineno">   26</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2e5343578ab9f920858bbc97fd12e3b7" name="a2e5343578ab9f920858bbc97fd12e3b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e5343578ab9f920858bbc97fd12e3b7">&#9670;&#160;</a></span>parse_bool_arg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool parse_bool_arg </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>default_val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse un argument comme booléen (0/1, true/false). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00093">93</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>                                                       {</div>
+<div class="line"><span class="lineno">   94</span>  <span class="keywordflow">if</span> (!arg || arg[0] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">   96</span>  <span class="keywordflow">if</span> (strcmp(arg, <span class="stringliteral">&quot;1&quot;</span>) == 0 || strcmp(arg, <span class="stringliteral">&quot;true&quot;</span>) == 0 ||</div>
+<div class="line"><span class="lineno">   97</span>      strcmp(arg, <span class="stringliteral">&quot;yes&quot;</span>) == 0 || strcmp(arg, <span class="stringliteral">&quot;vrai&quot;</span>) == 0 ||</div>
+<div class="line"><span class="lineno">   98</span>      strcmp(arg, <span class="stringliteral">&quot;oui&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keywordflow">if</span> (strcmp(arg, <span class="stringliteral">&quot;0&quot;</span>) == 0 || strcmp(arg, <span class="stringliteral">&quot;false&quot;</span>) == 0 ||</div>
+<div class="line"><span class="lineno">  102</span>      strcmp(arg, <span class="stringliteral">&quot;no&quot;</span>) == 0 || strcmp(arg, <span class="stringliteral">&quot;faux&quot;</span>) == 0 ||</div>
+<div class="line"><span class="lineno">  103</span>      strcmp(arg, <span class="stringliteral">&quot;non&quot;</span>) == 0) {</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  105</span>  }</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9366640bfd08ef066de45ff5483481cb" name="a9366640bfd08ef066de45ff5483481cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9366640bfd08ef066de45ff5483481cb">&#9670;&#160;</a></span>parse_float_arg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float parse_float_arg </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>default_val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse un argument comme flottant avec valeur par défaut. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00083">83</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>                                                          {</div>
+<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">if</span> (!arg || arg[0] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">   86</span>  <span class="keywordtype">char</span> *end;</div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordtype">float</span> val = strtof(arg, &amp;end);</div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordflow">if</span> (end == arg)</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">   90</span>  <span class="keywordflow">return</span> val;</div>
+<div class="line"><span class="lineno">   91</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abb78004d41898990f7e77ee27a6a8058" name="abb78004d41898990f7e77ee27a6a8058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb78004d41898990f7e77ee27a6a8058">&#9670;&#160;</a></span>parse_int_arg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int parse_int_arg </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>default_val</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse un argument comme entier avec valeur par défaut. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00073">73</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                    {</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">if</span> (!arg || arg[0] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">   76</span>  <span class="keywordtype">char</span> *end;</div>
+<div class="line"><span class="lineno">   77</span>  <span class="keywordtype">long</span> val = strtol(arg, &amp;end, 10);</div>
+<div class="line"><span class="lineno">   78</span>  <span class="keywordflow">if</span> (end == arg)</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> default_val;</div>
+<div class="line"><span class="lineno">   80</span>  <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)val;</div>
+<div class="line"><span class="lineno">   81</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a25c92490a54680a532dbfbaa4dee8a46" name="a25c92490a54680a532dbfbaa4dee8a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c92490a54680a532dbfbaa4dee8a46">&#9670;&#160;</a></span>utils_generer_topologie_large()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void utils_generer_topologie_large </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nb_noeuds</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>density_percent</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Génère un fichier de topologie aléatoire (Legacy gen_large). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td><a class="el" href="struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.">Chemin</a> du fichier de sortie </td></tr>
+    <tr><td class="paramname">name</td><td>Nom de la topologie </td></tr>
+    <tr><td class="paramname">nb_noeuds</td><td>Nombre de noeuds </td></tr>
+    <tr><td class="paramname">density_percent</td><td>Densité des liens (0-100) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="utils_8c_source.html#l00161">161</a> du fichier <a class="el" href="utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>                                                                       {</div>
+<div class="line"><span class="lineno">  163</span>  <span class="comment">// Ensure we have a random seed if not already set (call srand in main</span></div>
+<div class="line"><span class="lineno">  164</span>  <span class="comment">// ideally) srand(time(NULL));</span></div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>  <span class="comment">// Ensure directory exists</span></div>
+<div class="line"><span class="lineno">  167</span>  <a class="code hl_function" href="utils_8c.html#a23179d832d8ca657da9e43fd6a4e72cd">ensure_directory</a>(filename);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>  FILE *f = fopen(filename, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordflow">if</span> (!f) {</div>
+<div class="line"><span class="lineno">  171</span>    perror(<span class="stringliteral">&quot;utils_generer_topologie_large fopen&quot;</span>);</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="line"><span class="lineno">  174</span> </div>
+<div class="line"><span class="lineno">  175</span>  <span class="comment">// Header: N &lt;nb&gt; &lt;oriente=0&gt;</span></div>
+<div class="line"><span class="lineno">  176</span>  fprintf(f, <span class="stringliteral">&quot;N %d 0\n&quot;</span>, nb_noeuds);</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>  <span class="comment">// Nodes: V &lt;id&gt; &lt;name&gt; &lt;type&gt; &lt;x&gt; &lt;y&gt; &lt;active&gt;</span></div>
+<div class="line"><span class="lineno">  179</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nb_noeuds; i++) {</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordtype">int</span> type = rand() % 4; <span class="comment">// 0=ROUTEUR, 1=COMMUTATEUR...</span></div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordtype">float</span> x = (float)(rand() % 1000);</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordtype">float</span> y = (float)(rand() % 1000);</div>
+<div class="line"><span class="lineno">  183</span>    fprintf(f, <span class="stringliteral">&quot;V %d Node_%d %d %.2f %.2f 1\n&quot;</span>, i, i, type, x, y);</div>
+<div class="line"><span class="lineno">  184</span>  }</div>
+<div class="line"><span class="lineno">  185</span> </div>
+<div class="line"><span class="lineno">  186</span>  <span class="comment">// Edges: E &lt;src&gt; &lt;dest&gt; &lt;cost&gt; &lt;lat&gt; &lt;bp&gt; &lt;fiab&gt; &lt;sec&gt;</span></div>
+<div class="line"><span class="lineno">  187</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nb_noeuds; i++) {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; nb_noeuds; j++) {</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">if</span> ((rand() % 100) &lt; density_percent) {</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordtype">float</span> cout = (float)(rand() % 20 + 1);</div>
+<div class="line"><span class="lineno">  191</span>        <span class="keywordtype">float</span> lat = (float)(rand() % 10 + 1);</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordtype">float</span> bp = 1000.0f;</div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordtype">float</span> fiab = 0.9f + ((rand() % 10) / 100.0f); <span class="comment">// 0.90 - 0.99</span></div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordtype">int</span> sec = (rand() % 3) + 1;                   <span class="comment">// 1-3</span></div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>        fprintf(f, <span class="stringliteral">&quot;E %d %d %.2f %.2f %.2f %.2f %d\n&quot;</span>, i, j, cout, lat, bp,</div>
+<div class="line"><span class="lineno">  197</span>                fiab, sec);</div>
+<div class="line"><span class="lineno">  198</span>      }</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
+<div class="line"><span class="lineno">  200</span>    <span class="comment">// Ensure connectivity ring/chain</span></div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">if</span> (i &lt; nb_noeuds - 1) {</div>
+<div class="line"><span class="lineno">  202</span>      fprintf(f, <span class="stringliteral">&quot;E %d %d 10.00 1.00 1000.00 0.99 1\n&quot;</span>, i, i + 1);</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
+<div class="line"><span class="lineno">  204</span>  }</div>
+<div class="line"><span class="lineno">  205</span>  fclose(f);</div>
+<div class="line"><span class="lineno">  206</span>  printf(<span class="stringliteral">&quot;[Utils] Generated topology &#39;%s&#39; to %s\n&quot;</span>, name, filename);</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+<div class="ttc" id="autils_8c_html_a23179d832d8ca657da9e43fd6a4e72cd"><div class="ttname"><a href="utils_8c.html#a23179d832d8ca657da9e43fd6a4e72cd">ensure_directory</a></div><div class="ttdeci">bool ensure_directory(const char *filepath)</div><div class="ttdoc">Crée le répertoire parent si nécessaire.</div><div class="ttdef"><b>Definition</b> <a href="utils_8c_source.html#l00129">utils.c:129</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="utils_8c_source.html#l00129">ensure_directory()</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="utils_8h_a25c92490a54680a532dbfbaa4dee8a46_cgraph.png" border="0" usemap="#autils_8h_a25c92490a54680a532dbfbaa4dee8a46_cgraph" loading="lazy" alt=""/></div>
+<map name="autils_8h_a25c92490a54680a532dbfbaa4dee8a46_cgraph" id="autils_8h_a25c92490a54680a532dbfbaa4dee8a46_cgraph">
+<area shape="rect" title="Génère un fichier de topologie aléatoire (Legacy gen_large)." alt="" coords="5,5,160,46"/>
+<area shape="rect" href="utils_8c.html#a23179d832d8ca657da9e43fd6a4e72cd" title="Crée le répertoire parent si nécessaire." alt="" coords="208,13,325,38"/>
+<area shape="poly" title=" " alt="" coords="160,23,195,25,190,26,160,28"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="utils_8h.html">utils.h</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

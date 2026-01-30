@@ -1,0 +1,22 @@
+<map id="securite_analyser_vulnerabilites" name="securite_analyser_vulnerabilites">
+<area shape="rect" id="Node000001" title="Rapport complet de vulnérabilité. Exécute tous les tests ci&#45;dessus et affiche un diagnostic console." alt="" coords="5,103,212,128"/>
+<area shape="rect" id="Node000002" href="$securite_8c.html#a44f3600062ffe146efdebcfc633c0906" title="Analyse les Zones de Confiance (SCC &#45; Strongly Connected Components)." alt="" coords="261,41,426,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,100,279,70,275,73,162,105"/>
+<area shape="rect" id="Node000006" href="$securite_8c.html#a4370eac228145617d0e3627c3b10d081" title="Détecte la présence de cycles dans le graphe. Utilise un parcours en profondeur (DFS) avec marquage d..." alt="" coords="287,103,400,128"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="212,113,274,115,269,116,213,118"/>
+<area shape="rect" id="Node000008" href="$securite_8c.html#a1cf4224c021167a4369de4ea48d5d5a3" title="Identifie les Points d&#39;Articulation (SPOF)." alt="" coords="260,164,428,190"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="161,126,279,158,275,161,161,132"/>
+<area shape="rect" id="Node000003" href="$securite_8c.html#a2169ae842221ab74532d33a621e9b1fd" title=" " alt="" coords="511,29,578,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,47,498,44,493,46,427,52"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="518,28,513,21,516,11,527,5,545,3,564,5,575,14,570,14,562,10,545,8,529,10,520,15,518,20,523,30"/>
+<area shape="rect" id="Node000004" href="$securite_8c.html#aa8cc9093ef3c3f7d8ef3b94b69178f26" title=" " alt="" coords="665,5,735,31"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="578,34,652,25,647,26,579,40"/>
+<area shape="rect" id="Node000005" href="$securite_8c.html#a2192e024ee94f5a67e89275e672cfe51" title=" " alt="" coords="661,55,739,80"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="579,45,649,59,644,59,579,50"/>
+<area shape="rect" id="Node000007" href="$securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0" title=" " alt="" coords="506,103,583,128"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="401,113,493,115,488,116,401,118"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="518,101,513,94,516,84,527,78,545,76,564,79,575,88,570,87,562,84,545,81,529,83,520,88,518,93,523,103"/>
+<area shape="rect" id="Node000009" href="$securite_8c.html#a9168b48ff7f7d88fd3f713fead433645" title=" " alt="" coords="476,176,613,202"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="429,179,463,184,458,184,429,185"/>
+<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="518,174,513,167,516,158,527,152,545,149,564,152,575,161,570,160,562,157,545,155,529,157,520,161,518,167,523,177"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="src/backtracking.h" name="src/backtracking.h">
+<area shape="rect" id="Node000001" title="Exploration exhaustive avec élagage." alt="" coords="70,5,199,31"/>
+<area shape="rect" id="Node000002" href="$routage_8h.html" title="Module 2 : Algorithmes de Routage Optimal &amp; Intelligent." alt="" coords="97,79,172,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,29,137,64,132,63,134,34"/>
+<area shape="rect" id="Node000003" href="$graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système)." alt="" coords="99,153,170,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,103,137,138,132,136,133,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,226,80,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="121,178,71,219,68,215,116,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,226,165,252"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="136,177,137,212,132,209,133,181"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="188,226,252,252"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="150,176,197,216,191,217,148,181"/>
+</map>

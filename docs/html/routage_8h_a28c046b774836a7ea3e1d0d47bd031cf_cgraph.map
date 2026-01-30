@@ -1,0 +1,11 @@
+<map id="routage_k_chemins_plus_courts" name="routage_k_chemins_plus_courts">
+<area shape="rect" id="Node000001" title="Algorithme de Yen (K&#45;Plus Courts Chemins)." alt="" coords="5,47,171,88"/>
+<area shape="rect" id="Node000002" href="$routage_8c.html#a5f3c9dc95951b06193d080420a6ef90c" title=" " alt="" coords="230,5,344,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,44,220,34,215,36,172,50"/>
+<area shape="rect" id="Node000003" href="$routage_8c.html#a6c714354c5d0fc10baa8a1e5e2bb824f" title=" " alt="" coords="219,55,355,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,65,206,67,200,68,171,70"/>
+<area shape="rect" id="Node000004" href="$routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc" title="Algorithme de Dijkstra (Routage Optimal)." alt="" coords="230,104,344,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="171,85,220,99,215,100,171,91"/>
+<area shape="rect" id="Node000005" href="$routage_8c.html#a07c8a06cf3fe0ac597f3e95d8a166099" title=" " alt="" coords="403,104,501,130"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="344,114,390,117,385,117,344,119"/>
+</map>

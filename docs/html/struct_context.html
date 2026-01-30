@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Système Intelligent de Routage (UVCI): Référence de la structure Context</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Système Intelligent de Routage (UVCI)<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Simulation et Optimisation de Réseaux - Master 1 Algo</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('struct_context.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence de la structure Context</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Graphe de collaboration de Context:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_context__coll__graph.png" border="0" usemap="#a_context_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_context_coll__map" id="a_context_coll__map">
+<area shape="rect" title=" " alt="" coords="62,392,130,418"/>
+<area shape="rect" href="struct_graphe.html" title="Structure du graphe représentant le réseau." alt="" coords="19,295,82,321"/>
+<area shape="poly" title=" " alt="" coords="65,333,93,391,87,392,61,337"/>
+<area shape="rect" href="struct_noeud.html" title="Informations sur un nœud." alt="" coords="21,199,80,224"/>
+<area shape="poly" title=" " alt="" coords="51,237,53,295,48,294,50,242"/>
+<area shape="rect" href="struct_arete_noeud.html" title="Élément de la liste d&#39;adjacence." alt="" coords="5,102,96,128"/>
+<area shape="poly" title=" " alt="" coords="51,140,53,198,48,198,50,146"/>
+<area shape="poly" title=" " alt="" coords="110,105,122,115,114,124,97,126,94,122,112,119,117,115,111,110"/>
+<area shape="rect" href="struct_metriques.html" title="Métriques 4D pour une arête." alt="" coords="11,5,90,31"/>
+<area shape="poly" title=" " alt="" coords="51,44,53,102,48,101,50,49"/>
+<area shape="rect" href="struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées." alt="" coords="107,295,173,321"/>
+<area shape="poly" title=" " alt="" coords="130,334,104,393,99,390,125,336"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">légende</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Champs de données</h2></td></tr>
+<tr class="memitem:a418d6d9523f31f28b7a8ef624513c9b2" id="r_a418d6d9523f31f28b7a8ef624513c9b2"><td class="memItemLeft"><a class="el" href="struct_graphe.html">Graphe</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a418d6d9523f31f28b7a8ef624513c9b2">g</a></td></tr>
+<tr class="memitem:af36bf356bed53015bf5ab389835e5e82" id="r_af36bf356bed53015bf5ab389835e5e82"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af36bf356bed53015bf5ab389835e5e82">target</a></td></tr>
+<tr class="memitem:aa89ce916b394ce7302bc958ac349b3a0" id="r_aa89ce916b394ce7302bc958ac349b3a0"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aa89ce916b394ce7302bc958ac349b3a0">min_bp</a></td></tr>
+<tr class="memitem:a038ec699661c3e53d7c6b7ad28381fbe" id="r_a038ec699661c3e53d7c6b7ad28381fbe"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a038ec699661c3e53d7c6b7ad28381fbe">max_cout</a></td></tr>
+<tr class="memitem:a39ca1ce80b97479263ceff5ccd1a2818" id="r_a39ca1ce80b97479263ceff5ccd1a2818"><td class="memItemLeft">int *&#160;</td><td class="memItemRight"><a class="el" href="#a39ca1ce80b97479263ceff5ccd1a2818">passage_obligatoire</a></td></tr>
+<tr class="memitem:a57e47350b19fbf81e675ff67656f80a8" id="r_a57e47350b19fbf81e675ff67656f80a8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a57e47350b19fbf81e675ff67656f80a8">nb_obligatoire</a></td></tr>
+<tr class="memitem:a3cf78a0f35d10c478868b075f2a3274f" id="r_a3cf78a0f35d10c478868b075f2a3274f"><td class="memItemLeft">bool *&#160;</td><td class="memItemRight"><a class="el" href="#a3cf78a0f35d10c478868b075f2a3274f">visite</a></td></tr>
+<tr class="memitem:a695f8a20ef93783a2ef6dc8b1e746348" id="r_a695f8a20ef93783a2ef6dc8b1e746348"><td class="memItemLeft">int *&#160;</td><td class="memItemRight"><a class="el" href="#a695f8a20ef93783a2ef6dc8b1e746348">chemin_courant</a></td></tr>
+<tr class="memitem:ac1bf3ff3b00b71914b9684ba9a1fa696" id="r_ac1bf3ff3b00b71914b9684ba9a1fa696"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac1bf3ff3b00b71914b9684ba9a1fa696">indice</a></td></tr>
+<tr class="memitem:ad1f61e2a9aab283095206461774c232a" id="r_ad1f61e2a9aab283095206461774c232a"><td class="memItemLeft"><a class="el" href="struct_chemin.html">Chemin</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad1f61e2a9aab283095206461774c232a">meilleur</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock">
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00010">10</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des champs</h2>
+<a id="a695f8a20ef93783a2ef6dc8b1e746348" name="a695f8a20ef93783a2ef6dc8b1e746348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695f8a20ef93783a2ef6dc8b1e746348">&#9670;&#160;</a></span>chemin_courant</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* Context::chemin_courant</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00018">18</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, et <a class="el" href="backtracking_8c_source.html#l00084">routage_backtracking_contraint()</a>.</p>
+
+</div>
+</div>
+<a id="a418d6d9523f31f28b7a8ef624513c9b2" name="a418d6d9523f31f28b7a8ef624513c9b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418d6d9523f31f28b7a8ef624513c9b2">&#9670;&#160;</a></span>g</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_graphe.html">Graphe</a>* Context::g</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00011">11</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="ac1bf3ff3b00b71914b9684ba9a1fa696" name="ac1bf3ff3b00b71914b9684ba9a1fa696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bf3ff3b00b71914b9684ba9a1fa696">&#9670;&#160;</a></span>indice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Context::indice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00019">19</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="a038ec699661c3e53d7c6b7ad28381fbe" name="a038ec699661c3e53d7c6b7ad28381fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038ec699661c3e53d7c6b7ad28381fbe">&#9670;&#160;</a></span>max_cout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Context::max_cout</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00014">14</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="ad1f61e2a9aab283095206461774c232a" name="ad1f61e2a9aab283095206461774c232a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f61e2a9aab283095206461774c232a">&#9670;&#160;</a></span>meilleur</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chemin.html">Chemin</a>* Context::meilleur</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00020">20</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, et <a class="el" href="backtracking_8c_source.html#l00084">routage_backtracking_contraint()</a>.</p>
+
+</div>
+</div>
+<a id="aa89ce916b394ce7302bc958ac349b3a0" name="aa89ce916b394ce7302bc958ac349b3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89ce916b394ce7302bc958ac349b3a0">&#9670;&#160;</a></span>min_bp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Context::min_bp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00013">13</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="a57e47350b19fbf81e675ff67656f80a8" name="a57e47350b19fbf81e675ff67656f80a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e47350b19fbf81e675ff67656f80a8">&#9670;&#160;</a></span>nb_obligatoire</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Context::nb_obligatoire</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00016">16</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="a39ca1ce80b97479263ceff5ccd1a2818" name="a39ca1ce80b97479263ceff5ccd1a2818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39ca1ce80b97479263ceff5ccd1a2818">&#9670;&#160;</a></span>passage_obligatoire</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* Context::passage_obligatoire</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00015">15</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="af36bf356bed53015bf5ab389835e5e82" name="af36bf356bed53015bf5ab389835e5e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36bf356bed53015bf5ab389835e5e82">&#9670;&#160;</a></span>target</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Context::target</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00012">12</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>.</p>
+
+</div>
+</div>
+<a id="a3cf78a0f35d10c478868b075f2a3274f" name="a3cf78a0f35d10c478868b075f2a3274f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf78a0f35d10c478868b075f2a3274f">&#9670;&#160;</a></span>visite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool* Context::visite</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="backtracking_8c_source.html#l00017">17</a> du fichier <a class="el" href="backtracking_8c_source.html">backtracking.c</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="backtracking_8c_source.html#l00030">explorer()</a>, et <a class="el" href="backtracking_8c_source.html#l00084">routage_backtracking_contraint()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li>src/<a class="el" href="backtracking_8c_source.html">backtracking.c</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="struct_context.html">Context</a></li>
+    <li class="footer">Généré le <span class="timestamp"></span> pour Système Intelligent de Routage (UVCI) par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

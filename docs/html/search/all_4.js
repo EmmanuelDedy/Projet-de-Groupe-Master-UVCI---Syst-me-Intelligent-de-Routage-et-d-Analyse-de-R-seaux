@@ -7,6 +7,8 @@ var searchData=
   ['5_203_20k_20plus_20courts_20chemins_20yen_20simplifié_4',['5.3 K-Plus Courts Chemins (Yen Simplifié)',['../rapport_projet.html#rap_proof_yen',1,'']]],
   ['5_204_20algorithmes_20de_20sécurité_20dfs_20tarjan_5',['5.4 Algorithmes de Sécurité (DFS/Tarjan)',['../rapport_projet.html#rap_proof_secu',1,'']]],
   ['5_20analyse_20théorique_20de_20complexité_20crucial_6',['5. Analyse Théorique de Complexité (CRUCIAL)',['../rapport_projet.html#rap_complexity',1,'']]],
-  ['5_20implémentation_20algorithmique_20a_20z_7',['5. Implémentation Algorithmique (A-Z)',['../index.html#sec_algo',1,'']]],
-  ['5_20module_20sécurité_20_3a_20points_20d_20articulation_20identifier_5fpoints_5fcritiques_8',['5. Module Sécurité : Points d&apos;Articulation (&lt;span class=&quot;tt&quot;&gt;identifier_points_critiques&lt;/span&gt;)',['../rapport_projet.html#autotoc_md14',1,'']]]
+  ['5_20comparaison_20structurelle_20_3a_20matrice_20vs_20liste_20d_20adjacence_7',['7.5 Comparaison Structurelle : Matrice vs Liste d&apos;Adjacence',['../rapport_projet.html#rap_comp_struct',1,'']]],
+  ['5_20format_20des_20fichiers_20de_20données_8',['4.5 Format des Fichiers de Données',['../rapport_projet.html#rap_file_format',1,'']]],
+  ['5_20implémentation_20algorithmique_20a_20z_9',['5. Implémentation Algorithmique (A-Z)',['../index.html#sec_algo',1,'']]],
+  ['5_20module_20sécurité_20_3a_20points_20d_20articulation_20identifier_5fpoints_5fcritiques_10',['5. Module Sécurité : Points d&apos;Articulation (&lt;span class=&quot;tt&quot;&gt;identifier_points_critiques&lt;/span&gt;)',['../rapport_projet.html#autotoc_md24',1,'']]]
 ];

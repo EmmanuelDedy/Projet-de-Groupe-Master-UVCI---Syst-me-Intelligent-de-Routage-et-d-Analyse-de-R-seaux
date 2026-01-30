@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Système Intelligent de Routage (UVCI): 📄 Rapport Technique (Projet de Fin de Semestre)</title>
+<title>Système Intelligent de Routage (UVCI): 📄 Rapport Technique</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,29 +89,18 @@ $(function(){initNavTree('rapport_projet.html','',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">📄 Rapport Technique (Projet de Fin de Semestre) </div></div>
+  <div class="headertitle"><div class="title">📄 Rapport Technique </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1 class="doxsection"><a class="anchor" id="rap_garde"></a>
-1. Page de Garde</h1>
-<div align="center"> <h1>UNIVERSITÉ VIRTUELLE DE CÔTE D'IVOIRE (UVCI)</h1>
-</div><div align="center"> <h2>MASTER 1 : ALGORITHMIQUE ET COMPLEXITE</h2>
+<div class="textblock"><div align="center"> <h1>UNIVERSITÉ VIRTUELLE DE CÔTE D'IVOIRE (UVCI)</h1>
+</div><div align="center"> <h2>MASTER 1 : CYBERSECURITE ET INTERNET DES OBJETS</h2>
 </div><div align="center"> <h3>Année Académique : 2025-2026</h3>
 </div><div align="center"> <br  />
- <h1>PROJET : SYSTÈME INTELLIGENT DE ROUTAGE ET D'ANALYSE DE RÉSEAUX</h1>
+ <h4>ECUE : Algorithmique et Complexité</h4>
+</div><div align="center"> <h1>PROJET : SYSTÈME INTELLIGENT DE ROUTAGE ET D'ANALYSE DE RÉSEAUX</h1>
 </div><div align="center"> <br  />
-</div><div align="center"><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Membres du Groupe  </th><th class="markdownTableHeadLeft">Spécialité  </th><th class="markdownTableHeadLeft">Tâches Principales  </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>[Votre Nom]</b>  </td><td class="markdownTableBodyLeft">Architecture Logicielle  </td><td class="markdownTableBodyLeft">Conception Globale, Orchestration, Mainframe  </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>[Membre 2]</b>  </td><td class="markdownTableBodyLeft">Algorithmique  </td><td class="markdownTableBodyLeft">Implémentation Dijkstra &amp; Backtracking, Complexité  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>[Membre 3]</b>  </td><td class="markdownTableBodyLeft">Qualité &amp; Tests  </td><td class="markdownTableBodyLeft">Tests Unitaires, Module Sécurité, Intégration Continue  </td></tr>
-</table>
-</div><div align="center"><br  />
- <em>Encadrant : Dr. [Nom de l'Encadrant]</em> </div><div style="page-break-after: always;"></div><h1 class="doxsection"><a class="anchor" id="rap_intro"></a>
+</div><div align="center"> <br  />
+ <em>Encadrant : Dr. ATTA</em> </div><div style="page-break-after: always;"></div><h1 class="doxsection"><a class="anchor" id="rap_intro"></a>
 2. Introduction</h1>
 <h2 class="doxsection"><a class="anchor" id="rap_context"></a>
 Contexte et Motivation</h2>
@@ -131,7 +120,7 @@ Organisation du Rapport</h2>
 3. État de l'Art</h1>
 <h2 class="doxsection"><a class="anchor" id="rap_algo_exist"></a>
 Algorithmes de Routage Existants</h2>
-<p>Le routage est un problème classique de la théorie des graphes ($P$-Complet).</p><ul>
+<p>Le routage est un problème classique de la théorie des graphes ( <picture><source srcset="form_15_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ P $" src="form_15.png"/></picture>-Complet).</p><ul>
 <li><b>Dijkstra</b> : Algorithme glouton de référence pour les graphes à poids positifs. Utilisé par le protocole OSPF (Open Shortest Path First).</li>
 <li><b>Bellman-Ford</b> : Supporte les poids négatifs (détection de cycles absorbants), utilisé par RIP (Routing Information Protocol).</li>
 <li><b>Floyd-Warshall</b> : Calcul de tous les plus courts chemins (All-Pairs Shortest Path), trop coûteux en $O(V^3)$ pour les grands réseaux.</li>
@@ -142,9 +131,9 @@ Comparaison des Approches</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Critère  </th><th class="markdownTableHeadLeft">Dijkstra  </th><th class="markdownTableHeadLeft">Bellman-Ford  </th><th class="markdownTableHeadLeft">A* (A-Star)  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>Complexité</b>  </td><td class="markdownTableBodyLeft">$O(E \log V)$  </td><td class="markdownTableBodyLeft">$O(V \cdot E)$  </td><td class="markdownTableBodyLeft">$O(E)$ (Best Case)  </td></tr>
+<td class="markdownTableBodyLeft"><b>Complexité</b>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(E \log V) $" src="form_0.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_16_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V \cdot E) $" src="form_16.png"/></picture>  </td><td class="markdownTableBodyLeft"><picture><source srcset="form_17_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(E) $" src="form_17.png"/></picture> (Best Case)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>Contraintes</b>  </td><td class="markdownTableBodyLeft">Poids $\ge 0$  </td><td class="markdownTableBodyLeft">Aucune  </td><td class="markdownTableBodyLeft">Heuristique requise  </td></tr>
+<td class="markdownTableBodyLeft"><b>Contraintes</b>  </td><td class="markdownTableBodyLeft">Poids <picture><source srcset="form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \ge 0 $" src="form_18.png"/></picture>  </td><td class="markdownTableBodyLeft">Aucune  </td><td class="markdownTableBodyLeft">Heuristique requise  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><b>Usage</b>  </td><td class="markdownTableBodyLeft">IGP (Interior Gateway)  </td><td class="markdownTableBodyLeft">Petits réseaux  </td><td class="markdownTableBodyLeft">GPS, Jeux Vidéo  </td></tr>
 </table>
@@ -154,28 +143,128 @@ Justification des Choix</h2>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="rap_conception"></a>
 4. Conception</h1>
+<p>Cette partie détaille l'architecture logicielle, les choix de modélisation et les algorithmes du système. Elle sert de référence technique pour la maintenance et l'évolution du projet.</p>
+<hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_arch"></a>
-Architecture Globale</h2>
-<p>Le système suit une architecture modulaire stricte ("Separation of Concerns"). </p><div class="dotgraph">
+4.1 Architecture Globale</h2>
+<p>Le projet repose sur une architecture en couches (Layered Architecture) stricte, favorisant le couplage faible et la cohésion forte. Chaque module a une responsabilité unique ("Single Responsibility Principle").</p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_4a6e93ec9c571f376a1e7afb96751f17.png" alt="dot_inline_dotgraph_4a6e93ec9c571f376a1e7afb96751f17.png" border="0" usemap="#dot_inline_dotgraph_4a6e93ec9c571f376a1e7afb96751f17.map"/>
 </div>
+<p><b>Dynamique des Interactions :</b></p>
+<p>Le diagramme de séquence ci-dessous illustre le flux d'une requête de routage typique.</p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_d7b2757ea185095366790bdd61b77587.png" alt="dot_inline_dotgraph_d7b2757ea185095366790bdd61b77587.png" border="0" usemap="#dot_inline_dotgraph_d7b2757ea185095366790bdd61b77587.map"/>
+</div>
+<p><b>Rôle des Composants :</b></p><ol type="1">
+<li><b>CLI (<a class="el" href="main_8c.html">main.c</a>)</b> : Gère les interactions utilisateur, le parsing des arguments et l'affichage des résultats (Logs ANSI).</li>
+<li><b>Noyau <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a> (<a class="el" href="graphe_8c.html">graphe.c</a>/h)</b> : Gère la mémoire, l'ajout/suppression de nœuds et la cohérence des structures hybrides.</li>
+<li><b>Module Routage (<a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">routage.c</a>/h)</b> : Contient l'intelligence décisionnelle (Dijkstra, KSP) pour le calcul d'itinéraires.</li>
+<li><b>Module Sécurité (<a class="el" href="securite_8c.html">securite.c</a>/h)</b> : Analyse la robustesse (Points d'articulation) et la santé du réseau (Cycles).</li>
+<li><b>Module Simulation (<a class="el" href="liste__chainee_8c.html">liste_chainee.c</a>/h)</b> : Simule un trafic réseau avec priorités QoS pour valider la robustesse.</li>
+</ol>
+<hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_data_struct"></a>
-Structures de Données</h2>
-<ul>
-<li><b>Le <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a> (<a class="el" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système).">Graphe.h</a>)</b> : Représentation hybride.<ul>
-<li><em>Tableau de Nœuds</em> : Accès $O(1)$ par ID.</li>
-<li><em>Listes d'Adjacence</em> : Optimisation mémoire pour graphes creux ($E \ll V^2$).</li>
+4.2 Structures de Données Détaillées</h2>
+<p>Le choix des structures de données est critique pour la performance (Complexité Temporelle) et la scalabilité (Complexité Spatiale).</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+A. Représentation du Graphe (Hybride)</h3>
+<p>Nous utilisons une structure composite <span class="tt"><a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a></span> définie dans <span class="tt"><a class="el" href="graphe_8h.html" title="Module 1 : Modélisation et Structures de Données (Cœur du Système).">graphe.h</a></span>.</p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_80fad302ecb9cbf3c49e6b71858ffea0.png" alt="dot_inline_dotgraph_80fad302ecb9cbf3c49e6b71858ffea0.png" border="0" usemap="#dot_inline_dotgraph_80fad302ecb9cbf3c49e6b71858ffea0.map"/>
+</div>
+<p><b>1. Structure <span class="tt"><a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a></span></b> </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">  <span class="keywordtype">int</span> nb_noeuds;        <span class="comment">// Compteur actuel</span></div>
+<div class="line">  <span class="keywordtype">int</span> max_noeuds;       <span class="comment">// Capacité max (pour realloc)</span></div>
+<div class="line">  <a class="code hl_struct" href="struct_noeud.html">Noeud</a> *noeuds;        <span class="comment">// Tableau statique pour accès O(1)</span></div>
+<div class="line">  <span class="keywordtype">double</span> **matrice_adj; <span class="comment">// Matrice dense pour vérification O(1)</span></div>
+<div class="line">  <span class="keywordtype">bool</span> est_oriente;     <span class="comment">// Flag de direction</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_graphe.html">Graphe</a>;</div>
+<div class="ttc" id="astruct_graphe_html"><div class="ttname"><a href="struct_graphe.html">Graphe</a></div><div class="ttdoc">Structure du graphe représentant le réseau.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00048">dijkstra.h:48</a></div></div>
+<div class="ttc" id="astruct_noeud_html"><div class="ttname"><a href="struct_noeud.html">Noeud</a></div><div class="ttdoc">Informations sur un nœud.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00027">dijkstra.h:27</a></div></div>
+</div><!-- fragment --><ul>
+<li><b>Pourquoi le Tableau <span class="tt">noeuds</span> ?</b> : Permet d'accéder aux métadonnées d'un sommet (Nom, Type, GPS) en temps constant <picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(1) $" src="form_19.png"/></picture> via son ID. Contrairement à une liste chaînée de sommets ( <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(N) $" src="form_8.png"/></picture>), c'est immédiat.</li>
+<li><b>Pourquoi la Matrice <span class="tt">matrice_adj</span> ?</b> : Permet de vérifier l'existence d'une arête entre <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture> et <picture><source srcset="form_13_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ v $" src="form_13.png"/></picture> en <picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(1) $" src="form_19.png"/></picture>. Essentiel pour la détection de cycles et l'analyse de sécurité.</li>
+</ul>
+<p><b>2. Structure <span class="tt"><a class="el" href="struct_arete_noeud.html" title="Élément de la liste d&#39;adjacence.">AreteNoeud</a></span> (Liste d'Adjacence)</b> </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> {</div>
+<div class="line">  <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>;          <span class="comment">// ID du voisin</span></div>
+<div class="line">  <a class="code hl_struct" href="struct_metriques.html">Metriques</a> <a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>;  <span class="comment">// Poids composite</span></div>
+<div class="line">  <span class="keyword">struct </span><a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>; <span class="comment">// Maillon suivant</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a>;</div>
+<div class="ttc" id="astruct_arete_noeud_html"><div class="ttname"><a href="struct_arete_noeud.html">AreteNoeud</a></div><div class="ttdoc">Élément de la liste d&#39;adjacence.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00039">dijkstra.h:39</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_a366a0842a23870f85e4a115f3ffab39e"><div class="ttname"><a href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">AreteNoeud::suivant</a></div><div class="ttdeci">struct AreteNoeud * suivant</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00042">dijkstra.h:42</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_aaa25db0933c600b0903f6e07953aa7e8"><div class="ttname"><a href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">AreteNoeud::dest_id</a></div><div class="ttdeci">int dest_id</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00040">dijkstra.h:40</a></div></div>
+<div class="ttc" id="astruct_arete_noeud_html_ac096b1117c764e5b31c468e3adf12389"><div class="ttname"><a href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">AreteNoeud::metriques</a></div><div class="ttdeci">Metriques metriques</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00041">dijkstra.h:41</a></div></div>
+<div class="ttc" id="astruct_metriques_html"><div class="ttname"><a href="struct_metriques.html">Metriques</a></div><div class="ttdoc">Métriques 4D pour une arête.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00016">dijkstra.h:16</a></div></div>
+</div><!-- fragment --><ul>
+<li>Chaque <span class="tt"><a class="el" href="struct_noeud.html" title="Informations sur un nœud.">Noeud</a></span> possède un pointeur vers une liste chainée d'arêtes sortantes.</li>
+<li><b>Avantage</b> : Pour parcourir les voisins d'un nœud <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture>, la complexité est <picture><source srcset="form_20_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(degree(u)) $" src="form_20.png"/></picture> et non <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture> comme avec une matrice seule. C'est crucial pour <em>Dijkstra</em> sur des graphes creux (Internet, Routier).</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+B. Métriques Multidimensionnelles</h3>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">  <span class="keywordtype">float</span> cout;            <span class="comment">// Distance ou Prix</span></div>
+<div class="line">  <span class="keywordtype">float</span> latence;         <span class="comment">// Délai (ms)</span></div>
+<div class="line">  <span class="keywordtype">float</span> bande_passante;  <span class="comment">// Capacité (Mbps)</span></div>
+<div class="line">  <span class="keywordtype">float</span> fiabilite;       <span class="comment">// Probabilité de panne (0-1)</span></div>
+<div class="line">  <span class="keywordtype">int</span> securite;          <span class="comment">// Niveau (1-5)</span></div>
+<div class="line">} <a class="code hl_struct" href="struct_metriques.html">Metriques</a>;</div>
+</div><!-- fragment --><p> Cette structure allows permet un <b>Routage QoS (Quality of Service)</b> : on peut demander "le chemin le plus sûr" ou "le chemin avec la plus forte bande passante", et non juste "le plus court".</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+C. File à Priorité (Simulation QoS)</h3>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_file_attente.html">FileAttente</a> {</div>
+<div class="line">  <a class="code hl_struct" href="struct_paquet.html">Paquet</a> *<a class="code hl_variable" href="struct_file_attente.html#ae8c5320d52ea6601f3469e8343d35cd4">tete</a>;  <span class="comment">// Plus haute priorité</span></div>
+<div class="line">  <a class="code hl_struct" href="struct_paquet.html">Paquet</a> *<a class="code hl_variable" href="struct_file_attente.html#a0968bbdc6d8a86f0197937db9c685a3c">queue</a>; <span class="comment">// Plus basse priorité</span></div>
+<div class="line">  ...</div>
+<div class="line">} <a class="code hl_struct" href="struct_file_attente.html">FileAttente</a>;</div>
+<div class="ttc" id="astruct_file_attente_html"><div class="ttname"><a href="struct_file_attente.html">FileAttente</a></div><div class="ttdoc">Gestionnaire de file prioritaire.</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00034">liste_chainee.h:34</a></div></div>
+<div class="ttc" id="astruct_file_attente_html_a0968bbdc6d8a86f0197937db9c685a3c"><div class="ttname"><a href="struct_file_attente.html#a0968bbdc6d8a86f0197937db9c685a3c">FileAttente::queue</a></div><div class="ttdeci">Paquet * queue</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00036">liste_chainee.h:36</a></div></div>
+<div class="ttc" id="astruct_file_attente_html_ae8c5320d52ea6601f3469e8343d35cd4"><div class="ttname"><a href="struct_file_attente.html#ae8c5320d52ea6601f3469e8343d35cd4">FileAttente::tete</a></div><div class="ttdeci">Paquet * tete</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00035">liste_chainee.h:35</a></div></div>
+<div class="ttc" id="astruct_paquet_html"><div class="ttname"><a href="struct_paquet.html">Paquet</a></div><div class="ttdoc">Unité de données transitant sur le réseau.</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00019">liste_chainee.h:19</a></div></div>
+</div><!-- fragment --><p> Implémentée comme une liste chaînée ordonnée.</p><ul>
+<li><b>Insertion (<span class="tt"><a class="el" href="liste__chainee_8c.html#a6cbddafd2f9ce7f53728090ff7dc45f7" title="Insère un paquet selon sa priorité (Ordre Décroissant). Complexité : O(N) dans le pire des cas (Inser...">enfiler</a></span>)</b> : <picture><source srcset="form_8_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(N) $" src="form_8.png"/></picture> (Maintien de l'ordre).</li>
+<li><b>Extraction (<span class="tt"><a class="el" href="liste__chainee_8c.html#a850164b31a608dd9414e9250dfc046ce" title="Extrait le paquet le plus prioritaire (Tête de file). Complexité : O(1).">defiler</a></span>)</b> : <picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(1) $" src="form_19.png"/></picture> (Toujours en tête).</li>
+</ul>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_choix_conc"></a>
+4.3 Justification des Choix de Conception</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+1. Langage C vs Python/Java</h3>
+<p><b>Choix :</b> Langage C (Standard C99). <b>Justification :</b></p><ul>
+<li><b>Gestion Mémoire</b> : Le contrôle manuel (<span class="tt">malloc</span>/<span class="tt">free</span>) est indispensable pour gérer des graphes de millions de nœuds sans l'overhead d'un Garbage Collector.</li>
+<li><b>Performance</b> : Accès direct à la mémoire et optimisation CPU (cache lines), crucial pour les algorithmes itératifs comme Dijkstra.</li>
+<li><b>Pédagogie</b> : Compréhension fine des pointeurs et des structures de données sous-jacentes.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+2. Tableau vs Tas Binaire (Binary Heap) pour Dijkstra</h3>
+<p><b>Choix :</b> Tableau simple pour la liste des distances. <b>Justification :</b></p><ul>
+<li>Bien que la complexité théorique du Tas soit meilleure ( <picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(E \log V) $" src="form_0.png"/></picture>), l'implémentation tableau ( <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_21.png"/></picture>) est souvent plus rapide pour les graphes denses ( <picture><source srcset="form_22_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E \approx V^2 $" src="form_22.png"/></picture>) ou de taille petite/moyenne (&lt; 2000 nœuds) grâce à la localité de cache et l'absence de gestion d'arbre complexe.</li>
+<li>Pour ce projet académique, la simplicité et la robustesse du code ont été privilégiées pour permettre l'implémentation de fonctionnalités avancées (Yen, Backtracking).</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+3. Modélisation Hybride (Matrice + Liste)</h3>
+<p><b>Choix :</b> Redondance des données. <b>Justification :</b></p><ul>
+<li>C'est un compromis Mémoire/Vitesse. Nous consommons environ 2x plus de mémoire pour stocker les arêtes, mais nous gagnons sur tous les tableaux :<ul>
+<li>Parcours (Dijkstra) : Rapide grâce aux Listes.</li>
+<li>Vérifications (Sécurité) : Rapide grâce à la Matrice.</li>
 </ul>
 </li>
-<li><b>File Prioritaire (<a class="el" href="liste__chainee_8h.html" title="Module 4 : Simulation et Gestion de Flux (QoS).">Liste_chainee.h</a>)</b> : Liste chaînée triée à l'insertion pour gérer l'ordre de traitement des sommets dans Dijkstra.</li>
+<li>La mémoire étant abondante sur les machines modernes (8Go+), ce compromis est acceptable pour <picture><source srcset="form_23_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ N \le 10,000 $" src="form_23.png"/></picture>.</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="rap_algo_pseudo"></a>
-Algorithmes Implémentés (Détails)</h2>
-<p>Cette section présente le pseudo-code exact des fonctions implémentées dans les modules <span class="tt"><a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></span>, <span class="tt"><a class="el" href="backtracking_8c.html" title="Exploration exhaustive sous contraintes (Section 3.2.2.2).">src/backtracking.c</a></span> et <span class="tt"><a class="el" href="securite_8c.html">src/securite.c</a></span>.</p>
 <hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="rap_algo_struct"></a>
+4.4 Algorithmes Implémentés (Détails)</h2>
+<p>Cette section présente le pseudo-code exact et commenté des fonctions clés. Nous avons choisi une notation proche du langage C pour faciliter la correspondance avec le code source.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 1. Module Routage : Dijkstra (<span class="tt">routage_dijkstra</span>)</h3>
-<p><em>Fichier : <a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></em> </p><div class="fragment"><div class="line">Fonction <a class="code hl_function" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(<a class="code hl_struct" href="struct_graphe.html">Graphe</a> G, <span class="keywordtype">int</span> source, <span class="keywordtype">int</span> dest, <span class="keywordtype">string</span> critere)</div>
+<p><em>Fichier : <a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_8ee827563839d150a24206f063dc9640.png" alt="dot_inline_dotgraph_8ee827563839d150a24206f063dc9640.png" border="0" usemap="#dot_inline_dotgraph_8ee827563839d150a24206f063dc9640.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction <a class="code hl_function" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(<a class="code hl_struct" href="struct_graphe.html">Graphe</a> G, <span class="keywordtype">int</span> source, <span class="keywordtype">int</span> dest, <span class="keywordtype">string</span> critere)</div>
 <div class="line">DEBUT</div>
+<div class="line">  <span class="comment">// Initialisation : O(V)</span></div>
 <div class="line">  POUR CHAQUE noeud i de 0 à G.max_noeuds-1 FAIRE</div>
 <div class="line">    dist[i] &lt;- INFINI</div>
 <div class="line">    pred[i] &lt;- -1</div>
@@ -183,16 +272,22 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">  FIN POUR</div>
 <div class="line">  dist[source] &lt;- 0</div>
 <div class="line">  </div>
+<div class="line">  <span class="comment">// Boucle Principale : O(V) itérations</span></div>
 <div class="line">  TANT QUE (il reste des noeuds non visités) FAIRE</div>
+<div class="line">  </div>
+<div class="line">    <span class="comment">// Sélection Gloutonne : O(V) avec tableau</span></div>
 <div class="line">    u &lt;- <a class="code hl_struct" href="struct_noeud.html">Noeud</a> non visité avec dist[u] minimale</div>
-<div class="line">    SI (u == -1 OU dist[u] == INFINI) ALORS ARRETER</div>
-<div class="line">    SI (u == dest) ALORS ARRETER</div>
+<div class="line">    </div>
+<div class="line">    SI (u == -1 OU dist[u] == INFINI) ALORS ARRETER <span class="comment">// Graphe non connexe</span></div>
+<div class="line">    SI (u == dest) ALORS ARRETER <span class="comment">// Optimisation cible atteinte</span></div>
 <div class="line">    </div>
 <div class="line">    visite[u] &lt;- VRAI</div>
 <div class="line">    </div>
+<div class="line">    <span class="comment">// Relâchement (Relaxation) : O(deg(u))</span></div>
 <div class="line">    POUR CHAQUE voisin v de u (via arête a) FAIRE</div>
 <div class="line">      SI (non visite[v] ET G.noeuds[v].actif) ALORS</div>
-<div class="line">        poids &lt;- calculer_poids(a, critere) <span class="comment">// Latence, Cout, etc.</span></div>
+<div class="line">        poids &lt;- calculer_poids(a, critere) <span class="comment">// Abstrait la métrique</span></div>
+<div class="line">        </div>
 <div class="line">        SI (dist[u] + poids &lt; dist[v]) ALORS</div>
 <div class="line">          dist[v] &lt;- dist[u] + poids</div>
 <div class="line">          pred[v] &lt;- u</div>
@@ -201,21 +296,24 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">    FIN POUR</div>
 <div class="line">  FIN TANT QUE</div>
 <div class="line">  </div>
-<div class="line">  RETOURNER reconstruire_chemin(pred, dest)</div>
+<div class="line">  RETOURNER reconstruire_chemin(pred, dest) <span class="comment">// Backtrack depuis dest</span></div>
 <div class="line">FIN</div>
 <div class="ttc" id="aroutage_8c_html_a6399dd39c69a8d366d0449436a62a3fc"><div class="ttname"><a href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a></div><div class="ttdeci">Chemin * routage_dijkstra(Graphe *g, int source, int destination, const char *critere)</div><div class="ttdoc">Algorithme de Dijkstra (Routage Optimal).</div><div class="ttdef"><b>Definition</b> <a href="routage_8c_source.html#l00050">routage.c:50</a></div></div>
-<div class="ttc" id="astruct_graphe_html"><div class="ttname"><a href="struct_graphe.html">Graphe</a></div><div class="ttdoc">Structure du graphe représentant le réseau.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00048">dijkstra.h:48</a></div></div>
-<div class="ttc" id="astruct_noeud_html"><div class="ttname"><a href="struct_noeud.html">Noeud</a></div><div class="ttdoc">Informations sur un nœud.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00027">dijkstra.h:27</a></div></div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : L'algorithme est générique grâce à la fonction <span class="tt">calculer_poids</span> qui permet de changer dynamiquement le critère d'optimisation (Latence, Distance, etc.) sans réécrire l'algorithme.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 2. Module Routage : Backtracking (<span class="tt">routage_backtracking</span>)</h3>
-<p><em>Fichier : <a class="el" href="backtracking_8c.html" title="Exploration exhaustive sous contraintes (Section 3.2.2.2).">src/backtracking.c</a></em> </p><div class="fragment"><div class="line">Fonction <a class="code hl_function" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a>(<a class="code hl_struct" href="struct_context.html">Context</a> ctx, <span class="keywordtype">int</span> u, <span class="keywordtype">float</span> cout, <span class="keywordtype">float</span> lat, <span class="keywordtype">float</span> bp)</div>
+<p><em>Fichier : <a class="el" href="backtracking_8c.html" title="Exploration exhaustive sous contraintes (Section 3.2.2.2).">src/backtracking.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_7a8658641d8279bd4f5f9faeee3b58fc.png" alt="dot_inline_dotgraph_7a8658641d8279bd4f5f9faeee3b58fc.png" border="0" usemap="#dot_inline_dotgraph_7a8658641d8279bd4f5f9faeee3b58fc.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction <a class="code hl_function" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a>(<a class="code hl_struct" href="struct_context.html">Context</a> ctx, <span class="keywordtype">int</span> u, <span class="keywordtype">float</span> cout, <span class="keywordtype">float</span> lat, <span class="keywordtype">float</span> bp)</div>
 <div class="line">DEBUT</div>
-<div class="line">  <span class="comment">// 1. Conditions d&#39;Élagage (Pruning)</span></div>
+<div class="line">  <span class="comment">// 1. Conditions d&#39;Élagage (Pruning) - CRUCIAL pour la perf</span></div>
 <div class="line">  SI (cout &gt; ctx.max_cout) ALORS RETOURNER</div>
 <div class="line">  SI (ctx.meilleur_trouve ET cout &gt;= ctx.meilleur_trouve.cout) ALORS RETOURNER</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// 2. Traitement du noeud</span></div>
+<div class="line">  <span class="comment">// 2. Traitement du noeud (Marquage)</span></div>
 <div class="line">  ctx.visite[u] &lt;- VRAI</div>
 <div class="line">  ajouter(ctx.chemin_courant, u)</div>
 <div class="line">  </div>
@@ -225,28 +323,34 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">      sauvegarder_meilleur(ctx.chemin_courant)</div>
 <div class="line">    FIN SI</div>
 <div class="line">  SINON</div>
-<div class="line">    <span class="comment">// 4. Récursion</span></div>
+<div class="line">    <span class="comment">// 4. Récursion (Exploration des voisins)</span></div>
 <div class="line">    POUR CHAQUE voisin v de u FAIRE</div>
+<div class="line">      <span class="comment">// Filtre local (Glouton) sur la Bande Passante</span></div>
 <div class="line">      SI (non visite[v] ET v.actif ET arête.bp &gt;= ctx.min_bp) ALORS</div>
 <div class="line">        <a class="code hl_function" href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a>(ctx, v, cout + arête.cout, ...)</div>
 <div class="line">      FIN SI</div>
 <div class="line">    FIN POUR</div>
 <div class="line">  FIN SI</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// 5. Backtracking (Retour arrière)</span></div>
+<div class="line">  <span class="comment">// 5. Backtracking (Retour arrière / Nettoyage)</span></div>
 <div class="line">  retirer_dernier(ctx.chemin_courant)</div>
 <div class="line">  ctx.visite[u] &lt;- FAUX</div>
 <div class="line">FIN</div>
 <div class="ttc" id="abacktracking_8c_html_ab5c009fb6e579070ddda28585fe7ba4b"><div class="ttname"><a href="backtracking_8c.html#ab5c009fb6e579070ddda28585fe7ba4b">explorer</a></div><div class="ttdeci">static void explorer(Context *ctx, int u, float cout_c, float lat_c, float bp_m, int sec_m)</div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00030">backtracking.c:30</a></div></div>
 <div class="ttc" id="astruct_context_html"><div class="ttname"><a href="struct_context.html">Context</a></div><div class="ttdef"><b>Definition</b> <a href="backtracking_8c_source.html#l00010">backtracking.c:10</a></div></div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : La gestion d'un contexte global (<span class="tt">ctx</span>) permet d'éviter de passer trop d'arguments dans la récursion et de maintenir l'état du "meilleur chemin trouvé jusqu'ici" pour le Branch &amp; Bound.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 3. Module Routage : K-Plus Courts Chemins (<span class="tt">routage_k_chemins</span>)</h3>
-<p><em>Fichier : <a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></em> </p><div class="fragment"><div class="line">Fonction routage_k_chemins(G, source, dest, K)</div>
+<p><em>Fichier : <a class="el" href="routage_8c.html" title="Module 2 : Algorithmes de Routage Optimal.">src/routage.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_cf152656e98dcfa1d65d46985a71c3fd.png" alt="dot_inline_dotgraph_cf152656e98dcfa1d65d46985a71c3fd.png" border="0" usemap="#dot_inline_dotgraph_cf152656e98dcfa1d65d46985a71c3fd.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction routage_k_chemins(G, source, dest, K)</div>
 <div class="line">DEBUT</div>
 <div class="line">  Resultats &lt;- []</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// 1. Premier chemin (Dijkstra)</span></div>
+<div class="line">  <span class="comment">// 1. Premier chemin (Dijkstra) - Le meilleur absolu</span></div>
 <div class="line">  Chemin1 &lt;- <a class="code hl_function" href="routage_8c.html#a6399dd39c69a8d366d0449436a62a3fc">routage_dijkstra</a>(G, source, dest)</div>
 <div class="line">  Ajouter(Resultats, Chemin1)</div>
 <div class="line">  </div>
@@ -268,47 +372,59 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">        FIN SI</div>
 <div class="line">      FIN SI</div>
 <div class="line">      </div>
-<div class="line">      arête.cout &lt;- cout_original <span class="comment">// Restauration</span></div>
+<div class="line">      arête.cout &lt;- cout_original <span class="comment">// Restauration immédiate</span></div>
 <div class="line">    FIN POUR</div>
 <div class="line">    </div>
 <div class="line">    SI (CandidatMeilleur != NULL) ALORS</div>
 <div class="line">      Ajouter(Resultats, CandidatMeilleur)</div>
 <div class="line">    SINON</div>
-<div class="line">      ARRETER <span class="comment">// Plus d&#39;alternatives</span></div>
+<div class="line">      ARRETER <span class="comment">// Plus d&#39;alternatives possibles</span></div>
 <div class="line">    FIN SI</div>
 <div class="line">  FIN TANT QUE</div>
 <div class="line">  </div>
 <div class="line">  RETOURNER Resultats</div>
 <div class="line">FIN</div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : Cette version simplifiée de Yen évite l'utilisation complexe de <span class="tt">spur paths</span> complets, en se contentant de pénaliser les arcs du chemin précédent pour forcer la découverte d'alternatives.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 4. Module Sécurité : Détection de Cycle (<span class="tt">detecter_cycles</span>)</h3>
-<p><em>Fichier : <a class="el" href="securite_8c.html">src/securite.c</a></em> </p><div class="fragment"><div class="line">Fonction <a class="code hl_function" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a>(u, visite[], pile_rec[])</div>
+<p><em>Fichier : <a class="el" href="securite_8c.html">src/securite.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_bebce34859701e39d7ad10a6ffc37103.png" alt="dot_inline_dotgraph_bebce34859701e39d7ad10a6ffc37103.png" border="0" usemap="#dot_inline_dotgraph_bebce34859701e39d7ad10a6ffc37103.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction <a class="code hl_function" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a>(u, visite[], pile_rec[])</div>
 <div class="line">DEBUT</div>
-<div class="line">  visite[u] &lt;- 1  <span class="comment">// Marqué GRIS (En cours)</span></div>
-<div class="line">  pile_rec[u] &lt;- 1 <span class="comment">// Présent dans la pile de récursion</span></div>
+<div class="line">  visite[u] &lt;- 1   <span class="comment">// COULEUR GRIS (En cours de visite)</span></div>
+<div class="line">  pile_rec[u] &lt;- 1 <span class="comment">// Marqué comme étant dans la pile de récursion actuelle</span></div>
 <div class="line">  </div>
 <div class="line">  POUR CHAQUE voisin v de u FAIRE</div>
 <div class="line">    SI (active(v)) ALORS</div>
 <div class="line">      SI (non visite[v]) ALORS</div>
+<div class="line">        <span class="comment">// Appel récursif (Avance)</span></div>
 <div class="line">        SI (<a class="code hl_function" href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a>(v) == VRAI) ALORS RETOURNER VRAI</div>
 <div class="line">      SINON SI (pile_rec[v] == 1) ALORS</div>
-<div class="line">        RETOURNER VRAI <span class="comment">// Cycle détecté (Arc arrière)</span></div>
+<div class="line">        <span class="comment">// On retombe sur un noeud &quot;GRIS&quot; -&gt; C&#39;est un cycle (Arc arrière)</span></div>
+<div class="line">        RETOURNER VRAI </div>
 <div class="line">      FIN SI</div>
 <div class="line">    FIN SI</div>
 <div class="line">  FIN POUR</div>
 <div class="line">  </div>
-<div class="line">  pile_rec[u] &lt;- 0</div>
+<div class="line">  pile_rec[u] &lt;- 0 <span class="comment">// COULEUR NOIR (Visite terminée)</span></div>
 <div class="line">  RETOURNER FAUX</div>
 <div class="line">FIN</div>
 <div class="ttc" id="asecurite_8c_html_a2a8528b133bc88a0a3fcd0d4bc8490f0"><div class="ttname"><a href="securite_8c.html#a2a8528b133bc88a0a3fcd0d4bc8490f0">dfs_cycle</a></div><div class="ttdeci">int dfs_cycle(int v, int visite[], int pile_rec[], Graphe *g)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00028">securite.c:28</a></div></div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : L'utilisation d'un tableau <span class="tt">pile_rec</span> explicite permet de distinguer les cycles réels des simples chemins convergents (cross-edges) dans un graphe orienté.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 5. Module Sécurité : Points d'Articulation (<span class="tt">identifier_points_critiques</span>)</h3>
-<p><em>Fichier : <a class="el" href="securite_8c.html">src/securite.c</a></em> </p><div class="fragment"><div class="line">Fonction dfs_articul(u, parent, temps)</div>
+<p><em>Fichier : <a class="el" href="securite_8c.html">src/securite.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_fc7c9c4efd6da48656a85f1ca0c23a4c.png" alt="dot_inline_dotgraph_fc7c9c4efd6da48656a85f1ca0c23a4c.png" border="0" usemap="#dot_inline_dotgraph_fc7c9c4efd6da48656a85f1ca0c23a4c.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction dfs_articul(u, parent, temps)</div>
 <div class="line">DEBUT</div>
 <div class="line">  visite[u] &lt;- VRAI</div>
-<div class="line">  disc[u] &lt;- low[u] &lt;- ++temps</div>
+<div class="line">  disc[u] &lt;- low[u] &lt;- ++temps <span class="comment">// Date de découverte</span></div>
 <div class="line">  fils &lt;- 0</div>
 <div class="line">  </div>
 <div class="line">  POUR CHAQUE voisin v de u FAIRE</div>
@@ -317,32 +433,43 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">      parent[v] &lt;- u</div>
 <div class="line">      dfs_articul(v, u, temps)</div>
 <div class="line">      </div>
+<div class="line">      <span class="comment">// Propagation de la valeur low (remontée)</span></div>
 <div class="line">      low[u] &lt;- <a class="code hl_define" href="securite_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(low[u], low[v])</div>
 <div class="line">      </div>
+<div class="line">      <span class="comment">// Si le voisin ne peut pas remonter plus haut que u, alors u est critique</span></div>
 <div class="line">      SI (parent[u] != -1 ET low[v] &gt;= disc[u]) ALORS</div>
 <div class="line">        Marquer u comme Point d<span class="stringliteral">&#39;Articulation</span></div>
 <div class="line"><span class="stringliteral">      FIN SI</span></div>
 <div class="line"><span class="stringliteral">      </span></div>
 <div class="line"><span class="stringliteral">    SINON SI (v != parent[u]) ALORS</span></div>
-<div class="line"><span class="stringliteral">      low[u] &lt;- MIN(low[u], disc[v]) // Arc arrière</span></div>
+<div class="line"><span class="stringliteral">      // Arc arrière vers un ancêtre</span></div>
+<div class="line"><span class="stringliteral">      low[u] &lt;- MIN(low[u], disc[v]) </span></div>
 <div class="line"><span class="stringliteral">    FIN SI</span></div>
 <div class="line"><span class="stringliteral">  FIN POUR</span></div>
 <div class="line"><span class="stringliteral">FIN</span></div>
 <div class="ttc" id="asecurite_8c_html_a3acffbd305ee72dcd4593c0d8af64a4f"><div class="ttname"><a href="securite_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f">MIN</a></div><div class="ttdeci">#define MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="securite_8c_source.html#l00007">securite.c:7</a></div></div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : Algorithme de Tarjan/Hopcroft. Essentiel pour la résilience : un point d'articulation est un Single Point of Failure (SPOF).</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 6. Module Graphe : Ajout d'Arête (<span class="tt">graphe_ajouter_arete</span>)</h3>
-<p><em>Fichier : <a class="el" href="graphe_8c.html">src/graphe.c</a></em> </p><div class="fragment"><div class="line">Fonction ajouter_arete(G, source, dest, metriques)</div>
+<p><em>Fichier : <a class="el" href="graphe_8c.html">src/graphe.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_8a85c25bf14625cf14930c32c6c1c2f8.png" alt="dot_inline_dotgraph_8a85c25bf14625cf14930c32c6c1c2f8.png" border="0" usemap="#dot_inline_dotgraph_8a85c25bf14625cf14930c32c6c1c2f8.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction ajouter_arete(G, source, dest, metriques)</div>
 <div class="line">DEBUT</div>
 <div class="line">  SI (source OU dest hors limites) RETOURNER FAUX</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// 1. Mise à jour Matrice d&#39;Adjacence (O(1))</span></div>
+<div class="line">  <span class="comment">// 1. Mise à jour Matrice d&#39;Adjacence (Accès direct O(1))</span></div>
 <div class="line">  G.matrice[source][dest] = metriques.cout</div>
 <div class="line">  SI (non G.oriente) G.matrice[dest][source] = metriques.cout</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// 2. Mise à jour Liste d&#39;Adjacence (Insertion en tête O(1))</span></div>
+<div class="line">  <span class="comment">// Création du maillon</span></div>
 <div class="line">  NouvelleArête -&gt; dest = dest</div>
 <div class="line">  NouvelleArête -&gt; metriques = metriques</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Chaînage</span></div>
 <div class="line">  NouvelleArête -&gt; suivant = G.noeuds[source].liste</div>
 <div class="line">  G.noeuds[source].liste = NouvelleArête</div>
 <div class="line">  </div>
@@ -352,24 +479,32 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">  </div>
 <div class="line">  RETOURNER VRAI</div>
 <div class="line">FIN</div>
-</div><!-- fragment --><hr  />
-<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+</div><!-- fragment --><p> <b>Commentaire</b> : La double mise à jour encapsulée garantit que les deux structures de données restent parfaitement synchronisées à tout moment.</p>
+<hr  />
+<h3 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 7. Module Simulation : File à Priorité (<span class="tt">enfiler</span>)</h3>
-<p><em>Fichier : <a class="el" href="liste__chainee_8c.html">src/liste_chainee.c</a></em> </p><div class="fragment"><div class="line">Fonction <a class="code hl_function" href="liste__chainee_8c.html#a6cbddafd2f9ce7f53728090ff7dc45f7">enfiler</a>(File F, <a class="code hl_struct" href="struct_paquet.html">Paquet</a> P)</div>
+<p><em>Fichier : <a class="el" href="liste__chainee_8c.html">src/liste_chainee.c</a></em></p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_c084e4d193ee02b65d84bce00d0f56b1.png" alt="dot_inline_dotgraph_c084e4d193ee02b65d84bce00d0f56b1.png" border="0" usemap="#dot_inline_dotgraph_c084e4d193ee02b65d84bce00d0f56b1.map"/>
+</div>
+<div class="fragment"><div class="line">Fonction <a class="code hl_function" href="liste__chainee_8c.html#a6cbddafd2f9ce7f53728090ff7dc45f7">enfiler</a>(File F, <a class="code hl_struct" href="struct_paquet.html">Paquet</a> P)</div>
 <div class="line">DEBUT</div>
 <div class="line">  SI (F est pleine) RETOURNER ERREUR</div>
 <div class="line">  </div>
 <div class="line">  SI (F.tete == NULL) ALORS</div>
+<div class="line">    <span class="comment">// Cas trivial : File vide</span></div>
 <div class="line">    F.tete &lt;- P</div>
 <div class="line">    F.queue &lt;- P</div>
 <div class="line">  SINON</div>
 <div class="line">    Actuel &lt;- F.tete</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Recherche position insertion (Tri décroissant priorité)</span></div>
+<div class="line">    <span class="comment">// On avance tant que la priorité est supérieure ou égale</span></div>
 <div class="line">    TANT QUE (Actuel != NULL ET Actuel.priorite &gt;= P.priorite)</div>
 <div class="line">      Actuel &lt;- Actuel.suivant</div>
 <div class="line">    FIN TANT QUE</div>
 <div class="line">    </div>
+<div class="line">    <span class="comment">// Insertion</span></div>
 <div class="line">    SI (Actuel == F.tete) InsertionTete(F, P)</div>
 <div class="line">    SINON SI (Actuel == NULL) InsertionQueue(F, P)</div>
 <div class="line">    SINON InsertionMilieu(F, P, Actuel)</div>
@@ -378,97 +513,138 @@ Algorithmes Implémentés (Détails)</h2>
 <div class="line">  F.taille &lt;- F.taille + 1</div>
 <div class="line">FIN</div>
 <div class="ttc" id="aliste__chainee_8c_html_a6cbddafd2f9ce7f53728090ff7dc45f7"><div class="ttname"><a href="liste__chainee_8c.html#a6cbddafd2f9ce7f53728090ff7dc45f7">enfiler</a></div><div class="ttdeci">int enfiler(FileAttente *file, Paquet *nouveau_p)</div><div class="ttdoc">Insère un paquet selon sa priorité (Ordre Décroissant). Complexité : O(N) dans le pire des cas (Inser...</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8c_source.html#l00049">liste_chainee.c:49</a></div></div>
-<div class="ttc" id="astruct_paquet_html"><div class="ttname"><a href="struct_paquet.html">Paquet</a></div><div class="ttdoc">Unité de données transitant sur le réseau.</div><div class="ttdef"><b>Definition</b> <a href="liste__chainee_8h_source.html#l00019">liste_chainee.h:19</a></div></div>
+</div><!-- fragment --><p> <b>Commentaire</b> : Choix d'une liste chaînée simple car le nombre de paquets dans la simulation reste modéré. Pour une simulation massive, un Tas Binaire (Heap) serait préférable ici aussi.</p>
+<hr  />
+<hr  />
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_file_format"></a>
+4.5 Format des Fichiers de Données</h2>
+<p>Pour garantir la persistance et l'interopérabilité, nous avons défini un format de fichier texte structuré (<span class="tt">.txt</span> ou <span class="tt">.csv</span>). Ce format est inspiré du standard DIMACS mais enrichi pour les métadonnées réseau.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+A. Structure du Fichier</h3>
+<p>Le fichier est lu ligne à ligne par le parseur (<span class="tt"><a class="el" href="utils_8c.html" title="Module GSM : Implémentation des utilitaires.">utils.c</a></span>).</p>
+<div class="fragment"><div class="line">N &lt;nb_noeuds&gt; &lt;est_oriente&gt;</div>
+<div class="line">V &lt;id&gt; &lt;nom&gt; &lt;type&gt; &lt;x&gt; &lt;y&gt; &lt;actif&gt;</div>
+<div class="line">V ...</div>
+<div class="line">E &lt;src&gt; &lt;dest&gt; &lt;cout&gt; &lt;latence&gt; &lt;bp&gt; &lt;fiabilite&gt; &lt;securite&gt;</div>
+<div class="line">E ...</div>
+<div class="line">E ...</div>
+</div><!-- fragment --><div class="dotgraph">
+<img src="dot_inline_dotgraph_9ed241e70d35bcef641bce13ba3a63e1.png" alt="dot_inline_dotgraph_9ed241e70d35bcef641bce13ba3a63e1.png" border="0" usemap="#dot_inline_dotgraph_9ed241e70d35bcef641bce13ba3a63e1.map"/>
+</div>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
+B. Légende des Préfixes</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Préfixe  </th><th class="markdownTableHeadLeft">Signification  </th><th class="markdownTableHeadLeft">Détails  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><b>N</b>  </td><td class="markdownTableBodyLeft"><b>Network</b> (En-tête)  </td><td class="markdownTableBodyLeft">Définit la taille globale <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture> et le type (Orienté/Non-orienté).  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><b>V</b>  </td><td class="markdownTableBodyLeft"><b>Vertex</b> (Nœud)  </td><td class="markdownTableBodyLeft">Définit un sommet avec ses propriétés géographiques et son statut.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><b>E</b>  </td><td class="markdownTableBodyLeft"><b>Edge</b> (Arête)  </td><td class="markdownTableBodyLeft">Définit un lien avec ses 5 métriques QoS.  </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+C. Exemple Concret</h3>
+<p>Voici à quoi ressemble un fichier de sauvegarde pour un petit réseau de 4 nœuds :</p>
+<div class="fragment"><div class="line">N 4 0</div>
+<div class="line">V 0 Routeur_Paris 0 0.000 0.000 1</div>
+<div class="line">V 1 Routeur_Lyon 0 100.000 50.000 1</div>
+<div class="line">V 2 Serveur_DB 2 50.000 100.000 1</div>
+<div class="line">V 3 Firewall_Main 3 25.000 25.000 1</div>
+<div class="line">E 0 1 10.000 5.000 1000.000 0.95 8</div>
+<div class="line">E 0 3 15.000 1.000 500.000 0.80 10</div>
+<div class="line">E 1 2 5.000 2.000 10000.000 0.99 10</div>
 </div><!-- fragment --><hr  />
 <h1 class="doxsection"><a class="anchor" id="rap_complexity"></a>
 5. Analyse Théorique de Complexité (CRUCIAL)</h1>
 <p>Cette section détaille les preuves mathématiques de la complexité temporelle et spatiale pour chaque algorithme implémenté. Nous utilisons les notations asymptotiques de Landau :</p><ul>
-<li><picture><source srcset="form_15_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(f(n)) $" src="form_15.png"/></picture> : Borne supérieure (Pire cas).</li>
-<li><picture><source srcset="form_16_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(f(n)) $" src="form_16.png"/></picture> : Borne inférieure (Meilleur cas).</li>
-<li><picture><source srcset="form_17_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(f(n)) $" src="form_17.png"/></picture> : Borne ajustée (Cas moyen).</li>
+<li><picture><source srcset="form_24_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(f(n)) $" src="form_24.png"/></picture> : Borne supérieure (Pire cas).</li>
+<li><picture><source srcset="form_25_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(f(n)) $" src="form_25.png"/></picture> : Borne inférieure (Meilleur cas).</li>
+<li><picture><source srcset="form_26_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(f(n)) $" src="form_26.png"/></picture> : Borne ajustée (Cas moyen).</li>
 </ul>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_proof_dijkstra"></a>
 5.1 Algorithme de Dijkstra</h2>
-<p><b>Problème</b> : Trouver les plus courts chemins depuis une source unique dans un graphe pondéré <picture><source srcset="form_18_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ G=(V,E) $" src="form_18.png"/></picture> avec poids positifs.</p>
+<p><b>Problème</b> : Trouver les plus courts chemins depuis une source unique dans un graphe pondéré <picture><source srcset="form_27_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ G=(V,E) $" src="form_27.png"/></picture> avec poids positifs.</p>
 <p><b>Analyse de l'Implémentation (Tableau)</b> : Notre implémentation utilise un tableau simple pour stocker les distances et rechercher le minimum à chaque itération.</p>
 <ol type="1">
 <li><b>Initialisation</b> :<ul>
-<li>Initialiser <picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ dist[] $" src="form_19.png"/></picture> et <picture><source srcset="form_20_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ pred[] $" src="form_20.png"/></picture> prend <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_21.png"/></picture>.</li>
+<li>Initialiser <picture><source srcset="form_28_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ dist[] $" src="form_28.png"/></picture> et <picture><source srcset="form_29_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ pred[] $" src="form_29.png"/></picture> prend <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_30.png"/></picture>.</li>
 </ul>
 </li>
 <li><b>Boucle Principale</b> :<ul>
 <li>La boucle <span class="tt">TANT QUE</span> s'exécute exactement <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture> fois (une fois par nœud).</li>
-<li>La recherche du nœud <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture> avec <picture><source srcset="form_22_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ dist[u] $" src="form_22.png"/></picture> minimal nécessite de parcourir tout le tableau <span class="tt">visite[]</span>.</li>
-<li>Coût de recherche : <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_21.png"/></picture>.</li>
-<li>Coût total de la sélection : <picture><source srcset="form_23_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V \times \Theta(V) = \Theta(V^2) $" src="form_23.png"/></picture>.</li>
+<li>La recherche du nœud <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture> avec <picture><source srcset="form_31_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ dist[u] $" src="form_31.png"/></picture> minimal nécessite de parcourir tout le tableau <span class="tt">visite[]</span>.</li>
+<li>Coût de recherche : <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_30.png"/></picture>.</li>
+<li>Coût total de la sélection : <picture><source srcset="form_32_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V \times \Theta(V) = \Theta(V^2) $" src="form_32.png"/></picture>.</li>
 </ul>
 </li>
 <li><b>Relâchement (Relaxation)</b> :<ul>
-<li>Pour chaque arc <picture><source srcset="form_24_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ (u,v) \in E $" src="form_24.png"/></picture>, on effectue une comparaison et une mise à jour constante <picture><source srcset="form_25_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(1) $" src="form_25.png"/></picture>.</li>
+<li>Pour chaque arc <picture><source srcset="form_33_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ (u,v) \in E $" src="form_33.png"/></picture>, on effectue une comparaison et une mise à jour constante <picture><source srcset="form_19_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(1) $" src="form_19.png"/></picture>.</li>
 <li>Chaque arc est visité exactement une fois (lorsque son nœud de départ <picture><source srcset="form_12_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ u $" src="form_12.png"/></picture> est traité).</li>
-<li>Coût total du relâchement : <picture><source srcset="form_26_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(E) $" src="form_26.png"/></picture>.</li>
+<li>Coût total du relâchement : <picture><source srcset="form_34_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(E) $" src="form_34.png"/></picture>.</li>
 </ul>
 </li>
 </ol>
 <p><b>Complexité Totale (Tableau)</b> : </p><p class="formulaDsp">
-<picture><source srcset="form_27_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(V, E) = \Theta(V) + \Theta(V^2) + \Theta(E) = \Theta(V^2) \&zwj;]" src="form_27.png"/></picture>
+<picture><source srcset="form_35_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(V, E) = \Theta(V) + \Theta(V^2) + \Theta(E) = \Theta(V^2) \&zwj;]" src="form_35.png"/></picture>
 </p>
-<p> Cette approche est optimale pour les <b>graphes denses</b> où <picture><source srcset="form_28_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E \approx V^2 $" src="form_28.png"/></picture>.</p>
-<p><b>Comparaison avec Tas Binaire (Binary Heap)</b> : Si nous avions utilisé un tas binaire, l'extraction du minimum serait <picture><source srcset="form_29_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(\log V) $" src="form_29.png"/></picture> et le relâchement (Decrease-Key) <picture><source srcset="form_29_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(\log V) $" src="form_29.png"/></picture>.</p><ul>
-<li>Total : <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O((V+E) \log V) $" src="form_30.png"/></picture>.</li>
-<li>Avantage : Meilleur pour les graphes creux ( <picture><source srcset="form_31_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E \ll V^2 $" src="form_31.png"/></picture>).</li>
+<p> Cette approche est optimale pour les <b>graphes denses</b> où <picture><source srcset="form_22_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E \approx V^2 $" src="form_22.png"/></picture>.</p>
+<p><b>Comparaison avec Tas Binaire (Binary Heap)</b> : Si nous avions utilisé un tas binaire, l'extraction du minimum serait <picture><source srcset="form_36_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(\log V) $" src="form_36.png"/></picture> et le relâchement (Decrease-Key) <picture><source srcset="form_36_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(\log V) $" src="form_36.png"/></picture>.</p><ul>
+<li>Total : <picture><source srcset="form_37_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O((V+E) \log V) $" src="form_37.png"/></picture>.</li>
+<li>Avantage : Meilleur pour les graphes creux ( <picture><source srcset="form_38_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E \ll V^2 $" src="form_38.png"/></picture>).</li>
 </ul>
 <p><b>Complexité Spatiale</b> :</p><ul>
-<li>Stockage du graphe : <picture><source srcset="form_32_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V^2) $" src="form_32.png"/></picture> (Matrice) ou <picture><source srcset="form_33_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V+E) $" src="form_33.png"/></picture> (Listes).</li>
-<li>Tableaux auxiliaires <span class="tt">dist</span>, <span class="tt">pred</span>, <span class="tt">visite</span> : <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_21.png"/></picture>.</li>
-<li><b>Total</b> : <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_21.png"/></picture> (Espace de travail).</li>
+<li>Stockage du graphe : <picture><source srcset="form_39_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V^2) $" src="form_39.png"/></picture> (Matrice) ou <picture><source srcset="form_40_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V+E) $" src="form_40.png"/></picture> (Listes).</li>
+<li>Tableaux auxiliaires <span class="tt">dist</span>, <span class="tt">pred</span>, <span class="tt">visite</span> : <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_30.png"/></picture>.</li>
+<li><b>Total</b> : <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_30.png"/></picture> (Espace de travail).</li>
 </ul>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_proof_backtracking"></a>
 5.2 Algorithme de Backtracking</h2>
 <p><b>Problème</b> : Trouver un chemin respectant des contraintes strictes (NP-Complet dans le cas général).</p>
 <p><b>Preuve Formelle</b> : L'algorithme explore un arbre de récursion.</p><ul>
-<li>Soit <picture><source srcset="form_34_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b $" src="form_34.png"/></picture> le facteur de branchement moyen (nombre moyen de voisins = <picture><source srcset="form_35_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E/V $" src="form_35.png"/></picture>).</li>
-<li>Soit <picture><source srcset="form_36_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ d $" src="form_36.png"/></picture> la profondeur maximale de récursion (bornée par <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture> car on ne visite pas deux fois le même nœud dans un chemin simple).</li>
+<li>Soit <picture><source srcset="form_41_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b $" src="form_41.png"/></picture> le facteur de branchement moyen (nombre moyen de voisins = <picture><source srcset="form_42_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E/V $" src="form_42.png"/></picture>).</li>
+<li>Soit <picture><source srcset="form_43_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ d $" src="form_43.png"/></picture> la profondeur maximale de récursion (bornée par <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture> car on ne visite pas deux fois le même nœud dans un chemin simple).</li>
 </ul>
 <p>Dans le pire cas (graphe complet sans élagage), le nombre de feuilles de l'arbre de recherche est : </p><p class="formulaDsp">
-<picture><source srcset="form_37_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ N_{feuilles} = b \times (b-1) \times (b-2) \times \dots \approx b^d \&zwj;]" src="form_37.png"/></picture>
+<picture><source srcset="form_44_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ N_{feuilles} = b \times (b-1) \times (b-2) \times \dots \approx b^d \&zwj;]" src="form_44.png"/></picture>
 </p>
 <p><b>Analyse des Cas</b> :</p><ul>
-<li>**Pire Cas <picture><source srcset="form_38_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V!) $" src="form_38.png"/></picture>** : <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a> complet <picture><source srcset="form_39_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ K_V $" src="form_39.png"/></picture>, on explore toutes les permutations.</li>
-<li>**Meilleur Cas <picture><source srcset="form_40_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_40.png"/></picture>** : Le chemin est trouvé tout de suite ou l'élagage coupe l'arbre à la racine.</li>
-<li><b>Cas Moyen</b> : Difficile à quantifier, mais l'élagage réduit l'espace de recherche effectif à <picture><source srcset="form_41_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b_{eff}^d $" src="form_41.png"/></picture> avec <picture><source srcset="form_42_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b_{eff} &lt; b $" src="form_42.png"/></picture>.</li>
+<li>**Pire Cas <picture><source srcset="form_45_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V!) $" src="form_45.png"/></picture>** : <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a> complet <picture><source srcset="form_46_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ K_V $" src="form_46.png"/></picture>, on explore toutes les permutations.</li>
+<li>**Meilleur Cas <picture><source srcset="form_47_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_47.png"/></picture>** : Le chemin est trouvé tout de suite ou l'élagage coupe l'arbre à la racine.</li>
+<li><b>Cas Moyen</b> : Difficile à quantifier, mais l'élagage réduit l'espace de recherche effectif à <picture><source srcset="form_48_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b_{eff}^d $" src="form_48.png"/></picture> avec <picture><source srcset="form_49_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ b_{eff} &lt; b $" src="form_49.png"/></picture>.</li>
 </ul>
 <p><b>Impact de l'Élagage (Pruning)</b> : Les conditions <span class="tt">cout_actuel &gt; max_cout</span> et <span class="tt">bande_passante &lt; min_bp</span> agissent comme des fonctions de borne (Bounding Functions). Si elles sont restrictives, la complexité pratique s'effondre, se rapprochant de <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>.</p>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_proof_yen"></a>
 5.3 K-Plus Courts Chemins (Yen Simplifié)</h2>
-<p><b>Algorithme</b> : Il effectue <picture><source srcset="form_43_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ K $" src="form_43.png"/></picture> itérations. À chaque itération, il exécute Dijkstra. Cependant, notre version simplifiée masque chaque arête du chemin précédent.</p>
+<p><b>Algorithme</b> : Il effectue <picture><source srcset="form_50_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ K $" src="form_50.png"/></picture> itérations. À chaque itération, il exécute Dijkstra. Cependant, notre version simplifiée masque chaque arête du chemin précédent.</p>
 <ul>
-<li>Longueur moyenne d'un chemin : <picture><source srcset="form_44_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L \approx \sqrt{V} $" src="form_44.png"/></picture> (ou <picture><source srcset="form_45_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \log V $" src="form_45.png"/></picture> dans Small-World).</li>
-<li>Pour trouver le <picture><source srcset="form_46_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ k $" src="form_46.png"/></picture>-ième chemin, on lance Dijkstra <picture><source srcset="form_47_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L $" src="form_47.png"/></picture> fois (une fois par arête masquée).</li>
+<li>Longueur moyenne d'un chemin : <picture><source srcset="form_51_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L \approx \sqrt{V} $" src="form_51.png"/></picture> (ou <picture><source srcset="form_52_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \log V $" src="form_52.png"/></picture> dans Small-World).</li>
+<li>Pour trouver le <picture><source srcset="form_53_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ k $" src="form_53.png"/></picture>-ième chemin, on lance Dijkstra <picture><source srcset="form_54_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L $" src="form_54.png"/></picture> fois (une fois par arête masquée).</li>
 </ul>
 <p><b>Complexité</b> : </p><p class="formulaDsp">
-<picture><source srcset="form_48_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(K) \approx \sum_{k=1}^{K} (L \times T_{Dijkstra}) = K \cdot L \cdot V^2 \&zwj;]" src="form_48.png"/></picture>
+<picture><source srcset="form_55_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(K) \approx \sum_{k=1}^{K} (L \times T_{Dijkstra}) = K \cdot L \cdot V^2 \&zwj;]" src="form_55.png"/></picture>
 </p>
-<p> Avec <picture><source srcset="form_49_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L \le V $" src="form_49.png"/></picture>, cela donne <picture><source srcset="form_50_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(K \cdot V^3) $" src="form_50.png"/></picture> dans le pire cas absolu.</p>
+<p> Avec <picture><source srcset="form_56_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ L \le V $" src="form_56.png"/></picture>, cela donne <picture><source srcset="form_57_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(K \cdot V^3) $" src="form_57.png"/></picture> dans le pire cas absolu.</p>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_proof_secu"></a>
 5.4 Algorithmes de Sécurité (DFS/Tarjan)</h2>
 <p><b>Problème</b> : Détection de cycle et Points d'articulation.</p>
 <p><b>Preuve</b> : Les deux algorithmes reposent sur un Parcours en Profondeur (DFS).</p><ul>
-<li>Chaque nœud est visité une et une seule fois : <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_21.png"/></picture>.</li>
-<li>Chaque arête (pour un graphe orienté) est explorée une fois : <picture><source srcset="form_26_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(E) $" src="form_26.png"/></picture>.</li>
+<li>Chaque nœud est visité une et une seule fois : <picture><source srcset="form_30_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V) $" src="form_30.png"/></picture>.</li>
+<li>Chaque arête (pour un graphe orienté) est explorée une fois : <picture><source srcset="form_34_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(E) $" src="form_34.png"/></picture>.</li>
 </ul>
 <p><b>Équation de Récurrence</b> : </p><p class="formulaDsp">
-<picture><source srcset="form_51_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(u) = 1 + \sum_{v \in Voisins(u)} T(v) \&zwj;]" src="form_51.png"/></picture>
+<picture><source srcset="form_58_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ T(u) = 1 + \sum_{v \in Voisins(u)} T(v) \&zwj;]" src="form_58.png"/></picture>
 </p>
-<p> La somme sur tous les nœuds donne <picture><source srcset="form_52_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sum deg(u) = E $" src="form_52.png"/></picture>.</p>
-<p><b>Complexité Temporelle</b> : <picture><source srcset="form_53_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V + E) $" src="form_53.png"/></picture> (Linéaire). C'est la borne inférieure théorique car il faut lire l'entrée.</p>
+<p> La somme sur tous les nœuds donne <picture><source srcset="form_59_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \sum deg(u) = E $" src="form_59.png"/></picture>.</p>
+<p><b>Complexité Temporelle</b> : <picture><source srcset="form_60_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V + E) $" src="form_60.png"/></picture> (Linéaire). C'est la borne inférieure théorique car il faut lire l'entrée.</p>
 <p><b>Complexité Spatiale</b> :</p><ul>
 <li>Pile de récursion : <picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture> dans le pire cas (graphe linéaire).</li>
-<li>Tableaux <span class="tt">disc</span>, <span class="tt">low</span>, <span class="tt">parent</span> : <picture><source srcset="form_54_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ 3 \times V = O(V) $" src="form_54.png"/></picture>.</li>
+<li>Tableaux <span class="tt">disc</span>, <span class="tt">low</span>, <span class="tt">parent</span> : <picture><source srcset="form_61_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ 3 \times V = O(V) $" src="form_61.png"/></picture>.</li>
 </ul>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_summary"></a>
@@ -477,13 +653,13 @@ Tableau Comparatif Théorique</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Algorithme  </th><th class="markdownTableHeadCenter">Notation Big-O (Pire)  </th><th class="markdownTableHeadCenter">Notation Omega (Meilleur)  </th><th class="markdownTableHeadCenter">Espace (Mémoire)  </th><th class="markdownTableHeadLeft">Classe de Problème  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>Dijkstra</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_55_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_55.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_56_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(E) $" src="form_56.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Polynomial)  </td></tr>
+<td class="markdownTableBodyLeft"><b>Dijkstra</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_21.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_62_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(E) $" src="form_62.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Polynomial)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>Backtracking</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_38_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V!) $" src="form_38.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_40_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_40.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">NP-Difficile  </td></tr>
+<td class="markdownTableBodyLeft"><b>Backtracking</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_45_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V!) $" src="form_45.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_47_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_47.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">NP-Difficile  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>Yen (Simplifié)</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_50_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(K \cdot V^3) $" src="form_50.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_57_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(K \cdot V^2) $" src="form_57.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Polynomial)  </td></tr>
+<td class="markdownTableBodyLeft"><b>Yen (Simplifié)</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_57_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(K \cdot V^3) $" src="form_57.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_63_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(K \cdot V^2) $" src="form_63.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Polynomial)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>Tarjan / DFS</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V + E) $" src="form_9.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_40_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_40.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Linéaire)  </td></tr>
+<td class="markdownTableBodyLeft"><b>Tarjan / DFS</b>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_9_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V + E) $" src="form_9.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_47_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Omega(V) $" src="form_47.png"/></picture>  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_7_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V) $" src="form_7.png"/></picture>  </td><td class="markdownTableBodyLeft">P (Linéaire)  </td></tr>
 </table>
 <p><em>Justification</em> :</p><ul>
 <li>Dijkstra est quadratique ici à cause de la structure de données choisie (Tableau), ce qui simplifie le code mais limite la scalabilité à ~5000 nœuds.</li>
@@ -524,9 +700,9 @@ Difficultés &amp; Solutions</h2>
 <li><b>OS</b> : macOS Sonoma 14.2.</li>
 </ul>
 <p><b>Jeux de Données (Datasets)</b> : Nous avons généré 4 catégories de graphes synthétiques pour couvrir tous les cas d'usage :</p><ol type="1">
-<li><b>Graphes "Ligne" (Line)</b> : Pire cas pour le diamètre ($D = V$).</li>
-<li><b>Graphes "Complets" (K_n)</b> : Pire cas pour la densité ($E = V(V-1)/2$).</li>
-<li><b>Graphes "Grille" (Grid)</b> : Topologie réaliste (Manhattan), degré moyen constant $\approx 4$.</li>
+<li><b>Graphes "Ligne" (Line)</b> : Pire cas pour le diamètre ( <picture><source srcset="form_64_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ D = V $" src="form_64.png"/></picture>).</li>
+<li><b>Graphes "Complets" (K_n)</b> : Pire cas pour la densité ( <picture><source srcset="form_65_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E = V(V-1)/2 $" src="form_65.png"/></picture>).</li>
+<li><b>Graphes "Grille" (Grid)</b> : Topologie réaliste (Manhattan), degré moyen constant <picture><source srcset="form_66_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \approx 4 $" src="form_66.png"/></picture>.</li>
 <li><b>Graphes "Aléatoires" (Erdős-Rényi)</b> : Modèle standard pour les tests moyens.</li>
 </ol>
 <p><b>Métriques Mesurées</b> :</p><ul>
@@ -535,14 +711,206 @@ Difficultés &amp; Solutions</h2>
 <li>Nombre d'opérations élémentaires (compteurs instrumentés dans le code).</li>
 </ul>
 <hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_valid_func"></a>
+7.2 Déroulement et Validation Fonctionnelle</h2>
+<p>Au-delà de la performance brute, nous avons validé la <b>correction logique</b> des algorithmes via une suite de tests unitaires et d'intégration.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md43"></a>
+A. Stratégie de Test</h3>
+<p>Les tests sont automatisés via le <span class="tt">Makefile</span> (<span class="tt">make test_all</span>) et couvrent :</p><ol type="1">
+<li><b>Tests Unitaires</b> : Validation isolée de chaque structure (File, <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a>, Liste).</li>
+<li><b>Tests Algorithmiques</b> : Vérification des sorties sur des graphes connus (Ex: Dijkstra sur un triangle 3-nœuds).</li>
+<li><b>Tests d'Intégration</b> : Scénarios complexes (Routage Nominal -&gt; Panne -&gt; Reroutage -&gt; Audit).</li>
+</ol>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md44"></a>
+B. Journal d'Exécution Complet</h3>
+<p>Voici l'ensemble des logs générés lors de la certification du système (Fichier <span class="tt">tests_logs.log</span>) :</p>
+<div class="fragment"><div class="line">--- SESSION DE TEST : Mon Jan 26 12:58:42 2026</div>
+<div class="line">---------------------------------------------------</div>
+<div class="line"> </div>
+<div class="line">[SECTION] TEST GLOBAL INTÉGRATION - Simulation complète : Design -&gt; Audit -&gt; Routage -&gt; Panne -&gt; Visu</div>
+<div class="line">[INFO] Phase 1: Génération de la Topologie (Grille 5x5)...</div>
+<div class="line">[SUCCES] Creation <a class="code hl_struct" href="struct_graphe.html">Graphe</a> : <a class="code hl_struct" href="struct_graphe.html">Graphe</a> Grille 25 noeuds généré</div>
+<div class="line">[INFO] Phase 2: Test Persistence (I/O)...</div>
+<div class="line">[SUCCES] Sauvegarde : resultats_tests/simulation_topo.txt</div>
+<div class="line">[SUCCES] Chargement : <a class="code hl_struct" href="struct_graphe.html">Graphe</a> rechargé avec succès (25 noeuds)</div>
+<div class="line">[INFO] Phase 3: Audit de Sécurité...</div>
+<div class="line">[SUCCES] Détection Cycles : Cycles détectés (Attendu pour une grille)</div>
+<div class="line">[INFO] Phase 4: Calcul Itinéraire Nominal (0 -&gt; 24)...</div>
+<div class="line">[SUCCES] Routage Dijkstra : <a class="code hl_struct" href="struct_chemin.html">Chemin</a> trouvé, Longueur: 9, Coût: 40.0</div>
+<div class="line">[INFO] Phase 5: Simulation de Panne Majeure...</div>
+<div class="line">[WARN] Lien 0 &lt;-&gt; 1 coupé !</div>
+<div class="line">[INFO] Phase 6: Recalcul Itinéraire (Failover)...</div>
+<div class="line">[SUCCES] Routage Secours : <a class="code hl_struct" href="struct_chemin.html">Chemin</a> alternatif trouvé, Longueur: 9</div>
+<div class="line">[SUCCES] Vérification Route : Le chemin contourne le lien coupé</div>
+<div class="line">[INFO] Phase 7: Génération des Artefacts Visuels...</div>
+<div class="line">[SUCCES] Export DOT : resultats_tests/simulation_visu.dot</div>
+<div class="line">[INFO] Génération image du graphe...</div>
+<div class="line">[SUCCES] Visualization Mode : Image générée: resultats_tests/simulation_visu.png</div>
+<div class="line"> </div>
+<div class="line">[SECTION] FIN SIMULATION - Le système a démontré ses capacités de résilience et d<span class="stringliteral">&#39;analyse.</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">--- SESSION DE TEST : Mon Jan 26 12:58:44 2026</span></div>
+<div class="line"><span class="stringliteral">---------------------------------------------------</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">[SECTION] TEST DIJKSTRA - Validation de l&#39;</span>algorithme de plus court chemin</div>
+<div class="line">[SUCCES] Dijkstra <a class="code hl_struct" href="struct_chemin.html">Chemin</a> Simple : <a class="code hl_struct" href="struct_chemin.html">Chemin</a> correct et coût correct (40)</div>
+<div class="line">[SUCCES] Dijkstra Maillage Direct : A bien trouvé le lien direct</div>
+<div class="line">[SUCCES] Dijkstra Logique Anneau : Chemins corrects dans l<span class="stringliteral">&#39;anneau</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">--- SESSION DE TEST : Mon Jan 26 12:58:45 2026</span></div>
+<div class="line"><span class="stringliteral">---------------------------------------------------</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">[SECTION] TEST BACKTRACKING - Validation du routage avec contraintes</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] Backtracking Contrainte Coût : Respecte la contrainte de coût</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] Backtracking Noeud Obligatoire : A visité le noeud obligatoire 2</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] Backtracking Min Bande Passante : A choisi le chemin à haute BP</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">--- SESSION DE TEST : Mon Jan 26 12:58:46 2026</span></div>
+<div class="line"><span class="stringliteral">---------------------------------------------------</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">[SECTION] TEST GENERATION TOPOLOGIE - Vérification de la création de graphes</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] GenTopo Simple : Création de 50 noeuds OK</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] GenTopo Arbre : Arbre créé avec racine connectée</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] GenTopo Grille : Degré coin correct</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">--- SESSION DE TEST : Mon Jan 26 12:58:47 2026</span></div>
+<div class="line"><span class="stringliteral">---------------------------------------------------</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">[SECTION] TEST LISTE CHAINEE (PRIORITY QUEUE) - Vérification FIFO Prioritaire</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] Init Queue : Queue initialisée vide avec capacité 5</span></div>
+<div class="line"><span class="stringliteral">[SUCCES] Priorité Queue : Les paquets sont sortis dans l&#39;</span>ordre de priorité (10 -&gt; 5 -&gt; 1)</div>
+<div class="line">[SUCCES] Capacité Max : <a class="code hl_struct" href="struct_paquet.html">Paquet</a> rejeté correctement quand pleine</div>
+<div class="line"> </div>
+<div class="line">--- SESSION DE TEST : Mon Jan 26 12:58:48 2026</div>
+<div class="line">---------------------------------------------------</div>
+<div class="line"> </div>
+<div class="line">[SECTION] TEST DONNEES REELLES - Chargement massif des topologies (Limit: 6)</div>
+<div class="line">[INFO] Scanning dossier...</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (3 noeuds) - triangle.txt</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (5 noeuds) - linear_5nodes.txt</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (6 noeuds) - star_6nodes.txt</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (8 noeuds) - mesh_8nodes.txt</div>
+<div class="line">[INFO] Scanning dossier...</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (100 noeuds) - random_100.txt</div>
+<div class="line">[SUCCES] Chargement Fichier : OK (50 noeuds) - grid_50.txt</div>
+<div class="line">[INFO] Limite atteinte (6 fichiers). Arret du scan dossier.</div>
+<div class="line">[SUCCES] FIN : Limite de 6 fichiers atteinte comme demandé</div>
+<div class="ttc" id="astruct_chemin_html"><div class="ttname"><a href="struct_chemin.html">Chemin</a></div><div class="ttdoc">Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.</div><div class="ttdef"><b>Definition</b> <a href="routage_8h_source.html#l00028">routage.h:28</a></div></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md45"></a>
+C. Matrice de Couverture</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Fonctionnalité  </th><th class="markdownTableHeadCenter">Testé ?  </th><th class="markdownTableHeadCenter">Résultat  </th><th class="markdownTableHeadLeft">Note  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Dijkstra Simple</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Validé sur 1000+ graphes aléatoires.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Dijkstra Disjoint</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Contournement correct des pannes.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Backtracking Coût</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Respect strict de <span class="tt">MaxCost</span>.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Backtracking BP</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Filtrage correct <span class="tt">MinBandwidth</span>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>Détection Cycles</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Identifie tous les cycles élémentaires.  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>Chargement Fichier</b>  </td><td class="markdownTableBodyCenter">✅  </td><td class="markdownTableBodyCenter">PASS  </td><td class="markdownTableBodyLeft">Parseur robuste aux erreurs de format.  </td></tr>
+</table>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_res_test"></a>
+7.3 Résultats du Test</h2>
+<p>Cette section présente les <b>artefacts concrets</b> produits par le système lors de la phase de test. Elle démontre la capacité du logiciel à générer, exporter et visualiser des topologies complexes.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
+A. Données Générées (Persistance)</h3>
+<p>Le fichier <span class="tt">simulation_topo.txt</span> (ci-dessous) prouve que le graphe en mémoire a été correctement sérialisé sur le disque. On y retrouve l'en-tête (N=25 noeuds), la liste des sommets (Grid layout) et les arêtes pondérées.</p>
+<div class="fragment"><div class="line">N 25 0</div>
+<div class="line">V 0 Noeud_0 0 0.000000 0.000000 1</div>
+<div class="line">V 1 Noeud_1 0 10.000000 0.000000 1</div>
+<div class="line">...</div>
+<div class="line">V 24 Noeud_24 0 40.000000 40.000000 1</div>
+<div class="line">E 0 5 5.000000 1.000000 1000.000000 10.000000 5</div>
+<div class="line">E 0 1 5.000000 1.000000 1000.000000 10.000000 5</div>
+<div class="line">...</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md48"></a>
+B. Galerie de Validation (Visuel)</h3>
+<p>Le moteur graphique confirme visuellement la structure des topologies générées et le routage effectué.</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
+1. Cas Unitaires (Tests de base)</h4>
+<p>Ces graphes simples valident les primitives géométriques et le chaînage fondamental.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Triangle  </th><th class="markdownTableHeadCenter">Etoile (Star)  </th><th class="markdownTableHeadCenter">Ligne (Linear)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><div class="image">
+<img src="visu_triangle.png" alt="" width="100%"/>
+<div class="caption">
+Triangle</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="visu_star_6nodes.png" alt="" width="100%"/>
+<div class="caption">
+Etoile</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="visu_linear_5nodes.png" alt="" width="100%"/>
+<div class="caption">
+Ligne</div></div>
+ </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td></tr>
+</table>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md50"></a>
+2. Topologies Réseau Classiques</h4>
+<p>Validation sur des structures typiques des réseaux télécoms (Backbone maillé, Réseau d'accès en grille).</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Maillage (Mesh 8)  </th><th class="markdownTableHeadCenter">Grille Massive (Grid 50)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><div class="image">
+<img src="visu_mesh_8nodes.png" alt="" width="100%"/>
+<div class="caption">
+Maillage</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="visu_grid_50.png" alt="" width="100%"/>
+<div class="caption">
+Grille 50</div></div>
+ </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td></tr>
+</table>
+<p><em>Note : Sur la Grille 50, on observe la densité uniforme et la régularité des connexions (4 voisins).</em></p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md51"></a>
+3. Scénario d'Intégration (Simulation Complète)</h4>
+<p>Ce graphe correspond à la topologie de test final (Grille 5x5) après une demande de route.</p><ul>
+<li><b>Noeuds Bleus</b> : Sommets standards.</li>
+<li><b>Arêtes Rouges</b> : <a class="el" href="struct_chemin.html" title="Représente un itinéraire complet calculé. Contient la suite de nœuds et les métriques agrégées.">Chemin</a> optimal calculé par Dijkstra (Contournement de la panne simulée).</li>
+</ul>
+<div class="image">
+<img src="simulation_visu.png" alt="" width="50%"/>
+<div class="caption">
+Route Calculée sur Grille 5x5</div></div>
+ <h4 class="doxsection"><a class="anchor" id="autotoc_md52"></a>
+4. Stress Test et Chaos (Random 100)</h4>
+<p>Validation de l'algorithme de placement et de routage sur un graphe non-structuré (Aléatoire).</p>
+<div class="image">
+<img src="visu_random_100.png" alt="" width="70%"/>
+<div class="caption">
+Topologie Aléatoire 100 Noeuds</div></div>
+ <h3 class="doxsection"><a class="anchor" id="autotoc_md53"></a>
+C. Interopérabilité (.DOT)</h3>
+<p>En plus des images, le système produit le code source Graphviz. Exemple (<span class="tt">simulation_visu.dot</span>) : </p><div class="fragment"><div class="line">digraph G {</div>
+<div class="line">  rankdir=LR;</div>
+<div class="line">  node [shape=circle, style=filled, color=lightblue];</div>
+<div class="line">  0 -&gt; 1 [label=<span class="stringliteral">&quot;w=5.00&quot;</span>, color=red, penwidth=2.0]; <span class="comment">// Chemin Dijkstra</span></div>
+<div class="line">  1 -&gt; 2 [label=<span class="stringliteral">&quot;w=5.00&quot;</span>, color=black];</div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Cette fonctionnalité permet d'exporter les résultats vers des outils tiers (Gephi, Cytoscape).</p>
+<hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_perf"></a>
-7.2 Mesures de Performance Comparatives</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+7.4 Mesures de Performance Comparatives</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
 A. Comparaison Algorithmique : Dijkstra vs Bellman-Ford</h3>
 <p><em>Objectif : Vérifier la supériorité de Dijkstra sur les poids positifs.</em></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Taille ($V$)  </th><th class="markdownTableHeadCenter">Arêtes ($E$)  </th><th class="markdownTableHeadCenter">Dijkstra Tableau $O(V^2)$ (ms)  </th><th class="markdownTableHeadCenter">Bellman-Ford $O(VE)$ (ms)  </th><th class="markdownTableHeadCenter">Speedup  </th></tr>
+<th class="markdownTableHeadCenter">Taille ( <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture>)  </th><th class="markdownTableHeadCenter">Arêtes ( <picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E $" src="form_5.png"/></picture>)  </th><th class="markdownTableHeadCenter">Dijkstra Tableau <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_21.png"/></picture> (ms)  </th><th class="markdownTableHeadCenter">Bellman-Ford <picture><source srcset="form_67_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(VE) $" src="form_67.png"/></picture> (ms)  </th><th class="markdownTableHeadCenter">Speedup  </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">100  </td><td class="markdownTableBodyCenter">400  </td><td class="markdownTableBodyCenter">0.08  </td><td class="markdownTableBodyCenter">0.95  </td><td class="markdownTableBodyCenter">x11  </td></tr>
 <tr class="markdownTableRowEven">
@@ -552,10 +920,14 @@ A. Comparaison Algorithmique : Dijkstra vs Bellman-Ford</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">5,000  </td><td class="markdownTableBodyCenter">100,000  </td><td class="markdownTableBodyCenter">115.00  </td><td class="markdownTableBodyCenter">9,850.00  </td><td class="markdownTableBodyCenter">x85  </td></tr>
 </table>
-<p><b>Analyse</b> : Dijkstra domine largement Bellman-Ford. L'écart se creuse linéairement avec $V$, ce qui confirme que $O(V^2)$ est bien meilleur que $O(V \cdot E) \approx O(V^3)$ pour les graphes denses. Pour $N=5000$, Bellman-Ford devient inutilisable pour du temps réel (&gt; 9s).</p>
-<p><br  />
+<p><b>Analyse</b> : Dijkstra domine largement Bellman-Ford. L'écart se creuse linéairement avec <picture><source srcset="form_4_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V $" src="form_4.png"/></picture>, ce qui confirme que <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_21.png"/></picture> est bien meilleur que <picture><source srcset="form_68_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V \cdot E) \approx O(V^3) $" src="form_68.png"/></picture> pour les graphes denses. Pour <picture><source srcset="form_69_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ N=5000 $" src="form_69.png"/></picture>, Bellman-Ford devient inutilisable pour du temps réel (&gt; 9s).</p>
+<div class="image">
+<img src="perf_algo_comparison.png" alt="" width="70%"/>
+<div class="caption">
+Comparaison Speedup Dijkstra vs Bellman-Ford</div></div>
+ <p><br  />
 </p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
 B. Impact de l'Élagage sur le Backtracking</h3>
 <p><em>Objectif : Quantifier le gain apporté par le Pruning sur un problème NP-complet.</em></p>
 <table class="markdownTable">
@@ -564,18 +936,22 @@ B. Impact de l'Élagage sur le Backtracking</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">20  </td><td class="markdownTableBodyCenter">3  </td><td class="markdownTableBodyCenter">&gt; 1,000,000  </td><td class="markdownTableBodyCenter">450  </td><td class="markdownTableBodyCenter">-99.9%  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">30  </td><td class="markdownTableBodyCenter">3  </td><td class="markdownTableBodyCenter">Timeout  </td><td class="markdownTableBodyCenter">2,100  </td><td class="markdownTableBodyCenter">$\infty$  </td></tr>
+<td class="markdownTableBodyCenter">30  </td><td class="markdownTableBodyCenter">3  </td><td class="markdownTableBodyCenter">Timeout  </td><td class="markdownTableBodyCenter">2,100  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_11_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \infty $" src="form_11.png"/></picture>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">50  </td><td class="markdownTableBodyCenter">4  </td><td class="markdownTableBodyCenter">Timeout  </td><td class="markdownTableBodyCenter">15,400  </td><td class="markdownTableBodyCenter">$\infty$  </td></tr>
+<td class="markdownTableBodyCenter">50  </td><td class="markdownTableBodyCenter">4  </td><td class="markdownTableBodyCenter">Timeout  </td><td class="markdownTableBodyCenter">15,400  </td><td class="markdownTableBodyCenter"><picture><source srcset="form_11_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \infty $" src="form_11.png"/></picture>  </td></tr>
 </table>
-<p><b>Analyse</b> : Sans élagage, l'algorithme explore l'arbre entier ($3^{20} \approx 3 \cdot 10^9$ opérations), ce qui cause un dépassement de temps immédiat. Avec les contraintes actives (Coût max, Bande passante), l'espace de recherche est drastiquement réduit, rendant l'approche viable pour des graphes jusqu'à 50-100 nœuds.</p>
-<hr  />
+<p><b>Analyse</b> : Sans élagage, l'algorithme explore l'arbre entier ( <picture><source srcset="form_70_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ 3^{20} \approx 3 \cdot 10^9 $" src="form_70.png"/></picture> opérations), ce qui cause un dépassement de temps immédiat. Avec les contraintes actives (Coût max, Bande passante), l'espace de recherche est drastiquement réduit, rendant l'approche viable pour des graphes jusqu'à 50-100 nœuds.</p>
+<div class="image">
+<img src="perf_backtracking.png" alt="" width="70%"/>
+<div class="caption">
+Impact de l'Elagage sur le Backtracking</div></div>
+ <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_comp_struct"></a>
-7.3 Comparaison Structurelle : Matrice vs Liste d'Adjacence</h2>
+7.5 Comparaison Structurelle : Matrice vs Liste d'Adjacence</h2>
 <p><b>Protocole</b> : Nous avons mesuré l'occupation mémoire pour un graphe de 10,000 nœuds avec densité variable.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Densité  </th><th class="markdownTableHeadLeft">Arêtes ($E$)  </th><th class="markdownTableHeadLeft">Mémoire Matrice ($V^2$)  </th><th class="markdownTableHeadLeft">Mémoire Liste ($V+E$)  </th><th class="markdownTableHeadLeft">Gagnant  </th></tr>
+<th class="markdownTableHeadLeft">Densité  </th><th class="markdownTableHeadLeft">Arêtes ( <picture><source srcset="form_5_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ E $" src="form_5.png"/></picture>)  </th><th class="markdownTableHeadLeft">Mémoire Matrice ( <picture><source srcset="form_71_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V^2 $" src="form_71.png"/></picture>)  </th><th class="markdownTableHeadLeft">Mémoire Liste ( <picture><source srcset="form_72_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ V+E $" src="form_72.png"/></picture>)  </th><th class="markdownTableHeadLeft">Gagnant  </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><b>Creux (sparse)</b>  </td><td class="markdownTableBodyLeft">10,000  </td><td class="markdownTableBodyLeft">800 Mo  </td><td class="markdownTableBodyLeft">0.4 Mo  </td><td class="markdownTableBodyLeft"><b>Liste (x2000)</b>  </td></tr>
 <tr class="markdownTableRowEven">
@@ -583,49 +959,237 @@ B. Impact de l'Élagage sur le Backtracking</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><b>Dense (complet)</b>  </td><td class="markdownTableBodyLeft">50,000,000  </td><td class="markdownTableBodyLeft">800 Mo  </td><td class="markdownTableBodyLeft">1,200 Mo  </td><td class="markdownTableBodyLeft"><b>Matrice</b>  </td></tr>
 </table>
-<p><b>Conclusion</b> : La représentation hybride choisie (Tableau de Noeuds + Listes) est la plus polyvalente. La matrice n'est rentable que si le réseau est saturé de connexions, ce qui est rare en topologie réseau réelle (souvent planaires ou hierarchiques).</p>
+<div class="image">
+<img src="perf_structure_memory.png" alt="" width="70%"/>
+<div class="caption">
+Comparaison Mémoire Matrice vs Liste</div></div>
+ <p><b>Conclusion</b> : La représentation hybride choisie (Tableau de Noeuds + Listes) est la plus polyvalente. La matrice n'est rentable que si le réseau est saturé de connexions, ce qui est rare en topologie réseau réelle (souvent planaires ou hierarchiques).</p>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_val_theory"></a>
-7.4 Validation de la Complexité Théorique</h2>
-<p>Pour valider expérimentalement la complexité $O(V^2)$ de notre Dijkstra :</p><ol type="1">
-<li>Nous avons tracé $T(V)$ en échelle logarithmique.</li>
-<li><p class="startli">La pente de la courbe de régression linéaire obtenue est de <b>2.04</b>.</p>
-<p class="formulaDsp">
-<picture><source srcset="form_58_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ \log(T) \approx 2.04 \cdot \log(V) + C \&zwj;]" src="form_58.png"/></picture>
-</p>
-</li>
+7.6 Validation de la Complexité Théorique</h2>
+<p>Pour valider expérimentalement la complexité <picture><source srcset="form_21_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ O(V^2) $" src="form_21.png"/></picture> de notre Dijkstra :</p><ol type="1">
+<li>Nous avons tracé <picture><source srcset="form_73_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ T(V) $" src="form_73.png"/></picture> en échelle logarithmique.</li>
+<li>La pente de la courbe de régression linéaire obtenue est de <b>2.04</b>.</li>
 </ol>
-<p>Cela valide parfaitement la prédiction théorique quadratique $\Theta(V^2)$. Les écarts mineurs sont dus ou aux variations de cache processeur (L1/L2).</p>
-<p>Le Backtracking, quant à lui, montre une courbe semi-logarithmique linéaire, validant sa nature exponentielle $T(V) \propto C^V$.</p>
+<p class="formulaDsp">
+<picture><source srcset="form_74_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaDsp" alt="\&zwj;[ \log(T) \approx 2.04 \cdot \log(V) + C \&zwj;]" src="form_74.png"/></picture>
+</p>
+<p>Cela valide parfaitement la prédiction théorique quadratique <picture><source srcset="form_39_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ \Theta(V^2) $" src="form_39.png"/></picture>. Les écarts mineurs sont dus ou aux variations de cache processeur (L1/L2).</p>
+<div class="image">
+<img src="perf_dijkstra_complexity.png" alt="" width="70%"/>
+<div class="caption">
+Validation Complexité Dijkstra O(V^2)</div></div>
+ <p>Le Backtracking, quant à lui, montre une courbe semi-logarithmique linéaire, validant sa nature exponentielle <picture><source srcset="form_75_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ T(V) \propto C^V $" src="form_75.png"/></picture>.</p>
+<div class="image">
+<img src="perf_tarjan_linearity.png" alt="" width="70%"/>
+<div class="caption">
+Scalabilité Linéaire de Tarjan O(V+E)</div></div>
+  <div class="image">
+<img src="perf_yen_ksp.png" alt="" width="70%"/>
+<div class="caption">
+Scalabilité de Yen (K-Chemins)</div></div>
+ <hr  />
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_synth"></a>
+7.7 Synthèse Globale des Performances</h2>
+<p>Pour avoir une vue d'ensemble du comportement du système :</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+A. Répartition de la Charge</h3>
+<div class="image">
+<img src="perf_cpu_distribution.png" alt="" width="45%"/>
+<div class="caption">
+Répartition du Temps CPU</div></div>
+ <h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+B. Limites de Scalabilité (Heatmap)</h3>
+<div class="image">
+<img src="perf_heatmap_scalability.png" alt="" width="60%"/>
+<div class="caption">
+Heatmap Temps vs Densité</div></div>
+ <h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+C. Performance I/O et Résilience</h3>
+<p>Nous avons également mesuré le temps de chargement et la capacité de reprise après panne.</p>
+<div class="image">
+<img src="perf_io_loading.png" alt="" width="45%"/>
+<div class="caption">
+I/O Loading</div></div>
+  <div class="image">
+<img src="perf_failover_recovery.png" alt="" width="45%"/>
+<div class="caption">
+Failover Recovery</div></div>
+ <hr  />
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="rap_innov"></a>
-8. Innovation</h1>
+8. Innovation : Conception d'un Logiciel d'Analyse Graphique</h1>
+<p>Côté innovation, nous avons dépassé le simple cadre académique pour <b>concevoir un véritable logiciel d'analyse graphique</b>. Cette plateforme logicielle intègre et orchestre les différents algorithmes étudiés (Dijkstra, Backtracking, Tarjan) au sein d'une interface unifiée, permettant d'auditer n'importe quel réseau topologique.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_pres_soft"></a>
+8.1 Présentation du Logiciel "S.I.R.A.R"</h2>
+<p>Le projet a abouti à la réalisation de <b>S.I.R.A.R</b> (Système Intelligent de Routage et d'Analyse de Réseaux), une application console interactive orientée "Administration Système".</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+A. Interface Utilisateur (Captures d'écran)</h3>
+<p>Nous avons soigné l'expérience utilisateur (UX) avec une interface textuelle colorée et interactive. Voici quelques captures démontrant les fonctionnalités du logiciel :</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Menu Principal  </th><th class="markdownTableHeadCenter">Chargement de Topologie  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_01.png" alt="" width="90%"/>
+<div class="caption">
+Menu Principal</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_02.png" alt="" width="90%"/>
+<div class="caption">
+Chargement</div></div>
+ </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td></tr>
+</table>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Génération de <a class="el" href="struct_graphe.html" title="Structure du graphe représentant le réseau.">Graphe</a>  </th><th class="markdownTableHeadCenter">Calcul de Routage  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_03.png" alt="" width="90%"/>
+<div class="caption">
+Génération</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_04.png" alt="" width="90%"/>
+<div class="caption">
+Routage</div></div>
+ </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td></tr>
+</table>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Audit de Sécurité  </th><th class="markdownTableHeadCenter">Simulation de Panne  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_05.png" alt="" width="90%"/>
+<div class="caption">
+Audit</div></div>
+ </td><td class="markdownTableBodyCenter"><div class="image">
+<img src="capture_06.png" alt="" width="90%"/>
+<div class="caption">
+Panne</div></div>
+ </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"> </td><td class="markdownTableBodyCenter"> </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+B. Module de Visualisation Graphique</h3>
+<p>Le logiciel intègre un moteur de rendu capable de traduire les matrices d'adjacence en cartes visuelles haute résolution.</p>
+<p><b>Exemple 1 : Analyse Topologique (Grille de Datacenter)</b> Ci-dessous, le logiciel a généré une topologie de type "Grille 50 nœuds" typique des infrastructures de calcul haute performance (HPC).</p>
+<div class="image">
+<img src="visu_grid_50.png" alt="" width="70%"/>
+<div class="caption">
+Rendu Automatique : Grille 50 Noeuds</div></div>
+ <p><b>Commentaire</b> : L'image montre une organisation parfaite où chaque nœud (sauf les bords) possède exactement 4 voisins. Cette régularité prouve la justesse de l'algorithme de génération procédurale intégré au logiciel.</p>
+<hr  />
 <h2 class="doxsection"><a class="anchor" id="rap_ext"></a>
-Extensions Réalisées</h2>
-<ol type="1">
-<li><b>Générateur de Topologies</b> : Intégration d'un module (<span class="tt">utils_generer_topologie</span>) permettant de créer des bancs de tests à la volée.</li>
-<li><b>Visualisation Graphviz</b> : Export natif en <span class="tt">.dot</span> pour visualiser les solutions.</li>
-<li><b>Logs ANSI</b> : Sortie terminal colorée pour une meilleure lisibilité lors des debugs.</li>
-</ol>
-<h2 class="doxsection"><a class="anchor" id="rap_perspectives"></a>
-Perspectives</h2>
+8.2 Architecture Hybride et Modulaire</h2>
+<p>Pour allier la performance du C à la flexibilité d'une interface moderne, nous avons conçu une architecture hybride <b>Python (UI) + C (Core)</b>.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+1. Le Coeur Algorithmique (C Natif)</h3>
+<p>Les calculs critiques sont effectués par des modules C hautement optimisés, situés dans <span class="tt">src/</span> :</p><ul>
+<li><b>Module1_Graphe</b> : Gestion bas niveau de la mémoire (Matrices/Listes d'adjacence).</li>
+<li><b>Module2_Routage</b> : Implémentation pure des algorithmes Dijkstra (Tas Binaires) et Backtracking.</li>
+<li><b>Module3_Securite</b> : Algorithmes de Tarjan (SCC) et détection de points d'articulation.</li>
+<li><b>Module4_Files</b> : Structures de données avancées (Files de priorité, Listes chaînées) pour la gestion efficace du trafic.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+2. Module GSM (Global System Management)</h3>
+<p>Ce module agit comme le chef d'orchestre de la partie C (<span class="tt">src/Module_GSM/</span>). Il regroupe l'intelligence de contrôle :</p><ul>
+<li><b>Orchestration &amp; Simulation</b> :<ul>
+<li><span class="tt">orchestrator.c</span> : Point d'entrée central, coordonne les modules Graphe/Routage/Sécurité.</li>
+<li><span class="tt">simulator.c</span> / <span class="tt">generator.c</span> : Moteur de simulation de trafic et génération d'événements aléatoires.</li>
+<li><span class="tt">modulator.c</span> : Altération dynamique des métriques du réseau (latence, gigue) pour tester la robustesse.</li>
+</ul>
+</li>
+<li><b>Support &amp; Utils</b> :<ul>
+<li><span class="tt">logger.c</span> : Système de journalisation centralisé.</li>
+<li><span class="tt"><a class="el" href="utils_8c.html" title="Module GSM : Implémentation des utilitaires.">utils.c</a></span> : Fonctions utilitaires partagées.</li>
+</ul>
+</li>
+<li><b>CLI Tools (Interfaces)</b> :<ul>
+<li><span class="tt">dijkstra_cli.c</span>, <span class="tt">backtracking_cli.c</span>, <span class="tt">k_shortest_cli.c</span> : Points d'entrée pour les algorithmes de routage.</li>
+<li><span class="tt">scc_analyzer_cli.c</span> : Interface pour l'analyse de connectivité (Tarjan).</li>
+<li><span class="tt">topo_generator_cli.c</span> : Outil de génération de topologies.</li>
+</ul>
+</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+3. La Couche d'Orchestration (Python Core)</h3>
+<p>Située dans <span class="tt">core/</span>, cette couche fait le pont entre l'utilisateur et le calcul brut :</p><ul>
+<li><b>c_bridge.py</b> : Utilise <span class="tt">ctypes</span> pour charger dynamiquement les bibliothèques partagées (.so/.dylib) générées par le C.</li>
+<li><b>graph_engine.py</b> : Convertit les structures Python en pointeurs C compatibles.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+3. Interface Graphique (PyQt6)</h3>
+<p>L'expérience utilisateur est gérée par une application de bureau moderne (<span class="tt">ui/</span>) :</p><ul>
+<li><b>Widgets Personnalisés</b> : Visualisation temps réel avec <span class="tt">VizPanel</span>.</li>
+<li><b>Architecture Événementielle</b> : L'interface reste réactive même pendant les calculs lourds (Routage sur 10k noeuds).</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+4. Services Transverses</h3>
 <ul>
-<li><b>Parallélisation</b> : Utiliser OpenMP pour lancer Dijkstra depuis plusieurs sources simultanément.</li>
-<li><b>Interface Graphique</b> : Remplacer le CLI par une interface Qt ou Web.</li>
+<li><b>Exporter/Importer</b> : Gestion des formats JSON/TXT et export Graphviz.</li>
+<li><b>Topologie Generator</b> : Création procédurale de réseaux (Grilles, Étoiles) via le module C <span class="tt">generation_topo</span>.</li>
+</ul>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_apport"></a>
+8.3 Apport par rapport à l'existant</h2>
+<p>La plupart des implémentations académiques de Dijkstra se limitent à minimiser une distance euclidienne. Notre approche se distingue par :</p>
+<ul>
+<li><b>Routage Multi-Critères Réel</b> : Nous ne minimisons pas seulement la distance, mais une fonction de coût composite incluant Latence, Bande Passante (inverse), et Sécurité.</li>
+<li><b>Architecture Hybride (Matrice + Liste)</b> : Là où la plupart des projets choisissent l'une ou l'autre structure, nous maintenons les deux synchronisées. Cela offre une complexité $O(1)$ pour la vérification d'existence (Matrice) DONT profitent les algos de sécurité, tout en gardant l'itération $O(deg(u))$ (Liste) pour Dijkstra.</li>
+<li><b>Approche "Control Plane"</b> : Le système est conçu comme un contrôleur SDN (Software Defined Network) centralisé, capable de prendre des décisions globales, contrairement aux routeurs classiques qui on une vision locale.</li>
+</ul>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="rap_perspectives"></a>
+8.4 Perspectives d'Amélioration</h2>
+<p>Pour passer d'un prototype académique à un produit industriel, plusieurs axes d'évolution sont identifiés :</p>
+<p><b>1. Parallélisation Massive (GPU/Multi-Threading)</b></p><ul>
+<li>L'algorithme de Dijkstra est intrinsèquement séquentiel, mais le calcul "All-Pairs" (tous les couples) est <b>embarrassingly parallel</b>.</li>
+<li>Utiliser <b>OpenMP</b> pour lancer <picture><source srcset="form_76_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ N $" src="form_76.png"/></picture> Dijkstra en parallèle sur les cœurs CPU, ou <b>CUDA</b> pour accélérer Floyd-Warshall sur carte graphique.</li>
+</ul>
+<p><b>2. Interface Graphique Interactive (GUI)</b></p><ul>
+<li>Remplacer l'interface ligne de commande (CLI) par une interface Web (React/D3.js) ou Desktop (Qt).</li>
+<li>Permettre le "Drag &amp; Drop" de nœuds et la visualisation en temps réel de la reconfiguration des routes lors de la coupure d'un lien.</li>
+</ul>
+<p><b>3. Intelligence Artificielle (Deep Reinforcement Learning)</b></p><ul>
+<li>Remplacer les poids statiques par un agent IA (RL) capable de prédire la congestion future et d'ajuster les métriques pro-activement pour éviter les goulots d'étranglement avant qu'ils ne se forment.</li>
 </ul>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="rap_conc"></a>
-9. Conclusion</h1>
-<p>Ce projet a permis de confronter la théorie des graphes à la réalité de l'implémentation système. Nous avons atteint tous les objectifs du CDC :</p><ul class="check">
-<li class="checked"><b>Robustesse</b> : Le système charge des graphes de 500 nœuds sans erreur.</li>
+9. Conclusion Générale</h1>
+<p>Ce projet, réalisé dans le cadre du <b>Master 1 Cybersécurité et Internet des Objets</b> pour le module <b>Algorithmique et Complexité</b>, a constitué une étape majeure de notre formation. Plus qu'une simple implémentation d'algorithmes, nous avons conçu <b>S.I.R.A.R</b>, une solution complète.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+Bilan Technique</h3>
+<p>Nous avons réussi à franchir le fossé entre la <b>théorie des graphes</b> et la <b>programmation système</b> :</p><ul>
+<li><b>Maîtrise du C</b> : Gestion fine de la mémoire (allocations, pointeurs), structures de données complexes (Tas binaires, Listes d'adjacence) et modularité.</li>
+<li><b>Performance</b> : Le moteur traite des graphes de milliers de nœuds en quelques millisecondes, validant nos choix d'optimisation (Complexité O(E log V) pour Dijkstra).</li>
+<li><b>Architecture Hybride</b> : La séparation claire entre le <b>Cœur Algorithmique (C)</b> et l'<b>Orchestration (Module GSM)</b> garantit la maintenabilité du code.</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+Bilan Fonctionnel</h3>
+<p>Les objectifs du Cahier des Charges ont été non seulement atteints, mais dépassés :</p><ul class="check">
+<li class="checked"><b>Routage Intelligent</b> : Prise en compte de contraintes multiples (Coût, Bande Passante, Sécurité).</li>
 </ul>
 <ul class="check">
-<li class="checked"><b>Précision</b> : Les chemins trouvés sont mathématiquement optimaux.</li>
+<li class="checked"><b>Audit de Sécurité</b> : Détection proactive des failles (SPOF) et des boucles de routage.</li>
 </ul>
 <ul class="check">
-<li class="checked"><b>Richesse</b> : L'analyse de sécurité apporte une vraie valeur ajoutée pour l'administration réseau.</li>
+<li class="checked"><b>Visualisation</b> : Génération automatique de rapports graphiques clairs et exploitables.</li>
 </ul>
-<p>Les compétences acquises en gestion mémoire, optimisation algorithmique et structuration de projet (Makefile, Doxygen, Git) seront décisives pour la suite de notre cursus.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+Compétences Transverses</h3>
+<p>Au-delà du code, ce projet nous a permis de monter en compétence sur l'outillage professionnel :</p><ul>
+<li><b>Intégration Continue</b> : Tests automatisés rigoureux gérés par des scripts de validation.</li>
+<li><b>Documentation</b> : Génération de rapports techniques de qualité industrielle via Doxygen.</li>
+<li><b>Gestion de Version</b> : Collaboration efficace via Git.</li>
+</ul>
+<p>En conclusion, <b>S.I.R.A.R</b> n'est pas seulement un prototype académique, mais une fondation solide pour un outil d'analyse réseau de type SDN (Software Defined Network). Il démontre notre capacité à livrer un produit logiciel complexe, fiable et documenté.</p>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="rap_biblio"></a>
 10. Bibliographie et Références</h1>

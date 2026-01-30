@@ -462,17 +462,16 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="line"><span class="lineno">  281</span>      <span class="keywordtype">int</span> real_id = <a class="code hl_function" href="#a58cbcfc3a8f9120bafdbc5b9ea129de4">graphe_ajouter_noeud_nomme</a>(g, nom, (<a class="code hl_enumeration" href="dijkstra_8h.html#a2dfe8fe56937472386d4619be2ed90f5">TypeNoeud</a>)type_n, x, y);</div>
 <div class="line"><span class="lineno">  282</span>      g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[real_id].<a class="code hl_variable" href="struct_noeud.html#a33400f54123d7a20606a752b8dc988a9">est_actif</a> = (actif == 1);</div>
 <div class="line"><span class="lineno">  283</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <span class="charliteral">&#39;E&#39;</span>) {</div>
-<div class="line"><span class="lineno">  284</span> </div>
-<div class="line"><span class="lineno">  285</span>      <span class="keywordtype">int</span> src, dest, sec;</div>
-<div class="line"><span class="lineno">  286</span>      <span class="keywordtype">float</span> c, l, b, f_val;</div>
-<div class="line"><span class="lineno">  287</span>      fscanf(f, <span class="stringliteral">&quot; %d %d %f %f %f %f %d&quot;</span>, &amp;src, &amp;dest, &amp;c, &amp;l, &amp;b, &amp;f_val, &amp;sec);</div>
-<div class="line"><span class="lineno">  288</span>      <a class="code hl_struct" href="struct_metriques.html">Metriques</a> m = {c, l, b, f_val, sec};</div>
-<div class="line"><span class="lineno">  289</span>      <a class="code hl_function" href="#a0959b2dfdba06257de37da0f563487e7">graphe_ajouter_arete</a>(g, src, dest, m);</div>
-<div class="line"><span class="lineno">  290</span>    }</div>
-<div class="line"><span class="lineno">  291</span>  }</div>
-<div class="line"><span class="lineno">  292</span>  fclose(f);</div>
-<div class="line"><span class="lineno">  293</span>  <span class="keywordflow">return</span> g;</div>
-<div class="line"><span class="lineno">  294</span>}</div>
+<div class="line"><span class="lineno">  284</span>      <span class="keywordtype">int</span> src, dest, sec;</div>
+<div class="line"><span class="lineno">  285</span>      <span class="keywordtype">float</span> c, l, b, f_val;</div>
+<div class="line"><span class="lineno">  286</span>      fscanf(f, <span class="stringliteral">&quot; %d %d %f %f %f %f %d&quot;</span>, &amp;src, &amp;dest, &amp;c, &amp;l, &amp;b, &amp;f_val, &amp;sec);</div>
+<div class="line"><span class="lineno">  287</span>      <a class="code hl_struct" href="struct_metriques.html">Metriques</a> m = {c, l, b, f_val, sec};</div>
+<div class="line"><span class="lineno">  288</span>      <a class="code hl_function" href="#a0959b2dfdba06257de37da0f563487e7">graphe_ajouter_arete</a>(g, src, dest, m);</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+<div class="line"><span class="lineno">  290</span>  }</div>
+<div class="line"><span class="lineno">  291</span>  fclose(f);</div>
+<div class="line"><span class="lineno">  292</span>  <span class="keywordflow">return</span> g;</div>
+<div class="line"><span class="lineno">  293</span>}</div>
 <div class="ttc" id="adijkstra_8h_html_a2dfe8fe56937472386d4619be2ed90f5"><div class="ttname"><a href="dijkstra_8h.html#a2dfe8fe56937472386d4619be2ed90f5">TypeNoeud</a></div><div class="ttdeci">TypeNoeud</div><div class="ttdoc">Types de nœuds dans le réseau.</div><div class="ttdef"><b>Definition</b> <a href="dijkstra_8h_source.html#l00011">dijkstra.h:11</a></div></div>
 <div class="ttc" id="agraphe_8c_html_a0959b2dfdba06257de37da0f563487e7"><div class="ttname"><a href="#a0959b2dfdba06257de37da0f563487e7">graphe_ajouter_arete</a></div><div class="ttdeci">bool graphe_ajouter_arete(Graphe *g, int src, int dest, Metriques m)</div><div class="ttdoc">Ajoute un arc pondéré entre deux nœuds.</div><div class="ttdef"><b>Definition</b> <a href="graphe_8c_source.html#l00088">graphe.c:88</a></div></div>
 <div class="ttc" id="agraphe_8c_html_a58cbcfc3a8f9120bafdbc5b9ea129de4"><div class="ttname"><a href="#a58cbcfc3a8f9120bafdbc5b9ea129de4">graphe_ajouter_noeud_nomme</a></div><div class="ttdeci">int graphe_ajouter_noeud_nomme(Graphe *g, const char *nom, TypeNoeud type, double x, double y)</div><div class="ttdoc">Variante avec nom personnalisé</div><div class="ttdef"><b>Definition</b> <a href="graphe_8c_source.html#l00078">graphe.c:78</a></div></div>
@@ -866,33 +865,33 @@ Voici le graphe des appelants de cette fonction :</div>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="graphe_8c_source.html#l00297">297</a> du fichier <a class="el" href="graphe_8c_source.html">graphe.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  297</span>                                                         {</div>
-<div class="line"><span class="lineno">  298</span>  FILE *f = fopen(nom_fichier, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><span class="lineno">  299</span>  <span class="keywordflow">if</span> (!f)</div>
-<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  301</span> </div>
-<div class="line"><span class="lineno">  302</span>  fprintf(f, <span class="stringliteral">&quot;%s G {\n&quot;</span>, g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> ? <span class="stringliteral">&quot;digraph&quot;</span> : <span class="stringliteral">&quot;graph&quot;</span>);</div>
-<div class="line"><span class="lineno">  303</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *symb = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> ? <span class="stringliteral">&quot;-&gt;&quot;</span> : <span class="stringliteral">&quot;--&quot;</span>;</div>
-<div class="line"><span class="lineno">  304</span> </div>
-<div class="line"><span class="lineno">  305</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
-<div class="line"><span class="lineno">  306</span>    fprintf(f, <span class="stringliteral">&quot;  %d [label=\&quot;%s\&quot;];\n&quot;</span>, i, g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a3883ab37404aa791eb4abf07ee380be3">nom</a>);</div>
-<div class="line"><span class="lineno">  307</span>  }</div>
-<div class="line"><span class="lineno">  308</span> </div>
-<div class="line"><span class="lineno">  309</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
-<div class="line"><span class="lineno">  310</span>    <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *cour = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
-<div class="line"><span class="lineno">  311</span>    <span class="keywordflow">while</span> (cour) {</div>
-<div class="line"><span class="lineno">  312</span>      <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> || i &lt; cour-&gt;dest_id) {</div>
-<div class="line"><span class="lineno">  313</span>        fprintf(f, <span class="stringliteral">&quot;  %d %s %d [label=\&quot;c:%.1f, b:%.1f\&quot;];\n&quot;</span>, i, symb,</div>
-<div class="line"><span class="lineno">  314</span>                cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>, cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>,</div>
-<div class="line"><span class="lineno">  315</span>                cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a>);</div>
-<div class="line"><span class="lineno">  316</span>      }</div>
-<div class="line"><span class="lineno">  317</span>      cour = cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
-<div class="line"><span class="lineno">  318</span>    }</div>
-<div class="line"><span class="lineno">  319</span>  }</div>
-<div class="line"><span class="lineno">  320</span>  fprintf(f, <span class="stringliteral">&quot;}\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  321</span>  fclose(f);</div>
-<div class="line"><span class="lineno">  322</span>}</div>
+<p class="definition">Définition à la ligne <a class="el" href="graphe_8c_source.html#l00296">296</a> du fichier <a class="el" href="graphe_8c_source.html">graphe.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>                                                         {</div>
+<div class="line"><span class="lineno">  297</span>  FILE *f = fopen(nom_fichier, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><span class="lineno">  298</span>  <span class="keywordflow">if</span> (!f)</div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>  fprintf(f, <span class="stringliteral">&quot;%s G {\n&quot;</span>, g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> ? <span class="stringliteral">&quot;digraph&quot;</span> : <span class="stringliteral">&quot;graph&quot;</span>);</div>
+<div class="line"><span class="lineno">  302</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> *symb = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> ? <span class="stringliteral">&quot;-&gt;&quot;</span> : <span class="stringliteral">&quot;--&quot;</span>;</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  305</span>    fprintf(f, <span class="stringliteral">&quot;  %d [label=\&quot;%s\&quot;];\n&quot;</span>, i, g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a3883ab37404aa791eb4abf07ee380be3">nom</a>);</div>
+<div class="line"><span class="lineno">  306</span>  }</div>
+<div class="line"><span class="lineno">  307</span> </div>
+<div class="line"><span class="lineno">  308</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; g-&gt;<a class="code hl_variable" href="struct_graphe.html#a6b2d16680a41bda9522ea949e001736c">nb_noeuds</a>; i++) {</div>
+<div class="line"><span class="lineno">  309</span>    <a class="code hl_struct" href="struct_arete_noeud.html">AreteNoeud</a> *cour = g-&gt;<a class="code hl_variable" href="struct_graphe.html#a2e5bb51629044539e81c5c1041ed1602">noeuds</a>[i].<a class="code hl_variable" href="struct_noeud.html#a85658820f041ae3215f449308e5e75b4">liste_adj</a>;</div>
+<div class="line"><span class="lineno">  310</span>    <span class="keywordflow">while</span> (cour) {</div>
+<div class="line"><span class="lineno">  311</span>      <span class="keywordflow">if</span> (g-&gt;<a class="code hl_variable" href="struct_graphe.html#a081b976a714592298a63086e107ff1eb">est_oriente</a> || i &lt; cour-&gt;dest_id) {</div>
+<div class="line"><span class="lineno">  312</span>        fprintf(f, <span class="stringliteral">&quot;  %d %s %d [label=\&quot;c:%.1f, b:%.1f\&quot;];\n&quot;</span>, i, symb,</div>
+<div class="line"><span class="lineno">  313</span>                cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#aaa25db0933c600b0903f6e07953aa7e8">dest_id</a>, cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#ab7c69a08304787bc9e2cff02a98572ab">cout</a>,</div>
+<div class="line"><span class="lineno">  314</span>                cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#ac096b1117c764e5b31c468e3adf12389">metriques</a>.<a class="code hl_variable" href="struct_metriques.html#af82d8dbbe7806b04907d672e18cb12f2">bande_passante</a>);</div>
+<div class="line"><span class="lineno">  315</span>      }</div>
+<div class="line"><span class="lineno">  316</span>      cour = cour-&gt;<a class="code hl_variable" href="struct_arete_noeud.html#a366a0842a23870f85e4a115f3ffab39e">suivant</a>;</div>
+<div class="line"><span class="lineno">  317</span>    }</div>
+<div class="line"><span class="lineno">  318</span>  }</div>
+<div class="line"><span class="lineno">  319</span>  fprintf(f, <span class="stringliteral">&quot;}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  320</span>  fclose(f);</div>
+<div class="line"><span class="lineno">  321</span>}</div>
 </div><!-- fragment -->
 <p class="reference">Références <a class="el" href="dijkstra_8h_source.html#l00019">Metriques::bande_passante</a>, <a class="el" href="dijkstra_8h_source.html#l00017">Metriques::cout</a>, <a class="el" href="dijkstra_8h_source.html#l00040">AreteNoeud::dest_id</a>, <a class="el" href="dijkstra_8h_source.html#l00053">Graphe::est_oriente</a>, <a class="el" href="dijkstra_8h_source.html#l00033">Noeud::liste_adj</a>, <a class="el" href="dijkstra_8h_source.html#l00041">AreteNoeud::metriques</a>, <a class="el" href="dijkstra_8h_source.html#l00049">Graphe::nb_noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00051">Graphe::noeuds</a>, <a class="el" href="dijkstra_8h_source.html#l00029">Noeud::nom</a>, et <a class="el" href="dijkstra_8h_source.html#l00042">AreteNoeud::suivant</a>.</p>
 

@@ -61,7 +61,7 @@
  * @subsection sub_diag Diagramme Architectural
  * L'application suit une architecture modulaire stricte :
  * @dot
- * digraph G {
+ * digraph MainArch {
  *   rankdir=TD;
  *   node [fontname="Helvetica", fontsize=10, shape=record, style=filled, fillcolor="#f0f0f0"];
  *   edge [fontname="Helvetica", fontsize=10];
@@ -73,7 +73,7 @@
  *     label = "Noyau (Core)";
  *     style=dashed;
  *     color=gray;
- *     Graph [label="{ Module Graphe | graphe.c \n (Structures de Données) }", fillcolor="#ccffcc"];
+ *     GraphMod [label="{ Module Graphe | graphe.c \n (Structures de Données) }", fillcolor="#ccffcc"];
  *     Utils [label="{ Utilitaires | utils.c \n (I/O, Logs) }", fillcolor="#e6ccff"];
  *   }
  *
@@ -87,11 +87,11 @@
  *   }
  *
  *   CLI -> Orch;
- *   Orch -> Graph [label="Init"];
+ *   Orch -> GraphMod [label="Init"];
  *   Orch -> Route [label="Calcul"];
  *   Orch -> Secu [label="Audit"];
- *   Route -> Graph [label="Lit"];
- *   Secu -> Graph [label="Lit"];
+ *   Route -> GraphMod [label="Lit"];
+ *   Secu -> GraphMod [label="Lit"];
  *   Sim -> Utils [label="Log"];
  * }
  * @enddot

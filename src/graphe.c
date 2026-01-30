@@ -281,7 +281,6 @@ Graphe *graphe_charger(const char *nom_fichier) {
       int real_id = graphe_ajouter_noeud_nomme(g, nom, (TypeNoeud)type_n, x, y);
       g->noeuds[real_id].est_actif = (actif == 1);
     } else if (type == 'E') {
-
       int src, dest, sec;
       float c, l, b, f_val;
       fscanf(f, " %d %d %f %f %f %f %d", &src, &dest, &c, &l, &b, &f_val, &sec);

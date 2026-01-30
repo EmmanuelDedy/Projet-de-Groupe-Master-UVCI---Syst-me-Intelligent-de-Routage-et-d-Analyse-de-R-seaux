@@ -23,6 +23,7 @@ OPTIMIZE_OUTPUT_FOR_C  = YES
 TYPEDEF_HIDES_STRUCT   = YES
 
 # Visuals and Graphs
+IMAGE_PATH             = docs/images docs/images/screenshots resultats_tests
 HAVE_DOT               = YES
 CALL_GRAPH             = YES
 CALLER_GRAPH           = YES
